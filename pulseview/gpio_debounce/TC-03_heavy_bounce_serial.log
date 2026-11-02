@@ -1,0 +1,60 @@
+[   500.002 ms] 
+[   500.002 ms] ESP32 BUTTON / INTERRUPT / DEBOUNCE DEMO
+[   500.002 ms] ----------------------------------------
+[   500.002 ms] GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT
+[   500.002 ms] 
+[   500.002 ms] Green BUTTON = physical button with bouncing
+[   500.002 ms] Red NOISE    = artificial noise input
+[   500.002 ms] 
+[  1001.005 ms] 
+[  1001.005 ms] ================================
+[  1001.005 ms] LOGICAL EVENT #1
+[  1001.005 ms] Button press ACCEPTED
+[  1001.005 ms] RAW interrupts total: 1
+[  1001.005 ms] RAW interrupts since previous logical event: 1
+[  1001.005 ms] LOGICAL events total: 1
+[  1001.005 ms] ACTIONS total: 1
+[  1001.005 ms] ACTION executed ONCE
+[  1001.005 ms] LOGGER: physical press -> RAW -> LOGICAL -> ACTION
+[  1001.005 ms] ================================
+[  1001.007 ms] [SYSTEM] Critical operation is running...
+[  1003.003 ms] Button RELEASE accepted
+[  1005.015 ms] 
+[  1005.015 ms] ================================
+[  1005.015 ms] LOGICAL EVENT #2
+[  1005.015 ms] Button press ACCEPTED
+[  1005.015 ms] RAW interrupts total: 3
+[  1005.015 ms] RAW interrupts since previous logical event: 2
+[  1005.015 ms] LOGICAL events total: 2
+[  1005.015 ms] ACTIONS total: 2
+[  1005.015 ms] ACTION executed ONCE
+[  1005.015 ms] LOGGER: physical press -> RAW -> LOGICAL -> ACTION
+[  1005.015 ms] ================================
+[  1007.014 ms] Button RELEASE accepted
+[  1009.014 ms] 
+[  1009.014 ms] ================================
+[  1009.014 ms] LOGICAL EVENT #3
+[  1009.014 ms] Button press ACCEPTED
+[  1009.014 ms] RAW interrupts total: 5
+[  1009.014 ms] RAW interrupts since previous logical event: 2
+[  1009.014 ms] LOGICAL events total: 3
+[  1009.014 ms] ACTIONS total: 3
+[  1009.014 ms] ACTION executed ONCE
+[  1009.014 ms] LOGGER: physical press -> RAW -> LOGICAL -> ACTION
+[  1009.014 ms] ================================
+[  1011.013 ms] Button RELEASE accepted
+[  1013.014 ms] 
+[  1013.014 ms] ================================
+[  1013.014 ms] LOGICAL EVENT #4
+[  1013.014 ms] Button press ACCEPTED
+[  1013.014 ms] RAW interrupts total: 7
+[  1013.014 ms] RAW interrupts since previous logical event: 2
+[  1013.014 ms] LOGICAL events total: 4
+[  1013.014 ms] ACTIONS total: 4
+[  1013.014 ms] ACTION executed ONCE
+[  1013.014 ms] LOGGER: physical press -> RAW -> LOGICAL -> ACTION
+[  1013.014 ms] ================================
+[  1313.013 ms] Button RELEASE accepted
+[  3000.002 ms] 
+[  3000.002 ms] [LOGGER] RAW interrupts: 8 | Logical events: 4 | Actions: 4
+[  3013.000 ms] [SYSTEM] Critical operation finished.

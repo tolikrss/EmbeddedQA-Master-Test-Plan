@@ -1,0 +1,61 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.3] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       41.0] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       44.3] b0  RX  ets Jul 29 2019 12:21:46
+[       44.5] b0  RX  
+[       44.8] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      345.6] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      346.6] b0  RX  [BOOT] reset_reason=POWER_ON
+[      350.2] b0  HW  WDT_ADD loopTask
+[      350.4] b0  TX  status
+[      351.2] b0  RX  [WDT] enabled timeout=4000 ms
+[      351.8] b0  RX  Commands:
+[      351.9] b0  RX    help
+[      351.9] b0  RX    status
+[      352.0] b0  RX    sensor
+[      353.7] b0  RX    relay on
+[      354.3] b0  RX    relay off
+[      354.4] b0  RX    save
+[      354.5] b0  RX    sleep <seconds>
+[      354.5] b0  RX    hang
+[      354.6] b0  RX    powerloss
+[      354.7] b0  RX    reboot
+[      355.2] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      378.1] b0  TX  relay off
+[      379.1] b0  TX  save
+[      384.9] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      416.2] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      419.2] b0  RX  [STORE] saved
+[      419.4] b0  RX  [RELAY] OFF
+[      425.5] b0  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[      452.3] b0  RX  [STORE] saved
+[      679.6] b0  TX  status
+[      684.5] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":2,"heap":298412,"sensor_ok":true}
+[      691.8] b0  SYS INJECT POWERCUT
+[      692.6] b0  HW  RESET reason=POWERON detail=injected_power_cycle
+[      705.9] b0  SYS POWER OFF (held off by test)
+[      724.8] b0  SYS FLASH bit-flip mask=0x01 at byte 0 of entries ['qa-lab/counter', 'qa-lab/relay']
+[      725.1] b1  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[      768.8] b1  HW  BOOT reset_reason=POWERON wake_cause=0
+[      771.2] b1  RX  ets Jul 29 2019 12:21:46
+[      771.3] b1  RX  
+[      771.9] b1  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     1077.1] b1  HW  GPIO pin=5 level=1
+[     1077.3] b1  HW  GPIO pin=2 level=1
+[     1077.3] b1  HW  WDT_INIT timeout_ms=4000 panic=1
+[     1077.9] b1  RX  [BOOT] reset_reason=POWER_ON
+[     1080.6] b1  HW  WDT_ADD loopTask
+[     1082.0] b1  TX  status
+[     1085.7] b1  RX  [WDT] enabled timeout=4000 ms
+[     1085.9] b1  RX  Commands:
+[     1086.0] b1  RX    help
+[     1086.0] b1  RX    status
+[     1086.1] b1  RX    sensor
+[     1086.1] b1  RX    relay on
+[     1086.2] b1  RX    relay off
+[     1086.2] b1  RX    save
+[     1086.3] b1  RX    sleep <seconds>
+[     1086.8] b1  RX    hang
+[     1086.9] b1  RX    powerloss
+[     1087.0] b1  RX    reboot
+[     1087.6] b1  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":true,"counter":3,"heap":298412,"sensor_ok":true}

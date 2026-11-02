@@ -1,0 +1,59 @@
+name: 'TC-05 5 rapid presses 100/100 ms'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 100ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - delay: 100ms
+  - wait-serial: 'LOGICAL EVENT #5'
+  - delay: 3000ms

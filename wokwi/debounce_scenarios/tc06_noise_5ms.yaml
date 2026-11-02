@@ -1,0 +1,19 @@
+name: 'TC-06 Short noise pulse 5 ms (BUG-01 repro)'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 5ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  # Expected: no LOGICAL EVENT. If the next step completes, BUG-01 is reproduced.
+  - wait-serial: 'LOGICAL EVENT #1'
+  - delay: 2500ms

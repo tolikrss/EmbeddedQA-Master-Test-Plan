@@ -1,0 +1,33 @@
+[       2.9 ms] HW GPIO2=1
+[     205.2 ms] RX [BOOT] IoT node ready
+[     205.7 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_NET03_recovery_after_net_up fw=demo
+[~    205.7 ms] TX NET DOWN
+[     253.9 ms] HW GPIO2=0
+[     254.1 ms] RX [NET] state=DISCONNECTED
+[     254.1 ms] RX [NET] state=BACKOFF
+[     254.1 ms] RX [NET] retry=1 backoff_ms=500
+[     760.2 ms] RX [NET] state=CONNECTING
+[     760.7 ms] RX [NET] reconnect=FAILED
+[     760.7 ms] RX [NET] state=BACKOFF
+[     760.8 ms] RX [NET] retry=2 backoff_ms=1000
+[    1766.8 ms] RX [NET] state=CONNECTING
+[    1767.2 ms] RX [NET] reconnect=FAILED
+[    1767.2 ms] RX [NET] state=BACKOFF
+[    1767.2 ms] RX [NET] retry=3 backoff_ms=2000
+[    3767.4 ms] RX [NET] state=CONNECTING
+[    3767.7 ms] RX [NET] reconnect=FAILED
+[    3767.7 ms] RX [NET] state=BACKOFF
+[    3767.8 ms] RX [NET] retry=4 backoff_ms=4000
+[~   3767.8 ms] TX NET UP
+[    6453.2 ms] RX [FAULT] network restored
+[    6453.4 ms] RX [NET] state=CONNECTING
+[    6453.4 ms] HW GPIO2=1
+[    6453.5 ms] RX [NET] state=CONNECTED
+[    6453.5 ms] RX [NET] reconnect=SUCCESS
+[    6453.5 ms] RX [BUFFER] flush_start count=0
+[    6453.5 ms] RX [BUFFER] flush_end count=0
+# MEASURED recovery_ms = 0.3
+[~   6453.5 ms] TX STATUS
+[    6506.8 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":4,"heap":286847}
+# MEASURED state_after = CONNECTED

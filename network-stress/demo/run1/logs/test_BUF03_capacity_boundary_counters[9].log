@@ -1,0 +1,43 @@
+[       0.7 ms] HW GPIO2=1
+[     205.0 ms] RX [BOOT] IoT node ready
+[     205.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF03_capacity_boundary_counters[9] fw=demo
+[~    205.4 ms] TX RESET STATS
+[     257.7 ms] RX [STATS] reset
+[~    257.7 ms] TX NET DOWN
+[     857.8 ms] HW GPIO2=0
+[     858.1 ms] RX [NET] state=DISCONNECTED
+[     858.1 ms] RX [NET] state=BACKOFF
+[     858.2 ms] RX [NET] retry=1 backoff_ms=500
+[~    858.2 ms] TX SEND
+[    1062.9 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1062.9 ms] TX SEND
+[    1184.5 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1184.5 ms] TX SEND
+[    1308.6 ms] RX [BUFFER] queued id=3 count=3/8
+[    1359.4 ms] RX [NET] state=CONNECTING
+[    1359.6 ms] RX [NET] reconnect=FAILED
+[    1359.6 ms] RX [NET] state=BACKOFF
+[    1359.6 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1359.6 ms] TX SEND
+[    1432.7 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1432.7 ms] TX SEND
+[    1560.9 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1560.9 ms] TX SEND
+[    1679.1 ms] RX [BUFFER] queued id=6 count=6/8
+[~   1679.1 ms] TX SEND
+[    1800.6 ms] RX [BUFFER] queued id=7 count=7/8
+[~   1800.6 ms] TX SEND
+[    1922.7 ms] RX [BUFFER] queued id=8 count=8/8
+[~   1922.7 ms] TX SEND
+[    2046.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=1
+[    2047.2 ms] RX [BUFFER] queued id=9 count=8/8
+[~   2047.2 ms] TX STATUS
+[    2168.2 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":0,"dropped":1,"duplicates":0,"reconnect_attempts":2,"heap":286847}
+[    2359.4 ms] RX [NET] state=CONNECTING
+[    2359.7 ms] RX [NET] reconnect=FAILED
+[    2359.7 ms] RX [NET] state=BACKOFF
+[    2359.7 ms] RX [NET] retry=3 backoff_ms=2000
+# MEASURED sent_offline = 9
+# MEASURED buffer = 8
+# MEASURED dropped = 1

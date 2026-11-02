@@ -1,0 +1,19 @@
+name: 'TC-01 Normal press'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 200ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - wait-serial: 'LOGICAL EVENT #1'
+  - delay: 3000ms
+  # Check: no 'LOGICAL EVENT #2' in log; [LOGGER] Logical events: 1 | Actions: 1

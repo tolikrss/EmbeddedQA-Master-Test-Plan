@@ -1,0 +1,415 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.5] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       30.9] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       34.8] b0  RX  ets Jul 29 2019 12:21:46
+[       35.3] b0  RX  
+[       35.6] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      335.5] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      338.1] b0  RX  [BOOT] reset_reason=POWER_ON
+[      338.5] b0  HW  WDT_ADD loopTask
+[      339.4] b0  RX  [WDT] enabled timeout=4000 ms
+[      339.6] b0  RX  Commands:
+[      339.6] b0  RX    help
+[      339.7] b0  RX    status
+[      339.8] b0  RX    sensor
+[      339.8] b0  RX    relay on
+[      339.9] b0  RX    relay off
+[      340.0] b0  RX    save
+[      340.1] b0  RX    sleep <seconds>
+[      340.1] b0  RX    hang
+[      340.6] b0  RX    powerloss
+[      340.6] b0  RX    reboot
+[      343.5] b0  TX  status
+[      347.2] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      364.6] b0  TX  relay on
+[      364.8] b0  TX  save
+[      366.1] b0  HW  GPIO pin=5 level=1
+[      366.6] b0  HW  GPIO pin=2 level=1
+[      370.0] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      398.3] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      399.4] b0  RX  [STORE] saved
+[      400.8] b0  RX  [RELAY] ON
+[      403.8] b0  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[      430.3] b0  RX  [STORE] saved
+[      565.8] b0  TX  status
+[      568.7] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":true,"counter":2,"heap":298412,"sensor_ok":true}
+[      595.8] b0  TX  relay on
+[      605.6] b0  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[      632.2] b0  RX  [STORE] saved
+[      632.3] b0  RX  [RELAY] ON
+[      696.9] b0  TX  hang
+[      699.6] b0  RX  [FAULT] firmware hang
+[     4700.7] b0  HW  WDT_TIMEOUT since_feed_ms=4001.0
+[     4700.7] b0  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[     4703.8] b0  RX  E (4699) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[     4704.4] b0  RX  E (4699) task_wdt:  - loopTask (CPU 1)
+[     4704.4] b0  RX  
+[     4704.8] b0  RX  abort() was called at PC 0x400d4f2b on core 0
+[     4704.8] b0  RX  
+[     4704.9] b0  RX  Rebooting...
+[     4708.2] b1  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[     4742.4] b1  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[     4745.7] b1  RX  ets Jul 29 2019 12:21:46
+[     4745.8] b1  RX  
+[     4746.0] b1  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     5048.7] b1  HW  GPIO pin=5 level=1
+[     5048.7] b1  HW  GPIO pin=2 level=1
+[     5048.8] b1  HW  WDT_INIT timeout_ms=4000 panic=1
+[     5048.9] b1  RX  [BOOT] reset_reason=TASK_WDT
+[     5050.6] b1  HW  WDT_ADD loopTask
+[     5052.7] b1  RX  [WDT] enabled timeout=4000 ms
+[     5054.0] b1  TX  status
+[     5054.6] b1  RX  Commands:
+[     5056.2] b1  RX    help
+[     5056.3] b1  RX    status
+[     5056.3] b1  RX    sensor
+[     5056.4] b1  RX    relay on
+[     5056.5] b1  RX    relay off
+[     5056.5] b1  RX    save
+[     5056.6] b1  RX    sleep <seconds>
+[     5056.6] b1  RX    hang
+[     5056.7] b1  RX    powerloss
+[     5056.8] b1  RX    reboot
+[     5057.7] b1  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":3,"heap":298412,"sensor_ok":true}
+[     5067.2] b1  TX  relay on
+[     5077.7] b1  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     5103.9] b1  RX  [STORE] saved
+[     5104.4] b1  RX  [RELAY] ON
+[     5168.2] b1  TX  hang
+[     5169.7] b1  RX  [FAULT] firmware hang
+[     9171.0] b1  HW  WDT_TIMEOUT since_feed_ms=4001.4
+[     9172.2] b1  RX  E (4462) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[     9172.4] b1  RX  E (4462) task_wdt:  - loopTask (CPU 1)
+[     9172.5] b1  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[     9176.5] b1  RX  
+[     9176.7] b1  RX  abort() was called at PC 0x400d4f2b on core 0
+[     9176.8] b1  RX  
+[     9178.5] b1  RX  Rebooting...
+[     9183.5] b2  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[     9218.8] b2  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[     9221.2] b2  RX  ets Jul 29 2019 12:21:46
+[     9221.2] b2  RX  
+[     9221.6] b2  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     9525.1] b2  HW  GPIO pin=5 level=1
+[     9525.1] b2  HW  GPIO pin=2 level=1
+[     9525.1] b2  HW  WDT_INIT timeout_ms=4000 panic=1
+[     9526.8] b2  HW  WDT_ADD loopTask
+[     9529.7] b2  RX  [BOOT] reset_reason=TASK_WDT
+[     9530.7] b2  RX  [WDT] enabled timeout=4000 ms
+[     9530.7] b2  RX  Commands:
+[     9530.8] b2  RX    help
+[     9530.8] b2  RX    status
+[     9530.9] b2  RX    sensor
+[     9531.0] b2  RX    relay on
+[     9531.7] b2  TX  status
+[     9533.3] b2  RX    relay off
+[     9533.3] b2  RX    save
+[     9533.4] b2  RX    sleep <seconds>
+[     9533.5] b2  RX    hang
+[     9533.6] b2  RX    powerloss
+[     9533.7] b2  RX    reboot
+[     9534.6] b2  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":4,"heap":298412,"sensor_ok":true}
+[     9545.2] b2  TX  relay on
+[     9555.3] b2  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     9581.5] b2  RX  [STORE] saved
+[     9581.6] b2  RX  [RELAY] ON
+[     9646.8] b2  TX  hang
+[     9649.0] b2  RX  [FAULT] firmware hang
+[    13652.1] b2  HW  WDT_TIMEOUT since_feed_ms=4001.8
+[    13652.1] b2  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    13655.0] b2  RX  E (4466) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    13656.9] b2  RX  E (4466) task_wdt:  - loopTask (CPU 1)
+[    13657.0] b2  RX  
+[    13659.3] b2  RX  abort() was called at PC 0x400d4f2b on core 0
+[    13659.4] b2  RX  
+[    13659.5] b2  RX  Rebooting...
+[    13663.6] b3  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    13696.6] b3  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    13702.7] b3  RX  ets Jul 29 2019 12:21:46
+[    13703.4] b3  RX  
+[    13703.8] b3  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    14002.1] b3  HW  GPIO pin=5 level=1
+[    14002.1] b3  HW  GPIO pin=2 level=1
+[    14002.1] b3  HW  WDT_INIT timeout_ms=4000 panic=1
+[    14002.8] b3  HW  WDT_ADD loopTask
+[    14003.8] b3  RX  [BOOT] reset_reason=TASK_WDT
+[    14004.0] b3  RX  [WDT] enabled timeout=4000 ms
+[    14004.2] b3  RX  Commands:
+[    14004.3] b3  RX    help
+[    14004.4] b3  RX    status
+[    14005.3] b3  RX    sensor
+[    14005.4] b3  RX    relay on
+[    14005.5] b3  RX    relay off
+[    14005.5] b3  RX    save
+[    14005.6] b3  RX    sleep <seconds>
+[    14005.7] b3  RX    hang
+[    14005.7] b3  RX    powerloss
+[    14005.8] b3  RX    reboot
+[    14010.3] b3  TX  status
+[    14013.7] b3  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":5,"heap":298412,"sensor_ok":true}
+[    14021.3] b3  TX  relay on
+[    14029.9] b3  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    14055.5] b3  RX  [STORE] saved
+[    14055.6] b3  RX  [RELAY] ON
+[    14122.7] b3  TX  hang
+[    14134.1] b3  RX  [FAULT] firmware hang
+[    18134.6] b3  HW  WDT_TIMEOUT since_feed_ms=4000.5
+[    18134.7] b3  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    18135.5] b3  RX  E (4470) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    18135.9] b3  RX  E (4470) task_wdt:  - loopTask (CPU 1)
+[    18135.9] b3  RX  
+[    18136.2] b3  RX  abort() was called at PC 0x400d4f2b on core 0
+[    18142.2] b3  RX  
+[    18142.4] b3  RX  Rebooting...
+[    18145.5] b4  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    18184.5] b4  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    18189.6] b4  RX  ets Jul 29 2019 12:21:46
+[    18190.2] b4  RX  
+[    18193.5] b4  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    18491.2] b4  HW  GPIO pin=5 level=1
+[    18491.2] b4  HW  GPIO pin=2 level=1
+[    18491.3] b4  HW  WDT_INIT timeout_ms=4000 panic=1
+[    18492.0] b4  RX  [BOOT] reset_reason=TASK_WDT
+[    18496.3] b4  TX  status
+[    18496.8] b4  HW  WDT_ADD loopTask
+[    18498.0] b4  RX  [WDT] enabled timeout=4000 ms
+[    18498.1] b4  RX  Commands:
+[    18498.1] b4  RX    help
+[    18498.2] b4  RX    status
+[    18498.7] b4  RX    sensor
+[    18498.8] b4  RX    relay on
+[    18498.9] b4  RX    relay off
+[    18499.0] b4  RX    save
+[    18499.1] b4  RX    sleep <seconds>
+[    18499.1] b4  RX    hang
+[    18499.2] b4  RX    powerloss
+[    18499.3] b4  RX    reboot
+[    18500.2] b4  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":6,"heap":298412,"sensor_ok":true}
+[    18508.2] b4  TX  relay on
+[    18516.6] b4  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    18544.6] b4  RX  [STORE] saved
+[    18544.7] b4  RX  [RELAY] ON
+[    18609.6] b4  TX  hang
+[    18612.8] b4  RX  [FAULT] firmware hang
+[    22614.0] b4  HW  WDT_TIMEOUT since_feed_ms=4001.1
+[    22614.8] b4  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    22621.8] b4  RX  E (4468) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    22624.0] b4  RX  E (4468) task_wdt:  - loopTask (CPU 1)
+[    22624.1] b4  RX  
+[    22625.9] b4  RX  abort() was called at PC 0x400d4f2b on core 0
+[    22625.9] b4  RX  
+[    22626.0] b4  RX  Rebooting...
+[    22633.5] b5  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    22676.6] b5  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    22681.0] b5  RX  ets Jul 29 2019 12:21:46
+[    22681.2] b5  RX  
+[    22681.9] b5  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    22982.0] b5  HW  GPIO pin=5 level=1
+[    22982.0] b5  HW  GPIO pin=2 level=1
+[    22982.0] b5  HW  WDT_INIT timeout_ms=4000 panic=1
+[    22982.6] b5  RX  [BOOT] reset_reason=TASK_WDT
+[    22984.5] b5  HW  WDT_ADD loopTask
+[    22985.7] b5  RX  [WDT] enabled timeout=4000 ms
+[    22986.4] b5  RX  Commands:
+[    22986.5] b5  RX    help
+[    22986.6] b5  RX    status
+[    22986.6] b5  RX    sensor
+[    22986.7] b5  RX    relay on
+[    22986.8] b5  RX    relay off
+[    22986.9] b5  RX    save
+[    22987.0] b5  RX    sleep <seconds>
+[    22987.0] b5  RX    hang
+[    22987.1] b5  RX    powerloss
+[    22987.2] b5  RX    reboot
+[    22991.7] b5  TX  status
+[    22995.9] b5  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":7,"heap":298412,"sensor_ok":true}
+[    23003.3] b5  TX  relay on
+[    23013.9] b5  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    23040.2] b5  RX  [STORE] saved
+[    23040.6] b5  RX  [RELAY] ON
+[    23104.4] b5  TX  hang
+[    23107.0] b5  RX  [FAULT] firmware hang
+[    27106.8] b5  HW  WDT_TIMEOUT since_feed_ms=4000.1
+[    27106.9] b5  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    27110.4] b5  RX  E (4472) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    27110.7] b5  RX  E (4472) task_wdt:  - loopTask (CPU 1)
+[    27110.7] b5  RX  
+[    27112.1] b5  RX  abort() was called at PC 0x400d4f2b on core 0
+[    27114.1] b5  RX  
+[    27114.2] b5  RX  Rebooting...
+[    27116.9] b6  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    27156.1] b6  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    27163.8] b6  RX  ets Jul 29 2019 12:21:46
+[    27163.9] b6  RX  
+[    27165.0] b6  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    27462.5] b6  HW  GPIO pin=5 level=1
+[    27462.5] b6  HW  GPIO pin=2 level=1
+[    27462.5] b6  HW  WDT_INIT timeout_ms=4000 panic=1
+[    27463.3] b6  RX  [BOOT] reset_reason=TASK_WDT
+[    27463.8] b6  HW  WDT_ADD loopTask
+[    27466.2] b6  TX  status
+[    27466.9] b6  RX  [WDT] enabled timeout=4000 ms
+[    27467.0] b6  RX  Commands:
+[    27467.1] b6  RX    help
+[    27467.2] b6  RX    status
+[    27467.2] b6  RX    sensor
+[    27467.3] b6  RX    relay on
+[    27467.4] b6  RX    relay off
+[    27467.5] b6  RX    save
+[    27467.6] b6  RX    sleep <seconds>
+[    27467.9] b6  RX    hang
+[    27468.0] b6  RX    powerloss
+[    27468.1] b6  RX    reboot
+[    27470.7] b6  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":8,"heap":298412,"sensor_ok":true}
+[    27480.1] b6  TX  relay on
+[    27489.6] b6  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    27516.2] b6  RX  [STORE] saved
+[    27516.3] b6  RX  [RELAY] ON
+[    27581.6] b6  TX  hang
+[    27584.8] b6  RX  [FAULT] firmware hang
+[    31585.2] b6  HW  WDT_TIMEOUT since_feed_ms=4001.0
+[    31585.3] b6  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    31590.3] b6  RX  E (4467) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    31590.6] b6  RX  E (4467) task_wdt:  - loopTask (CPU 1)
+[    31590.6] b6  RX  
+[    31590.9] b6  RX  abort() was called at PC 0x400d4f2b on core 0
+[    31590.9] b6  RX  
+[    31591.0] b6  RX  Rebooting...
+[    31592.2] b7  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    31626.9] b7  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    31629.1] b7  RX  ets Jul 29 2019 12:21:46
+[    31629.2] b7  RX  
+[    31629.4] b7  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    31931.8] b7  HW  GPIO pin=5 level=1
+[    31931.9] b7  HW  GPIO pin=2 level=1
+[    31931.9] b7  HW  WDT_INIT timeout_ms=4000 panic=1
+[    31932.1] b7  RX  [BOOT] reset_reason=TASK_WDT
+[    31935.1] b7  HW  WDT_ADD loopTask
+[    31936.4] b7  RX  [WDT] enabled timeout=4000 ms
+[    31936.5] b7  RX  Commands:
+[    31936.6] b7  RX    help
+[    31936.6] b7  RX    status
+[    31936.7] b7  RX    sensor
+[    31936.7] b7  RX    relay on
+[    31936.8] b7  RX    relay off
+[    31936.8] b7  RX    save
+[    31936.9] b7  RX    sleep <seconds>
+[    31937.0] b7  RX    hang
+[    31937.0] b7  RX    powerloss
+[    31937.1] b7  RX    reboot
+[    31942.1] b7  TX  status
+[    31944.2] b7  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":9,"heap":298412,"sensor_ok":true}
+[    31953.5] b7  TX  relay on
+[    31962.4] b7  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    31989.0] b7  RX  [STORE] saved
+[    31989.5] b7  RX  [RELAY] ON
+[    32054.3] b7  TX  hang
+[    32058.0] b7  RX  [FAULT] firmware hang
+[    36058.5] b7  HW  WDT_TIMEOUT since_feed_ms=4000.3
+[    36058.6] b7  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    36062.1] b7  RX  E (4465) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    36063.5] b7  RX  E (4465) task_wdt:  - loopTask (CPU 1)
+[    36064.0] b7  RX  
+[    36065.7] b7  RX  abort() was called at PC 0x400d4f2b on core 0
+[    36065.8] b7  RX  
+[    36065.9] b7  RX  Rebooting...
+[    36067.8] b8  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    36095.1] b8  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    36100.4] b8  RX  ets Jul 29 2019 12:21:46
+[    36100.6] b8  RX  
+[    36102.6] b8  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    36401.8] b8  HW  GPIO pin=5 level=1
+[    36401.9] b8  HW  GPIO pin=2 level=1
+[    36402.0] b8  HW  WDT_INIT timeout_ms=4000 panic=1
+[    36403.3] b8  RX  [BOOT] reset_reason=TASK_WDT
+[    36403.6] b8  HW  WDT_ADD loopTask
+[    36404.6] b8  RX  [WDT] enabled timeout=4000 ms
+[    36404.6] b8  RX  Commands:
+[    36404.7] b8  RX    help
+[    36404.8] b8  RX    status
+[    36404.8] b8  RX    sensor
+[    36404.9] b8  RX    relay on
+[    36404.9] b8  RX    relay off
+[    36405.0] b8  RX    save
+[    36405.1] b8  RX    sleep <seconds>
+[    36405.1] b8  RX    hang
+[    36405.2] b8  RX    powerloss
+[    36405.2] b8  RX    reboot
+[    36410.1] b8  TX  status
+[    36412.3] b8  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":10,"heap":298412,"sensor_ok":true}
+[    36421.3] b8  TX  relay on
+[    36430.2] b8  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    36456.0] b8  RX  [STORE] saved
+[    36456.1] b8  RX  [RELAY] ON
+[    36522.6] b8  TX  hang
+[    36526.4] b8  RX  [FAULT] firmware hang
+[    40529.3] b8  HW  WDT_TIMEOUT since_feed_ms=4002.4
+[    40529.4] b8  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    40530.7] b8  RX  E (4460) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    40531.2] b8  RX  E (4460) task_wdt:  - loopTask (CPU 1)
+[    40531.3] b8  RX  
+[    40534.9] b8  RX  abort() was called at PC 0x400d4f2b on core 0
+[    40535.4] b8  RX  
+[    40535.5] b8  RX  Rebooting...
+[    40540.5] b9  SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    40572.1] b9  HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    40576.7] b9  RX  ets Jul 29 2019 12:21:46
+[    40576.8] b9  RX  
+[    40577.0] b9  RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    40877.6] b9  HW  GPIO pin=5 level=1
+[    40877.8] b9  HW  GPIO pin=2 level=1
+[    40877.8] b9  HW  WDT_INIT timeout_ms=4000 panic=1
+[    40878.4] b9  HW  WDT_ADD loopTask
+[    40880.0] b9  RX  [BOOT] reset_reason=TASK_WDT
+[    40880.6] b9  RX  [WDT] enabled timeout=4000 ms
+[    40880.8] b9  RX  Commands:
+[    40880.9] b9  RX    help
+[    40880.9] b9  RX    status
+[    40881.0] b9  RX    sensor
+[    40881.0] b9  RX    relay on
+[    40881.1] b9  RX    relay off
+[    40881.5] b9  RX    save
+[    40882.6] b9  RX    sleep <seconds>
+[    40882.8] b9  RX    hang
+[    40883.5] b9  RX    powerloss
+[    40884.5] b9  TX  status
+[    40885.8] b9  RX    reboot
+[    40888.6] b9  RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":11,"heap":298412,"sensor_ok":true}
+[    40897.9] b9  TX  relay on
+[    40909.7] b9  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[    40936.7] b9  RX  [STORE] saved
+[    40936.9] b9  RX  [RELAY] ON
+[    40999.1] b9  TX  hang
+[    41002.6] b9  RX  [FAULT] firmware hang
+[    45005.8] b9  HW  WDT_TIMEOUT since_feed_ms=4001.3
+[    45005.9] b9  HW  RESET reason=TASK_WDT detail=task_wdt_panic
+[    45006.8] b9  RX  E (4462) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[    45011.8] b9  RX  E (4462) task_wdt:  - loopTask (CPU 1)
+[    45012.3] b9  RX  
+[    45014.5] b9  RX  abort() was called at PC 0x400d4f2b on core 0
+[    45014.7] b9  RX  
+[    45016.3] b9  RX  Rebooting...
+[    45017.8] b10 SYS CHIP RESET RELEASED reason=TASK_WDT wake_cause=0
+[    45061.2] b10 HW  BOOT reset_reason=TASK_WDT wake_cause=0
+[    45065.1] b10 RX  ets Jul 29 2019 12:21:46
+[    45065.2] b10 RX  
+[    45065.6] b10 RX  rst:0x7 (TG0WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[    45366.8] b10 HW  GPIO pin=5 level=1
+[    45366.8] b10 HW  GPIO pin=2 level=1
+[    45366.8] b10 HW  WDT_INIT timeout_ms=4000 panic=1
+[    45367.7] b10 HW  WDT_ADD loopTask
+[    45370.4] b10 RX  [BOOT] reset_reason=TASK_WDT
+[    45370.6] b10 RX  [WDT] enabled timeout=4000 ms
+[    45370.6] b10 RX  Commands:
+[    45370.7] b10 RX    help
+[    45370.8] b10 RX    status
+[    45370.8] b10 RX    sensor
+[    45370.9] b10 RX    relay on
+[    45371.0] b10 RX    relay off
+[    45371.0] b10 RX    save
+[    45371.1] b10 RX    sleep <seconds>
+[    45371.6] b10 RX    hang
+[    45371.8] b10 RX    powerloss
+[    45371.9] b10 RX    reboot
+[    45372.1] b10 TX  status
+[    45376.0] b10 RX  {"state":"ACTIVE","reset_reason":"TASK_WDT","relay":true,"counter":12,"heap":298412,"sensor_ok":true}

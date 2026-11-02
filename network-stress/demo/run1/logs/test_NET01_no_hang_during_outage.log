@@ -1,0 +1,36 @@
+[       0.7 ms] HW GPIO2=1
+[     203.5 ms] RX [BOOT] IoT node ready
+[     204.0 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_NET01_no_hang_during_outage fw=demo
+[~    204.0 ms] TX NET DOWN
+[     262.8 ms] HW GPIO2=0
+[     263.1 ms] RX [NET] state=DISCONNECTED
+[     263.1 ms] RX [NET] state=BACKOFF
+[     263.1 ms] RX [NET] retry=1 backoff_ms=500
+[     768.9 ms] RX [NET] state=CONNECTING
+[     769.5 ms] RX [NET] reconnect=FAILED
+[     769.6 ms] RX [NET] state=BACKOFF
+[     769.6 ms] RX [NET] retry=2 backoff_ms=1000
+[    1773.7 ms] RX [NET] state=CONNECTING
+[    1774.0 ms] RX [NET] reconnect=FAILED
+[    1774.0 ms] RX [NET] state=BACKOFF
+[    1774.0 ms] RX [NET] retry=3 backoff_ms=2000
+[~   1774.0 ms] TX STATUS
+[    2477.3 ms] RX {"net":"BACKOFF","broker":false,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":3,"heap":286847}
+[    3777.1 ms] RX [NET] state=CONNECTING
+[    3777.5 ms] RX [NET] reconnect=FAILED
+[    3777.5 ms] RX [NET] state=BACKOFF
+[    3777.6 ms] RX [NET] retry=4 backoff_ms=4000
+[~   3777.6 ms] TX STATUS
+[    4834.3 ms] RX {"net":"BACKOFF","broker":false,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":4,"heap":286847}
+[~   4834.3 ms] TX STATUS
+[    7188.4 ms] RX {"net":"BACKOFF","broker":false,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":4,"heap":286847}
+[    7779.9 ms] RX [NET] state=CONNECTING
+[    7780.2 ms] RX [NET] reconnect=FAILED
+[    7780.3 ms] RX [NET] state=BACKOFF
+[    7780.3 ms] RX [NET] retry=5 backoff_ms=8000
+[~   7780.3 ms] TX STATUS
+[    9549.9 ms] RX {"net":"BACKOFF","broker":false,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":5,"heap":286847}
+[~   9549.9 ms] TX STATUS
+[   11905.8 ms] RX {"net":"BACKOFF","broker":false,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":5,"heap":286847}
+# MEASURED status_answered_of_5 = 5

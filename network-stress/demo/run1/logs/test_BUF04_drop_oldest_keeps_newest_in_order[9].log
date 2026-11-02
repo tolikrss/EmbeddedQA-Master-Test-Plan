@@ -1,0 +1,53 @@
+[       0.7 ms] HW GPIO2=1
+[     202.5 ms] RX [BOOT] IoT node ready
+[     202.8 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF04_drop_oldest_keeps_newest_in_order[9] fw=demo
+[~    202.8 ms] TX RESET STATS
+[     246.6 ms] RX [STATS] reset
+[~    246.6 ms] TX NET DOWN
+[     852.0 ms] HW GPIO2=0
+[     852.5 ms] RX [NET] state=DISCONNECTED
+[     852.5 ms] RX [NET] state=BACKOFF
+[     852.5 ms] RX [NET] retry=1 backoff_ms=500
+[~    852.5 ms] TX SEND
+[    1053.6 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1053.6 ms] TX SEND
+[    1178.9 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1178.9 ms] TX SEND
+[    1299.5 ms] RX [BUFFER] queued id=3 count=3/8
+[    1356.0 ms] RX [NET] state=CONNECTING
+[    1356.3 ms] RX [NET] reconnect=FAILED
+[    1356.3 ms] RX [NET] state=BACKOFF
+[    1356.3 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1356.3 ms] TX SEND
+[    1422.4 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1422.4 ms] TX SEND
+[    1547.1 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1547.1 ms] TX SEND
+[    1664.9 ms] RX [BUFFER] queued id=6 count=6/8
+[~   1664.9 ms] TX SEND
+[    1788.6 ms] RX [BUFFER] queued id=7 count=7/8
+[~   1788.6 ms] TX SEND
+[    1911.8 ms] RX [BUFFER] queued id=8 count=8/8
+[~   1911.8 ms] TX SEND
+[    2034.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=1
+[    2034.5 ms] RX [BUFFER] queued id=9 count=8/8
+[~   2034.5 ms] TX NET UP
+[    2158.8 ms] RX [FAULT] network restored
+[    2159.1 ms] RX [NET] state=CONNECTING
+[    2159.1 ms] HW GPIO2=1
+[    2159.1 ms] RX [NET] state=CONNECTED
+[    2159.1 ms] RX [NET] reconnect=SUCCESS
+[    2159.1 ms] RX [BUFFER] flush_start count=8
+[    2159.1 ms] RX [MQTT] publish id=2 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=3 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=4 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=5 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=6 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=7 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=8 temp=24.5
+[    2159.2 ms] RX [MQTT] publish id=9 temp=24.5
+[    2159.2 ms] RX [BUFFER] flush_end count=0
+# MEASURED queued = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# MEASURED published = [2, 3, 4, 5, 6, 7, 8, 9]
+# MEASURED lost_ids = [1]

@@ -1,0 +1,461 @@
+[       0.9 ms] HW GPIO2=1
+[     204.5 ms] RX [BOOT] IoT node ready
+[     204.9 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_NET03_recovery_after_net_up fw=buggy
+[~    204.9 ms] TX NET DOWN
+[     257.1 ms] HW GPIO2=0
+[     257.3 ms] RX [NET] state=DISCONNECTED
+[     257.3 ms] RX [NET] state=BACKOFF
+[     257.3 ms] RX [NET] retry=1 backoff_ms=500
+[     759.2 ms] RX [NET] state=CONNECTING
+[     759.5 ms] RX [NET] reconnect=FAILED
+[     759.5 ms] RX [NET] state=BACKOFF
+[     759.6 ms] RX [NET] retry=2 backoff_ms=50
+[     816.0 ms] RX [NET] state=CONNECTING
+[     816.2 ms] RX [NET] reconnect=FAILED
+[     816.2 ms] RX [NET] state=BACKOFF
+[     816.2 ms] RX [NET] retry=3 backoff_ms=50
+[     868.8 ms] RX [NET] state=CONNECTING
+[     869.1 ms] RX [NET] reconnect=FAILED
+[     869.1 ms] RX [NET] state=BACKOFF
+[     869.1 ms] RX [NET] retry=4 backoff_ms=50
+[     920.7 ms] RX [NET] state=CONNECTING
+[     921.0 ms] RX [NET] reconnect=FAILED
+[     921.0 ms] RX [NET] state=BACKOFF
+[     921.0 ms] RX [NET] retry=5 backoff_ms=50
+[     972.6 ms] RX [NET] state=CONNECTING
+[     972.8 ms] RX [NET] reconnect=FAILED
+[     972.9 ms] RX [NET] state=BACKOFF
+[     972.9 ms] RX [NET] retry=6 backoff_ms=50
+[    1022.1 ms] RX [NET] state=CONNECTING
+[    1022.2 ms] RX [NET] reconnect=FAILED
+[    1022.3 ms] RX [NET] state=BACKOFF
+[    1022.3 ms] RX [NET] retry=7 backoff_ms=50
+[    1074.0 ms] RX [NET] state=CONNECTING
+[    1074.2 ms] RX [NET] reconnect=FAILED
+[    1074.3 ms] RX [NET] state=BACKOFF
+[    1074.3 ms] RX [NET] retry=8 backoff_ms=50
+[    1128.7 ms] RX [NET] state=CONNECTING
+[    1129.0 ms] RX [NET] reconnect=FAILED
+[    1129.0 ms] RX [NET] state=BACKOFF
+[    1129.0 ms] RX [NET] retry=9 backoff_ms=50
+[    1179.6 ms] RX [NET] state=CONNECTING
+[    1179.9 ms] RX [NET] reconnect=FAILED
+[    1179.9 ms] RX [NET] state=BACKOFF
+[    1179.9 ms] RX [NET] retry=10 backoff_ms=50
+[    1229.5 ms] RX [NET] state=CONNECTING
+[    1229.7 ms] RX [NET] reconnect=FAILED
+[    1229.7 ms] RX [NET] state=BACKOFF
+[    1229.7 ms] RX [NET] retry=11 backoff_ms=50
+[    1283.4 ms] RX [NET] state=CONNECTING
+[    1283.6 ms] RX [NET] reconnect=FAILED
+[    1283.6 ms] RX [NET] state=BACKOFF
+[    1283.7 ms] RX [NET] retry=12 backoff_ms=50
+[    1336.4 ms] RX [NET] state=CONNECTING
+[    1336.6 ms] RX [NET] reconnect=FAILED
+[    1336.7 ms] RX [NET] state=BACKOFF
+[    1336.7 ms] RX [NET] retry=13 backoff_ms=50
+[    1390.2 ms] RX [NET] state=CONNECTING
+[    1390.4 ms] RX [NET] reconnect=FAILED
+[    1390.5 ms] RX [NET] state=BACKOFF
+[    1390.5 ms] RX [NET] retry=14 backoff_ms=50
+[    1440.1 ms] RX [NET] state=CONNECTING
+[    1440.3 ms] RX [NET] reconnect=FAILED
+[    1440.4 ms] RX [NET] state=BACKOFF
+[    1440.4 ms] RX [NET] retry=15 backoff_ms=50
+[    1491.5 ms] RX [NET] state=CONNECTING
+[    1491.7 ms] RX [NET] reconnect=FAILED
+[    1491.8 ms] RX [NET] state=BACKOFF
+[    1491.8 ms] RX [NET] retry=16 backoff_ms=50
+[    1544.9 ms] RX [NET] state=CONNECTING
+[    1545.2 ms] RX [NET] reconnect=FAILED
+[    1545.2 ms] RX [NET] state=BACKOFF
+[    1545.2 ms] RX [NET] retry=17 backoff_ms=50
+[    1596.3 ms] RX [NET] state=CONNECTING
+[    1596.5 ms] RX [NET] reconnect=FAILED
+[    1596.6 ms] RX [NET] state=BACKOFF
+[    1596.6 ms] RX [NET] retry=18 backoff_ms=50
+[    1650.3 ms] RX [NET] state=CONNECTING
+[    1650.5 ms] RX [NET] reconnect=FAILED
+[    1650.5 ms] RX [NET] state=BACKOFF
+[    1650.5 ms] RX [NET] retry=19 backoff_ms=50
+[    1702.1 ms] RX [NET] state=CONNECTING
+[    1702.3 ms] RX [NET] reconnect=FAILED
+[    1702.4 ms] RX [NET] state=BACKOFF
+[    1702.4 ms] RX [NET] retry=20 backoff_ms=50
+[    1755.1 ms] RX [NET] state=CONNECTING
+[    1755.3 ms] RX [NET] reconnect=FAILED
+[    1755.3 ms] RX [NET] state=BACKOFF
+[    1755.4 ms] RX [NET] retry=21 backoff_ms=50
+[    1807.2 ms] RX [NET] state=CONNECTING
+[    1807.4 ms] RX [NET] reconnect=FAILED
+[    1807.4 ms] RX [NET] state=BACKOFF
+[    1807.4 ms] RX [NET] retry=22 backoff_ms=50
+[    1858.3 ms] RX [NET] state=CONNECTING
+[    1858.5 ms] RX [NET] reconnect=FAILED
+[    1858.5 ms] RX [NET] state=BACKOFF
+[    1858.6 ms] RX [NET] retry=23 backoff_ms=50
+[    1914.0 ms] RX [NET] state=CONNECTING
+[    1914.3 ms] RX [NET] reconnect=FAILED
+[    1914.3 ms] RX [NET] state=BACKOFF
+[    1914.3 ms] RX [NET] retry=24 backoff_ms=50
+[    1966.1 ms] RX [NET] state=CONNECTING
+[    1966.4 ms] RX [NET] reconnect=FAILED
+[    1966.4 ms] RX [NET] state=BACKOFF
+[    1966.4 ms] RX [NET] retry=25 backoff_ms=50
+[    2017.2 ms] RX [NET] state=CONNECTING
+[    2017.5 ms] RX [NET] reconnect=FAILED
+[    2017.5 ms] RX [NET] state=BACKOFF
+[    2017.5 ms] RX [NET] retry=26 backoff_ms=50
+[    2068.8 ms] RX [NET] state=CONNECTING
+[    2069.0 ms] RX [NET] reconnect=FAILED
+[    2069.0 ms] RX [NET] state=BACKOFF
+[    2069.1 ms] RX [NET] retry=27 backoff_ms=50
+[    2120.9 ms] RX [NET] state=CONNECTING
+[    2121.1 ms] RX [NET] reconnect=FAILED
+[    2121.1 ms] RX [NET] state=BACKOFF
+[    2121.2 ms] RX [NET] retry=28 backoff_ms=50
+[    2172.4 ms] RX [NET] state=CONNECTING
+[    2172.6 ms] RX [NET] reconnect=FAILED
+[    2172.6 ms] RX [NET] state=BACKOFF
+[    2172.6 ms] RX [NET] retry=29 backoff_ms=50
+[    2223.2 ms] RX [NET] state=CONNECTING
+[    2223.5 ms] RX [NET] reconnect=FAILED
+[    2223.5 ms] RX [NET] state=BACKOFF
+[    2223.6 ms] RX [NET] retry=30 backoff_ms=50
+[    2274.2 ms] RX [NET] state=CONNECTING
+[    2274.5 ms] RX [NET] reconnect=FAILED
+[    2274.5 ms] RX [NET] state=BACKOFF
+[    2274.5 ms] RX [NET] retry=31 backoff_ms=50
+[    2325.1 ms] RX [NET] state=CONNECTING
+[    2325.4 ms] RX [NET] reconnect=FAILED
+[    2325.4 ms] RX [NET] state=BACKOFF
+[    2325.4 ms] RX [NET] retry=32 backoff_ms=50
+[    2377.7 ms] RX [NET] state=CONNECTING
+[    2378.0 ms] RX [NET] reconnect=FAILED
+[    2378.0 ms] RX [NET] state=BACKOFF
+[    2378.2 ms] RX [NET] retry=33 backoff_ms=50
+[    2429.9 ms] RX [NET] state=CONNECTING
+[    2430.2 ms] RX [NET] reconnect=FAILED
+[    2430.2 ms] RX [NET] state=BACKOFF
+[    2430.2 ms] RX [NET] retry=34 backoff_ms=50
+[    2485.7 ms] RX [NET] state=CONNECTING
+[    2486.0 ms] RX [NET] reconnect=FAILED
+[    2486.0 ms] RX [NET] state=BACKOFF
+[    2486.0 ms] RX [NET] retry=35 backoff_ms=50
+[    2538.8 ms] RX [NET] state=CONNECTING
+[    2539.0 ms] RX [NET] reconnect=FAILED
+[    2539.0 ms] RX [NET] state=BACKOFF
+[    2539.1 ms] RX [NET] retry=36 backoff_ms=50
+[    2593.9 ms] RX [NET] state=CONNECTING
+[    2594.1 ms] RX [NET] reconnect=FAILED
+[    2594.1 ms] RX [NET] state=BACKOFF
+[    2594.2 ms] RX [NET] retry=37 backoff_ms=50
+[    2648.7 ms] RX [NET] state=CONNECTING
+[    2648.9 ms] RX [NET] reconnect=FAILED
+[    2649.0 ms] RX [NET] state=BACKOFF
+[    2649.0 ms] RX [NET] retry=38 backoff_ms=50
+[    2702.9 ms] RX [NET] state=CONNECTING
+[    2703.2 ms] RX [NET] reconnect=FAILED
+[    2703.2 ms] RX [NET] state=BACKOFF
+[    2703.2 ms] RX [NET] retry=39 backoff_ms=50
+[    2755.4 ms] RX [NET] state=CONNECTING
+[    2755.6 ms] RX [NET] reconnect=FAILED
+[    2755.7 ms] RX [NET] state=BACKOFF
+[    2755.7 ms] RX [NET] retry=40 backoff_ms=50
+[    2810.4 ms] RX [NET] state=CONNECTING
+[    2810.7 ms] RX [NET] reconnect=FAILED
+[    2810.8 ms] RX [NET] state=BACKOFF
+[    2810.8 ms] RX [NET] retry=41 backoff_ms=50
+[    2865.7 ms] RX [NET] state=CONNECTING
+[    2865.9 ms] RX [NET] reconnect=FAILED
+[    2865.9 ms] RX [NET] state=BACKOFF
+[    2865.9 ms] RX [NET] retry=42 backoff_ms=50
+[    2917.9 ms] RX [NET] state=CONNECTING
+[    2918.4 ms] RX [NET] reconnect=FAILED
+[    2918.4 ms] RX [NET] state=BACKOFF
+[    2918.4 ms] RX [NET] retry=43 backoff_ms=50
+[    2969.6 ms] RX [NET] state=CONNECTING
+[    2969.8 ms] RX [NET] reconnect=FAILED
+[    2969.8 ms] RX [NET] state=BACKOFF
+[    2969.8 ms] RX [NET] retry=44 backoff_ms=50
+[    3022.4 ms] RX [NET] state=CONNECTING
+[    3022.6 ms] RX [NET] reconnect=FAILED
+[    3022.6 ms] RX [NET] state=BACKOFF
+[    3022.6 ms] RX [NET] retry=45 backoff_ms=50
+[    3073.0 ms] RX [NET] state=CONNECTING
+[    3073.1 ms] RX [NET] reconnect=FAILED
+[    3073.1 ms] RX [NET] state=BACKOFF
+[    3073.2 ms] RX [NET] retry=46 backoff_ms=50
+[    3126.5 ms] RX [NET] state=CONNECTING
+[    3126.7 ms] RX [NET] reconnect=FAILED
+[    3126.7 ms] RX [NET] state=BACKOFF
+[    3126.7 ms] RX [NET] retry=47 backoff_ms=50
+[    3177.3 ms] RX [NET] state=CONNECTING
+[    3177.5 ms] RX [NET] reconnect=FAILED
+[    3177.5 ms] RX [NET] state=BACKOFF
+[    3177.5 ms] RX [NET] retry=48 backoff_ms=50
+[    3229.1 ms] RX [NET] state=CONNECTING
+[    3229.4 ms] RX [NET] reconnect=FAILED
+[    3229.4 ms] RX [NET] state=BACKOFF
+[    3229.4 ms] RX [NET] retry=49 backoff_ms=50
+[    3279.3 ms] RX [NET] state=CONNECTING
+[    3279.5 ms] RX [NET] reconnect=FAILED
+[    3279.5 ms] RX [NET] state=BACKOFF
+[    3279.5 ms] RX [NET] retry=50 backoff_ms=50
+[    3331.0 ms] RX [NET] state=CONNECTING
+[    3331.2 ms] RX [NET] reconnect=FAILED
+[    3331.2 ms] RX [NET] state=BACKOFF
+[    3331.3 ms] RX [NET] retry=51 backoff_ms=50
+[    3384.7 ms] RX [NET] state=CONNECTING
+[    3384.9 ms] RX [NET] reconnect=FAILED
+[    3384.9 ms] RX [NET] state=BACKOFF
+[    3384.9 ms] RX [NET] retry=52 backoff_ms=50
+[    3436.9 ms] RX [NET] state=CONNECTING
+[    3437.1 ms] RX [NET] reconnect=FAILED
+[    3437.2 ms] RX [NET] state=BACKOFF
+[    3437.2 ms] RX [NET] retry=53 backoff_ms=50
+[    3487.5 ms] RX [NET] state=CONNECTING
+[    3487.7 ms] RX [NET] reconnect=FAILED
+[    3487.7 ms] RX [NET] state=BACKOFF
+[    3487.7 ms] RX [NET] retry=54 backoff_ms=50
+[    3538.5 ms] RX [NET] state=CONNECTING
+[    3538.6 ms] RX [NET] reconnect=FAILED
+[    3538.7 ms] RX [NET] state=BACKOFF
+[    3538.7 ms] RX [NET] retry=55 backoff_ms=50
+[    3590.0 ms] RX [NET] state=CONNECTING
+[    3590.2 ms] RX [NET] reconnect=FAILED
+[    3590.2 ms] RX [NET] state=BACKOFF
+[    3590.3 ms] RX [NET] retry=56 backoff_ms=50
+[    3641.6 ms] RX [NET] state=CONNECTING
+[    3641.9 ms] RX [NET] reconnect=FAILED
+[    3641.9 ms] RX [NET] state=BACKOFF
+[    3641.9 ms] RX [NET] retry=57 backoff_ms=50
+[    3694.0 ms] RX [NET] state=CONNECTING
+[    3694.2 ms] RX [NET] reconnect=FAILED
+[    3694.3 ms] RX [NET] state=BACKOFF
+[    3694.3 ms] RX [NET] retry=58 backoff_ms=50
+[    3746.0 ms] RX [NET] state=CONNECTING
+[    3746.2 ms] RX [NET] reconnect=FAILED
+[    3746.2 ms] RX [NET] state=BACKOFF
+[    3746.2 ms] RX [NET] retry=59 backoff_ms=50
+[    3798.9 ms] RX [NET] state=CONNECTING
+[    3799.1 ms] RX [NET] reconnect=FAILED
+[    3799.1 ms] RX [NET] state=BACKOFF
+[    3799.1 ms] RX [NET] retry=60 backoff_ms=50
+[    3850.3 ms] RX [NET] state=CONNECTING
+[    3850.5 ms] RX [NET] reconnect=FAILED
+[    3850.5 ms] RX [NET] state=BACKOFF
+[    3850.5 ms] RX [NET] retry=61 backoff_ms=50
+[    3903.0 ms] RX [NET] state=CONNECTING
+[    3903.2 ms] RX [NET] reconnect=FAILED
+[    3903.2 ms] RX [NET] state=BACKOFF
+[    3903.3 ms] RX [NET] retry=62 backoff_ms=50
+[    3953.8 ms] RX [NET] state=CONNECTING
+[    3954.0 ms] RX [NET] reconnect=FAILED
+[    3954.0 ms] RX [NET] state=BACKOFF
+[    3954.0 ms] RX [NET] retry=63 backoff_ms=50
+[    4004.1 ms] RX [NET] state=CONNECTING
+[    4004.2 ms] RX [NET] reconnect=FAILED
+[    4004.2 ms] RX [NET] state=BACKOFF
+[    4004.3 ms] RX [NET] retry=64 backoff_ms=50
+[    4056.1 ms] RX [NET] state=CONNECTING
+[    4056.4 ms] RX [NET] reconnect=FAILED
+[    4056.4 ms] RX [NET] state=BACKOFF
+[    4056.4 ms] RX [NET] retry=65 backoff_ms=50
+[    4107.5 ms] RX [NET] state=CONNECTING
+[    4107.8 ms] RX [NET] reconnect=FAILED
+[    4107.8 ms] RX [NET] state=BACKOFF
+[    4107.8 ms] RX [NET] retry=66 backoff_ms=50
+[    4159.9 ms] RX [NET] state=CONNECTING
+[    4160.1 ms] RX [NET] reconnect=FAILED
+[    4160.1 ms] RX [NET] state=BACKOFF
+[    4160.2 ms] RX [NET] retry=67 backoff_ms=50
+[    4214.2 ms] RX [NET] state=CONNECTING
+[    4214.4 ms] RX [NET] reconnect=FAILED
+[    4214.4 ms] RX [NET] state=BACKOFF
+[    4214.4 ms] RX [NET] retry=68 backoff_ms=50
+[    4271.9 ms] RX [NET] state=CONNECTING
+[    4272.1 ms] RX [NET] reconnect=FAILED
+[    4272.1 ms] RX [NET] state=BACKOFF
+[    4272.2 ms] RX [NET] retry=69 backoff_ms=50
+[    4323.1 ms] RX [NET] state=CONNECTING
+[    4323.3 ms] RX [NET] reconnect=FAILED
+[    4323.3 ms] RX [NET] state=BACKOFF
+[    4323.3 ms] RX [NET] retry=70 backoff_ms=50
+[    4374.5 ms] RX [NET] state=CONNECTING
+[    4374.7 ms] RX [NET] reconnect=FAILED
+[    4374.7 ms] RX [NET] state=BACKOFF
+[    4374.7 ms] RX [NET] retry=71 backoff_ms=50
+[    4425.1 ms] RX [NET] state=CONNECTING
+[    4425.3 ms] RX [NET] reconnect=FAILED
+[    4425.4 ms] RX [NET] state=BACKOFF
+[    4425.4 ms] RX [NET] retry=72 backoff_ms=50
+[    4477.3 ms] RX [NET] state=CONNECTING
+[    4477.5 ms] RX [NET] reconnect=FAILED
+[    4477.6 ms] RX [NET] state=BACKOFF
+[    4477.6 ms] RX [NET] retry=73 backoff_ms=50
+[    4528.0 ms] RX [NET] state=CONNECTING
+[    4528.4 ms] RX [NET] reconnect=FAILED
+[    4528.5 ms] RX [NET] state=BACKOFF
+[    4528.5 ms] RX [NET] retry=74 backoff_ms=50
+[    4580.3 ms] RX [NET] state=CONNECTING
+[    4580.5 ms] RX [NET] reconnect=FAILED
+[    4580.6 ms] RX [NET] state=BACKOFF
+[    4580.6 ms] RX [NET] retry=75 backoff_ms=50
+[    4632.0 ms] RX [NET] state=CONNECTING
+[    4632.2 ms] RX [NET] reconnect=FAILED
+[    4632.2 ms] RX [NET] state=BACKOFF
+[    4632.3 ms] RX [NET] retry=76 backoff_ms=50
+[    4683.8 ms] RX [NET] state=CONNECTING
+[    4684.0 ms] RX [NET] reconnect=FAILED
+[    4684.1 ms] RX [NET] state=BACKOFF
+[    4684.1 ms] RX [NET] retry=77 backoff_ms=50
+[    4735.9 ms] RX [NET] state=CONNECTING
+[    4736.2 ms] RX [NET] reconnect=FAILED
+[    4736.2 ms] RX [NET] state=BACKOFF
+[    4736.2 ms] RX [NET] retry=78 backoff_ms=50
+[    4787.6 ms] RX [NET] state=CONNECTING
+[    4787.8 ms] RX [NET] reconnect=FAILED
+[    4787.9 ms] RX [NET] state=BACKOFF
+[    4787.9 ms] RX [NET] retry=79 backoff_ms=50
+[    4840.1 ms] RX [NET] state=CONNECTING
+[    4840.4 ms] RX [NET] reconnect=FAILED
+[    4840.4 ms] RX [NET] state=BACKOFF
+[    4840.4 ms] RX [NET] retry=80 backoff_ms=50
+[    4891.8 ms] RX [NET] state=CONNECTING
+[    4892.1 ms] RX [NET] reconnect=FAILED
+[    4892.1 ms] RX [NET] state=BACKOFF
+[    4892.1 ms] RX [NET] retry=81 backoff_ms=50
+[    4945.7 ms] RX [NET] state=CONNECTING
+[    4945.9 ms] RX [NET] reconnect=FAILED
+[    4945.9 ms] RX [NET] state=BACKOFF
+[    4946.0 ms] RX [NET] retry=82 backoff_ms=50
+[    4997.4 ms] RX [NET] state=CONNECTING
+[    4997.6 ms] RX [NET] reconnect=FAILED
+[    4997.6 ms] RX [NET] state=BACKOFF
+[    4997.6 ms] RX [NET] retry=83 backoff_ms=50
+[    5048.4 ms] RX [NET] state=CONNECTING
+[    5048.6 ms] RX [NET] reconnect=FAILED
+[    5048.7 ms] RX [NET] state=BACKOFF
+[    5048.7 ms] RX [NET] retry=84 backoff_ms=50
+[    5115.5 ms] RX [NET] state=CONNECTING
+[    5115.9 ms] RX [NET] reconnect=FAILED
+[    5115.9 ms] RX [NET] state=BACKOFF
+[    5115.9 ms] RX [NET] retry=85 backoff_ms=50
+[    5168.0 ms] RX [NET] state=CONNECTING
+[    5168.5 ms] RX [NET] reconnect=FAILED
+[    5168.5 ms] RX [NET] state=BACKOFF
+[    5168.5 ms] RX [NET] retry=86 backoff_ms=50
+[    5219.1 ms] RX [NET] state=CONNECTING
+[    5219.4 ms] RX [NET] reconnect=FAILED
+[    5219.4 ms] RX [NET] state=BACKOFF
+[    5219.4 ms] RX [NET] retry=87 backoff_ms=50
+[    5269.7 ms] RX [NET] state=CONNECTING
+[    5270.0 ms] RX [NET] reconnect=FAILED
+[    5270.0 ms] RX [NET] state=BACKOFF
+[    5270.0 ms] RX [NET] retry=88 backoff_ms=50
+[    5321.8 ms] RX [NET] state=CONNECTING
+[    5322.0 ms] RX [NET] reconnect=FAILED
+[    5322.0 ms] RX [NET] state=BACKOFF
+[    5322.0 ms] RX [NET] retry=89 backoff_ms=50
+[    5373.1 ms] RX [NET] state=CONNECTING
+[    5373.3 ms] RX [NET] reconnect=FAILED
+[    5373.3 ms] RX [NET] state=BACKOFF
+[    5373.3 ms] RX [NET] retry=90 backoff_ms=50
+[    5425.3 ms] RX [NET] state=CONNECTING
+[    5425.5 ms] RX [NET] reconnect=FAILED
+[    5425.5 ms] RX [NET] state=BACKOFF
+[    5425.6 ms] RX [NET] retry=91 backoff_ms=50
+[    5476.7 ms] RX [NET] state=CONNECTING
+[    5477.0 ms] RX [NET] reconnect=FAILED
+[    5477.0 ms] RX [NET] state=BACKOFF
+[    5477.0 ms] RX [NET] retry=92 backoff_ms=50
+[    5528.3 ms] RX [NET] state=CONNECTING
+[    5528.5 ms] RX [NET] reconnect=FAILED
+[    5528.5 ms] RX [NET] state=BACKOFF
+[    5528.6 ms] RX [NET] retry=93 backoff_ms=50
+[    5579.9 ms] RX [NET] state=CONNECTING
+[    5580.1 ms] RX [NET] reconnect=FAILED
+[    5580.1 ms] RX [NET] state=BACKOFF
+[    5580.1 ms] RX [NET] retry=94 backoff_ms=50
+[    5632.0 ms] RX [NET] state=CONNECTING
+[    5632.2 ms] RX [NET] reconnect=FAILED
+[    5632.2 ms] RX [NET] state=BACKOFF
+[    5632.3 ms] RX [NET] retry=95 backoff_ms=50
+[    5686.8 ms] RX [NET] state=CONNECTING
+[    5687.0 ms] RX [NET] reconnect=FAILED
+[    5687.0 ms] RX [NET] state=BACKOFF
+[    5687.0 ms] RX [NET] retry=96 backoff_ms=50
+[    5738.8 ms] RX [NET] state=CONNECTING
+[    5739.0 ms] RX [NET] reconnect=FAILED
+[    5739.0 ms] RX [NET] state=BACKOFF
+[    5739.1 ms] RX [NET] retry=97 backoff_ms=50
+[    5790.6 ms] RX [NET] state=CONNECTING
+[    5790.9 ms] RX [NET] reconnect=FAILED
+[    5790.9 ms] RX [NET] state=BACKOFF
+[    5790.9 ms] RX [NET] retry=98 backoff_ms=50
+[    5842.0 ms] RX [NET] state=CONNECTING
+[    5842.2 ms] RX [NET] reconnect=FAILED
+[    5842.2 ms] RX [NET] state=BACKOFF
+[    5842.2 ms] RX [NET] retry=99 backoff_ms=50
+[    5893.2 ms] RX [NET] state=CONNECTING
+[    5893.4 ms] RX [NET] reconnect=FAILED
+[    5893.4 ms] RX [NET] state=BACKOFF
+[    5893.4 ms] RX [NET] retry=100 backoff_ms=50
+[    5944.0 ms] RX [NET] state=CONNECTING
+[    5944.3 ms] RX [NET] reconnect=FAILED
+[    5944.3 ms] RX [NET] state=BACKOFF
+[    5944.3 ms] RX [NET] retry=101 backoff_ms=50
+[    5994.9 ms] RX [NET] state=CONNECTING
+[    5995.1 ms] RX [NET] reconnect=FAILED
+[    5995.2 ms] RX [NET] state=BACKOFF
+[    5995.2 ms] RX [NET] retry=102 backoff_ms=50
+[    6045.8 ms] RX [NET] state=CONNECTING
+[    6045.9 ms] RX [NET] reconnect=FAILED
+[    6045.9 ms] RX [NET] state=BACKOFF
+[    6046.0 ms] RX [NET] retry=103 backoff_ms=50
+[    6096.4 ms] RX [NET] state=CONNECTING
+[    6096.6 ms] RX [NET] reconnect=FAILED
+[    6096.6 ms] RX [NET] state=BACKOFF
+[    6096.7 ms] RX [NET] retry=104 backoff_ms=50
+[    6147.1 ms] RX [NET] state=CONNECTING
+[    6147.3 ms] RX [NET] reconnect=FAILED
+[    6147.3 ms] RX [NET] state=BACKOFF
+[    6147.4 ms] RX [NET] retry=105 backoff_ms=50
+[    6197.6 ms] RX [NET] state=CONNECTING
+[    6197.8 ms] RX [NET] reconnect=FAILED
+[    6197.8 ms] RX [NET] state=BACKOFF
+[    6197.8 ms] RX [NET] retry=106 backoff_ms=50
+[    6247.9 ms] RX [NET] state=CONNECTING
+[    6248.0 ms] RX [NET] reconnect=FAILED
+[    6248.3 ms] RX [NET] state=BACKOFF
+[    6248.3 ms] RX [NET] retry=107 backoff_ms=50
+[    6299.7 ms] RX [NET] state=CONNECTING
+[    6300.1 ms] RX [NET] reconnect=FAILED
+[    6300.1 ms] RX [NET] state=BACKOFF
+[    6300.1 ms] RX [NET] retry=108 backoff_ms=50
+[    6351.1 ms] RX [NET] state=CONNECTING
+[    6351.3 ms] RX [NET] reconnect=FAILED
+[    6351.3 ms] RX [NET] state=BACKOFF
+[    6351.3 ms] RX [NET] retry=109 backoff_ms=50
+[    6401.6 ms] RX [NET] state=CONNECTING
+[    6401.8 ms] RX [NET] reconnect=FAILED
+[    6401.8 ms] RX [NET] state=BACKOFF
+[    6401.8 ms] RX [NET] retry=110 backoff_ms=50
+[~   6401.8 ms] TX NET UP
+[    6456.0 ms] RX [NET] state=CONNECTING
+[    6456.2 ms] RX [NET] reconnect=FAILED
+[    6456.2 ms] RX [NET] state=BACKOFF
+[    6456.3 ms] RX [NET] retry=111 backoff_ms=50
+[    6456.4 ms] RX [FAULT] network restored
+[    6456.5 ms] RX [NET] state=CONNECTING
+[    6456.5 ms] HW GPIO2=1
+[    6456.5 ms] RX [NET] state=CONNECTED
+[    6456.5 ms] RX [NET] reconnect=SUCCESS
+[    6456.5 ms] RX [BUFFER] flush_start count=0
+[    6456.5 ms] RX [BUFFER] flush_end count=0
+# MEASURED recovery_ms = 0.5
+[~   6456.5 ms] TX STATUS
+[    6516.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":111,"heap":286847}
+# MEASURED state_after = CONNECTED

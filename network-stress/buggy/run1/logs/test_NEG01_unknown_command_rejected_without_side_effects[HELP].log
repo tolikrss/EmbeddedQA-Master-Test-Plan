@@ -1,0 +1,11 @@
+[       0.9 ms] HW GPIO2=1
+[     202.5 ms] RX [BOOT] IoT node ready
+[     202.9 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_NEG01_unknown_command_rejected_without_side_effects[HELP] fw=buggy
+[~    202.9 ms] TX STATUS
+[     257.9 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":286847}
+[~    257.9 ms] TX HELP
+[     613.2 ms] RX [CLI] ERROR unknown command
+[~    613.2 ms] TX STATUS
+[    1212.5 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":286847}
+# MEASURED response = ['[CLI] ERROR unknown command']

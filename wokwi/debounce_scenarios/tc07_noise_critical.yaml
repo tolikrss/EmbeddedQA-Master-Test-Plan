@@ -1,0 +1,51 @@
+name: 'TC-07 Noise during critical operation (BUG-03 repro)'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 1
+  - delay: 200ms
+  - set-control:
+      part-id: btn1
+      control: pressed
+      value: 0
+  - wait-serial: 'Critical operation is running'
+  - delay: 300ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 5ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 400ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 5ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 400ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 5ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 400ms
+  # Expected: still only LOGICAL EVENT #1. If the next step completes, BUG-03 is reproduced.
+  - wait-serial: 'LOGICAL EVENT #2'
+  - delay: 4000ms

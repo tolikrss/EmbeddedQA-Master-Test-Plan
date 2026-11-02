@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="10" skipped="0" tests="21" time="9.372" timestamp="2026-11-02T16:21:13.743079+00:00" hostname="vm"><testcase classname="tests.test_network" name="test_NET01_no_hang_during_outage" time="1.228"><properties><property name="status_answered_of_5" value="5" /></properties></testcase><testcase classname="tests.test_network" name="test_NET02_backoff_grows_no_reconnect_storm" time="2.030"><properties><property name="attempts_20s" value="374" /><property name="backoff_seq_first10" value="[500, 50, 50, 50, 50, 50, 50, 50, 50, 50]" /></properties><failure message="AssertionError: backoff decreases: [500, 50, 50, 50, 50, 50]&#10;assert False&#10; +  where False = all(&lt;generator object test_NET02_backoff_grows_no_reconnect_storm.&lt;locals&gt;.&lt;genexpr&gt; at 0x7f402f633ed0&gt;)">dut = &lt;node.Node object at 0x7f402f7e2c10&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ac900&gt;
+
+    def test_NET02_backoff_grows_no_reconnect_storm(dut, record):
+        """R2: retry must use backoff and must not create a reconnect storm.
+        Acceptance: backoff never decreases, every backoff &gt;= first backoff (500 ms),
+        and in a 20 s outage there are at most 10 attempts."""
+        i = dut.mark()
+        dut.send("NET DOWN")
+        dut.wait_dev(20000)
+        retries = [(int(m.group(1)), int(m.group(2))) for t in texts(dut.since(i)) for m in [RETRY.search(t)] if m]
+        backoffs = [b for _, b in retries]
+        record("attempts_20s", len(retries))
+        record("backoff_seq_first10", backoffs[:10])
+        assert retries, "no retry observed"
+&gt;       assert all(b2 &gt;= b1 for b1, b2 in zip(backoffs, backoffs[1:])), f"backoff decreases: {backoffs[:6]}"
+E       AssertionError: backoff decreases: [500, 50, 50, 50, 50, 50]
+E       assert False
+E        +  where False = all(&lt;generator object test_NET02_backoff_grows_no_reconnect_storm.&lt;locals&gt;.&lt;genexpr&gt; at 0x7f402f633ed0&gt;)
+
+tests/test_network.py:65: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_NET03_recovery_after_net_up" time="0.691"><properties><property name="recovery_ms" value="0.2" /><property name="state_after" value="CONNECTED" /></properties></testcase><testcase classname="tests.test_network" name="test_BUF01_offline_messages_are_buffered" time="0.232"><properties><property name="queued_ids" value="[1, 2, 3, 4, 5]" /><property name="buffer_line" value="[&quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=8 backoff_ms=50&quot;, &quot;[BUFFER] count=5 capacity=8 dropped=0&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=9 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=10 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=11 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=12 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=13 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=14 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=15 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=16 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=17 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=18 backoff_ms=50&quot;, &quot;[NET] state=CONNECTING&quot;, &quot;[NET] reconnect=FAILED&quot;, &quot;[NET] state=BACKOFF&quot;, &quot;[NET] retry=19 backoff_ms=50&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_BUF02_buffer_flushed_exactly_once" time="0.244"><properties><property name="queued" value="[1, 2, 3, 4, 5]" /><property name="published" value="[1, 1, 2, 2, 3, 3, 4, 4, 5, 5]" /><property name="status" value="{&quot;net&quot;: &quot;CONNECTED&quot;, &quot;broker&quot;: true, &quot;buffer&quot;: 0, &quot;capacity&quot;: 8, &quot;sent&quot;: 10, &quot;dropped&quot;: 0, &quot;duplicates&quot;: 5, &quot;reconnect_attempts&quot;: 8, &quot;heap&quot;: 286527}" /></properties><failure message="AssertionError: flush must publish each buffered id once in FIFO order, got [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]&#10;assert [1, 1, 2, 2, 3, 3, ...] == [1, 2, 3, 4, 5]&#10;  &#10;  At index 1 diff: 1 != 2&#10;  Left contains 5 more items, first extra item: 3&#10;  Use -v to get more diff">dut = &lt;node.Node object at 0x7f402f7e9940&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6aca40&gt;
+
+    def test_BUF02_buffer_flushed_exactly_once(dut, record):
+        dut.cmd("RESET STATS")
+        queued = go_offline_and_send(dut, 5)
+        lines, end = go_online(dut)
+        ids = published_ids(lines)
+        s = dut.status()
+        record("queued", queued)
+        record("published", ids)
+        record("status", s)
+        assert end, "flush did not finish"
+&gt;       assert ids == queued, f"flush must publish each buffered id once in FIFO order, got {ids}"
+E       AssertionError: flush must publish each buffered id once in FIFO order, got [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
+E       assert [1, 1, 2, 2, 3, 3, ...] == [1, 2, 3, 4, 5]
+E         
+E         At index 1 diff: 1 != 2
+E         Left contains 5 more items, first extra item: 3
+E         Use -v to get more diff
+
+tests/test_network.py:104: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_BUF03_capacity_boundary_counters[7]" time="0.234"><properties><property name="sent_offline" value="7" /><property name="buffer" value="7" /><property name="dropped" value="0" /></properties></testcase><testcase classname="tests.test_network" name="test_BUF03_capacity_boundary_counters[8]" time="0.244"><properties><property name="sent_offline" value="8" /><property name="buffer" value="8" /><property name="dropped" value="0" /></properties></testcase><testcase classname="tests.test_network" name="test_BUF03_capacity_boundary_counters[9]" time="0.258"><properties><property name="sent_offline" value="9" /><property name="buffer" value="9" /><property name="dropped" value="0" /></properties><failure message="AssertionError: occupancy 9 for capacity 8&#10;assert 9 == 8">dut = &lt;node.Node object at 0x7f402f79b680&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ad1c0&gt;, n = 9
+
+    @pytest.mark.parametrize("n", [7, 8, 9, 12])
+    def test_BUF03_capacity_boundary_counters(dut, record, n):
+        dut.cmd("RESET STATS")
+        go_offline_and_send(dut, n)
+        s = dut.status()
+        exp_count, exp_drop = min(n, 8), max(0, n - 8)
+        record("sent_offline", n)
+        record("buffer", s["buffer"])
+        record("dropped", s["dropped"])
+        assert s["capacity"] == 8
+&gt;       assert s["buffer"] == exp_count, f"occupancy {s['buffer']} for capacity 8"
+E       AssertionError: occupancy 9 for capacity 8
+E       assert 9 == 8
+
+tests/test_network.py:120: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_BUF03_capacity_boundary_counters[12]" time="0.295"><properties><property name="sent_offline" value="12" /><property name="buffer" value="12" /><property name="dropped" value="0" /></properties><failure message="AssertionError: occupancy 12 for capacity 8&#10;assert 12 == 8">dut = &lt;node.Node object at 0x7f402f7cb250&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ad4e0&gt;, n = 12
+
+    @pytest.mark.parametrize("n", [7, 8, 9, 12])
+    def test_BUF03_capacity_boundary_counters(dut, record, n):
+        dut.cmd("RESET STATS")
+        go_offline_and_send(dut, n)
+        s = dut.status()
+        exp_count, exp_drop = min(n, 8), max(0, n - 8)
+        record("sent_offline", n)
+        record("buffer", s["buffer"])
+        record("dropped", s["dropped"])
+        assert s["capacity"] == 8
+&gt;       assert s["buffer"] == exp_count, f"occupancy {s['buffer']} for capacity 8"
+E       AssertionError: occupancy 12 for capacity 8
+E       assert 12 == 8
+
+tests/test_network.py:120: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_BUF04_drop_oldest_keeps_newest_in_order[8]" time="0.246"><properties><property name="queued" value="[1, 2, 3, 4, 5, 6, 7, 8]" /><property name="published" value="[1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]" /><property name="lost_ids" value="[]" /></properties><failure message="AssertionError: expected newest 8 in FIFO order [1, 2, 3, 4, 5, 6, 7, 8], got [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]&#10;assert [1, 1, 2, 2, 3, 3, ...] == [1, 2, 3, 4, 5, 6, ...]&#10;  &#10;  At index 1 diff: 1 != 2&#10;  Left contains 8 more items, first extra item: 5&#10;  Use -v to get more diff">dut = &lt;node.Node object at 0x7f402f7cb850&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ad8a0&gt;, n = 8
+
+    @pytest.mark.parametrize("n", [8, 9, 12])
+    def test_BUF04_drop_oldest_keeps_newest_in_order(dut, record, n):
+        dut.cmd("RESET STATS")
+        queued = go_offline_and_send(dut, n)
+        lines, _ = go_online(dut)
+        ids = published_ids(lines)
+        expected = queued[-8:]
+        lost_silently = sorted(set(queued) - set(ids))
+        record("queued", queued)
+        record("published", ids)
+        record("lost_ids", lost_silently)
+&gt;       assert ids == expected, f"expected newest 8 in FIFO order {expected}, got {ids}"
+E       AssertionError: expected newest 8 in FIFO order [1, 2, 3, 4, 5, 6, 7, 8], got [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]
+E       assert [1, 1, 2, 2, 3, 3, ...] == [1, 2, 3, 4, 5, 6, ...]
+E         
+E         At index 1 diff: 1 != 2
+E         Left contains 8 more items, first extra item: 5
+E         Use -v to get more diff
+
+tests/test_network.py:135: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_BUF04_drop_oldest_keeps_newest_in_order[9]" time="0.257"><properties><property name="queued" value="[1, 2, 3, 4, 5, 6, 7, 8, 9]" /><property name="published" value="[9, 9, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]" /><property name="lost_ids" value="[1]" /></properties><failure message="AssertionError: expected newest 8 in FIFO order [2, 3, 4, 5, 6, 7, 8, 9], got [9, 9, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]&#10;assert [9, 9, 2, 2, 3, 3, ...] == [2, 3, 4, 5, 6, 7, ...]&#10;  &#10;  At index 0 diff: 9 != 2&#10;  Left contains 10 more items, first extra item: 5&#10;  Use -v to get more diff">dut = &lt;node.Node object at 0x7f402ed394f0&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6adbc0&gt;, n = 9
+
+    @pytest.mark.parametrize("n", [8, 9, 12])
+    def test_BUF04_drop_oldest_keeps_newest_in_order(dut, record, n):
+        dut.cmd("RESET STATS")
+        queued = go_offline_and_send(dut, n)
+        lines, _ = go_online(dut)
+        ids = published_ids(lines)
+        expected = queued[-8:]
+        lost_silently = sorted(set(queued) - set(ids))
+        record("queued", queued)
+        record("published", ids)
+        record("lost_ids", lost_silently)
+&gt;       assert ids == expected, f"expected newest 8 in FIFO order {expected}, got {ids}"
+E       AssertionError: expected newest 8 in FIFO order [2, 3, 4, 5, 6, 7, 8, 9], got [9, 9, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9]
+E       assert [9, 9, 2, 2, 3, 3, ...] == [2, 3, 4, 5, 6, 7, ...]
+E         
+E         At index 0 diff: 9 != 2
+E         Left contains 10 more items, first extra item: 5
+E         Use -v to get more diff
+
+tests/test_network.py:135: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_BUF04_drop_oldest_keeps_newest_in_order[12]" time="0.295"><properties><property name="queued" value="[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" /><property name="published" value="[9, 9, 10, 10, 11, 11, 12, 12, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12]" /><property name="lost_ids" value="[1, 2, 3, 4]" /></properties><failure message="AssertionError: expected newest 8 in FIFO order [5, 6, 7, 8, 9, 10, 11, 12], got [9, 9, 10, 10, 11, 11, 12, 12, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12]&#10;assert [9, 9, 10, 10, 11, 11, ...] == [5, 6, 7, 8, 9, 10, ...]&#10;  &#10;  At index 0 diff: 9 != 5&#10;  Left contains 16 more items, first extra item: 5&#10;  Use -v to get more diff">dut = &lt;node.Node object at 0x7f402ed39b80&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6adda0&gt;, n = 12
+
+    @pytest.mark.parametrize("n", [8, 9, 12])
+    def test_BUF04_drop_oldest_keeps_newest_in_order(dut, record, n):
+        dut.cmd("RESET STATS")
+        queued = go_offline_and_send(dut, n)
+        lines, _ = go_online(dut)
+        ids = published_ids(lines)
+        expected = queued[-8:]
+        lost_silently = sorted(set(queued) - set(ids))
+        record("queued", queued)
+        record("published", ids)
+        record("lost_ids", lost_silently)
+&gt;       assert ids == expected, f"expected newest 8 in FIFO order {expected}, got {ids}"
+E       AssertionError: expected newest 8 in FIFO order [5, 6, 7, 8, 9, 10, 11, 12], got [9, 9, 10, 10, 11, 11, 12, 12, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12]
+E       assert [9, 9, 10, 10, 11, 11, ...] == [5, 6, 7, 8, 9, 10, ...]
+E         
+E         At index 0 diff: 9 != 5
+E         Left contains 16 more items, first extra item: 5
+E         Use -v to get more diff
+
+tests/test_network.py:135: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_DUP01_no_duplicate_ids_over_5_flaps" time="0.590"><properties><property name="published_total" value="30" /><property name="unique_ids" value="15" /><property name="status_duplicates" value="15" /></properties><failure message="AssertionError: 15 duplicate publications of the same id&#10;assert 15 == 0">dut = &lt;node.Node object at 0x7f402ed50670&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ae0c0&gt;
+
+    def test_DUP01_no_duplicate_ids_over_5_flaps(dut, record):
+        dut.cmd("RESET STATS")
+        all_ids = []
+        for _ in range(5):
+            go_offline_and_send(dut, 3)
+            lines, _ = go_online(dut)
+            all_ids += published_ids(lines)
+        s = dut.status()
+        dups = len(all_ids) - len(set(all_ids))
+        record("published_total", len(all_ids))
+        record("unique_ids", len(set(all_ids)))
+        record("status_duplicates", s["duplicates"])
+&gt;       assert dups == 0, f"{dups} duplicate publications of the same id"
+E       AssertionError: 15 duplicate publications of the same id
+E       assert 15 == 0
+
+tests/test_network.py:152: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_MEM01_heap_trend_online_stress" time="0.705"><properties><property name="heap_series" value="[286847, 280447, 274047, 267647, 261247, 254847, 248447, 242047, 235647, 229247, 222847]" /><property name="delta_bytes" value="-64000" /><property name="bytes_per_message" value="64.0" /></properties><failure message="AssertionError: systematic heap drop: 286847 -&gt; 222847 over 1000 messages&#10;assert 222847 &gt;= (286847 - 1024)">dut = &lt;node.Node object at 0x7f402ed509f0&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ae480&gt;
+
+    def test_MEM01_heap_trend_online_stress(dut, record):
+        heaps = [dut.status()["heap"]]
+        for _ in range(10):
+            i = dut.mark()
+            dut.send("STRESS 100")
+            dut.wait_for(lambda l: "[STRESS] end" in l[2], timeout_dev_ms=5000, start=i)
+            dut.wait_dev(200)
+            heaps.append(dut.status()["heap"])
+        record("heap_series", heaps)
+        record("delta_bytes", heaps[-1] - heaps[0])
+        record("bytes_per_message", round((heaps[0] - heaps[-1]) / 1000.0, 1))
+&gt;       assert heaps[-1] &gt;= heaps[0] - 1024, f"systematic heap drop: {heaps[0]} -&gt; {heaps[-1]} over 1000 messages"
+E       AssertionError: systematic heap drop: 286847 -&gt; 222847 over 1000 messages
+E       assert 222847 &gt;= (286847 - 1024)
+
+tests/test_network.py:168: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_MEM02_heap_and_buffer_offline_stress" time="0.839"><properties><property name="heap_series" value="[286847, 280447, 274047, 267647, 261247, 254847]" /><property name="buffer_occupancy_offline" value="[100, 100, 100, 100, 100]" /></properties><failure message="AssertionError: buffer occupancy 100 exceeds capacity 8&#10;assert 100 &lt;= 8&#10; +  where 100 = max([100, 100, 100, 100, 100])">dut = &lt;node.Node object at 0x7f402ed7a8f0&gt;
+record = &lt;function record.&lt;locals&gt;._r at 0x7f402f6ae8e0&gt;
+
+    def test_MEM02_heap_and_buffer_offline_stress(dut, record):
+        heaps, occ = [dut.status()["heap"]], []
+        for _ in range(5):
+            dut.cmd("NET DOWN", 200)
+            i = dut.mark()
+            dut.send("STRESS 100")
+            dut.wait_for(lambda l: "[STRESS] end" in l[2], timeout_dev_ms=5000, start=i)
+            dut.wait_dev(200)
+            s = dut.status()
+            occ.append(s["buffer"])
+            go_online(dut)
+            heaps.append(dut.status()["heap"])
+        record("heap_series", heaps)
+        record("buffer_occupancy_offline", occ)
+&gt;       assert max(occ) &lt;= 8, f"buffer occupancy {max(occ)} exceeds capacity 8"
+E       AssertionError: buffer occupancy 100 exceeds capacity 8
+E       assert 100 &lt;= 8
+E        +  where 100 = max([100, 100, 100, 100, 100])
+
+tests/test_network.py:185: AssertionError</failure></testcase><testcase classname="tests.test_network" name="test_OBS01_status_has_required_fields" time="0.065"><properties><property name="fields" value="[&quot;broker&quot;, &quot;buffer&quot;, &quot;capacity&quot;, &quot;dropped&quot;, &quot;duplicates&quot;, &quot;heap&quot;, &quot;net&quot;, &quot;reconnect_attempts&quot;, &quot;sent&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_NEG01_unknown_command_rejected_without_side_effects[HELP]" time="0.161"><properties><property name="response" value="[&quot;[CLI] ERROR unknown command&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_NEG01_unknown_command_rejected_without_side_effects[stress 5]" time="0.161"><properties><property name="response" value="[&quot;[CLI] ERROR unknown command&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_NEG01_unknown_command_rejected_without_side_effects[NET]" time="0.161"><properties><property name="response" value="[&quot;[CLI] ERROR unknown command&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_NEG01_unknown_command_rejected_without_side_effects[NET SIDEWAYS]" time="0.161"><properties><property name="response" value="[&quot;[CLI] ERROR unknown command&quot;]" /></properties></testcase><testcase classname="tests.test_network" name="test_NEG01_unknown_command_rejected_without_side_effects[STATUSX]" time="0.162"><properties><property name="response" value="[&quot;[CLI] ERROR unknown command&quot;]" /></properties></testcase></testsuite></testsuites>

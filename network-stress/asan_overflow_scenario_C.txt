@@ -1,0 +1,52 @@
+# ASan/UBSan run: scenario C (NET DOWN, SEND x12, BUFFER, NET UP) on homework_buggy
+# build: g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer (unmodified sketch, sha256 d953e339...)
+# date: 2026-11-02
+@HW 2.0 GPIO2=1
+@T 205.5 [BOOT] IoT node ready
+@T 206.6 {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+@HW 1481.9 GPIO2=0
+@T 1495.2 [BUFFER] queued id=1 count=1/8
+@T 1755.0 [BUFFER] queued id=2 count=2/8
+@T 2013.1 [BUFFER] queued id=3 count=3/8
+@T 2276.6 [BUFFER] queued id=4 count=4/8
+@T 2537.4 [BUFFER] queued id=5 count=5/8
+@T 2796.9 [BUFFER] queued id=6 count=6/8
+@T 3060.7 [BUFFER] queued id=7 count=7/8
+@T 3322.8 [BUFFER] queued id=8 count=8/8
+@T 3584.7 [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+@T 3584.8 [BUFFER] queued id=9 count=9/8
+@T 3846.3 [BUFFER] queued id=10 count=10/8
+@T 4106.2 [BUFFER] queued id=11 count=11/8
+@T 4369.3 [BUFFER] queued id=12 count=12/8
+@T 4632.0 [BUFFER] count=12 capacity=8 dropped=0
+@T 6147.7 [FAULT] network restored
+@HW 6147.9 GPIO2=1
+@T 6148.0 [NET] reconnect=SUCCESS
+@T 6148.0 [BUFFER] flush_start count=12
+@T 6148.0 [MQTT] publish id=9 temp=24.5
+@T 6148.0 [MQTT] publish id=9 temp=24.5
+@T 6148.0 [MQTT] publish id=10 temp=24.5
+@T 6148.0 [MQTT] publish id=10 temp=24.5
+@T 6148.0 [MQTT] publish id=11 temp=24.5
+@T 6148.1 [MQTT] publish id=11 temp=24.5
+@T 6148.1 [MQTT] publish id=12 temp=24.5
+@T 6148.1 [MQTT] publish id=12 temp=24.5
+@T 6148.1 [MQTT] publish id=5 temp=24.5
+@T 6148.1 [MQTT] publish id=5 temp=24.5
+@T 6148.2 [MQTT] publish id=6 temp=24.5
+@T 6148.2 [MQTT] publish id=6 temp=24.5
+@T 6148.2 [MQTT] publish id=7 temp=24.5
+@T 6148.2 [MQTT] publish id=7 temp=24.5
+@T 6148.2 [MQTT] publish id=8 temp=24.5
+@T 6148.2 [MQTT] publish id=8 temp=24.5
+@T 6148.2 [MQTT] publish id=9 temp=24.5
+@T 6148.3 [MQTT] publish id=9 temp=24.5
+@T 6148.3 [MQTT] publish id=10 temp=24.5
+@T 6148.3 [MQTT] publish id=10 temp=24.5
+@T 6148.3 [MQTT] publish id=11 temp=24.5
+@T 6148.3 [MQTT] publish id=11 temp=24.5
+@T 6148.3 [MQTT] publish id=12 temp=24.5
+@T 6148.3 [MQTT] publish id=12 temp=24.5
+@T 6148.4 [BUFFER] flush_end count=0
+@T 8652.2 {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":24,"dropped":0,"duplicates":12,"reconnect_attempts":81,"heap":286079}
+# exit: no AddressSanitizer / UBSan report above = no out-of-bounds access detected

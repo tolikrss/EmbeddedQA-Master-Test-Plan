@@ -1,0 +1,7 @@
+[       0.7 ms] HW GPIO2=1
+[     202.7 ms] RX [BOOT] IoT node ready
+[     203.1 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_OBS01_status_has_required_fields fw=demo
+[~    203.1 ms] TX STATUS
+[     257.8 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":286847}
+# MEASURED fields = ['broker', 'buffer', 'capacity', 'dropped', 'duplicates', 'heap', 'net', 'reconnect_attempts', 'sent']

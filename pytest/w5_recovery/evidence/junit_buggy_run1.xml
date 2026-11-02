@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="46" skipped="0" tests="124" time="63.292" timestamp="2026-11-02T15:16:34.060164+00:00" hostname="vm"><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[1]" file="tests/test_01_sleep_wake.py" line="23" time="0.070"><properties><property name="requested_ms" value="1000" /><property name="measured_sleep_ms" value="100.2" /><property name="serial_silence_ms" value="160.5" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 100 ms, expected 850..1150 ms for `sleep 1`&#10;assert 850.0 &lt;= 100.15672">dut = &lt;dut.Device object at 0x7fc7e1375160&gt;, seconds = 1
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1210e00&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 100 ms, expected 850..1150 ms for `sleep 1`
+E       assert 850.0 &lt;= 100.15672
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[2]" file="tests/test_01_sleep_wake.py" line="23" time="0.072"><properties><property name="requested_ms" value="2000" /><property name="measured_sleep_ms" value="200.4" /><property name="serial_silence_ms" value="272.8" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 200 ms, expected 1700..2300 ms for `sleep 2`&#10;assert 1700.0 &lt;= 200.36386999999996">dut = &lt;dut.Device object at 0x7fc7e136afd0&gt;, seconds = 2
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e13b7560&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 200 ms, expected 1700..2300 ms for `sleep 2`
+E       assert 1700.0 &lt;= 200.36386999999996
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[5]" file="tests/test_01_sleep_wake.py" line="23" time="0.070"><properties><property name="requested_ms" value="5000" /><property name="measured_sleep_ms" value="500.1" /><property name="serial_silence_ms" value="558.1" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 500 ms, expected 4250..5750 ms for `sleep 5`&#10;assert 4250.0 &lt;= 500.14036000000004">dut = &lt;dut.Device object at 0x7fc7e136b9d0&gt;, seconds = 5
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1210d60&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 500 ms, expected 4250..5750 ms for `sleep 5`
+E       assert 4250.0 &lt;= 500.14036000000004
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[10]" file="tests/test_01_sleep_wake.py" line="23" time="0.071"><properties><property name="requested_ms" value="10000" /><property name="measured_sleep_ms" value="1000.1" /><property name="serial_silence_ms" value="1059.5" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 1000 ms, expected 8500..11500 ms for `sleep 10`&#10;assert 8500.0 &lt;= 1000.14408">dut = &lt;dut.Device object at 0x7fc7e1230e90&gt;, seconds = 10
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e12119e0&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 1000 ms, expected 8500..11500 ms for `sleep 10`
+E       assert 8500.0 &lt;= 1000.14408
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[30]" file="tests/test_01_sleep_wake.py" line="23" time="0.073"><properties><property name="requested_ms" value="30000" /><property name="measured_sleep_ms" value="3000.2" /><property name="serial_silence_ms" value="3069.2" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 3000 ms, expected 25500..34500 ms for `sleep 30`&#10;assert 25500.0 &lt;= 3000.17911">dut = &lt;dut.Device object at 0x7fc7e1231350&gt;, seconds = 30
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1212160&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 3000 ms, expected 25500..34500 ms for `sleep 30`
+E       assert 25500.0 &lt;= 3000.17911
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW01_wakeup_time_within_15pct[60]" file="tests/test_01_sleep_wake.py" line="23" time="0.072"><properties><property name="requested_ms" value="60000" /><property name="measured_sleep_ms" value="6000.1" /><property name="serial_silence_ms" value="6068.6" /><property name="error_pct" value="-90.0" /></properties><failure message="AssertionError: deep sleep lasted 6000 ms, expected 51000..69000 ms for `sleep 60`&#10;assert 51000.0 &lt;= 6000.1458">dut = &lt;dut.Device object at 0x7fc7e12028d0&gt;, seconds = 60
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1212980&gt;
+
+    @pytest.mark.req("R4")
+    @pytest.mark.parametrize("seconds", [1, 2, 5, 10, 30, 60])
+    def test_SW01_wakeup_time_within_15pct(dut, seconds, record_property):
+        """TC-SW-01: `sleep N` -&gt; deep sleep lasts N s ±15 % (measured on the power trace)."""
+        _, wake, slept_ms, gap_ms, _ = _sleep_and_measure(dut, seconds)
+        lo, hi = seconds * 1000 * (1 - TOL), seconds * 1000 * (1 + TOL)
+        record_property("requested_ms", seconds * 1000)
+        record_property("measured_sleep_ms", round(slept_ms, 1))
+        record_property("serial_silence_ms", round(gap_ms, 1))
+        record_property("error_pct", round((slept_ms / (seconds * 1000) - 1) * 100, 1))
+&gt;       assert lo &lt;= slept_ms &lt;= hi, (
+            f"deep sleep lasted {slept_ms:.0f} ms, expected {lo:.0f}..{hi:.0f} ms for `sleep {seconds}`")
+E       AssertionError: deep sleep lasted 6000 ms, expected 51000..69000 ms for `sleep 60`
+E       assert 51000.0 &lt;= 6000.1458
+
+tests/test_01_sleep_wake.py:34: AssertionError</failure></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW02_device_functional_after_wake" file="tests/test_01_sleep_wake.py" line="37" time="0.190"><properties><property name="boot_line" value="[BOOT] reset_reason=DEEP_SLEEP" /><property name="status_after_wake" value="{'state': 'ACTIVE', 'reset_reason': 'DEEP_SLEEP', 'relay': False, 'counter': 1, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW03_persistent_data_intact_after_wake" file="tests/test_01_sleep_wake.py" line="61" time="0.215"><properties><property name="counter_before" value="4" /><property name="counter_after" value="5" /></properties></testcase><testcase classname="tests.test_01_sleep_wake" name="test_SW04_repeated_sleep_wake_cycles" file="tests/test_01_sleep_wake.py" line="77" time="0.496"><properties><property name="sleep_ms_per_cycle" value="[200, 201, 200, 200, 200, 200, 201, 200, 201, 200]" /><property name="counter_per_cycle" value="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" /></properties><failure message="AssertionError: 10/10 wake-ups outside 1700..2300 ms: [200, 201, 200, 200, 200, 200, 201, 200, 201, 200]&#10;assert not [200, 201, 200, 200, 200, 200, ...]">dut = &lt;dut.Device object at 0x7fc7e1239650&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1213920&gt;
+
+    @pytest.mark.req("R4")
+    def test_SW04_repeated_sleep_wake_cycles(dut, record_property):
+        """TC-SW-04: 10 x `sleep 2` — every wake-up in tolerance, device ACTIVE each time, counter monotonic."""
+        times, counters = [], [dut.status()["counter"]]
+        for _ in range(10):
+            _, _, slept_ms, _, _ = _sleep_and_measure(dut, 2)
+            times.append(round(slept_ms))
+            counters.append(dut.wait_ready(READY_MS)["counter"])
+        record_property("sleep_ms_per_cycle", times)
+        record_property("counter_per_cycle", counters)
+        bad = [t for t in times if not (1700 &lt;= t &lt;= 2300)]
+&gt;       assert not bad, f"{len(bad)}/10 wake-ups outside 1700..2300 ms: {times}"
+E       AssertionError: 10/10 wake-ups outside 1700..2300 ms: [200, 201, 200, 200, 200, 200, 201, 200, 201, 200]
+E       assert not [200, 201, 200, 200, 200, 200, ...]
+
+tests/test_01_sleep_wake.py:89: AssertionError</failure></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT01_reset_within_5s" file="tests/test_02_watchdog.py" line="20" time="0.467"><properties><property name="hang_to_reset_ms" value="4008.1" /><property name="reset_reason_trace" value="TASK_WDT" /></properties></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT02_reset_reason_identifies_wdt" file="tests/test_02_watchdog.py" line="30" time="0.498"><properties><property name="boot_line" value="[BOOT] reset_reason=TASK_WDT" /><property name="status_reset_reason" value="TASK_WDT" /></properties></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT03_relay_off_after_wdt_reset[cli]" file="tests/test_02_watchdog.py" line="42" time="0.522"><properties><property name="relay_pin_after" value="1" /><property name="status_relay_after" value="True" /><property name="relay_high_events_after_reset_ms" value="[340]" /></properties><failure message="AssertionError: relay pin is ON after WDT reset (unsafe actuator state)&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e134f3e0&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e134f3e0&gt;, how = 'cli'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e1213ec0&gt;
+
+    @pytest.mark.req("R5")
+    @pytest.mark.parametrize("how", ["cli", "cli_then_save", "button"])
+    def test_WDT03_relay_off_after_wdt_reset(dut, how, record_property):
+        """TC-WDT-03: relay ON before the hang -&gt; after the WDT reset the actuator is OFF (and never pulses ON while booting)."""
+        if how == "button":
+            dut.press_button(bounce=False, release_bounce=False)
+        else:
+            dut.cmd("relay on", r"RELAY\] ON")
+            if how == "cli_then_save":
+                dut.cmd("save")
+        dut.wait(200)
+        assert dut.relay() == 1, "precondition: relay must be ON"
+        _, new, _ = _hang(dut)
+        st = dut.wait_ready(READY_MS)
+        pulses = gpio_high_during_boot(dut, new.idx, RELAY_PIN)
+        record_property("relay_pin_after", dut.relay())
+        record_property("status_relay_after", st["relay"])
+        record_property("relay_high_events_after_reset_ms", [round(t - new.t) for t in pulses])
+&gt;       assert dut.relay() == 0, "relay pin is ON after WDT reset (unsafe actuator state)"
+E       AssertionError: relay pin is ON after WDT reset (unsafe actuator state)
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e134f3e0&gt;.relay
+
+tests/test_02_watchdog.py:61: AssertionError</failure></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT03_relay_off_after_wdt_reset[cli_then_save]" file="tests/test_02_watchdog.py" line="42" time="0.521"><properties><property name="relay_pin_after" value="1" /><property name="status_relay_after" value="True" /><property name="relay_high_events_after_reset_ms" value="[342]" /></properties><failure message="AssertionError: relay pin is ON after WDT reset (unsafe actuator state)&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e125a210&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e125a210&gt;, how = 'cli_then_save'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e12c87c0&gt;
+
+    @pytest.mark.req("R5")
+    @pytest.mark.parametrize("how", ["cli", "cli_then_save", "button"])
+    def test_WDT03_relay_off_after_wdt_reset(dut, how, record_property):
+        """TC-WDT-03: relay ON before the hang -&gt; after the WDT reset the actuator is OFF (and never pulses ON while booting)."""
+        if how == "button":
+            dut.press_button(bounce=False, release_bounce=False)
+        else:
+            dut.cmd("relay on", r"RELAY\] ON")
+            if how == "cli_then_save":
+                dut.cmd("save")
+        dut.wait(200)
+        assert dut.relay() == 1, "precondition: relay must be ON"
+        _, new, _ = _hang(dut)
+        st = dut.wait_ready(READY_MS)
+        pulses = gpio_high_during_boot(dut, new.idx, RELAY_PIN)
+        record_property("relay_pin_after", dut.relay())
+        record_property("status_relay_after", st["relay"])
+        record_property("relay_high_events_after_reset_ms", [round(t - new.t) for t in pulses])
+&gt;       assert dut.relay() == 0, "relay pin is ON after WDT reset (unsafe actuator state)"
+E       AssertionError: relay pin is ON after WDT reset (unsafe actuator state)
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e125a210&gt;.relay
+
+tests/test_02_watchdog.py:61: AssertionError</failure></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT03_relay_off_after_wdt_reset[button]" file="tests/test_02_watchdog.py" line="42" time="0.545"><properties><property name="relay_pin_after" value="1" /><property name="status_relay_after" value="True" /><property name="relay_high_events_after_reset_ms" value="[335]" /></properties><failure message="AssertionError: relay pin is ON after WDT reset (unsafe actuator state)&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e1259f40&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e1259f40&gt;, how = 'button'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e12c8680&gt;
+
+    @pytest.mark.req("R5")
+    @pytest.mark.parametrize("how", ["cli", "cli_then_save", "button"])
+    def test_WDT03_relay_off_after_wdt_reset(dut, how, record_property):
+        """TC-WDT-03: relay ON before the hang -&gt; after the WDT reset the actuator is OFF (and never pulses ON while booting)."""
+        if how == "button":
+            dut.press_button(bounce=False, release_bounce=False)
+        else:
+            dut.cmd("relay on", r"RELAY\] ON")
+            if how == "cli_then_save":
+                dut.cmd("save")
+        dut.wait(200)
+        assert dut.relay() == 1, "precondition: relay must be ON"
+        _, new, _ = _hang(dut)
+        st = dut.wait_ready(READY_MS)
+        pulses = gpio_high_during_boot(dut, new.idx, RELAY_PIN)
+        record_property("relay_pin_after", dut.relay())
+        record_property("status_relay_after", st["relay"])
+        record_property("relay_high_events_after_reset_ms", [round(t - new.t) for t in pulses])
+&gt;       assert dut.relay() == 0, "relay pin is ON after WDT reset (unsafe actuator state)"
+E       AssertionError: relay pin is ON after WDT reset (unsafe actuator state)
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e1259f40&gt;.relay
+
+tests/test_02_watchdog.py:61: AssertionError</failure></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT04_no_boot_loop_after_recovery" file="tests/test_02_watchdog.py" line="65" time="2.016"><properties><property name="extra_resets_in_15s" value="0" /></properties></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT05_repeated_hang_recovery_x10" file="tests/test_02_watchdog.py" line="78" time="4.561"><properties><property name="hang_to_reset_ms" value="[4004, 4004, 4005, 4012, 4005, 4003, 4004, 4004, 4007, 4007]" /><property name="counter_after_each" value="[3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" /><property name="relay_after_each" value="[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]" /></properties><failure message="AssertionError: relay ON after WDT reset in 10/10 cycles&#10;assert [1, 1, 1, 1, 1, 1, ...] == [0, 0, 0, 0, 0, 0, ...]&#10;  &#10;  At index 0 diff: 1 != 0&#10;  Use -v to get more diff">dut = &lt;dut.Device object at 0x7fc7e12587d0&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e12c9c60&gt;
+
+    @pytest.mark.req("R5")
+    def test_WDT05_repeated_hang_recovery_x10(dut, record_property):
+        """TC-WDT-05: 10 consecutive hang/recovery cycles: every reset &lt;= 5 s, reason WDT, ACTIVE, relay OFF, counter kept."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(200)
+        base = dut.status()["counter"]
+        dts, counters, relays = [], [], []
+        for _ in range(10):
+            dut.cmd("relay on")
+            dut.wait(100)
+            _, new, dt = _hang(dut)
+            st = dut.wait_ready(READY_MS)
+            dts.append(round(dt))
+            counters.append(st["counter"])
+            relays.append(dut.relay())
+            assert "WDT" in st["reset_reason"].upper()
+        record_property("hang_to_reset_ms", dts)
+        record_property("counter_after_each", counters)
+        record_property("relay_after_each", relays)
+        assert max(dts) &lt;= WDT_LIMIT_MS * WDT_MEAS_TOL, f"slowest WDT reset {max(dts)} ms"
+        assert min(counters) &gt;= base, f"persistent counter lost: base {base}, seen {counters}"
+        assert all(b &gt;= a for a, b in zip(counters, counters[1:])), f"counter went backwards: {counters}"
+&gt;       assert relays == [0] * 10, f"relay ON after WDT reset in {relays.count(1)}/10 cycles"
+E       AssertionError: relay ON after WDT reset in 10/10 cycles
+E       assert [1, 1, 1, 1, 1, 1, ...] == [0, 0, 0, 0, 0, 0, ...]
+E         
+E         At index 0 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_02_watchdog.py:100: AssertionError</failure></testcase><testcase classname="tests.test_02_watchdog" name="test_WDT06_no_false_wdt_reset_in_normal_operation" file="tests/test_02_watchdog.py" line="102" time="6.072"><properties><property name="commands_sent" value="110" /><property name="resets" value="0" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[BROWNOUT-idle]" file="tests/test_03_brownout.py" line="15" time="0.181"><properties><property name="boot_line" value="[BOOT] reset_reason=BROWNOUT" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'BROWNOUT', 'relay': False, 'counter': 3, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="3" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[BROWNOUT-relay_on]" file="tests/test_03_brownout.py" line="15" time="0.189"><properties><property name="boot_line" value="[BOOT] reset_reason=BROWNOUT" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'BROWNOUT', 'relay': True, 'counter': 4, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="4" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[BROWNOUT-sensor_read]" file="tests/test_03_brownout.py" line="15" time="0.188"><properties><property name="boot_line" value="[BOOT] reset_reason=BROWNOUT" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'BROWNOUT', 'relay': False, 'counter': 3, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="3" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[POWERCUT-idle]" file="tests/test_03_brownout.py" line="15" time="0.180"><properties><property name="boot_line" value="[BOOT] reset_reason=POWER_ON" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 3, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="3" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[POWERCUT-relay_on]" file="tests/test_03_brownout.py" line="15" time="0.194"><properties><property name="boot_line" value="[BOOT] reset_reason=POWER_ON" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': True, 'counter': 4, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="4" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO01_recovers_with_correct_reset_reason[POWERCUT-sensor_read]" file="tests/test_03_brownout.py" line="15" time="0.184"><properties><property name="boot_line" value="[BOOT] reset_reason=POWER_ON" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 3, 'heap': 298412, 'sensor_ok': True}" /><property name="counter_saved" value="3" /></properties></testcase><testcase classname="tests.test_03_brownout" name="test_BO02_relay_off_after_brownout[cli]" file="tests/test_03_brownout.py" line="42" time="0.120"><properties><property name="relay_pin_after" value="1" /><property name="relay_high_after_reset_ms" value="[338]" /></properties><failure message="AssertionError: relay is ON after brown-out reset&#10;assert (1 == 0)&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e125bb60&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e125bb60&gt;, how = 'cli'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01514e0&gt;
+
+    @pytest.mark.req("R5", "R6")
+    @pytest.mark.parametrize("how", ["cli", "button"])
+    def test_BO02_relay_off_after_brownout(dut, how, record_property):
+        """TC-BO-02: relay ON + brown-out -&gt; after the emergency reset the actuator stays OFF (same safety rule as R5)."""
+        if how == "cli":
+            dut.cmd("relay on", r"RELAY\] ON")
+        else:
+            dut.press_button(bounce=False, release_bounce=False)
+        dut.wait(200)
+        assert dut.relay() == 1
+        new = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        pulses = gpio_high_during_boot(dut, new.idx, RELAY_PIN)
+        record_property("relay_pin_after", dut.relay())
+        record_property("relay_high_after_reset_ms", [round(t - new.t) for t in pulses])
+&gt;       assert dut.relay() == 0 and st["relay"] is False, "relay is ON after brown-out reset"
+E       AssertionError: relay is ON after brown-out reset
+E       assert (1 == 0)
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e125bb60&gt;.relay
+
+tests/test_03_brownout.py:58: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO02_relay_off_after_brownout[button]" file="tests/test_03_brownout.py" line="42" time="0.143"><properties><property name="relay_pin_after" value="1" /><property name="relay_high_after_reset_ms" value="[337]" /></properties><failure message="AssertionError: relay is ON after brown-out reset&#10;assert (1 == 0)&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e0164050&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e0164050&gt;, how = 'button'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0151b20&gt;
+
+    @pytest.mark.req("R5", "R6")
+    @pytest.mark.parametrize("how", ["cli", "button"])
+    def test_BO02_relay_off_after_brownout(dut, how, record_property):
+        """TC-BO-02: relay ON + brown-out -&gt; after the emergency reset the actuator stays OFF (same safety rule as R5)."""
+        if how == "cli":
+            dut.cmd("relay on", r"RELAY\] ON")
+        else:
+            dut.press_button(bounce=False, release_bounce=False)
+        dut.wait(200)
+        assert dut.relay() == 1
+        new = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        pulses = gpio_high_during_boot(dut, new.idx, RELAY_PIN)
+        record_property("relay_pin_after", dut.relay())
+        record_property("relay_high_after_reset_ms", [round(t - new.t) for t in pulses])
+&gt;       assert dut.relay() == 0 and st["relay"] is False, "relay is ON after brown-out reset"
+E       AssertionError: relay is ON after brown-out reset
+E       assert (1 == 0)
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e0164050&gt;.relay
+
+tests/test_03_brownout.py:58: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[5]" file="tests/test_03_brownout.py" line="61" time="0.630"><properties><property name="second_fault_after_boot_ms" value="41" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e0164b90&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e0164b90&gt;, at_ms = 5
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0151e40&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e0164b90&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[50]" file="tests/test_03_brownout.py" line="61" time="0.633"><properties><property name="second_fault_after_boot_ms" value="61" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e0165400&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e0165400&gt;, at_ms = 50
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0152a20&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e0165400&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[150]" file="tests/test_03_brownout.py" line="61" time="0.648"><properties><property name="second_fault_after_boot_ms" value="182" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e0165a90&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e0165a90&gt;, at_ms = 150
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0153380&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e0165a90&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[300]" file="tests/test_03_brownout.py" line="61" time="0.665"><properties><property name="second_fault_after_boot_ms" value="315" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e0166120&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e0166120&gt;, at_ms = 300
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0153ba0&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e0166120&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[320]" file="tests/test_03_brownout.py" line="61" time="0.663"><properties><property name="second_fault_after_boot_ms" value="329" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e01667b0&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e01667b0&gt;, at_ms = 320
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01b82c0&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e01667b0&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO03_brownout_during_boot[400]" file="tests/test_03_brownout.py" line="61" time="0.669"><properties><property name="second_fault_after_boot_ms" value="409" /><property name="counter_saved" value="2" /><property name="counter_after" value="2" /></properties><failure message="AssertionError: relay ON after brown-out recovery&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7e1258c80&gt;.relay">dut = &lt;dut.Device object at 0x7fc7e1258c80&gt;, at_ms = 400
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e0151440&gt;
+
+    @pytest.mark.req("R1", "R6")
+    @pytest.mark.parametrize("at_ms", [5, 50, 150, 300, 320, 400])
+    def test_BO03_brownout_during_boot(dut, at_ms, record_property):
+        """TC-BO-03: a second brown-out hits while the device is still booting -&gt; it still ends up ACTIVE, data intact, no loop."""
+        dut.cmd("relay on"); dut.cmd("save"); dut.wait(300)
+        saved = dut.status()["counter"]
+        first = dut.brownout()
+        dut.wait(max(0, at_ms - (dut.now() - first.t)))
+        second = dut.brownout()
+        st = dut.wait_ready(READY_MS)
+        dut.wait(5000)
+        record_property("second_fault_after_boot_ms", round(second.t - first.t))
+        record_property("counter_saved", saved)
+        record_property("counter_after", st["counter"])
+        assert resets_since(dut, second.idx) == 0, "boot loop after double brown-out"
+        assert st["counter"] == saved, f"counter {saved} -&gt; {st['counter']}"
+&gt;       assert dut.relay() == 0, "relay ON after brown-out recovery"
+E       AssertionError: relay ON after brown-out recovery
+E       assert 1 == 0
+E        +  where 1 = relay()
+E        +    where relay = &lt;dut.Device object at 0x7fc7e1258c80&gt;.relay
+
+tests/test_03_brownout.py:78: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO04_random_brownouts_x10[1]" file="tests/test_03_brownout.py" line="80" time="0.474"><properties><property name="plan_cmd_delayms" value="[('sensor', 34.2), ('status', 15.3), ('relay off', 45.7), ('relay off', 39.1), ('sensor', 5.6), ('status', 53.6), ('relay off', 26.0), ('status', 41.7), ('relay on', 43.3), ('sensor', 35.5)]" /><property name="counters" value="[0, 0, 0, 1, 2, 2, 2, 3, 3, 4, 4]" /><property name="relay_after" value="[0, 0, 0, 0, 0, 0, 0, 0, 1, 1]" /></properties><failure message="AssertionError: relay ON after brown-out in 2/10 recoveries&#10;assert [0, 0, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]&#10;  &#10;  At index 8 diff: 1 != 0&#10;  Use -v to get more diff">dut = &lt;dut.Device object at 0x7fc7e1259220&gt;, seed = 1
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01b8220&gt;
+
+    @pytest.mark.req("R1", "R5", "R6")
+    @pytest.mark.parametrize("seed", [1, 2, 3])
+    def test_BO04_random_brownouts_x10(dut, seed, record_property):
+        """TC-BO-04: 10 brown-outs at random moments of random activity -&gt; always ACTIVE, relay OFF, counter never goes back."""
+        rnd = random.Random(seed)
+        counters, relays, plan = [dut.status()["counter"]], [], []
+        for _ in range(10):
+            cmd = rnd.choice(["status", "sensor", "relay on", "relay off", "save", "button"])
+            delay = rnd.uniform(0, 60)
+            plan.append((cmd, round(delay, 1)))
+            if cmd == "button":
+                dut.hw("BTN 0")
+            else:
+                dut.send(cmd)
+            dut.wait(delay)
+            dut.brownout()
+            dut.btn_level = 1
+            st = dut.wait_ready(READY_MS)
+            dut.hw("BTN 1")
+            counters.append(st["counter"])
+            relays.append(dut.relay())
+        record_property("plan_cmd_delayms", plan)
+        record_property("counters", counters)
+        record_property("relay_after", relays)
+        assert all(b &gt;= a for a, b in zip(counters, counters[1:])), f"counter went backwards: {counters}"
+&gt;       assert relays == [0] * 10, f"relay ON after brown-out in {relays.count(1)}/10 recoveries"
+E       AssertionError: relay ON after brown-out in 2/10 recoveries
+E       assert [0, 0, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]
+E         
+E         At index 8 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_03_brownout.py:106: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO04_random_brownouts_x10[2]" file="tests/test_03_brownout.py" line="80" time="0.473"><properties><property name="plan_cmd_delayms" value="[('status', 5.5), ('relay on', 50.1), ('button', 48.5), ('relay on', 15.1), ('sensor', 36.4), ('save', 40.9), ('relay off', 38.3), ('button', 51.6), ('save', 57.0), ('save', 56.1)]" /><property name="counters" value="[0, 0, 1, 2, 3, 3, 4, 5, 6, 7, 8]" /><property name="relay_after" value="[0, 1, 0, 0, 0, 0, 0, 1, 1, 1]" /></properties><failure message="AssertionError: relay ON after brown-out in 4/10 recoveries&#10;assert [0, 1, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]&#10;  &#10;  At index 1 diff: 1 != 0&#10;  Use -v to get more diff">dut = &lt;dut.Device object at 0x7fc7e125a990&gt;, seed = 2
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01b8cc0&gt;
+
+    @pytest.mark.req("R1", "R5", "R6")
+    @pytest.mark.parametrize("seed", [1, 2, 3])
+    def test_BO04_random_brownouts_x10(dut, seed, record_property):
+        """TC-BO-04: 10 brown-outs at random moments of random activity -&gt; always ACTIVE, relay OFF, counter never goes back."""
+        rnd = random.Random(seed)
+        counters, relays, plan = [dut.status()["counter"]], [], []
+        for _ in range(10):
+            cmd = rnd.choice(["status", "sensor", "relay on", "relay off", "save", "button"])
+            delay = rnd.uniform(0, 60)
+            plan.append((cmd, round(delay, 1)))
+            if cmd == "button":
+                dut.hw("BTN 0")
+            else:
+                dut.send(cmd)
+            dut.wait(delay)
+            dut.brownout()
+            dut.btn_level = 1
+            st = dut.wait_ready(READY_MS)
+            dut.hw("BTN 1")
+            counters.append(st["counter"])
+            relays.append(dut.relay())
+        record_property("plan_cmd_delayms", plan)
+        record_property("counters", counters)
+        record_property("relay_after", relays)
+        assert all(b &gt;= a for a, b in zip(counters, counters[1:])), f"counter went backwards: {counters}"
+&gt;       assert relays == [0] * 10, f"relay ON after brown-out in {relays.count(1)}/10 recoveries"
+E       AssertionError: relay ON after brown-out in 4/10 recoveries
+E       assert [0, 1, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]
+E         
+E         At index 1 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_03_brownout.py:106: AssertionError</failure></testcase><testcase classname="tests.test_03_brownout" name="test_BO04_random_brownouts_x10[3]" file="tests/test_03_brownout.py" line="80" time="0.475"><properties><property name="plan_cmd_delayms" value="[('sensor', 35.6), ('sensor', 22.2), ('save', 28.4), ('save', 3.9), ('status', 54.5), ('relay off', 15.6), ('sensor', 11.5), ('button', 28.2), ('save', 28.6), ('button', 51.7)]" /><property name="counters" value="[0, 0, 0, 1, 1, 1, 2, 2, 3, 4, 5]" /><property name="relay_after" value="[0, 0, 0, 0, 0, 0, 0, 0, 0, 1]" /></properties><failure message="AssertionError: relay ON after brown-out in 1/10 recoveries&#10;assert [0, 0, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]&#10;  &#10;  At index 9 diff: 1 != 0&#10;  Use -v to get more diff">dut = &lt;dut.Device object at 0x7fc7e0166990&gt;, seed = 3
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01b9940&gt;
+
+    @pytest.mark.req("R1", "R5", "R6")
+    @pytest.mark.parametrize("seed", [1, 2, 3])
+    def test_BO04_random_brownouts_x10(dut, seed, record_property):
+        """TC-BO-04: 10 brown-outs at random moments of random activity -&gt; always ACTIVE, relay OFF, counter never goes back."""
+        rnd = random.Random(seed)
+        counters, relays, plan = [dut.status()["counter"]], [], []
+        for _ in range(10):
+            cmd = rnd.choice(["status", "sensor", "relay on", "relay off", "save", "button"])
+            delay = rnd.uniform(0, 60)
+            plan.append((cmd, round(delay, 1)))
+            if cmd == "button":
+                dut.hw("BTN 0")
+            else:
+                dut.send(cmd)
+            dut.wait(delay)
+            dut.brownout()
+            dut.btn_level = 1
+            st = dut.wait_ready(READY_MS)
+            dut.hw("BTN 1")
+            counters.append(st["counter"])
+            relays.append(dut.relay())
+        record_property("plan_cmd_delayms", plan)
+        record_property("counters", counters)
+        record_property("relay_after", relays)
+        assert all(b &gt;= a for a, b in zip(counters, counters[1:])), f"counter went backwards: {counters}"
+&gt;       assert relays == [0] * 10, f"relay ON after brown-out in {relays.count(1)}/10 recoveries"
+E       AssertionError: relay ON after brown-out in 1/10 recoveries
+E       assert [0, 0, 0, 0, 0, 0, ...] == [0, 0, 0, 0, 0, 0, ...]
+E         
+E         At index 9 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_03_brownout.py:106: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI01_saved_state_survives_restart[power_cycle]" file="tests/test_04_data_integrity.py" line="12" time="0.235"><properties><property name="before" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 5, 'heap': 298412, 'sensor_ok': True, 'relay_pin': 0}" /><property name="after" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 5, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI01_saved_state_survives_restart[reboot_cmd]" file="tests/test_04_data_integrity.py" line="12" time="0.237"><properties><property name="before" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 5, 'heap': 298412, 'sensor_ok': True, 'relay_pin': 0}" /><property name="after" value="{'state': 'ACTIVE', 'reset_reason': 'SOFTWARE_RESET', 'relay': False, 'counter': 5, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI01_saved_state_survives_restart[deep_sleep]" file="tests/test_04_data_integrity.py" line="12" time="0.243"><properties><property name="before" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 5, 'heap': 298412, 'sensor_ok': True, 'relay_pin': 0}" /><property name="after" value="{'state': 'ACTIVE', 'reset_reason': 'DEEP_SLEEP', 'relay': False, 'counter': 6, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI02_powerloss_leaves_old_or_new_valid_state" file="tests/test_04_data_integrity.py" line="34" time="0.213"><properties><property name="counter_before" value="4" /><property name="counter_after" value="104" /></properties><failure message="AssertionError: counter 4 -&gt; 104: neither old nor a complete new state&#10;assert 104 in (4, 5)">dut = &lt;dut.Device object at 0x7fc7e0165130&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7e01bb740&gt;
+
+    @pytest.mark.req("R6")
+    def test_DI02_powerloss_leaves_old_or_new_valid_state(dut, record_property):
+        """TC-DI-02 (lab `powerloss`): state after the interrupted save is the old one or one complete new one
+        (at most one more event than before) — never a value that no operation produced."""
+        for _ in range(3):
+            dut.press_button(bounce=False, release_bounce=False)
+        dut.cmd("save"); dut.wait(300)
+        old = dut.status()
+        n = dut.boot_count
+        dut.send("powerloss")
+        dut.wait_boot(n, timeout=5000)
+        new = dut.wait_ready(READY_MS)
+        record_property("counter_before", old["counter"])
+        record_property("counter_after", new["counter"])
+&gt;       assert new["counter"] in (old["counter"], old["counter"] + 1), (
+            f"counter {old['counter']} -&gt; {new['counter']}: neither old nor a complete new state")
+E       AssertionError: counter 4 -&gt; 104: neither old nor a complete new state
+E       assert 104 in (4, 5)
+
+tests/test_04_data_integrity.py:49: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI03_interrupted_save_is_detected" file="tests/test_04_data_integrity.py" line="52" time="0.129"><properties><property name="recovery_lines" value="[]" /></properties><failure message="AssertionError: no diagnostic about the interrupted save in the boot log&#10;assert []">dut = &lt;dut.Device object at 0x7fc7e0166030&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7daf58720&gt;
+
+    @pytest.mark.req("R6")
+    def test_DI03_interrupted_save_is_detected(dut, record_property):
+        """TC-DI-03: after `powerloss` the boot log reports that an interrupted/incomplete save was found and handled."""
+        dut.cmd("save"); dut.wait(300)
+        n = dut.boot_count
+        dut.send("powerloss")
+        new = dut.wait_boot(n, timeout=5000)
+        dut.wait_ready(READY_MS)
+        rx = boot_rx(dut, new.idx)
+        hits = [l for l in rx if any(k in l.upper() for k in ("RECOVER", "INTERRUPT", "PENDING", "CORRUPT", "INVALID", "ROLLBACK"))]
+        record_property("recovery_lines", hits)
+&gt;       assert hits, "no diagnostic about the interrupted save in the boot log"
+E       AssertionError: no diagnostic about the interrupted save in the boot log
+E       assert []
+
+tests/test_04_data_integrity.py:64: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay on-0]" file="tests/test_04_data_integrity.py" line="66" time="0.183"><properties><property name="cut_happened" value="True" /><property name="old" value="(3, False)" /><property name="new" value="(4, True)" /><property name="after_power_on" value="(3, False)" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay on-1]" file="tests/test_04_data_integrity.py" line="66" time="0.178"><properties><property name="cut_happened" value="True" /><property name="old" value="(3, False)" /><property name="new" value="(4, True)" /><property name="after_power_on" value="(4, False)" /></properties><failure message="AssertionError: mixed state after power cut: got (4, False), allowed old (3, False) or new (4, True)&#10;assert (4, False) in ((3, False), (4, True))">dut = &lt;dut.Device object at 0x7fc7e01672f0&gt;, op = 'relay on'
+commits_before_cut = 1
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7daf594e0&gt;
+
+    @pytest.mark.req("R6")
+    @pytest.mark.parametrize("commits_before_cut", [0, 1, 2])
+    @pytest.mark.parametrize("op", ["relay on", "relay off"])
+    def test_DI04_power_cut_between_flash_writes(dut, op, commits_before_cut, record_property):
+        """TC-DI-04: supply cut after K flash (NVS) entry writes of a state update -&gt; after power-on the state is
+        exactly the old one or exactly the new one (counter and relay must belong to the same version)."""
+        pre = "relay off" if op == "relay on" else "relay on"
+        # learn what one state update looks like (counter delta) on this build
+        dut.cmd(pre); dut.wait(200)
+        c0 = dut.status()["counter"]
+        dut.cmd(op); dut.wait(200)
+        delta = dut.status()["counter"] - c0
+        dut.cmd(pre); dut.wait(300)
+        old = dut.status()
+        old_v = (old["counter"], bool(old["relay"]))
+        new_v = (old["counter"] + delta, op == "relay on")
+        n = dut.boot_count
+        dut.hw(f"NVSCUT {commits_before_cut} POWERON")
+        dut.send(op)
+        try:
+            dut.wait_boot(n, timeout=1500)
+            cut = True
+        except AssertionError:
+            cut = False  # update needed fewer flash writes than K: nothing was interrupted
+            dut.hw("NVSCUT -1 POWERON")
+            dut.power_cycle(off_ms=500)
+        after = dut.wait_ready(READY_MS)
+        got = (after["counter"], bool(after["relay"]))
+        record_property("cut_happened", cut)
+        record_property("old", old_v)
+        record_property("new", new_v)
+        record_property("after_power_on", got)
+&gt;       assert got in (old_v, new_v), f"mixed state after power cut: got {got}, allowed old {old_v} or new {new_v}"
+E       AssertionError: mixed state after power cut: got (4, False), allowed old (3, False) or new (4, True)
+E       assert (4, False) in ((3, False), (4, True))
+
+tests/test_04_data_integrity.py:99: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay on-2]" file="tests/test_04_data_integrity.py" line="66" time="0.323"><properties><property name="cut_happened" value="False" /><property name="old" value="(3, False)" /><property name="new" value="(4, True)" /><property name="after_power_on" value="(4, True)" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay off-0]" file="tests/test_04_data_integrity.py" line="66" time="0.172"><properties><property name="cut_happened" value="True" /><property name="old" value="(3, True)" /><property name="new" value="(4, False)" /><property name="after_power_on" value="(3, True)" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay off-1]" file="tests/test_04_data_integrity.py" line="66" time="0.176"><properties><property name="cut_happened" value="True" /><property name="old" value="(3, True)" /><property name="new" value="(4, False)" /><property name="after_power_on" value="(4, True)" /></properties><failure message="AssertionError: mixed state after power cut: got (4, True), allowed old (3, True) or new (4, False)&#10;assert (4, True) in ((3, True), (4, False))">dut = &lt;dut.Device object at 0x7fc7e0167980&gt;, op = 'relay off'
+commits_before_cut = 1
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7daf5ab60&gt;
+
+    @pytest.mark.req("R6")
+    @pytest.mark.parametrize("commits_before_cut", [0, 1, 2])
+    @pytest.mark.parametrize("op", ["relay on", "relay off"])
+    def test_DI04_power_cut_between_flash_writes(dut, op, commits_before_cut, record_property):
+        """TC-DI-04: supply cut after K flash (NVS) entry writes of a state update -&gt; after power-on the state is
+        exactly the old one or exactly the new one (counter and relay must belong to the same version)."""
+        pre = "relay off" if op == "relay on" else "relay on"
+        # learn what one state update looks like (counter delta) on this build
+        dut.cmd(pre); dut.wait(200)
+        c0 = dut.status()["counter"]
+        dut.cmd(op); dut.wait(200)
+        delta = dut.status()["counter"] - c0
+        dut.cmd(pre); dut.wait(300)
+        old = dut.status()
+        old_v = (old["counter"], bool(old["relay"]))
+        new_v = (old["counter"] + delta, op == "relay on")
+        n = dut.boot_count
+        dut.hw(f"NVSCUT {commits_before_cut} POWERON")
+        dut.send(op)
+        try:
+            dut.wait_boot(n, timeout=1500)
+            cut = True
+        except AssertionError:
+            cut = False  # update needed fewer flash writes than K: nothing was interrupted
+            dut.hw("NVSCUT -1 POWERON")
+            dut.power_cycle(off_ms=500)
+        after = dut.wait_ready(READY_MS)
+        got = (after["counter"], bool(after["relay"]))
+        record_property("cut_happened", cut)
+        record_property("old", old_v)
+        record_property("new", new_v)
+        record_property("after_power_on", got)
+&gt;       assert got in (old_v, new_v), f"mixed state after power cut: got {got}, allowed old {old_v} or new {new_v}"
+E       AssertionError: mixed state after power cut: got (4, True), allowed old (3, True) or new (4, False)
+E       assert (4, True) in ((3, True), (4, False))
+
+tests/test_04_data_integrity.py:99: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI04_power_cut_between_flash_writes[relay off-2]" file="tests/test_04_data_integrity.py" line="66" time="0.324"><properties><property name="cut_happened" value="False" /><property name="old" value="(3, True)" /><property name="new" value="(4, False)" /><property name="after_power_on" value="(4, False)" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI05_corrupted_flash_is_detected[off-bit0]" file="tests/test_04_data_integrity.py" line="101" time="0.133"><properties><property name="entries_flipped" value="2" /><property name="before" value="(2, False)" /><property name="after" value="(3, True, 1)" /><property name="diagnostic" value="[]" /></properties><failure message="AssertionError: corrupted flash switched the relay ON (saved state was OFF)&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7daf845f0&gt;.relay">dut = &lt;dut.Device object at 0x7fc7daf845f0&gt;, saved_relay = 'off', flip = (0, 1)
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7daf5bba0&gt;
+
+    @pytest.mark.req("R6", "R5")
+    @pytest.mark.parametrize("flip", [(0, 0x01), (0, 0x80)], ids=["bit0", "bit7"])
+    @pytest.mark.parametrize("saved_relay", ["off", "on"])
+    def test_DI05_corrupted_flash_is_detected(dut, saved_relay, flip, record_property):
+        """TC-DI-05: a bit flip in the stored state (device off) must be detected at boot, and corrupted data must not
+        switch the actuator ON."""
+        dut.cmd(f"relay {saved_relay}"); dut.cmd("save"); dut.wait(300)
+        before = snapshot(dut)
+        dut.power_off()
+        touched = dut.flip_flash_bits(*flip)
+        dut.power_on()
+        after = dut.wait_ready(READY_MS)
+        rx = boot_rx(dut, dut.current_boot().idx)
+        diag = [l for l in rx if __import__("re").search(CORRUPT_RX, l)]
+        record_property("entries_flipped", len(touched))
+        record_property("before", (before["counter"], before["relay"]))
+        record_property("after", (after["counter"], after["relay"], dut.relay()))
+        record_property("diagnostic", diag)
+        if saved_relay == "off":
+&gt;           assert dut.relay() == 0, "corrupted flash switched the relay ON (saved state was OFF)"
+E           AssertionError: corrupted flash switched the relay ON (saved state was OFF)
+E           assert 1 == 0
+E            +  where 1 = relay()
+E            +    where relay = &lt;dut.Device object at 0x7fc7daf845f0&gt;.relay
+
+tests/test_04_data_integrity.py:121: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI05_corrupted_flash_is_detected[off-bit7]" file="tests/test_04_data_integrity.py" line="101" time="0.133"><properties><property name="entries_flipped" value="2" /><property name="before" value="(2, False)" /><property name="after" value="(130, True, 1)" /><property name="diagnostic" value="[]" /></properties><failure message="AssertionError: corrupted flash switched the relay ON (saved state was OFF)&#10;assert 1 == 0&#10; +  where 1 = relay()&#10; +    where relay = &lt;dut.Device object at 0x7fc7daf848c0&gt;.relay">dut = &lt;dut.Device object at 0x7fc7daf848c0&gt;, saved_relay = 'off'
+flip = (0, 128)
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dafcc400&gt;
+
+    @pytest.mark.req("R6", "R5")
+    @pytest.mark.parametrize("flip", [(0, 0x01), (0, 0x80)], ids=["bit0", "bit7"])
+    @pytest.mark.parametrize("saved_relay", ["off", "on"])
+    def test_DI05_corrupted_flash_is_detected(dut, saved_relay, flip, record_property):
+        """TC-DI-05: a bit flip in the stored state (device off) must be detected at boot, and corrupted data must not
+        switch the actuator ON."""
+        dut.cmd(f"relay {saved_relay}"); dut.cmd("save"); dut.wait(300)
+        before = snapshot(dut)
+        dut.power_off()
+        touched = dut.flip_flash_bits(*flip)
+        dut.power_on()
+        after = dut.wait_ready(READY_MS)
+        rx = boot_rx(dut, dut.current_boot().idx)
+        diag = [l for l in rx if __import__("re").search(CORRUPT_RX, l)]
+        record_property("entries_flipped", len(touched))
+        record_property("before", (before["counter"], before["relay"]))
+        record_property("after", (after["counter"], after["relay"], dut.relay()))
+        record_property("diagnostic", diag)
+        if saved_relay == "off":
+&gt;           assert dut.relay() == 0, "corrupted flash switched the relay ON (saved state was OFF)"
+E           AssertionError: corrupted flash switched the relay ON (saved state was OFF)
+E           assert 1 == 0
+E            +  where 1 = relay()
+E            +    where relay = &lt;dut.Device object at 0x7fc7daf848c0&gt;.relay
+
+tests/test_04_data_integrity.py:121: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI05_corrupted_flash_is_detected[on-bit0]" file="tests/test_04_data_integrity.py" line="101" time="0.132"><properties><property name="entries_flipped" value="2" /><property name="before" value="(2, True)" /><property name="after" value="(3, False, 0)" /><property name="diagnostic" value="[]" /></properties><failure message="AssertionError: corruption not reported; device silently loaded counter=3 relay=False&#10;assert []">dut = &lt;dut.Device object at 0x7fc7daf84f50&gt;, saved_relay = 'on', flip = (0, 1)
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dafccb80&gt;
+
+    @pytest.mark.req("R6", "R5")
+    @pytest.mark.parametrize("flip", [(0, 0x01), (0, 0x80)], ids=["bit0", "bit7"])
+    @pytest.mark.parametrize("saved_relay", ["off", "on"])
+    def test_DI05_corrupted_flash_is_detected(dut, saved_relay, flip, record_property):
+        """TC-DI-05: a bit flip in the stored state (device off) must be detected at boot, and corrupted data must not
+        switch the actuator ON."""
+        dut.cmd(f"relay {saved_relay}"); dut.cmd("save"); dut.wait(300)
+        before = snapshot(dut)
+        dut.power_off()
+        touched = dut.flip_flash_bits(*flip)
+        dut.power_on()
+        after = dut.wait_ready(READY_MS)
+        rx = boot_rx(dut, dut.current_boot().idx)
+        diag = [l for l in rx if __import__("re").search(CORRUPT_RX, l)]
+        record_property("entries_flipped", len(touched))
+        record_property("before", (before["counter"], before["relay"]))
+        record_property("after", (after["counter"], after["relay"], dut.relay()))
+        record_property("diagnostic", diag)
+        if saved_relay == "off":
+            assert dut.relay() == 0, "corrupted flash switched the relay ON (saved state was OFF)"
+&gt;       assert diag, f"corruption not reported; device silently loaded counter={after['counter']} relay={after['relay']}"
+E       AssertionError: corruption not reported; device silently loaded counter=3 relay=False
+E       assert []
+
+tests/test_04_data_integrity.py:122: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI05_corrupted_flash_is_detected[on-bit7]" file="tests/test_04_data_integrity.py" line="101" time="0.131"><properties><property name="entries_flipped" value="2" /><property name="before" value="(2, True)" /><property name="after" value="(130, True, 1)" /><property name="diagnostic" value="[]" /></properties><failure message="AssertionError: corruption not reported; device silently loaded counter=130 relay=True&#10;assert []">dut = &lt;dut.Device object at 0x7fc7daf855e0&gt;, saved_relay = 'on', flip = (0, 128)
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dafccd60&gt;
+
+    @pytest.mark.req("R6", "R5")
+    @pytest.mark.parametrize("flip", [(0, 0x01), (0, 0x80)], ids=["bit0", "bit7"])
+    @pytest.mark.parametrize("saved_relay", ["off", "on"])
+    def test_DI05_corrupted_flash_is_detected(dut, saved_relay, flip, record_property):
+        """TC-DI-05: a bit flip in the stored state (device off) must be detected at boot, and corrupted data must not
+        switch the actuator ON."""
+        dut.cmd(f"relay {saved_relay}"); dut.cmd("save"); dut.wait(300)
+        before = snapshot(dut)
+        dut.power_off()
+        touched = dut.flip_flash_bits(*flip)
+        dut.power_on()
+        after = dut.wait_ready(READY_MS)
+        rx = boot_rx(dut, dut.current_boot().idx)
+        diag = [l for l in rx if __import__("re").search(CORRUPT_RX, l)]
+        record_property("entries_flipped", len(touched))
+        record_property("before", (before["counter"], before["relay"]))
+        record_property("after", (after["counter"], after["relay"], dut.relay()))
+        record_property("diagnostic", diag)
+        if saved_relay == "off":
+            assert dut.relay() == 0, "corrupted flash switched the relay ON (saved state was OFF)"
+&gt;       assert diag, f"corruption not reported; device silently loaded counter={after['counter']} relay={after['relay']}"
+E       AssertionError: corruption not reported; device silently loaded counter=130 relay=True
+E       assert []
+
+tests/test_04_data_integrity.py:122: AssertionError</failure></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI06_blank_flash_defaults" file="tests/test_04_data_integrity.py" line="124" time="0.563"><properties><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 0, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_04_data_integrity" name="test_DI07_repeated_powerloss_x5" file="tests/test_04_data_integrity.py" line="134" time="0.506"><properties><property name="before_after" value="[(2, 102), (104, 204), (206, 306), (308, 408), (410, 510)]" /></properties><failure message="AssertionError: 5/5 interrupted saves left an invalid counter: [(2, 102), (104, 204), (206, 306), (308, 408), (410, 510)]&#10;assert not [(2, 102), (104, 204), (206, 306), (308, 408), (410, 510)]">dut = &lt;dut.Device object at 0x7fc7e0164c80&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dafccc20&gt;
+
+    @pytest.mark.req("R6")
+    def test_DI07_repeated_powerloss_x5(dut, record_property):
+        """TC-DI-07: 5 interrupted saves in a row: each time the state stays old-or-new, never drifts."""
+        seq = [dut.status()["counter"]]
+        for i in range(5):
+            dut.press_button(bounce=False, release_bounce=False)
+            dut.cmd("save"); dut.wait(200)
+            before = dut.status()["counter"]
+            n = dut.boot_count
+            dut.send("powerloss")
+            dut.wait_boot(n, timeout=5000)
+            after = dut.wait_ready(READY_MS)["counter"]
+            seq.append((before, after))
+        record_property("before_after", seq[1:])
+        bad = [(b, a) for b, a in seq[1:] if a not in (b, b + 1)]
+&gt;       assert not bad, f"{len(bad)}/5 interrupted saves left an invalid counter: {bad}"
+E       AssertionError: 5/5 interrupted saves left an invalid counter: [(2, 102), (104, 204), (206, 306), (308, 408), (410, 510)]
+E       assert not [(2, 102), (104, 204), (206, 306), (308, 408), (410, 510)]
+
+tests/test_04_data_integrity.py:150: AssertionError</failure></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-unknown_word]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.703"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-relay_bad_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.702"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-relay_no_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.749"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-upper_case]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.701"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-save_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.699"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-hang_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.697"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-binary_garbage]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.697"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-overlong_300]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.698"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[wdt-empty_line]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.698"><properties><property name="reply" value="[]" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-unknown_word]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.297"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-relay_bad_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.296"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-relay_no_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.301"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-upper_case]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.300"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-save_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.301"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-hang_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.299"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-binary_garbage]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.299"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-overlong_300]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.299"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[brownout-empty_line]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.300"><properties><property name="reply" value="[]" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-unknown_word]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.303"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-relay_bad_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.300"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-relay_no_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.302"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-upper_case]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.296"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-save_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.297"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-hang_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.300"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-binary_garbage]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.300"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-overlong_300]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.301"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[power_cycle-empty_line]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.298"><properties><property name="reply" value="[]" /><property name="before" value="(2, True, 1)" /><property name="after" value="(2, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-unknown_word]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.308"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-relay_bad_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.303"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-relay_no_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.301"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-upper_case]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.301"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-save_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.304"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-hang_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.303"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-binary_garbage]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-overlong_300]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[powerloss_cmd-empty_line]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.302"><properties><property name="reply" value="[]" /><property name="before" value="(102, True, 1)" /><property name="after" value="(102, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-unknown_word]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.306"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-relay_bad_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-relay_no_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.307"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-upper_case]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.307"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-save_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-hang_extra_arg]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.306"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-binary_garbage]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-overlong_300]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.305"><properties><property name="reply" value="['[CLI] ERROR unknown command']" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG01_invalid_command_after_recovery[deep_sleep-empty_line]" file="tests/test_05_negative_after_recovery.py" line="28" time="0.304"><properties><property name="reply" value="[]" /><property name="before" value="(3, True, 1)" /><property name="after" value="(3, True, 1)" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG02_garbage_on_uart_while_booting[wdt]" file="tests/test_05_negative_after_recovery.py" line="54" time="0.820"><properties><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'TASK_WDT', 'relay': False, 'counter': 2, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG02_garbage_on_uart_while_booting[brownout]" file="tests/test_05_negative_after_recovery.py" line="54" time="0.423"><properties><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'BROWNOUT', 'relay': False, 'counter': 2, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG02_garbage_on_uart_while_booting[power_cycle]" file="tests/test_05_negative_after_recovery.py" line="54" time="0.423"><properties><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 2, 'heap': 298412, 'sensor_ok': True}" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[abc]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.542"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=1 s']" /><property name="slept_ms" value="100" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[-5]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.548"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=60 s']" /><property name="slept_ms" value="6000" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[0]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.543"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=1 s']" /><property name="slept_ms" value="100" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[99999999]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.542"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=60 s']" /><property name="slept_ms" value="6000" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[5abc]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.550"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=5 s']" /><property name="slept_ms" value="500" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG03_sleep_with_invalid_argument_after_wdt[]" file="tests/test_05_negative_after_recovery.py" line="80" time="0.545"><properties><property name="reply" value="['[STORE] saved', '[STATE] SLEEP timer=5 s']" /><property name="slept_ms" value="500" /></properties></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG04_sensor_disconnected_after_recovery[wdt]" file="tests/test_05_negative_after_recovery.py" line="103" time="0.551"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="sensor_ok" value="False" /></properties><failure message="AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert False&#10; +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad079f0&gt;)">dut = &lt;dut.Device object at 0x7fc7daeeda90&gt;, recovery = 'wdt'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad171a0&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("recovery", list(RECOVERIES))
+    def test_NEG04_sensor_disconnected_after_recovery(dut, recovery, record_property):
+        """TC-NEG-04: DHT22 unplugged after &lt;recovery&gt; -&gt; explicit sensor error, no fake value, relay unchanged."""
+        RECOVERIES[recovery](dut)
+        pin0 = dut.relay()
+        dut.set_dht("nan")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+        assert dut.relay() == pin0
+&gt;       assert any("ERROR" in l.upper() for l in reply), f"no explicit sensor error: {reply}"
+E       AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert False
+E        +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad079f0&gt;)
+
+tests/test_05_negative_after_recovery.py:120: AssertionError</failure></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG04_sensor_disconnected_after_recovery[brownout]" file="tests/test_05_negative_after_recovery.py" line="103" time="0.155"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="sensor_ok" value="False" /></properties><failure message="AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert False&#10; +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad07ed0&gt;)">dut = &lt;dut.Device object at 0x7fc7daeedc70&gt;, recovery = 'brownout'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad80040&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("recovery", list(RECOVERIES))
+    def test_NEG04_sensor_disconnected_after_recovery(dut, recovery, record_property):
+        """TC-NEG-04: DHT22 unplugged after &lt;recovery&gt; -&gt; explicit sensor error, no fake value, relay unchanged."""
+        RECOVERIES[recovery](dut)
+        pin0 = dut.relay()
+        dut.set_dht("nan")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+        assert dut.relay() == pin0
+&gt;       assert any("ERROR" in l.upper() for l in reply), f"no explicit sensor error: {reply}"
+E       AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert False
+E        +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad07ed0&gt;)
+
+tests/test_05_negative_after_recovery.py:120: AssertionError</failure></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG04_sensor_disconnected_after_recovery[power_cycle]" file="tests/test_05_negative_after_recovery.py" line="103" time="0.152"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="sensor_ok" value="False" /></properties><failure message="AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert False&#10; +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad705f0&gt;)">dut = &lt;dut.Device object at 0x7fc7daeee210&gt;, recovery = 'power_cycle'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad805e0&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("recovery", list(RECOVERIES))
+    def test_NEG04_sensor_disconnected_after_recovery(dut, recovery, record_property):
+        """TC-NEG-04: DHT22 unplugged after &lt;recovery&gt; -&gt; explicit sensor error, no fake value, relay unchanged."""
+        RECOVERIES[recovery](dut)
+        pin0 = dut.relay()
+        dut.set_dht("nan")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+        assert dut.relay() == pin0
+&gt;       assert any("ERROR" in l.upper() for l in reply), f"no explicit sensor error: {reply}"
+E       AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert False
+E        +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad705f0&gt;)
+
+tests/test_05_negative_after_recovery.py:120: AssertionError</failure></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG04_sensor_disconnected_after_recovery[powerloss_cmd]" file="tests/test_05_negative_after_recovery.py" line="103" time="0.151"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="sensor_ok" value="False" /></properties><failure message="AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert False&#10; +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad713c0&gt;)">dut = &lt;dut.Device object at 0x7fc7daeee8a0&gt;, recovery = 'powerloss_cmd'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad80d60&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("recovery", list(RECOVERIES))
+    def test_NEG04_sensor_disconnected_after_recovery(dut, recovery, record_property):
+        """TC-NEG-04: DHT22 unplugged after &lt;recovery&gt; -&gt; explicit sensor error, no fake value, relay unchanged."""
+        RECOVERIES[recovery](dut)
+        pin0 = dut.relay()
+        dut.set_dht("nan")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+        assert dut.relay() == pin0
+&gt;       assert any("ERROR" in l.upper() for l in reply), f"no explicit sensor error: {reply}"
+E       AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert False
+E        +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad713c0&gt;)
+
+tests/test_05_negative_after_recovery.py:120: AssertionError</failure></testcase><testcase classname="tests.test_05_negative_after_recovery" name="test_NEG04_sensor_disconnected_after_recovery[deep_sleep]" file="tests/test_05_negative_after_recovery.py" line="103" time="0.153"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="sensor_ok" value="False" /></properties><failure message="AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert False&#10; +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad71150&gt;)">dut = &lt;dut.Device object at 0x7fc7daeeef30&gt;, recovery = 'deep_sleep'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad81620&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("recovery", list(RECOVERIES))
+    def test_NEG04_sensor_disconnected_after_recovery(dut, recovery, record_property):
+        """TC-NEG-04: DHT22 unplugged after &lt;recovery&gt; -&gt; explicit sensor error, no fake value, relay unchanged."""
+        RECOVERIES[recovery](dut)
+        pin0 = dut.relay()
+        dut.set_dht("nan")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+        assert dut.relay() == pin0
+&gt;       assert any("ERROR" in l.upper() for l in reply), f"no explicit sensor error: {reply}"
+E       AssertionError: no explicit sensor error: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert False
+E        +  where False = any(&lt;generator object test_NEG04_sensor_disconnected_after_recovery.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dad71150&gt;)
+
+tests/test_05_negative_after_recovery.py:120: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB01_sensor_failure_reported_explicitly[disconnected]" file="tests/test_06_sensor_button.py" line="10" time="0.112"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="status_sensor_ok" value="False" /></properties><failure message="AssertionError: invalid reading printed as a measurement: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert not True&#10; +  where True = any(&lt;generator object test_SB01_sensor_failure_reported_explicitly.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dadac660&gt;)">dut = &lt;dut.Device object at 0x7fc7daeef5c0&gt;, mode = 'nan'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad81da0&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("mode", ["nan", "checksum"], ids=["disconnected", "checksum_error"])
+    def test_SB01_sensor_failure_reported_explicitly(dut, mode, record_property):
+        """TC-SB-01: DHT22 does not answer / bad checksum -&gt; explicit error, no number printed, status sensor_ok=false."""
+        dut.set_dht(mode)
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("status_sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+&gt;       assert not any(re.search(VALUE_RX, l) for l in reply), f"invalid reading printed as a measurement: {reply}"
+E       AssertionError: invalid reading printed as a measurement: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert not True
+E        +  where True = any(&lt;generator object test_SB01_sensor_failure_reported_explicitly.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dadac660&gt;)
+
+tests/test_06_sensor_button.py:24: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB01_sensor_failure_reported_explicitly[checksum_error]" file="tests/test_06_sensor_button.py" line="10" time="0.112"><properties><property name="reply" value="['[SENSOR] temp=0.0C humidity=0.0%']" /><property name="status_sensor_ok" value="False" /></properties><failure message="AssertionError: invalid reading printed as a measurement: ['[SENSOR] temp=0.0C humidity=0.0%']&#10;assert not True&#10; +  where True = any(&lt;generator object test_SB01_sensor_failure_reported_explicitly.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dadad380&gt;)">dut = &lt;dut.Device object at 0x7fc7dadcc050&gt;, mode = 'checksum'
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad82b60&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("mode", ["nan", "checksum"], ids=["disconnected", "checksum_error"])
+    def test_SB01_sensor_failure_reported_explicitly(dut, mode, record_property):
+        """TC-SB-01: DHT22 does not answer / bad checksum -&gt; explicit error, no number printed, status sensor_ok=false."""
+        dut.set_dht(mode)
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("status_sensor_ok", st["sensor_ok"])
+        assert st["sensor_ok"] is False
+&gt;       assert not any(re.search(VALUE_RX, l) for l in reply), f"invalid reading printed as a measurement: {reply}"
+E       AssertionError: invalid reading printed as a measurement: ['[SENSOR] temp=0.0C humidity=0.0%']
+E       assert not True
+E        +  where True = any(&lt;generator object test_SB01_sensor_failure_reported_explicitly.&lt;locals&gt;.&lt;genexpr&gt; at 0x7fc7dadad380&gt;)
+
+tests/test_06_sensor_button.py:24: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB02_out_of_range_values_not_valid[temp_150C]" file="tests/test_06_sensor_button.py" line="27" time="0.112"><properties><property name="reply" value="['[SENSOR] temp=150.0C humidity=50.0%']" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 0, 'heap': 298412, 'sensor_ok': True}" /></properties><failure message="AssertionError: out-of-range data reported as sensor_ok=true (150.0 C / 50.0 %)&#10;assert True is False">dut = &lt;dut.Device object at 0x7fc7dadcc5f0&gt;, t = 150.0, h = 50.0
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad83560&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("t,h", [(150.0, 50.0), (-60.0, 50.0), (25.0, 120.0)],
+                             ids=["temp_150C", "temp_-60C", "hum_120pct"])
+    def test_SB02_out_of_range_values_not_valid(dut, t, h, record_property):
+        """TC-SB-02: physically impossible DHT22 data (range -40..80 C, 0..100 %RH) must not be accepted as valid."""
+        dut.set_dht(f"raw {t} {h}")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("status", st)
+&gt;       assert st["sensor_ok"] is False, f"out-of-range data reported as sensor_ok=true ({t} C / {h} %)"
+E       AssertionError: out-of-range data reported as sensor_ok=true (150.0 C / 50.0 %)
+E       assert True is False
+
+tests/test_06_sensor_button.py:41: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB02_out_of_range_values_not_valid[temp_-60C]" file="tests/test_06_sensor_button.py" line="27" time="0.114"><properties><property name="reply" value="['[SENSOR] temp=-60.0C humidity=50.0%']" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 0, 'heap': 298412, 'sensor_ok': True}" /></properties><failure message="AssertionError: out-of-range data reported as sensor_ok=true (-60.0 C / 50.0 %)&#10;assert True is False">dut = &lt;dut.Device object at 0x7fc7daeefe30&gt;, t = -60.0, h = 50.0
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dad82840&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("t,h", [(150.0, 50.0), (-60.0, 50.0), (25.0, 120.0)],
+                             ids=["temp_150C", "temp_-60C", "hum_120pct"])
+    def test_SB02_out_of_range_values_not_valid(dut, t, h, record_property):
+        """TC-SB-02: physically impossible DHT22 data (range -40..80 C, 0..100 %RH) must not be accepted as valid."""
+        dut.set_dht(f"raw {t} {h}")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("status", st)
+&gt;       assert st["sensor_ok"] is False, f"out-of-range data reported as sensor_ok=true ({t} C / {h} %)"
+E       AssertionError: out-of-range data reported as sensor_ok=true (-60.0 C / 50.0 %)
+E       assert True is False
+
+tests/test_06_sensor_button.py:41: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB02_out_of_range_values_not_valid[hum_120pct]" file="tests/test_06_sensor_button.py" line="27" time="0.113"><properties><property name="reply" value="['[SENSOR] temp=25.0C humidity=120.0%']" /><property name="status" value="{'state': 'ACTIVE', 'reset_reason': 'POWER_ON', 'relay': False, 'counter': 0, 'heap': 298412, 'sensor_ok': True}" /></properties><failure message="AssertionError: out-of-range data reported as sensor_ok=true (25.0 C / 120.0 %)&#10;assert True is False">dut = &lt;dut.Device object at 0x7fc7dadcc8c0&gt;, t = 25.0, h = 120.0
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dadc8040&gt;
+
+    @pytest.mark.req("R2")
+    @pytest.mark.parametrize("t,h", [(150.0, 50.0), (-60.0, 50.0), (25.0, 120.0)],
+                             ids=["temp_150C", "temp_-60C", "hum_120pct"])
+    def test_SB02_out_of_range_values_not_valid(dut, t, h, record_property):
+        """TC-SB-02: physically impossible DHT22 data (range -40..80 C, 0..100 %RH) must not be accepted as valid."""
+        dut.set_dht(f"raw {t} {h}")
+        m = dut.mark()
+        dut.send("sensor")
+        dut.wait(500)
+        reply = [e.text for e in dut.lines(m) if e.text.strip()]
+        st = dut.status()
+        record_property("reply", reply)
+        record_property("status", st)
+&gt;       assert st["sensor_ok"] is False, f"out-of-range data reported as sensor_ok=true ({t} C / {h} %)"
+E       AssertionError: out-of-range data reported as sensor_ok=true (25.0 C / 120.0 %)
+E       assert True is False
+
+tests/test_06_sensor_button.py:41: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB03_invalid_data_does_not_move_actuator" file="tests/test_06_sensor_button.py" line="43" time="0.274" /><testcase classname="tests.test_06_sensor_button" name="test_SB04_one_press_one_event[clean]" file="tests/test_06_sensor_button.py" line="56" time="0.118"><properties><property name="events" value="1" /></properties></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB04_one_press_one_event[press_bounce]" file="tests/test_06_sensor_button.py" line="56" time="0.122"><properties><property name="events" value="1" /></properties></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB04_one_press_one_event[release_bounce]" file="tests/test_06_sensor_button.py" line="56" time="0.121"><properties><property name="events" value="2" /></properties><failure message="AssertionError: 2 events for one press&#10;assert (2 - 0) == 1">dut = &lt;dut.Device object at 0x7fc7dadcd7c0&gt;, bounce = False
+release_bounce = True
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dadc9940&gt;
+
+    @pytest.mark.req("R3")
+    @pytest.mark.parametrize("bounce,release_bounce", [(False, False), (True, False), (False, True), (True, True)],
+                             ids=["clean", "press_bounce", "release_bounce", "both_bounce"])
+    def test_SB04_one_press_one_event(dut, bounce, release_bounce, record_property):
+        """TC-SB-04: one physical press (with typical 2-3 ms contact bounce) -&gt; exactly one logical event."""
+        c0 = dut.status()["counter"]
+        dut.press_button(bounce=bounce, release_bounce=release_bounce)
+        dut.wait(300)
+        c1 = dut.status()["counter"]
+        record_property("events", c1 - c0)
+&gt;       assert c1 - c0 == 1, f"{c1 - c0} events for one press"
+E       AssertionError: 2 events for one press
+E       assert (2 - 0) == 1
+
+tests/test_06_sensor_button.py:67: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB04_one_press_one_event[both_bounce]" file="tests/test_06_sensor_button.py" line="56" time="0.122"><properties><property name="events" value="2" /></properties><failure message="AssertionError: 2 events for one press&#10;assert (2 - 0) == 1">dut = &lt;dut.Device object at 0x7fc7daeeff20&gt;, bounce = True
+release_bounce = True
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dafccc20&gt;
+
+    @pytest.mark.req("R3")
+    @pytest.mark.parametrize("bounce,release_bounce", [(False, False), (True, False), (False, True), (True, True)],
+                             ids=["clean", "press_bounce", "release_bounce", "both_bounce"])
+    def test_SB04_one_press_one_event(dut, bounce, release_bounce, record_property):
+        """TC-SB-04: one physical press (with typical 2-3 ms contact bounce) -&gt; exactly one logical event."""
+        c0 = dut.status()["counter"]
+        dut.press_button(bounce=bounce, release_bounce=release_bounce)
+        dut.wait(300)
+        c1 = dut.status()["counter"]
+        record_property("events", c1 - c0)
+&gt;       assert c1 - c0 == 1, f"{c1 - c0} events for one press"
+E       AssertionError: 2 events for one press
+E       assert (2 - 0) == 1
+
+tests/test_06_sensor_button.py:67: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB05_twenty_presses_twenty_events" file="tests/test_06_sensor_button.py" line="69" time="0.828"><properties><property name="events" value="38" /></properties><failure message="AssertionError: 38 events for 20 presses&#10;assert (38 - 0) == 20">dut = &lt;dut.Device object at 0x7fc7daeeec60&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dadc9a80&gt;
+
+    @pytest.mark.req("R3")
+    def test_SB05_twenty_presses_twenty_events(dut, record_property):
+        """TC-SB-05 (template T02): 20 bouncy presses -&gt; exactly 20 events, relay toggles accordingly."""
+        c0 = dut.status()["counter"]
+        for _ in range(20):
+            dut.press_button(hold_ms=150)
+            dut.wait(150)
+        c1 = dut.status()["counter"]
+        record_property("events", c1 - c0)
+&gt;       assert c1 - c0 == 20, f"{c1 - c0} events for 20 presses"
+E       AssertionError: 38 events for 20 presses
+E       assert (38 - 0) == 20
+
+tests/test_06_sensor_button.py:79: AssertionError</failure></testcase><testcase classname="tests.test_06_sensor_button" name="test_SB06_long_hold_is_one_event" file="tests/test_06_sensor_button.py" line="81" time="0.400"><properties><property name="events" value="1" /></properties></testcase><testcase classname="tests.test_07_stability" name="test_REC01_mixed_fault_storm_x20[11]" file="tests/test_07_stability.py" line="8" time="5.451"><properties><property name="history_kind_reason_counter_relay" value="[('deep_sleep', 'DEEP_SLEEP', 1, 0), ('wdt', 'TASK_WDT', 3, 0), ('deep_sleep', 'DEEP_SLEEP', 4, 0), ('wdt', 'TASK_WDT', 4, 0), ('brownout', 'BROWNOUT', 4, 0), ('powerloss_cmd', 'SOFTWARE_RESET', 104, 0), ('power_cycle', 'POWER_ON', 105, 0), ('wdt', 'TASK_WDT', 106, 1), ('wdt', 'TASK_WDT', 107, 1), ('powerloss_cmd', 'SOFTWARE_RESET', 207, 1), ('power_cycle', 'POWER_ON', 207, 1), ('powerloss_cmd', 'SOFTWARE_RESET', 310, 1), ('power_cycle', 'POWER_ON', 313, 0), ('wdt', 'TASK_WDT', 315, 1), ('wdt', 'TASK_WDT', 315, 1), ('brownout', 'BROWNOUT', 315, 1), ('deep_sleep', 'DEEP_SLEEP', 317, 1), ('deep_sleep', 'DEEP_SLEEP', 319, 1), ('wdt', 'TASK_WDT', 319, 1), ('wdt', 'TASK_WDT', 320, 0)]" /></properties><failure message="AssertionError: relay ON after 6 emergency resets: [('wdt', 'TASK_WDT', 106, 1), ('wdt', 'TASK_WDT', 107, 1), ('wdt', 'TASK_WDT', 315, 1), ('wdt', 'TASK_WDT', 315, 1), ('brownout', 'BROWNOUT', 315, 1), ('wdt', 'TASK_WDT', 319, 1)] | persistent counter jumped/rolled back 3x: [(4, 104), (107, 207), (207, 310)]&#10;assert not [&quot;relay ON after 6 emergency resets: [('wdt', 'TASK_WDT', 106, 1), ('wdt', 'TASK_WDT', 107, 1), ('wdt', 'TASK_WDT', 31...315, 1), ('wdt', 'TASK_WDT', 319, 1)]&quot;, 'persistent counter jumped/rolled back 3x: [(4, 104), (107, 207), (207, 310)]']">dut = &lt;dut.Device object at 0x7fc7daeef6b0&gt;, seed = 11
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dadc9ee0&gt;
+
+    @pytest.mark.req("R1", "R4", "R5", "R6")
+    @pytest.mark.parametrize("seed", [11, 22])
+    def test_REC01_mixed_fault_storm_x20(dut, seed, record_property):
+        """TC-REC-01: 20 random faults (WDT, brown-out, power cut, interrupted save, deep sleep) with random activity
+        in between -&gt; every time ACTIVE within 5 s, relay OFF after emergency resets, no boot loop, CLI works."""
+        rnd = random.Random(seed)
+        history = []
+        for i in range(20):
+            for _ in range(rnd.randint(0, 3)):
+                c = rnd.choice(["relay on", "relay off", "save", "sensor", "status"])
+                dut.send(c)
+                dut.wait(rnd.uniform(20, 200))
+            kind = rnd.choice(list(RECOVERIES))
+            RECOVERIES[kind](dut)
+            st = dut.status()
+            history.append((kind, st["reset_reason"], st["counter"], dut.relay()))
+        boot_idx = dut.current_boot().idx
+        dut.wait(10000)
+        record_property("history_kind_reason_counter_relay", history)
+        problems = []
+        if resets_since(dut, boot_idx):
+            problems.append("device keeps resetting after the fault storm")
+        unsafe = [h for h in history if h[0] in ("wdt", "brownout") and h[3] == 1]
+        if unsafe:
+            problems.append(f"relay ON after {len(unsafe)} emergency resets: {unsafe}")
+        counters = [h[2] for h in history]
+        jumps = [(a, b) for a, b in zip(counters, counters[1:]) if b &lt; a or b - a &gt; 10]
+        if jumps:
+            problems.append(f"persistent counter jumped/rolled back {len(jumps)}x: {jumps}")
+&gt;       assert not problems, " | ".join(problems)
+E       AssertionError: relay ON after 6 emergency resets: [('wdt', 'TASK_WDT', 106, 1), ('wdt', 'TASK_WDT', 107, 1), ('wdt', 'TASK_WDT', 315, 1), ('wdt', 'TASK_WDT', 315, 1), ('brownout', 'BROWNOUT', 315, 1), ('wdt', 'TASK_WDT', 319, 1)] | persistent counter jumped/rolled back 3x: [(4, 104), (107, 207), (207, 310)]
+E       assert not ["relay ON after 6 emergency resets: [('wdt', 'TASK_WDT', 106, 1), ('wdt', 'TASK_WDT', 107, 1), ('wdt', 'TASK_WDT', 31...315, 1), ('wdt', 'TASK_WDT', 319, 1)]", 'persistent counter jumped/rolled back 3x: [(4, 104), (107, 207), (207, 310)]']
+
+tests/test_07_stability.py:38: AssertionError</failure></testcase><testcase classname="tests.test_07_stability" name="test_REC01_mixed_fault_storm_x20[22]" file="tests/test_07_stability.py" line="8" time="4.145"><properties><property name="history_kind_reason_counter_relay" value="[('powerloss_cmd', 'SOFTWARE_RESET', 101, 0), ('power_cycle', 'POWER_ON', 102, 1), ('brownout', 'BROWNOUT', 102, 1), ('deep_sleep', 'DEEP_SLEEP', 104, 1), ('brownout', 'BROWNOUT', 107, 1), ('deep_sleep', 'DEEP_SLEEP', 108, 1), ('power_cycle', 'POWER_ON', 108, 1), ('deep_sleep', 'DEEP_SLEEP', 110, 1), ('brownout', 'BROWNOUT', 111, 1), ('deep_sleep', 'DEEP_SLEEP', 115, 1), ('wdt', 'TASK_WDT', 117, 0), ('deep_sleep', 'DEEP_SLEEP', 118, 0), ('wdt', 'TASK_WDT', 119, 1), ('wdt', 'TASK_WDT', 119, 1), ('powerloss_cmd', 'SOFTWARE_RESET', 219, 1), ('powerloss_cmd', 'SOFTWARE_RESET', 320, 0), ('powerloss_cmd', 'SOFTWARE_RESET', 422, 0), ('wdt', 'TASK_WDT', 422, 0), ('wdt', 'TASK_WDT', 423, 0), ('brownout', 'BROWNOUT', 423, 0)]" /></properties><failure message="AssertionError: relay ON after 5 emergency resets: [('brownout', 'BROWNOUT', 102, 1), ('brownout', 'BROWNOUT', 107, 1), ('brownout', 'BROWNOUT', 111, 1), ('wdt', 'TASK_WDT', 119, 1), ('wdt', 'TASK_WDT', 119, 1)] | persistent counter jumped/rolled back 3x: [(119, 219), (219, 320), (320, 422)]&#10;assert not [&quot;relay ON after 5 emergency resets: [('brownout', 'BROWNOUT', 102, 1), ('brownout', 'BROWNOUT', 107, 1), ('brownout',...9, 1), ('wdt', 'TASK_WDT', 119, 1)]&quot;, 'persistent counter jumped/rolled back 3x: [(119, 219), (219, 320), (320, 422)]']">dut = &lt;dut.Device object at 0x7fc7daeedf40&gt;, seed = 22
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x7fc7dadcbc40&gt;
+
+    @pytest.mark.req("R1", "R4", "R5", "R6")
+    @pytest.mark.parametrize("seed", [11, 22])
+    def test_REC01_mixed_fault_storm_x20(dut, seed, record_property):
+        """TC-REC-01: 20 random faults (WDT, brown-out, power cut, interrupted save, deep sleep) with random activity
+        in between -&gt; every time ACTIVE within 5 s, relay OFF after emergency resets, no boot loop, CLI works."""
+        rnd = random.Random(seed)
+        history = []
+        for i in range(20):
+            for _ in range(rnd.randint(0, 3)):
+                c = rnd.choice(["relay on", "relay off", "save", "sensor", "status"])
+                dut.send(c)
+                dut.wait(rnd.uniform(20, 200))
+            kind = rnd.choice(list(RECOVERIES))
+            RECOVERIES[kind](dut)
+            st = dut.status()
+            history.append((kind, st["reset_reason"], st["counter"], dut.relay()))
+        boot_idx = dut.current_boot().idx
+        dut.wait(10000)
+        record_property("history_kind_reason_counter_relay", history)
+        problems = []
+        if resets_since(dut, boot_idx):
+            problems.append("device keeps resetting after the fault storm")
+        unsafe = [h for h in history if h[0] in ("wdt", "brownout") and h[3] == 1]
+        if unsafe:
+            problems.append(f"relay ON after {len(unsafe)} emergency resets: {unsafe}")
+        counters = [h[2] for h in history]
+        jumps = [(a, b) for a, b in zip(counters, counters[1:]) if b &lt; a or b - a &gt; 10]
+        if jumps:
+            problems.append(f"persistent counter jumped/rolled back {len(jumps)}x: {jumps}")
+&gt;       assert not problems, " | ".join(problems)
+E       AssertionError: relay ON after 5 emergency resets: [('brownout', 'BROWNOUT', 102, 1), ('brownout', 'BROWNOUT', 107, 1), ('brownout', 'BROWNOUT', 111, 1), ('wdt', 'TASK_WDT', 119, 1), ('wdt', 'TASK_WDT', 119, 1)] | persistent counter jumped/rolled back 3x: [(119, 219), (219, 320), (320, 422)]
+E       assert not ["relay ON after 5 emergency resets: [('brownout', 'BROWNOUT', 102, 1), ('brownout', 'BROWNOUT', 107, 1), ('brownout',...9, 1), ('wdt', 'TASK_WDT', 119, 1)]", 'persistent counter jumped/rolled back 3x: [(119, 219), (219, 320), (320, 422)]']
+
+tests/test_07_stability.py:38: AssertionError</failure></testcase></testsuite></testsuites>

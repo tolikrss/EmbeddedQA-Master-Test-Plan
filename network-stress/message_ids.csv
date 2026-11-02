@@ -1,0 +1,11 @@
+firmware,scenario,queued_count,queued_ids,published_count,published_unique,published_ids_in_order,lost_ids
+buggy,BUF02_buffer_flushed_exactly_once,5,1 2 3 4 5,10,5,1 1 2 2 3 3 4 4 5 5,
+buggy,BUF04_drop_oldest_keeps_newest_in_order[8],8,1 2 3 4 5 6 7 8,16,8,1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8,
+buggy,BUF04_drop_oldest_keeps_newest_in_order[9],9,1 2 3 4 5 6 7 8 9,18,8,9 9 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9,1
+buggy,BUF04_drop_oldest_keeps_newest_in_order[12],12,1 2 3 4 5 6 7 8 9 10 11 12,24,8,9 9 10 10 11 11 12 12 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12,1 2 3 4
+buggy,DUP01_no_duplicate_ids_over_5_flaps,15,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15,30,15,1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15,
+demo,BUF02_buffer_flushed_exactly_once,5,1 2 3 4 5,5,5,1 2 3 4 5,
+demo,BUF04_drop_oldest_keeps_newest_in_order[8],8,1 2 3 4 5 6 7 8,8,8,1 2 3 4 5 6 7 8,
+demo,BUF04_drop_oldest_keeps_newest_in_order[9],9,1 2 3 4 5 6 7 8 9,8,8,2 3 4 5 6 7 8 9,1
+demo,BUF04_drop_oldest_keeps_newest_in_order[12],12,1 2 3 4 5 6 7 8 9 10 11 12,8,8,5 6 7 8 9 10 11 12,1 2 3 4
+demo,DUP01_no_duplicate_ids_over_5_flaps,15,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15,15,15,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15,

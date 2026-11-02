@@ -1,0 +1,15 @@
+$timescale 1us $end
+$scope module logic $end
+$var wire 1 ! D0_RAW_GPIO18 $end
+$var wire 1 " D1_GPIO2_LOGICAL $end
+$upscope $end
+$enddefinitions $end
+#0
+1!
+0"
+#1007000
+0!
+#1008014
+1"
+#1012000
+1!

@@ -1,0 +1,495 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.7] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       42.1] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       46.6] b0  RX  ets Jul 29 2019 12:21:46
+[       46.7] b0  RX  
+[       47.0] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      350.5] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      352.3] b0  RX  [BOOT] reset_reason=POWER_ON
+[      353.1] b0  HW  WDT_ADD loopTask
+[      353.5] b0  RX  [WDT] enabled timeout=4000 ms
+[      353.9] b0  RX  Commands:
+[      354.0] b0  RX    help
+[      354.0] b0  RX    status
+[      354.1] b0  RX    sensor
+[      354.1] b0  RX    relay on
+[      354.2] b0  RX    relay off
+[      354.3] b0  RX    save
+[      354.3] b0  RX    sleep <seconds>
+[      354.4] b0  RX    hang
+[      354.7] b0  RX    powerloss
+[      355.0] b0  RX    reboot
+[      359.9] b0  TX  status
+[      362.8] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      382.4] b0  TX  status
+[      385.7] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      393.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[      394.5] b0  HW  BTN level=0
+[      395.9] b0  HW  GPIO pin=5 level=1
+[      396.0] b0  HW  GPIO pin=2 level=1
+[      398.3] b0  HW  BTN level=1
+[      399.8] b0  HW  BTN level=0
+[      404.7] b0  HW  BTN level=1
+[      405.4] b0  HW  BTN level=0
+[      405.8] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      435.3] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      436.0] b0  RX  [STORE] saved
+[      436.3] b0  RX  [BUTTON] relay=ON
+[      555.8] b0  HW  BTN level=1
+[      557.3] b0  HW  BTN level=0
+[      557.3] b0  HW  GPIO pin=5 level=0
+[      557.3] b0  HW  GPIO pin=2 level=0
+[      563.7] b0  HW  BTN level=1
+[      565.6] b0  HW  BTN level=0
+[      566.2] b0  HW  BTN level=1
+[      570.1] b0  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[      602.6] b0  HW  NVS_COMMIT #4 write key=qa-lab/relay
+[      603.4] b0  RX  [STORE] saved
+[      604.0] b0  RX  [BUTTON] relay=OFF
+[      626.7] b0  HW  BTNSEQ_DONE
+[      783.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[      784.8] b0  HW  BTN level=0
+[      785.7] b0  HW  GPIO pin=5 level=1
+[      785.8] b0  HW  GPIO pin=2 level=1
+[      786.6] b0  HW  BTN level=1
+[      788.1] b0  HW  BTN level=0
+[      790.2] b0  HW  BTN level=1
+[      791.7] b0  HW  BTN level=0
+[      793.3] b0  HW  NVS_COMMIT #5 write key=qa-lab/counter
+[      824.6] b0  HW  NVS_COMMIT #6 write key=qa-lab/relay
+[      825.9] b0  RX  [STORE] saved
+[      826.2] b0  RX  [BUTTON] relay=ON
+[      942.1] b0  HW  BTN level=1
+[      944.1] b0  HW  BTN level=0
+[      944.4] b0  HW  GPIO pin=5 level=0
+[      944.4] b0  HW  GPIO pin=2 level=0
+[      946.4] b0  HW  BTN level=1
+[      950.5] b0  HW  BTN level=0
+[      952.2] b0  HW  BTN level=1
+[      955.5] b0  HW  NVS_COMMIT #7 write key=qa-lab/counter
+[      987.8] b0  HW  NVS_COMMIT #8 write key=qa-lab/relay
+[      988.2] b0  RX  [STORE] saved
+[      988.8] b0  RX  [BUTTON] relay=OFF
+[     1013.7] b0  HW  BTNSEQ_DONE
+[     1176.0] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     1176.7] b0  HW  BTN level=0
+[     1178.0] b0  HW  GPIO pin=5 level=1
+[     1178.1] b0  HW  GPIO pin=2 level=1
+[     1178.3] b0  HW  BTN level=1
+[     1179.6] b0  HW  BTN level=0
+[     1181.5] b0  HW  BTN level=1
+[     1182.4] b0  HW  BTN level=0
+[     1185.9] b0  HW  NVS_COMMIT #9 write key=qa-lab/counter
+[     1217.8] b0  HW  NVS_COMMIT #10 write key=qa-lab/relay
+[     1220.0] b0  RX  [STORE] saved
+[     1220.3] b0  RX  [BUTTON] relay=ON
+[     1332.7] b0  HW  BTN level=1
+[     1334.3] b0  HW  BTN level=0
+[     1335.3] b0  HW  GPIO pin=5 level=0
+[     1335.4] b0  HW  BTN level=1
+[     1335.8] b0  HW  GPIO pin=2 level=0
+[     1337.0] b0  HW  BTN level=0
+[     1338.0] b0  HW  BTN level=1
+[     1341.9] b0  HW  NVS_COMMIT #11 write key=qa-lab/counter
+[     1373.4] b0  HW  NVS_COMMIT #12 write key=qa-lab/relay
+[     1374.6] b0  RX  [STORE] saved
+[     1374.7] b0  RX  [BUTTON] relay=OFF
+[     1398.6] b0  HW  BTNSEQ_DONE
+[     1555.6] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     1556.4] b0  HW  BTN level=0
+[     1557.5] b0  HW  GPIO pin=5 level=1
+[     1557.6] b0  HW  GPIO pin=2 level=1
+[     1558.1] b0  HW  BTN level=1
+[     1559.3] b0  HW  BTN level=0
+[     1561.1] b0  HW  BTN level=1
+[     1561.7] b0  HW  BTN level=0
+[     1564.9] b0  HW  NVS_COMMIT #13 write key=qa-lab/counter
+[     1595.9] b0  HW  NVS_COMMIT #14 write key=qa-lab/relay
+[     1597.5] b0  RX  [STORE] saved
+[     1597.6] b0  RX  [BUTTON] relay=ON
+[     1712.7] b0  HW  BTN level=1
+[     1714.2] b0  HW  BTN level=0
+[     1715.7] b0  HW  BTN level=1
+[     1717.4] b0  HW  BTN level=0
+[     1717.4] b0  HW  GPIO pin=5 level=0
+[     1717.4] b0  HW  GPIO pin=2 level=0
+[     1718.1] b0  HW  BTN level=1
+[     1724.3] b0  HW  NVS_COMMIT #15 write key=qa-lab/counter
+[     1755.5] b0  HW  NVS_COMMIT #16 write key=qa-lab/relay
+[     1757.3] b0  RX  [STORE] saved
+[     1757.4] b0  RX  [BUTTON] relay=OFF
+[     1778.6] b0  HW  BTNSEQ_DONE
+[     1931.9] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     1932.7] b0  HW  BTN level=0
+[     1933.5] b0  HW  GPIO pin=5 level=1
+[     1933.7] b0  HW  GPIO pin=2 level=1
+[     1936.1] b0  HW  BTN level=1
+[     1937.7] b0  HW  BTN level=0
+[     1939.9] b0  HW  BTN level=1
+[     1941.6] b0  HW  BTN level=0
+[     1941.9] b0  HW  NVS_COMMIT #17 write key=qa-lab/counter
+[     1974.2] b0  HW  NVS_COMMIT #18 write key=qa-lab/relay
+[     1975.4] b0  RX  [STORE] saved
+[     1975.6] b0  RX  [BUTTON] relay=ON
+[     2092.5] b0  HW  BTN level=1
+[     2094.4] b0  HW  BTN level=0
+[     2095.1] b0  HW  GPIO pin=5 level=0
+[     2095.1] b0  HW  GPIO pin=2 level=0
+[     2096.9] b0  HW  BTN level=1
+[     2098.6] b0  HW  BTN level=0
+[     2099.3] b0  HW  BTN level=1
+[     2101.4] b0  HW  NVS_COMMIT #19 write key=qa-lab/counter
+[     2131.8] b0  HW  NVS_COMMIT #20 write key=qa-lab/relay
+[     2134.4] b0  RX  [STORE] saved
+[     2134.5] b0  RX  [BUTTON] relay=OFF
+[     2161.4] b0  HW  BTNSEQ_DONE
+[     2319.4] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     2320.5] b0  HW  BTN level=0
+[     2321.4] b0  HW  GPIO pin=5 level=1
+[     2321.4] b0  HW  GPIO pin=2 level=1
+[     2322.1] b0  HW  BTN level=1
+[     2323.3] b0  HW  BTN level=0
+[     2325.0] b0  HW  BTN level=1
+[     2327.0] b0  HW  BTN level=0
+[     2328.3] b0  HW  NVS_COMMIT #21 write key=qa-lab/counter
+[     2359.7] b0  HW  NVS_COMMIT #22 write key=qa-lab/relay
+[     2361.1] b0  RX  [STORE] saved
+[     2361.3] b0  RX  [BUTTON] relay=ON
+[     2477.8] b0  HW  BTN level=1
+[     2479.6] b0  HW  BTN level=0
+[     2480.3] b0  HW  GPIO pin=5 level=0
+[     2480.5] b0  HW  GPIO pin=2 level=0
+[     2482.1] b0  HW  BTN level=1
+[     2483.8] b0  HW  BTN level=0
+[     2484.8] b0  HW  BTN level=1
+[     2486.9] b0  HW  NVS_COMMIT #23 write key=qa-lab/counter
+[     2517.6] b0  HW  NVS_COMMIT #24 write key=qa-lab/relay
+[     2519.3] b0  RX  [STORE] saved
+[     2519.5] b0  RX  [BUTTON] relay=OFF
+[     2546.0] b0  HW  BTNSEQ_DONE
+[     2706.8] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     2707.7] b0  HW  BTN level=0
+[     2708.3] b0  HW  GPIO pin=5 level=1
+[     2708.3] b0  HW  GPIO pin=2 level=1
+[     2711.5] b0  HW  BTN level=1
+[     2714.1] b0  HW  BTN level=0
+[     2716.0] b0  HW  BTN level=1
+[     2717.1] b0  HW  BTN level=0
+[     2719.7] b0  HW  NVS_COMMIT #25 write key=qa-lab/counter
+[     2752.3] b0  HW  NVS_COMMIT #26 write key=qa-lab/relay
+[     2754.4] b0  RX  [STORE] saved
+[     2755.7] b0  RX  [BUTTON] relay=ON
+[     2868.0] b0  HW  BTN level=1
+[     2869.7] b0  HW  BTN level=0
+[     2869.9] b0  HW  GPIO pin=5 level=0
+[     2869.9] b0  HW  GPIO pin=2 level=0
+[     2870.4] b0  HW  BTN level=1
+[     2871.5] b0  HW  BTN level=0
+[     2872.4] b0  HW  BTN level=1
+[     2876.7] b0  HW  NVS_COMMIT #27 write key=qa-lab/counter
+[     2908.2] b0  HW  NVS_COMMIT #28 write key=qa-lab/relay
+[     2910.0] b0  RX  [STORE] saved
+[     2910.7] b0  RX  [BUTTON] relay=OFF
+[     2933.5] b0  HW  BTNSEQ_DONE
+[     3087.3] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     3087.7] b0  HW  BTN level=0
+[     3089.2] b0  HW  BTN level=1
+[     3090.3] b0  HW  BTN level=0
+[     3091.3] b0  HW  GPIO pin=5 level=1
+[     3091.4] b0  HW  GPIO pin=2 level=1
+[     3091.9] b0  HW  BTN level=1
+[     3093.0] b0  HW  BTN level=0
+[     3100.4] b0  HW  NVS_COMMIT #29 write key=qa-lab/counter
+[     3133.0] b0  HW  NVS_COMMIT #30 write key=qa-lab/relay
+[     3133.8] b0  RX  [STORE] saved
+[     3134.0] b0  RX  [BUTTON] relay=ON
+[     3243.8] b0  HW  BTN level=1
+[     3245.5] b0  HW  BTN level=0
+[     3246.5] b0  HW  GPIO pin=5 level=0
+[     3246.6] b0  HW  GPIO pin=2 level=0
+[     3248.6] b0  HW  BTN level=1
+[     3251.4] b0  HW  BTN level=0
+[     3252.7] b0  HW  BTN level=1
+[     3256.9] b0  HW  NVS_COMMIT #31 write key=qa-lab/counter
+[     3288.8] b0  HW  NVS_COMMIT #32 write key=qa-lab/relay
+[     3291.0] b0  RX  [STORE] saved
+[     3291.6] b0  RX  [BUTTON] relay=OFF
+[     3313.0] b0  HW  BTNSEQ_DONE
+[     3469.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     3471.2] b0  HW  BTN level=0
+[     3472.8] b0  HW  BTN level=1
+[     3474.2] b0  HW  BTN level=0
+[     3475.5] b0  HW  GPIO pin=5 level=1
+[     3475.6] b0  HW  GPIO pin=2 level=1
+[     3476.0] b0  HW  BTN level=1
+[     3476.8] b0  HW  BTN level=0
+[     3483.4] b0  HW  NVS_COMMIT #33 write key=qa-lab/counter
+[     3516.1] b0  HW  NVS_COMMIT #34 write key=qa-lab/relay
+[     3518.1] b0  RX  [STORE] saved
+[     3518.4] b0  RX  [BUTTON] relay=ON
+[     3627.7] b0  HW  BTN level=1
+[     3629.5] b0  HW  BTN level=0
+[     3630.9] b0  HW  BTN level=1
+[     3632.3] b0  HW  BTN level=0
+[     3633.0] b0  HW  GPIO pin=5 level=0
+[     3633.1] b0  HW  GPIO pin=2 level=0
+[     3633.2] b0  HW  BTN level=1
+[     3640.1] b0  HW  NVS_COMMIT #35 write key=qa-lab/counter
+[     3672.6] b0  HW  NVS_COMMIT #36 write key=qa-lab/relay
+[     3674.7] b0  RX  [STORE] saved
+[     3674.9] b0  RX  [BUTTON] relay=OFF
+[     3694.4] b0  HW  BTNSEQ_DONE
+[     3849.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     3850.1] b0  HW  BTN level=0
+[     3850.9] b0  HW  GPIO pin=5 level=1
+[     3851.0] b0  HW  GPIO pin=2 level=1
+[     3852.5] b0  HW  BTN level=1
+[     3853.4] b0  HW  BTN level=0
+[     3855.4] b0  HW  BTN level=1
+[     3856.5] b0  HW  BTN level=0
+[     3859.2] b0  HW  NVS_COMMIT #37 write key=qa-lab/counter
+[     3891.4] b0  HW  NVS_COMMIT #38 write key=qa-lab/relay
+[     3892.9] b0  RX  [STORE] saved
+[     3895.6] b0  RX  [BUTTON] relay=ON
+[     4007.5] b0  HW  BTN level=1
+[     4009.6] b0  HW  BTN level=0
+[     4010.5] b0  HW  BTN level=1
+[     4012.3] b0  HW  BTN level=0
+[     4013.5] b0  HW  BTN level=1
+[     4074.4] b0  HW  BTNSEQ_DONE
+[     4234.6] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     4236.2] b0  HW  BTN level=0
+[     4237.0] b0  HW  GPIO pin=5 level=0
+[     4237.0] b0  HW  GPIO pin=2 level=0
+[     4238.0] b0  HW  BTN level=1
+[     4239.6] b0  HW  BTN level=0
+[     4241.2] b0  HW  BTN level=1
+[     4242.6] b0  HW  BTN level=0
+[     4247.5] b0  HW  NVS_COMMIT #39 write key=qa-lab/counter
+[     4278.5] b0  HW  NVS_COMMIT #40 write key=qa-lab/relay
+[     4279.8] b0  RX  [STORE] saved
+[     4281.4] b0  RX  [BUTTON] relay=OFF
+[     4393.3] b0  HW  BTN level=1
+[     4395.3] b0  HW  BTN level=0
+[     4396.1] b0  HW  GPIO pin=5 level=1
+[     4396.1] b0  HW  BTN level=1
+[     4396.4] b0  HW  GPIO pin=2 level=1
+[     4398.0] b0  HW  BTN level=0
+[     4399.2] b0  HW  BTN level=1
+[     4402.7] b0  HW  NVS_COMMIT #41 write key=qa-lab/counter
+[     4434.9] b0  HW  NVS_COMMIT #42 write key=qa-lab/relay
+[     4435.7] b0  RX  [STORE] saved
+[     4437.2] b0  RX  [BUTTON] relay=ON
+[     4459.9] b0  HW  BTNSEQ_DONE
+[     4616.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     4617.6] b0  HW  BTN level=0
+[     4617.9] b0  HW  GPIO pin=5 level=0
+[     4618.0] b0  HW  GPIO pin=2 level=0
+[     4619.5] b0  HW  BTN level=1
+[     4620.8] b0  HW  BTN level=0
+[     4622.7] b0  HW  BTN level=1
+[     4623.8] b0  HW  BTN level=0
+[     4625.8] b0  HW  NVS_COMMIT #43 write key=qa-lab/counter
+[     4658.7] b0  HW  NVS_COMMIT #44 write key=qa-lab/relay
+[     4659.8] b0  RX  [STORE] saved
+[     4662.1] b0  RX  [BUTTON] relay=OFF
+[     4774.3] b0  HW  BTN level=1
+[     4776.0] b0  HW  BTN level=0
+[     4776.9] b0  HW  GPIO pin=5 level=1
+[     4777.0] b0  HW  GPIO pin=2 level=1
+[     4779.7] b0  HW  BTN level=1
+[     4781.5] b0  HW  BTN level=0
+[     4782.6] b0  HW  BTN level=1
+[     4787.5] b0  HW  NVS_COMMIT #45 write key=qa-lab/counter
+[     4819.9] b0  HW  NVS_COMMIT #46 write key=qa-lab/relay
+[     4821.4] b0  RX  [STORE] saved
+[     4822.1] b0  RX  [BUTTON] relay=ON
+[     4843.3] b0  HW  BTNSEQ_DONE
+[     5006.1] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     5006.5] b0  HW  BTN level=0
+[     5008.3] b0  HW  GPIO pin=5 level=0
+[     5008.4] b0  HW  GPIO pin=2 level=0
+[     5008.8] b0  HW  BTN level=1
+[     5009.9] b0  HW  BTN level=0
+[     5011.5] b0  HW  BTN level=1
+[     5012.6] b0  HW  BTN level=0
+[     5016.4] b0  HW  NVS_COMMIT #47 write key=qa-lab/counter
+[     5048.8] b0  HW  NVS_COMMIT #48 write key=qa-lab/relay
+[     5051.3] b0  RX  [STORE] saved
+[     5051.5] b0  RX  [BUTTON] relay=OFF
+[     5163.3] b0  HW  BTN level=1
+[     5164.9] b0  HW  BTN level=0
+[     5165.8] b0  HW  BTN level=1
+[     5167.3] b0  HW  BTN level=0
+[     5167.8] b0  HW  GPIO pin=5 level=1
+[     5167.8] b0  HW  GPIO pin=2 level=1
+[     5168.1] b0  HW  BTN level=1
+[     5174.9] b0  HW  NVS_COMMIT #49 write key=qa-lab/counter
+[     5207.0] b0  HW  NVS_COMMIT #50 write key=qa-lab/relay
+[     5208.7] b0  RX  [STORE] saved
+[     5209.1] b0  RX  [BUTTON] relay=ON
+[     5229.1] b0  HW  BTNSEQ_DONE
+[     5387.7] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     5388.5] b0  HW  BTN level=0
+[     5389.3] b0  HW  GPIO pin=5 level=0
+[     5389.4] b0  HW  GPIO pin=2 level=0
+[     5390.3] b0  HW  BTN level=1
+[     5391.6] b0  HW  BTN level=0
+[     5393.4] b0  HW  BTN level=1
+[     5394.3] b0  HW  BTN level=0
+[     5399.2] b0  HW  NVS_COMMIT #51 write key=qa-lab/counter
+[     5431.6] b0  HW  NVS_COMMIT #52 write key=qa-lab/relay
+[     5432.2] b0  RX  [STORE] saved
+[     5432.4] b0  RX  [BUTTON] relay=OFF
+[     5545.4] b0  HW  BTN level=1
+[     5547.2] b0  HW  BTN level=0
+[     5548.5] b0  HW  BTN level=1
+[     5550.2] b0  HW  BTN level=0
+[     5550.2] b0  HW  GPIO pin=5 level=1
+[     5550.3] b0  HW  GPIO pin=2 level=1
+[     5551.3] b0  HW  BTN level=1
+[     5559.5] b0  HW  NVS_COMMIT #53 write key=qa-lab/counter
+[     5591.5] b0  HW  NVS_COMMIT #54 write key=qa-lab/relay
+[     5592.5] b0  RX  [STORE] saved
+[     5593.2] b0  RX  [BUTTON] relay=ON
+[     5611.7] b0  HW  BTNSEQ_DONE
+[     5764.3] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     5765.2] b0  HW  BTN level=0
+[     5766.6] b0  HW  GPIO pin=5 level=0
+[     5766.7] b0  HW  GPIO pin=2 level=0
+[     5767.3] b0  HW  BTN level=1
+[     5769.4] b0  HW  BTN level=0
+[     5771.4] b0  HW  BTN level=1
+[     5773.0] b0  HW  BTN level=0
+[     5775.5] b0  HW  NVS_COMMIT #55 write key=qa-lab/counter
+[     5807.8] b0  HW  NVS_COMMIT #56 write key=qa-lab/relay
+[     5809.4] b0  RX  [STORE] saved
+[     5809.5] b0  RX  [BUTTON] relay=OFF
+[     5924.0] b0  HW  BTN level=1
+[     5925.6] b0  HW  BTN level=0
+[     5925.8] b0  HW  GPIO pin=5 level=1
+[     5926.0] b0  HW  GPIO pin=2 level=1
+[     5926.5] b0  HW  BTN level=1
+[     5928.3] b0  HW  BTN level=0
+[     5929.3] b0  HW  BTN level=1
+[     5933.8] b0  HW  NVS_COMMIT #57 write key=qa-lab/counter
+[     5966.3] b0  HW  NVS_COMMIT #58 write key=qa-lab/relay
+[     5967.3] b0  RX  [STORE] saved
+[     5967.4] b0  RX  [BUTTON] relay=ON
+[     5989.7] b0  HW  BTNSEQ_DONE
+[     6145.3] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     6146.1] b0  HW  BTN level=0
+[     6146.4] b0  HW  GPIO pin=5 level=0
+[     6147.2] b0  HW  GPIO pin=2 level=0
+[     6148.2] b0  HW  BTN level=1
+[     6149.4] b0  HW  BTN level=0
+[     6151.1] b0  HW  BTN level=1
+[     6152.0] b0  HW  BTN level=0
+[     6153.9] b0  HW  NVS_COMMIT #59 write key=qa-lab/counter
+[     6185.6] b0  HW  NVS_COMMIT #60 write key=qa-lab/relay
+[     6187.5] b0  RX  [STORE] saved
+[     6187.6] b0  RX  [BUTTON] relay=OFF
+[     6302.9] b0  HW  BTN level=1
+[     6304.4] b0  HW  BTN level=0
+[     6305.2] b0  HW  GPIO pin=5 level=1
+[     6305.3] b0  HW  GPIO pin=2 level=1
+[     6305.8] b0  HW  BTN level=1
+[     6307.6] b0  HW  BTN level=0
+[     6308.6] b0  HW  BTN level=1
+[     6311.2] b0  HW  NVS_COMMIT #61 write key=qa-lab/counter
+[     6342.1] b0  HW  NVS_COMMIT #62 write key=qa-lab/relay
+[     6343.5] b0  RX  [STORE] saved
+[     6344.2] b0  RX  [BUTTON] relay=ON
+[     6369.1] b0  HW  BTNSEQ_DONE
+[     6523.8] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     6525.0] b0  HW  BTN level=0
+[     6525.1] b0  HW  GPIO pin=5 level=0
+[     6525.1] b0  HW  GPIO pin=2 level=0
+[     6526.5] b0  HW  BTN level=1
+[     6527.8] b0  HW  BTN level=0
+[     6529.2] b0  HW  BTN level=1
+[     6529.9] b0  HW  BTN level=0
+[     6533.6] b0  HW  NVS_COMMIT #63 write key=qa-lab/counter
+[     6565.4] b0  HW  NVS_COMMIT #64 write key=qa-lab/relay
+[     6567.4] b0  RX  [STORE] saved
+[     6568.0] b0  RX  [BUTTON] relay=OFF
+[     6680.8] b0  HW  BTN level=1
+[     6682.3] b0  HW  BTN level=0
+[     6683.3] b0  HW  GPIO pin=5 level=1
+[     6683.3] b0  HW  GPIO pin=2 level=1
+[     6683.7] b0  HW  BTN level=1
+[     6685.7] b0  HW  BTN level=0
+[     6686.5] b0  HW  BTN level=1
+[     6692.1] b0  HW  NVS_COMMIT #65 write key=qa-lab/counter
+[     6722.6] b0  HW  NVS_COMMIT #66 write key=qa-lab/relay
+[     6723.8] b0  RX  [STORE] saved
+[     6725.2] b0  RX  [BUTTON] relay=ON
+[     6747.4] b0  HW  BTNSEQ_DONE
+[     6901.4] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     6902.3] b0  HW  BTN level=0
+[     6903.8] b0  HW  BTN level=1
+[     6905.4] b0  HW  BTN level=0
+[     6905.7] b0  HW  GPIO pin=5 level=0
+[     6905.9] b0  HW  GPIO pin=2 level=0
+[     6907.5] b0  HW  BTN level=1
+[     6908.8] b0  HW  BTN level=0
+[     6912.4] b0  HW  NVS_COMMIT #67 write key=qa-lab/counter
+[     6943.4] b0  HW  NVS_COMMIT #68 write key=qa-lab/relay
+[     6944.5] b0  RX  [STORE] saved
+[     6944.8] b0  RX  [BUTTON] relay=OFF
+[     7059.6] b0  HW  BTN level=1
+[     7060.6] b0  HW  BTN level=0
+[     7061.6] b0  HW  BTN level=1
+[     7062.9] b0  HW  BTN level=0
+[     7063.7] b0  HW  BTN level=1
+[     7124.0] b0  HW  BTNSEQ_DONE
+[     7278.3] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     7279.4] b0  HW  BTN level=0
+[     7279.6] b0  HW  GPIO pin=5 level=1
+[     7280.7] b0  HW  GPIO pin=2 level=1
+[     7281.5] b0  HW  BTN level=1
+[     7282.7] b0  HW  BTN level=0
+[     7284.1] b0  HW  BTN level=1
+[     7284.8] b0  HW  BTN level=0
+[     7290.1] b0  HW  NVS_COMMIT #69 write key=qa-lab/counter
+[     7321.8] b0  HW  NVS_COMMIT #70 write key=qa-lab/relay
+[     7322.9] b0  RX  [STORE] saved
+[     7323.2] b0  RX  [BUTTON] relay=ON
+[     7435.7] b0  HW  BTN level=1
+[     7437.8] b0  HW  BTN level=0
+[     7438.8] b0  HW  GPIO pin=5 level=0
+[     7439.1] b0  HW  BTN level=1
+[     7439.1] b0  HW  GPIO pin=2 level=0
+[     7440.4] b0  HW  BTN level=0
+[     7441.4] b0  HW  BTN level=1
+[     7446.5] b0  HW  NVS_COMMIT #71 write key=qa-lab/counter
+[     7476.8] b0  HW  NVS_COMMIT #72 write key=qa-lab/relay
+[     7478.7] b0  RX  [STORE] saved
+[     7479.2] b0  RX  [BUTTON] relay=OFF
+[     7502.1] b0  HW  BTNSEQ_DONE
+[     7654.4] b0  SYS INJECT BTNSEQ 0:0.8,1:0.6,0:1.2,1:0.4,0:150,1:0.7,0:0.5,1:0.9,0:0.3,1:60
+[     7655.6] b0  HW  BTN level=0
+[     7656.7] b0  HW  GPIO pin=5 level=1
+[     7656.7] b0  HW  GPIO pin=2 level=1
+[     7657.3] b0  HW  BTN level=1
+[     7658.2] b0  HW  BTN level=0
+[     7659.9] b0  HW  BTN level=1
+[     7660.7] b0  HW  BTN level=0
+[     7664.5] b0  HW  NVS_COMMIT #73 write key=qa-lab/counter
+[     7696.4] b0  HW  NVS_COMMIT #74 write key=qa-lab/relay
+[     7697.7] b0  RX  [STORE] saved
+[     7698.7] b0  RX  [BUTTON] relay=ON
+[     7811.1] b0  HW  BTN level=1
+[     7812.3] b0  HW  BTN level=0
+[     7813.8] b0  HW  BTN level=1
+[     7815.4] b0  HW  BTN level=0
+[     7816.1] b0  HW  GPIO pin=5 level=0
+[     7816.2] b0  HW  GPIO pin=2 level=0
+[     7821.3] b0  HW  BTN level=1
+[     7823.1] b0  HW  NVS_COMMIT #75 write key=qa-lab/counter
+[     7856.0] b0  HW  NVS_COMMIT #76 write key=qa-lab/relay
+[     7856.8] b0  RX  [STORE] saved
+[     7857.0] b0  RX  [BUTTON] relay=OFF
+[     7882.2] b0  HW  BTNSEQ_DONE
+[     8041.2] b0  TX  status
+[     8043.5] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":38,"heap":298412,"sensor_ok":true}

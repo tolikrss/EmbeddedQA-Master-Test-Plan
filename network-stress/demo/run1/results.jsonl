@@ -1,0 +1,21 @@
+{"test": "test_NET01_no_hang_during_outage", "outcome": "passed", "measured": {"status_answered_of_5": "5"}, "message": ""}
+{"test": "test_NET02_backoff_grows_no_reconnect_storm", "outcome": "passed", "measured": {"attempts_20s": "6", "backoff_seq_first10": "[500, 1000, 2000, 4000, 8000, 8000]"}, "message": ""}
+{"test": "test_NET03_recovery_after_net_up", "outcome": "passed", "measured": {"recovery_ms": "0.3", "state_after": "CONNECTED"}, "message": ""}
+{"test": "test_BUF01_offline_messages_are_buffered", "outcome": "passed", "measured": {"queued_ids": "[1, 2, 3, 4, 5]", "buffer_line": "[\"[BUFFER] count=5 capacity=8 dropped=0\"]"}, "message": ""}
+{"test": "test_BUF02_buffer_flushed_exactly_once", "outcome": "passed", "measured": {"queued": "[1, 2, 3, 4, 5]", "published": "[1, 2, 3, 4, 5]", "status": "{\"net\": \"CONNECTED\", \"broker\": true, \"buffer\": 0, \"capacity\": 8, \"sent\": 5, \"dropped\": 0, \"duplicates\": 0, \"reconnect_attempts\": 2, \"heap\": 286847}"}, "message": ""}
+{"test": "test_BUF03_capacity_boundary_counters[7]", "outcome": "passed", "measured": {"sent_offline": "7", "buffer": "7", "dropped": "0"}, "message": ""}
+{"test": "test_BUF03_capacity_boundary_counters[8]", "outcome": "passed", "measured": {"sent_offline": "8", "buffer": "8", "dropped": "0"}, "message": ""}
+{"test": "test_BUF03_capacity_boundary_counters[9]", "outcome": "passed", "measured": {"sent_offline": "9", "buffer": "8", "dropped": "1"}, "message": ""}
+{"test": "test_BUF03_capacity_boundary_counters[12]", "outcome": "passed", "measured": {"sent_offline": "12", "buffer": "8", "dropped": "4"}, "message": ""}
+{"test": "test_BUF04_drop_oldest_keeps_newest_in_order[8]", "outcome": "passed", "measured": {"queued": "[1, 2, 3, 4, 5, 6, 7, 8]", "published": "[1, 2, 3, 4, 5, 6, 7, 8]", "lost_ids": "[]"}, "message": ""}
+{"test": "test_BUF04_drop_oldest_keeps_newest_in_order[9]", "outcome": "passed", "measured": {"queued": "[1, 2, 3, 4, 5, 6, 7, 8, 9]", "published": "[2, 3, 4, 5, 6, 7, 8, 9]", "lost_ids": "[1]"}, "message": ""}
+{"test": "test_BUF04_drop_oldest_keeps_newest_in_order[12]", "outcome": "passed", "measured": {"queued": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]", "published": "[5, 6, 7, 8, 9, 10, 11, 12]", "lost_ids": "[1, 2, 3, 4]"}, "message": ""}
+{"test": "test_DUP01_no_duplicate_ids_over_5_flaps", "outcome": "passed", "measured": {"published_total": "15", "unique_ids": "15", "status_duplicates": "0"}, "message": ""}
+{"test": "test_MEM01_heap_trend_online_stress", "outcome": "passed", "measured": {"heap_series": "[286847, 286847, 286847, 286847, 286847, 286847, 286847, 286847, 286847, 286847, 286847]", "delta_bytes": "0", "bytes_per_message": "0.0"}, "message": ""}
+{"test": "test_MEM02_heap_and_buffer_offline_stress", "outcome": "passed", "measured": {"heap_series": "[286847, 286847, 286847, 286847, 286847, 286847]", "buffer_occupancy_offline": "[8, 8, 8, 8, 8]"}, "message": ""}
+{"test": "test_OBS01_status_has_required_fields", "outcome": "passed", "measured": {"fields": "[\"broker\", \"buffer\", \"capacity\", \"dropped\", \"duplicates\", \"heap\", \"net\", \"reconnect_attempts\", \"sent\"]"}, "message": ""}
+{"test": "test_NEG01_unknown_command_rejected_without_side_effects[HELP]", "outcome": "passed", "measured": {"response": "[\"[CLI] ERROR unknown command\"]"}, "message": ""}
+{"test": "test_NEG01_unknown_command_rejected_without_side_effects[stress 5]", "outcome": "passed", "measured": {"response": "[\"[CLI] ERROR unknown command\"]"}, "message": ""}
+{"test": "test_NEG01_unknown_command_rejected_without_side_effects[NET]", "outcome": "passed", "measured": {"response": "[\"[CLI] ERROR unknown command\"]"}, "message": ""}
+{"test": "test_NEG01_unknown_command_rejected_without_side_effects[NET SIDEWAYS]", "outcome": "passed", "measured": {"response": "[\"[CLI] ERROR unknown command\"]"}, "message": ""}
+{"test": "test_NEG01_unknown_command_rejected_without_side_effects[STATUSX]", "outcome": "passed", "measured": {"response": "[\"[CLI] ERROR unknown command\"]"}, "message": ""}

@@ -1,0 +1,31 @@
+[       0.8 ms] HW GPIO2=1
+[     202.4 ms] RX [BOOT] IoT node ready
+[     202.7 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_NET02_backoff_grows_no_reconnect_storm fw=demo
+[~    202.7 ms] TX NET DOWN
+[     248.1 ms] HW GPIO2=0
+[     248.4 ms] RX [NET] state=DISCONNECTED
+[     248.4 ms] RX [NET] state=BACKOFF
+[     248.5 ms] RX [NET] retry=1 backoff_ms=500
+[     752.0 ms] RX [NET] state=CONNECTING
+[     752.3 ms] RX [NET] reconnect=FAILED
+[     752.4 ms] RX [NET] state=BACKOFF
+[     752.4 ms] RX [NET] retry=2 backoff_ms=1000
+[    1754.9 ms] RX [NET] state=CONNECTING
+[    1755.2 ms] RX [NET] reconnect=FAILED
+[    1755.3 ms] RX [NET] state=BACKOFF
+[    1755.3 ms] RX [NET] retry=3 backoff_ms=2000
+[    3761.2 ms] RX [NET] state=CONNECTING
+[    3761.6 ms] RX [NET] reconnect=FAILED
+[    3761.6 ms] RX [NET] state=BACKOFF
+[    3761.6 ms] RX [NET] retry=4 backoff_ms=4000
+[    7767.0 ms] RX [NET] state=CONNECTING
+[    7767.4 ms] RX [NET] reconnect=FAILED
+[    7767.4 ms] RX [NET] state=BACKOFF
+[    7767.4 ms] RX [NET] retry=5 backoff_ms=8000
+[   15767.2 ms] RX [NET] state=CONNECTING
+[   15767.5 ms] RX [NET] reconnect=FAILED
+[   15767.5 ms] RX [NET] state=BACKOFF
+[   15767.6 ms] RX [NET] retry=6 backoff_ms=8000
+# MEASURED attempts_20s = 6
+# MEASURED backoff_seq_first10 = [500, 1000, 2000, 4000, 8000, 8000]

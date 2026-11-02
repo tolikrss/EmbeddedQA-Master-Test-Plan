@@ -1,0 +1,1745 @@
+[       0.7 ms] HW GPIO2=1
+[     203.6 ms] RX [BOOT] IoT node ready
+[     204.0 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_MEM02_heap_and_buffer_offline_stress fw=buggy
+[~    204.0 ms] TX STATUS
+[     260.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":286847}
+[~    260.4 ms] TX NET DOWN
+[     615.1 ms] HW GPIO2=0
+[     615.4 ms] RX [NET] state=DISCONNECTED
+[     615.4 ms] RX [NET] state=BACKOFF
+[     615.5 ms] RX [NET] retry=1 backoff_ms=500
+[~    615.5 ms] TX STRESS 100
+[     816.7 ms] RX [STRESS] start count=100 heap=286847
+[     817.0 ms] RX [BUFFER] queued id=1 count=1/8
+[     817.0 ms] RX [BUFFER] queued id=2 count=2/8
+[     817.0 ms] RX [BUFFER] queued id=3 count=3/8
+[     817.0 ms] RX [BUFFER] queued id=4 count=4/8
+[     817.1 ms] RX [BUFFER] queued id=5 count=5/8
+[     817.1 ms] RX [BUFFER] queued id=6 count=6/8
+[     817.1 ms] RX [BUFFER] queued id=7 count=7/8
+[     817.1 ms] RX [BUFFER] queued id=8 count=8/8
+[     817.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+[     817.1 ms] RX [BUFFER] queued id=9 count=9/8
+[     817.1 ms] RX [BUFFER] queued id=10 count=10/8
+[     817.1 ms] RX [BUFFER] queued id=11 count=11/8
+[     817.2 ms] RX [BUFFER] queued id=12 count=12/8
+[     817.2 ms] RX [BUFFER] queued id=13 count=13/8
+[     817.2 ms] RX [BUFFER] queued id=14 count=14/8
+[     817.2 ms] RX [BUFFER] queued id=15 count=15/8
+[     817.2 ms] RX [BUFFER] queued id=16 count=16/8
+[     817.2 ms] RX [BUFFER] queued id=17 count=17/8
+[     817.2 ms] RX [BUFFER] queued id=18 count=18/8
+[     817.2 ms] RX [BUFFER] queued id=19 count=19/8
+[     817.4 ms] RX [BUFFER] queued id=20 count=20/8
+[     817.4 ms] RX [BUFFER] queued id=21 count=21/8
+[     817.4 ms] RX [BUFFER] queued id=22 count=22/8
+[     817.4 ms] RX [BUFFER] queued id=23 count=23/8
+[     817.4 ms] RX [BUFFER] queued id=24 count=24/8
+[     817.5 ms] RX [BUFFER] queued id=25 count=25/8
+[     817.5 ms] RX [BUFFER] queued id=26 count=26/8
+[     817.5 ms] RX [BUFFER] queued id=27 count=27/8
+[     817.5 ms] RX [BUFFER] queued id=28 count=28/8
+[     817.5 ms] RX [BUFFER] queued id=29 count=29/8
+[     817.5 ms] RX [BUFFER] queued id=30 count=30/8
+[     817.5 ms] RX [BUFFER] queued id=31 count=31/8
+[     817.5 ms] RX [BUFFER] queued id=32 count=32/8
+[     817.5 ms] RX [BUFFER] queued id=33 count=33/8
+[     817.5 ms] RX [BUFFER] queued id=34 count=34/8
+[     817.5 ms] RX [BUFFER] queued id=35 count=35/8
+[     817.6 ms] RX [BUFFER] queued id=36 count=36/8
+[     817.6 ms] RX [BUFFER] queued id=37 count=37/8
+[     817.6 ms] RX [BUFFER] queued id=38 count=38/8
+[     817.6 ms] RX [BUFFER] queued id=39 count=39/8
+[     817.6 ms] RX [BUFFER] queued id=40 count=40/8
+[     817.6 ms] RX [BUFFER] queued id=41 count=41/8
+[     817.6 ms] RX [BUFFER] queued id=42 count=42/8
+[     817.6 ms] RX [BUFFER] queued id=43 count=43/8
+[     817.6 ms] RX [BUFFER] queued id=44 count=44/8
+[     817.6 ms] RX [BUFFER] queued id=45 count=45/8
+[     817.7 ms] RX [BUFFER] queued id=46 count=46/8
+[     817.7 ms] RX [BUFFER] queued id=47 count=47/8
+[     817.7 ms] RX [BUFFER] queued id=48 count=48/8
+[     817.7 ms] RX [BUFFER] queued id=49 count=49/8
+[     817.7 ms] RX [BUFFER] queued id=50 count=50/8
+[     817.7 ms] RX [BUFFER] queued id=51 count=51/8
+[     817.7 ms] RX [BUFFER] queued id=52 count=52/8
+[     817.7 ms] RX [BUFFER] queued id=53 count=53/8
+[     817.8 ms] RX [BUFFER] queued id=54 count=54/8
+[     817.8 ms] RX [BUFFER] queued id=55 count=55/8
+[     817.8 ms] RX [BUFFER] queued id=56 count=56/8
+[     817.8 ms] RX [BUFFER] queued id=57 count=57/8
+[     817.8 ms] RX [BUFFER] queued id=58 count=58/8
+[     817.8 ms] RX [BUFFER] queued id=59 count=59/8
+[     817.8 ms] RX [BUFFER] queued id=60 count=60/8
+[     817.8 ms] RX [BUFFER] queued id=61 count=61/8
+[     817.8 ms] RX [BUFFER] queued id=62 count=62/8
+[     817.9 ms] RX [BUFFER] queued id=63 count=63/8
+[     817.9 ms] RX [BUFFER] queued id=64 count=64/8
+[     817.9 ms] RX [BUFFER] queued id=65 count=65/8
+[     817.9 ms] RX [BUFFER] queued id=66 count=66/8
+[     817.9 ms] RX [BUFFER] queued id=67 count=67/8
+[     817.9 ms] RX [BUFFER] queued id=68 count=68/8
+[     817.9 ms] RX [BUFFER] queued id=69 count=69/8
+[     818.0 ms] RX [BUFFER] queued id=70 count=70/8
+[     818.0 ms] RX [BUFFER] queued id=71 count=71/8
+[     818.0 ms] RX [BUFFER] queued id=72 count=72/8
+[     818.0 ms] RX [BUFFER] queued id=73 count=73/8
+[     818.0 ms] RX [BUFFER] queued id=74 count=74/8
+[     818.0 ms] RX [BUFFER] queued id=75 count=75/8
+[     818.0 ms] RX [BUFFER] queued id=76 count=76/8
+[     818.0 ms] RX [BUFFER] queued id=77 count=77/8
+[     818.0 ms] RX [BUFFER] queued id=78 count=78/8
+[     818.0 ms] RX [BUFFER] queued id=79 count=79/8
+[     818.1 ms] RX [BUFFER] queued id=80 count=80/8
+[     818.1 ms] RX [BUFFER] queued id=81 count=81/8
+[     818.1 ms] RX [BUFFER] queued id=82 count=82/8
+[     818.1 ms] RX [BUFFER] queued id=83 count=83/8
+[     818.1 ms] RX [BUFFER] queued id=84 count=84/8
+[     818.1 ms] RX [BUFFER] queued id=85 count=85/8
+[     818.1 ms] RX [BUFFER] queued id=86 count=86/8
+[     818.1 ms] RX [BUFFER] queued id=87 count=87/8
+[     818.1 ms] RX [BUFFER] queued id=88 count=88/8
+[     818.1 ms] RX [BUFFER] queued id=89 count=89/8
+[     818.1 ms] RX [BUFFER] queued id=90 count=90/8
+[     818.2 ms] RX [BUFFER] queued id=91 count=91/8
+[     818.2 ms] RX [BUFFER] queued id=92 count=92/8
+[     818.2 ms] RX [BUFFER] queued id=93 count=93/8
+[     818.2 ms] RX [BUFFER] queued id=94 count=94/8
+[     818.2 ms] RX [BUFFER] queued id=95 count=95/8
+[     818.2 ms] RX [BUFFER] queued id=96 count=96/8
+[     818.2 ms] RX [BUFFER] queued id=97 count=97/8
+[     818.2 ms] RX [BUFFER] queued id=98 count=98/8
+[     818.3 ms] RX [BUFFER] queued id=99 count=99/8
+[     818.3 ms] RX [BUFFER] queued id=100 count=100/8
+[     818.3 ms] RX [STRESS] end heap=280447
+[~    818.3 ms] TX STATUS
+[    1071.1 ms] RX {"net":"BACKOFF","broker":false,"buffer":100,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":1,"heap":280447}
+[    1117.5 ms] RX [NET] state=CONNECTING
+[    1117.8 ms] RX [NET] reconnect=FAILED
+[    1117.8 ms] RX [NET] state=BACKOFF
+[    1117.8 ms] RX [NET] retry=2 backoff_ms=50
+[    1171.4 ms] RX [NET] state=CONNECTING
+[    1171.7 ms] RX [NET] reconnect=FAILED
+[    1171.7 ms] RX [NET] state=BACKOFF
+[    1171.7 ms] RX [NET] retry=3 backoff_ms=50
+[    1223.8 ms] RX [NET] state=CONNECTING
+[    1224.1 ms] RX [NET] reconnect=FAILED
+[    1224.1 ms] RX [NET] state=BACKOFF
+[    1224.1 ms] RX [NET] retry=4 backoff_ms=50
+[    1276.5 ms] RX [NET] state=CONNECTING
+[    1276.7 ms] RX [NET] reconnect=FAILED
+[    1276.7 ms] RX [NET] state=BACKOFF
+[    1276.8 ms] RX [NET] retry=5 backoff_ms=50
+[    1332.0 ms] RX [NET] state=CONNECTING
+[    1332.3 ms] RX [NET] reconnect=FAILED
+[    1332.3 ms] RX [NET] state=BACKOFF
+[    1332.3 ms] RX [NET] retry=6 backoff_ms=50
+[    1387.0 ms] RX [NET] state=CONNECTING
+[    1387.2 ms] RX [NET] reconnect=FAILED
+[    1387.2 ms] RX [NET] state=BACKOFF
+[    1387.3 ms] RX [NET] retry=7 backoff_ms=50
+[~   1387.3 ms] TX NET UP
+[    1431.7 ms] RX [FAULT] network restored
+[    1432.0 ms] RX [NET] state=CONNECTING
+[    1432.0 ms] HW GPIO2=1
+[    1432.0 ms] RX [NET] state=CONNECTED
+[    1432.0 ms] RX [NET] reconnect=SUCCESS
+[    1432.0 ms] RX [BUFFER] flush_start count=100
+[    1432.0 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.1 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.2 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.3 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.4 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=100 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=93 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.5 ms] RX [MQTT] publish id=94 temp=24.5
+[    1432.6 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.8 ms] RX [MQTT] publish id=95 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=96 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=97 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1432.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.0 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.1 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.2 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.3 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.4 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.5 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.6 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.7 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=93 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=94 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=95 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.8 ms] RX [MQTT] publish id=96 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=97 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=100 temp=24.5
+[    1433.9 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.0 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.1 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.2 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.3 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.4 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.5 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=93 temp=24.5
+[    1434.6 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=94 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=95 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=96 temp=24.5
+[    1434.7 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.8 ms] RX [MQTT] publish id=97 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=98 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=99 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.9 ms] RX [MQTT] publish id=100 temp=24.5
+[    1434.9 ms] RX [BUFFER] flush_end count=0
+[~   1434.9 ms] TX STATUS
+[    1833.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":200,"dropped":0,"duplicates":100,"reconnect_attempts":7,"heap":280447}
+[~   1833.4 ms] TX NET DOWN
+[    2187.1 ms] HW GPIO2=0
+[    2187.4 ms] RX [NET] state=DISCONNECTED
+[    2187.5 ms] RX [NET] state=BACKOFF
+[    2187.5 ms] RX [NET] retry=8 backoff_ms=500
+[~   2187.5 ms] TX STRESS 100
+[    2390.4 ms] RX [STRESS] start count=100 heap=280447
+[    2390.7 ms] RX [BUFFER] queued id=101 count=1/8
+[    2390.7 ms] RX [BUFFER] queued id=102 count=2/8
+[    2390.7 ms] RX [BUFFER] queued id=103 count=3/8
+[    2390.7 ms] RX [BUFFER] queued id=104 count=4/8
+[    2390.7 ms] RX [BUFFER] queued id=105 count=5/8
+[    2390.9 ms] RX [BUFFER] queued id=106 count=6/8
+[    2390.9 ms] RX [BUFFER] queued id=107 count=7/8
+[    2390.9 ms] RX [BUFFER] queued id=108 count=8/8
+[    2390.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+[    2390.9 ms] RX [BUFFER] queued id=109 count=9/8
+[    2390.9 ms] RX [BUFFER] queued id=110 count=10/8
+[    2390.9 ms] RX [BUFFER] queued id=111 count=11/8
+[    2390.9 ms] RX [BUFFER] queued id=112 count=12/8
+[    2391.0 ms] RX [BUFFER] queued id=113 count=13/8
+[    2391.0 ms] RX [BUFFER] queued id=114 count=14/8
+[    2391.0 ms] RX [BUFFER] queued id=115 count=15/8
+[    2391.0 ms] RX [BUFFER] queued id=116 count=16/8
+[    2391.0 ms] RX [BUFFER] queued id=117 count=17/8
+[    2391.0 ms] RX [BUFFER] queued id=118 count=18/8
+[    2391.0 ms] RX [BUFFER] queued id=119 count=19/8
+[    2391.0 ms] RX [BUFFER] queued id=120 count=20/8
+[    2391.0 ms] RX [BUFFER] queued id=121 count=21/8
+[    2391.0 ms] RX [BUFFER] queued id=122 count=22/8
+[    2391.0 ms] RX [BUFFER] queued id=123 count=23/8
+[    2391.0 ms] RX [BUFFER] queued id=124 count=24/8
+[    2391.0 ms] RX [BUFFER] queued id=125 count=25/8
+[    2391.1 ms] RX [BUFFER] queued id=126 count=26/8
+[    2391.1 ms] RX [BUFFER] queued id=127 count=27/8
+[    2391.1 ms] RX [BUFFER] queued id=128 count=28/8
+[    2391.1 ms] RX [BUFFER] queued id=129 count=29/8
+[    2391.1 ms] RX [BUFFER] queued id=130 count=30/8
+[    2391.1 ms] RX [BUFFER] queued id=131 count=31/8
+[    2391.1 ms] RX [BUFFER] queued id=132 count=32/8
+[    2391.1 ms] RX [BUFFER] queued id=133 count=33/8
+[    2391.1 ms] RX [BUFFER] queued id=134 count=34/8
+[    2391.2 ms] RX [BUFFER] queued id=135 count=35/8
+[    2391.2 ms] RX [BUFFER] queued id=136 count=36/8
+[    2391.2 ms] RX [BUFFER] queued id=137 count=37/8
+[    2391.2 ms] RX [BUFFER] queued id=138 count=38/8
+[    2391.2 ms] RX [BUFFER] queued id=139 count=39/8
+[    2391.2 ms] RX [BUFFER] queued id=140 count=40/8
+[    2391.2 ms] RX [BUFFER] queued id=141 count=41/8
+[    2391.2 ms] RX [BUFFER] queued id=142 count=42/8
+[    2391.3 ms] RX [BUFFER] queued id=143 count=43/8
+[    2391.3 ms] RX [BUFFER] queued id=144 count=44/8
+[    2391.3 ms] RX [BUFFER] queued id=145 count=45/8
+[    2391.3 ms] RX [BUFFER] queued id=146 count=46/8
+[    2391.3 ms] RX [BUFFER] queued id=147 count=47/8
+[    2391.3 ms] RX [BUFFER] queued id=148 count=48/8
+[    2391.3 ms] RX [BUFFER] queued id=149 count=49/8
+[    2391.4 ms] RX [BUFFER] queued id=150 count=50/8
+[    2391.4 ms] RX [BUFFER] queued id=151 count=51/8
+[    2391.4 ms] RX [BUFFER] queued id=152 count=52/8
+[    2391.4 ms] RX [BUFFER] queued id=153 count=53/8
+[    2391.4 ms] RX [BUFFER] queued id=154 count=54/8
+[    2391.4 ms] RX [BUFFER] queued id=155 count=55/8
+[    2391.4 ms] RX [BUFFER] queued id=156 count=56/8
+[    2391.4 ms] RX [BUFFER] queued id=157 count=57/8
+[    2391.4 ms] RX [BUFFER] queued id=158 count=58/8
+[    2391.4 ms] RX [BUFFER] queued id=159 count=59/8
+[    2391.5 ms] RX [BUFFER] queued id=160 count=60/8
+[    2391.5 ms] RX [BUFFER] queued id=161 count=61/8
+[    2391.5 ms] RX [BUFFER] queued id=162 count=62/8
+[    2391.5 ms] RX [BUFFER] queued id=163 count=63/8
+[    2391.5 ms] RX [BUFFER] queued id=164 count=64/8
+[    2391.5 ms] RX [BUFFER] queued id=165 count=65/8
+[    2391.5 ms] RX [BUFFER] queued id=166 count=66/8
+[    2391.5 ms] RX [BUFFER] queued id=167 count=67/8
+[    2391.5 ms] RX [BUFFER] queued id=168 count=68/8
+[    2391.5 ms] RX [BUFFER] queued id=169 count=69/8
+[    2391.5 ms] RX [BUFFER] queued id=170 count=70/8
+[    2391.5 ms] RX [BUFFER] queued id=171 count=71/8
+[    2391.6 ms] RX [BUFFER] queued id=172 count=72/8
+[    2391.6 ms] RX [BUFFER] queued id=173 count=73/8
+[    2391.6 ms] RX [BUFFER] queued id=174 count=74/8
+[    2391.6 ms] RX [BUFFER] queued id=175 count=75/8
+[    2391.6 ms] RX [BUFFER] queued id=176 count=76/8
+[    2391.6 ms] RX [BUFFER] queued id=177 count=77/8
+[    2391.6 ms] RX [BUFFER] queued id=178 count=78/8
+[    2391.6 ms] RX [BUFFER] queued id=179 count=79/8
+[    2391.6 ms] RX [BUFFER] queued id=180 count=80/8
+[    2391.6 ms] RX [BUFFER] queued id=181 count=81/8
+[    2391.6 ms] RX [BUFFER] queued id=182 count=82/8
+[    2391.6 ms] RX [BUFFER] queued id=183 count=83/8
+[    2391.7 ms] RX [BUFFER] queued id=184 count=84/8
+[    2391.7 ms] RX [BUFFER] queued id=185 count=85/8
+[    2391.7 ms] RX [BUFFER] queued id=186 count=86/8
+[    2391.7 ms] RX [BUFFER] queued id=187 count=87/8
+[    2391.7 ms] RX [BUFFER] queued id=188 count=88/8
+[    2391.7 ms] RX [BUFFER] queued id=189 count=89/8
+[    2391.7 ms] RX [BUFFER] queued id=190 count=90/8
+[    2391.7 ms] RX [BUFFER] queued id=191 count=91/8
+[    2391.7 ms] RX [BUFFER] queued id=192 count=92/8
+[    2391.8 ms] RX [BUFFER] queued id=193 count=93/8
+[    2391.8 ms] RX [BUFFER] queued id=194 count=94/8
+[    2391.8 ms] RX [BUFFER] queued id=195 count=95/8
+[    2391.8 ms] RX [BUFFER] queued id=196 count=96/8
+[    2391.8 ms] RX [BUFFER] queued id=197 count=97/8
+[    2391.8 ms] RX [BUFFER] queued id=198 count=98/8
+[    2391.8 ms] RX [BUFFER] queued id=199 count=99/8
+[    2391.8 ms] RX [BUFFER] queued id=200 count=100/8
+[    2391.8 ms] RX [STRESS] end heap=274047
+[~   2391.8 ms] TX STATUS
+[    2647.6 ms] RX {"net":"BACKOFF","broker":false,"buffer":100,"capacity":8,"sent":200,"dropped":0,"duplicates":100,"reconnect_attempts":8,"heap":274047}
+[    2692.3 ms] RX [NET] state=CONNECTING
+[    2692.8 ms] RX [NET] reconnect=FAILED
+[    2692.9 ms] RX [NET] state=BACKOFF
+[    2692.9 ms] RX [NET] retry=9 backoff_ms=50
+[    2743.7 ms] RX [NET] state=CONNECTING
+[    2744.0 ms] RX [NET] reconnect=FAILED
+[    2744.0 ms] RX [NET] state=BACKOFF
+[    2744.0 ms] RX [NET] retry=10 backoff_ms=50
+[    2796.1 ms] RX [NET] state=CONNECTING
+[    2796.3 ms] RX [NET] reconnect=FAILED
+[    2796.3 ms] RX [NET] state=BACKOFF
+[    2796.4 ms] RX [NET] retry=11 backoff_ms=50
+[    2846.5 ms] RX [NET] state=CONNECTING
+[    2846.6 ms] RX [NET] reconnect=FAILED
+[    2846.7 ms] RX [NET] state=BACKOFF
+[    2846.7 ms] RX [NET] retry=12 backoff_ms=50
+[    2897.1 ms] RX [NET] state=CONNECTING
+[    2897.3 ms] RX [NET] reconnect=FAILED
+[    2897.3 ms] RX [NET] state=BACKOFF
+[    2897.4 ms] RX [NET] retry=13 backoff_ms=50
+[    2947.4 ms] RX [NET] state=CONNECTING
+[    2947.6 ms] RX [NET] reconnect=FAILED
+[    2947.6 ms] RX [NET] state=BACKOFF
+[    2947.7 ms] RX [NET] retry=14 backoff_ms=50
+[~   2947.7 ms] TX NET UP
+[    2998.6 ms] RX [NET] state=CONNECTING
+[    2998.8 ms] RX [NET] reconnect=FAILED
+[    2998.8 ms] RX [NET] state=BACKOFF
+[    2998.8 ms] RX [NET] retry=15 backoff_ms=50
+[    3006.3 ms] RX [FAULT] network restored
+[    3006.5 ms] RX [NET] state=CONNECTING
+[    3006.5 ms] HW GPIO2=1
+[    3006.6 ms] RX [NET] state=CONNECTED
+[    3006.6 ms] RX [NET] reconnect=SUCCESS
+[    3006.6 ms] RX [BUFFER] flush_start count=100
+[    3006.6 ms] RX [MQTT] publish id=197 temp=24.5
+[    3006.6 ms] RX [MQTT] publish id=197 temp=24.5
+[    3006.6 ms] RX [MQTT] publish id=198 temp=24.5
+[    3006.6 ms] RX [MQTT] publish id=198 temp=24.5
+[    3006.6 ms] RX [MQTT] publish id=199 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=199 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=193 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=193 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=194 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=194 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=195 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=195 temp=24.5
+[    3006.7 ms] RX [MQTT] publish id=196 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=196 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=197 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=197 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=198 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=198 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=199 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=199 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=200 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=200 temp=24.5
+[    3006.8 ms] RX [MQTT] publish id=193 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=193 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=194 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=194 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=195 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=195 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=196 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=196 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3006.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.0 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.1 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.2 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.3 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.4 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.5 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.6 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=193 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=194 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=195 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=196 temp=24.5
+[    3007.8 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=198 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=199 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=200 temp=24.5
+[    3007.9 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.0 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.1 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.2 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.3 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.4 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.5 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.6 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=199 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=200 temp=24.5
+[    3008.7 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.8 ms] RX [MQTT] publish id=193 temp=24.5
+[    3008.8 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.8 ms] RX [MQTT] publish id=194 temp=24.5
+[    3008.8 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.8 ms] RX [MQTT] publish id=195 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=196 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=198 temp=24.5
+[    3008.9 ms] RX [MQTT] publish id=199 temp=24.5
+[    3009.0 ms] RX [MQTT] publish id=199 temp=24.5
+[    3009.0 ms] RX [MQTT] publish id=200 temp=24.5
+[    3009.0 ms] RX [MQTT] publish id=200 temp=24.5
+[    3009.0 ms] RX [BUFFER] flush_end count=0
+[~   3009.0 ms] TX STATUS
+[    3409.5 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":400,"dropped":0,"duplicates":200,"reconnect_attempts":15,"heap":274047}
+[~   3409.5 ms] TX NET DOWN
+[    3763.2 ms] HW GPIO2=0
+[    3763.6 ms] RX [NET] state=DISCONNECTED
+[    3763.6 ms] RX [NET] state=BACKOFF
+[    3763.6 ms] RX [NET] retry=16 backoff_ms=500
+[~   3763.6 ms] TX STRESS 100
+[    3966.8 ms] RX [STRESS] start count=100 heap=274047
+[    3967.1 ms] RX [BUFFER] queued id=201 count=1/8
+[    3967.1 ms] RX [BUFFER] queued id=202 count=2/8
+[    3967.1 ms] RX [BUFFER] queued id=203 count=3/8
+[    3967.2 ms] RX [BUFFER] queued id=204 count=4/8
+[    3967.2 ms] RX [BUFFER] queued id=205 count=5/8
+[    3967.2 ms] RX [BUFFER] queued id=206 count=6/8
+[    3967.2 ms] RX [BUFFER] queued id=207 count=7/8
+[    3967.2 ms] RX [BUFFER] queued id=208 count=8/8
+[    3967.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+[    3967.2 ms] RX [BUFFER] queued id=209 count=9/8
+[    3967.2 ms] RX [BUFFER] queued id=210 count=10/8
+[    3967.3 ms] RX [BUFFER] queued id=211 count=11/8
+[    3967.3 ms] RX [BUFFER] queued id=212 count=12/8
+[    3967.3 ms] RX [BUFFER] queued id=213 count=13/8
+[    3967.3 ms] RX [BUFFER] queued id=214 count=14/8
+[    3967.3 ms] RX [BUFFER] queued id=215 count=15/8
+[    3967.3 ms] RX [BUFFER] queued id=216 count=16/8
+[    3967.3 ms] RX [BUFFER] queued id=217 count=17/8
+[    3967.3 ms] RX [BUFFER] queued id=218 count=18/8
+[    3967.3 ms] RX [BUFFER] queued id=219 count=19/8
+[    3967.4 ms] RX [BUFFER] queued id=220 count=20/8
+[    3967.4 ms] RX [BUFFER] queued id=221 count=21/8
+[    3967.4 ms] RX [BUFFER] queued id=222 count=22/8
+[    3967.4 ms] RX [BUFFER] queued id=223 count=23/8
+[    3967.4 ms] RX [BUFFER] queued id=224 count=24/8
+[    3967.4 ms] RX [BUFFER] queued id=225 count=25/8
+[    3967.4 ms] RX [BUFFER] queued id=226 count=26/8
+[    3967.5 ms] RX [BUFFER] queued id=227 count=27/8
+[    3967.5 ms] RX [BUFFER] queued id=228 count=28/8
+[    3967.5 ms] RX [BUFFER] queued id=229 count=29/8
+[    3967.5 ms] RX [BUFFER] queued id=230 count=30/8
+[    3967.5 ms] RX [BUFFER] queued id=231 count=31/8
+[    3967.5 ms] RX [BUFFER] queued id=232 count=32/8
+[    3967.5 ms] RX [BUFFER] queued id=233 count=33/8
+[    3967.7 ms] RX [BUFFER] queued id=234 count=34/8
+[    3967.7 ms] RX [BUFFER] queued id=235 count=35/8
+[    3967.7 ms] RX [BUFFER] queued id=236 count=36/8
+[    3967.7 ms] RX [BUFFER] queued id=237 count=37/8
+[    3967.7 ms] RX [BUFFER] queued id=238 count=38/8
+[    3967.7 ms] RX [BUFFER] queued id=239 count=39/8
+[    3967.8 ms] RX [BUFFER] queued id=240 count=40/8
+[    3967.8 ms] RX [BUFFER] queued id=241 count=41/8
+[    3967.8 ms] RX [BUFFER] queued id=242 count=42/8
+[    3967.8 ms] RX [BUFFER] queued id=243 count=43/8
+[    3967.8 ms] RX [BUFFER] queued id=244 count=44/8
+[    3967.8 ms] RX [BUFFER] queued id=245 count=45/8
+[    3967.8 ms] RX [BUFFER] queued id=246 count=46/8
+[    3967.9 ms] RX [BUFFER] queued id=247 count=47/8
+[    3967.9 ms] RX [BUFFER] queued id=248 count=48/8
+[    3967.9 ms] RX [BUFFER] queued id=249 count=49/8
+[    3967.9 ms] RX [BUFFER] queued id=250 count=50/8
+[    3967.9 ms] RX [BUFFER] queued id=251 count=51/8
+[    3967.9 ms] RX [BUFFER] queued id=252 count=52/8
+[    3967.9 ms] RX [BUFFER] queued id=253 count=53/8
+[    3967.9 ms] RX [BUFFER] queued id=254 count=54/8
+[    3968.0 ms] RX [BUFFER] queued id=255 count=55/8
+[    3968.0 ms] RX [BUFFER] queued id=256 count=56/8
+[    3968.0 ms] RX [BUFFER] queued id=257 count=57/8
+[    3968.0 ms] RX [BUFFER] queued id=258 count=58/8
+[    3968.0 ms] RX [BUFFER] queued id=259 count=59/8
+[    3968.0 ms] RX [BUFFER] queued id=260 count=60/8
+[    3968.0 ms] RX [BUFFER] queued id=261 count=61/8
+[    3968.0 ms] RX [BUFFER] queued id=262 count=62/8
+[    3968.0 ms] RX [BUFFER] queued id=263 count=63/8
+[    3968.1 ms] RX [BUFFER] queued id=264 count=64/8
+[    3968.1 ms] RX [BUFFER] queued id=265 count=65/8
+[    3968.1 ms] RX [BUFFER] queued id=266 count=66/8
+[    3968.1 ms] RX [BUFFER] queued id=267 count=67/8
+[    3968.1 ms] RX [BUFFER] queued id=268 count=68/8
+[    3968.1 ms] RX [BUFFER] queued id=269 count=69/8
+[    3968.1 ms] RX [BUFFER] queued id=270 count=70/8
+[    3968.1 ms] RX [BUFFER] queued id=271 count=71/8
+[    3968.1 ms] RX [BUFFER] queued id=272 count=72/8
+[    3968.2 ms] RX [BUFFER] queued id=273 count=73/8
+[    3968.2 ms] RX [BUFFER] queued id=274 count=74/8
+[    3968.2 ms] RX [BUFFER] queued id=275 count=75/8
+[    3968.2 ms] RX [BUFFER] queued id=276 count=76/8
+[    3968.2 ms] RX [BUFFER] queued id=277 count=77/8
+[    3968.2 ms] RX [BUFFER] queued id=278 count=78/8
+[    3968.2 ms] RX [BUFFER] queued id=279 count=79/8
+[    3968.3 ms] RX [BUFFER] queued id=280 count=80/8
+[    3968.3 ms] RX [BUFFER] queued id=281 count=81/8
+[    3968.3 ms] RX [BUFFER] queued id=282 count=82/8
+[    3968.3 ms] RX [BUFFER] queued id=283 count=83/8
+[    3968.3 ms] RX [BUFFER] queued id=284 count=84/8
+[    3968.3 ms] RX [BUFFER] queued id=285 count=85/8
+[    3968.3 ms] RX [BUFFER] queued id=286 count=86/8
+[    3968.4 ms] RX [BUFFER] queued id=287 count=87/8
+[    3968.4 ms] RX [BUFFER] queued id=288 count=88/8
+[    3968.4 ms] RX [BUFFER] queued id=289 count=89/8
+[    3968.4 ms] RX [BUFFER] queued id=290 count=90/8
+[    3968.4 ms] RX [BUFFER] queued id=291 count=91/8
+[    3968.4 ms] RX [BUFFER] queued id=292 count=92/8
+[    3968.5 ms] RX [BUFFER] queued id=293 count=93/8
+[    3968.5 ms] RX [BUFFER] queued id=294 count=94/8
+[    3968.5 ms] RX [BUFFER] queued id=295 count=95/8
+[    3968.5 ms] RX [BUFFER] queued id=296 count=96/8
+[    3968.5 ms] RX [BUFFER] queued id=297 count=97/8
+[    3968.5 ms] RX [BUFFER] queued id=298 count=98/8
+[    3968.5 ms] RX [BUFFER] queued id=299 count=99/8
+[    3968.5 ms] RX [BUFFER] queued id=300 count=100/8
+[    3968.6 ms] RX [STRESS] end heap=267647
+[~   3968.6 ms] TX STATUS
+[    4218.0 ms] RX {"net":"BACKOFF","broker":false,"buffer":100,"capacity":8,"sent":400,"dropped":0,"duplicates":200,"reconnect_attempts":16,"heap":267647}
+[    4263.7 ms] RX [NET] state=CONNECTING
+[    4263.9 ms] RX [NET] reconnect=FAILED
+[    4264.0 ms] RX [NET] state=BACKOFF
+[    4264.0 ms] RX [NET] retry=17 backoff_ms=50
+[    4314.6 ms] RX [NET] state=CONNECTING
+[    4314.9 ms] RX [NET] reconnect=FAILED
+[    4314.9 ms] RX [NET] state=BACKOFF
+[    4314.9 ms] RX [NET] retry=18 backoff_ms=50
+[    4367.5 ms] RX [NET] state=CONNECTING
+[    4367.7 ms] RX [NET] reconnect=FAILED
+[    4367.7 ms] RX [NET] state=BACKOFF
+[    4367.7 ms] RX [NET] retry=19 backoff_ms=50
+[    4419.5 ms] RX [NET] state=CONNECTING
+[    4419.8 ms] RX [NET] reconnect=FAILED
+[    4419.8 ms] RX [NET] state=BACKOFF
+[    4419.8 ms] RX [NET] retry=20 backoff_ms=50
+[    4472.3 ms] RX [NET] state=CONNECTING
+[    4472.5 ms] RX [NET] reconnect=FAILED
+[    4472.6 ms] RX [NET] state=BACKOFF
+[    4472.9 ms] RX [NET] retry=21 backoff_ms=50
+[    4525.0 ms] RX [NET] state=CONNECTING
+[    4525.2 ms] RX [NET] reconnect=FAILED
+[    4525.3 ms] RX [NET] state=BACKOFF
+[    4525.3 ms] RX [NET] retry=22 backoff_ms=50
+[~   4525.3 ms] TX NET UP
+[    4577.5 ms] RX [NET] state=CONNECTING
+[    4577.7 ms] RX [NET] reconnect=FAILED
+[    4577.7 ms] RX [NET] state=BACKOFF
+[    4577.8 ms] RX [NET] retry=23 backoff_ms=50
+[    4577.9 ms] RX [FAULT] network restored
+[    4577.9 ms] RX [NET] state=CONNECTING
+[    4577.9 ms] HW GPIO2=1
+[    4577.9 ms] RX [NET] state=CONNECTED
+[    4577.9 ms] RX [NET] reconnect=SUCCESS
+[    4577.9 ms] RX [BUFFER] flush_start count=100
+[    4577.9 ms] RX [MQTT] publish id=297 temp=24.5
+[    4577.9 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.0 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.1 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.2 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.3 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.4 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.5 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.6 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.7 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=295 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=296 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=297 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=298 temp=24.5
+[    4578.8 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=299 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=300 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=293 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=294 temp=24.5
+[    4578.9 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.0 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.1 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.2 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.3 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.4 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.5 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.6 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.7 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=300 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=293 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=294 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=295 temp=24.5
+[    4579.8 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=296 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=297 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=298 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=299 temp=24.5
+[    4579.9 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=293 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=293 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=294 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=294 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=295 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=295 temp=24.5
+[    4580.0 ms] RX [MQTT] publish id=296 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=296 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=297 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=297 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=298 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=298 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=299 temp=24.5
+[    4580.1 ms] RX [MQTT] publish id=299 temp=24.5
+[    4580.2 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.3 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.3 ms] RX [MQTT] publish id=293 temp=24.5
+[    4580.3 ms] RX [MQTT] publish id=293 temp=24.5
+[    4580.3 ms] RX [MQTT] publish id=294 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=294 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=295 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=295 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=296 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=296 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=297 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=297 temp=24.5
+[    4580.4 ms] RX [MQTT] publish id=298 temp=24.5
+[    4580.5 ms] RX [MQTT] publish id=298 temp=24.5
+[    4580.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4580.5 ms] RX [MQTT] publish id=299 temp=24.5
+[    4580.5 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.5 ms] RX [MQTT] publish id=300 temp=24.5
+[    4580.5 ms] RX [BUFFER] flush_end count=0
+[~   4580.5 ms] TX STATUS
+[    4988.3 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":600,"dropped":0,"duplicates":300,"reconnect_attempts":23,"heap":267647}
+[~   4988.3 ms] TX NET DOWN
+[    5340.5 ms] HW GPIO2=0
+[    5340.9 ms] RX [NET] state=DISCONNECTED
+[    5340.9 ms] RX [NET] state=BACKOFF
+[    5340.9 ms] RX [NET] retry=24 backoff_ms=500
+[~   5340.9 ms] TX STRESS 100
+[    5547.4 ms] RX [STRESS] start count=100 heap=267647
+[    5547.7 ms] RX [BUFFER] queued id=301 count=1/8
+[    5547.8 ms] RX [BUFFER] queued id=302 count=2/8
+[    5547.8 ms] RX [BUFFER] queued id=303 count=3/8
+[    5547.8 ms] RX [BUFFER] queued id=304 count=4/8
+[    5547.8 ms] RX [BUFFER] queued id=305 count=5/8
+[    5547.8 ms] RX [BUFFER] queued id=306 count=6/8
+[    5547.8 ms] RX [BUFFER] queued id=307 count=7/8
+[    5547.8 ms] RX [BUFFER] queued id=308 count=8/8
+[    5547.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+[    5547.9 ms] RX [BUFFER] queued id=309 count=9/8
+[    5547.9 ms] RX [BUFFER] queued id=310 count=10/8
+[    5547.9 ms] RX [BUFFER] queued id=311 count=11/8
+[    5547.9 ms] RX [BUFFER] queued id=312 count=12/8
+[    5547.9 ms] RX [BUFFER] queued id=313 count=13/8
+[    5547.9 ms] RX [BUFFER] queued id=314 count=14/8
+[    5547.9 ms] RX [BUFFER] queued id=315 count=15/8
+[    5548.0 ms] RX [BUFFER] queued id=316 count=16/8
+[    5548.0 ms] RX [BUFFER] queued id=317 count=17/8
+[    5548.0 ms] RX [BUFFER] queued id=318 count=18/8
+[    5548.2 ms] RX [BUFFER] queued id=319 count=19/8
+[    5548.2 ms] RX [BUFFER] queued id=320 count=20/8
+[    5548.2 ms] RX [BUFFER] queued id=321 count=21/8
+[    5548.2 ms] RX [BUFFER] queued id=322 count=22/8
+[    5548.2 ms] RX [BUFFER] queued id=323 count=23/8
+[    5548.2 ms] RX [BUFFER] queued id=324 count=24/8
+[    5548.2 ms] RX [BUFFER] queued id=325 count=25/8
+[    5548.2 ms] RX [BUFFER] queued id=326 count=26/8
+[    5548.3 ms] RX [BUFFER] queued id=327 count=27/8
+[    5548.3 ms] RX [BUFFER] queued id=328 count=28/8
+[    5548.3 ms] RX [BUFFER] queued id=329 count=29/8
+[    5548.3 ms] RX [BUFFER] queued id=330 count=30/8
+[    5548.3 ms] RX [BUFFER] queued id=331 count=31/8
+[    5548.3 ms] RX [BUFFER] queued id=332 count=32/8
+[    5548.3 ms] RX [BUFFER] queued id=333 count=33/8
+[    5548.3 ms] RX [BUFFER] queued id=334 count=34/8
+[    5548.3 ms] RX [BUFFER] queued id=335 count=35/8
+[    5548.4 ms] RX [BUFFER] queued id=336 count=36/8
+[    5548.4 ms] RX [BUFFER] queued id=337 count=37/8
+[    5548.4 ms] RX [BUFFER] queued id=338 count=38/8
+[    5548.4 ms] RX [BUFFER] queued id=339 count=39/8
+[    5548.4 ms] RX [BUFFER] queued id=340 count=40/8
+[    5548.4 ms] RX [BUFFER] queued id=341 count=41/8
+[    5548.4 ms] RX [BUFFER] queued id=342 count=42/8
+[    5548.5 ms] RX [BUFFER] queued id=343 count=43/8
+[    5548.5 ms] RX [BUFFER] queued id=344 count=44/8
+[    5548.5 ms] RX [BUFFER] queued id=345 count=45/8
+[    5548.5 ms] RX [BUFFER] queued id=346 count=46/8
+[    5548.5 ms] RX [BUFFER] queued id=347 count=47/8
+[    5548.5 ms] RX [BUFFER] queued id=348 count=48/8
+[    5548.5 ms] RX [BUFFER] queued id=349 count=49/8
+[    5548.5 ms] RX [BUFFER] queued id=350 count=50/8
+[    5548.5 ms] RX [BUFFER] queued id=351 count=51/8
+[    5548.6 ms] RX [BUFFER] queued id=352 count=52/8
+[    5548.6 ms] RX [BUFFER] queued id=353 count=53/8
+[    5548.6 ms] RX [BUFFER] queued id=354 count=54/8
+[    5548.6 ms] RX [BUFFER] queued id=355 count=55/8
+[    5548.6 ms] RX [BUFFER] queued id=356 count=56/8
+[    5548.6 ms] RX [BUFFER] queued id=357 count=57/8
+[    5548.6 ms] RX [BUFFER] queued id=358 count=58/8
+[    5548.6 ms] RX [BUFFER] queued id=359 count=59/8
+[    5548.7 ms] RX [BUFFER] queued id=360 count=60/8
+[    5548.7 ms] RX [BUFFER] queued id=361 count=61/8
+[    5548.7 ms] RX [BUFFER] queued id=362 count=62/8
+[    5548.7 ms] RX [BUFFER] queued id=363 count=63/8
+[    5548.7 ms] RX [BUFFER] queued id=364 count=64/8
+[    5548.8 ms] RX [BUFFER] queued id=365 count=65/8
+[    5548.8 ms] RX [BUFFER] queued id=366 count=66/8
+[    5548.8 ms] RX [BUFFER] queued id=367 count=67/8
+[    5548.8 ms] RX [BUFFER] queued id=368 count=68/8
+[    5548.8 ms] RX [BUFFER] queued id=369 count=69/8
+[    5548.8 ms] RX [BUFFER] queued id=370 count=70/8
+[    5548.8 ms] RX [BUFFER] queued id=371 count=71/8
+[    5548.9 ms] RX [BUFFER] queued id=372 count=72/8
+[    5548.9 ms] RX [BUFFER] queued id=373 count=73/8
+[    5548.9 ms] RX [BUFFER] queued id=374 count=74/8
+[    5548.9 ms] RX [BUFFER] queued id=375 count=75/8
+[    5548.9 ms] RX [BUFFER] queued id=376 count=76/8
+[    5548.9 ms] RX [BUFFER] queued id=377 count=77/8
+[    5548.9 ms] RX [BUFFER] queued id=378 count=78/8
+[    5549.0 ms] RX [BUFFER] queued id=379 count=79/8
+[    5549.0 ms] RX [BUFFER] queued id=380 count=80/8
+[    5549.0 ms] RX [BUFFER] queued id=381 count=81/8
+[    5549.0 ms] RX [BUFFER] queued id=382 count=82/8
+[    5549.0 ms] RX [BUFFER] queued id=383 count=83/8
+[    5549.0 ms] RX [BUFFER] queued id=384 count=84/8
+[    5549.0 ms] RX [BUFFER] queued id=385 count=85/8
+[    5549.0 ms] RX [BUFFER] queued id=386 count=86/8
+[    5549.0 ms] RX [BUFFER] queued id=387 count=87/8
+[    5549.1 ms] RX [BUFFER] queued id=388 count=88/8
+[    5549.1 ms] RX [BUFFER] queued id=389 count=89/8
+[    5549.1 ms] RX [BUFFER] queued id=390 count=90/8
+[    5549.1 ms] RX [BUFFER] queued id=391 count=91/8
+[    5549.1 ms] RX [BUFFER] queued id=392 count=92/8
+[    5549.1 ms] RX [BUFFER] queued id=393 count=93/8
+[    5549.1 ms] RX [BUFFER] queued id=394 count=94/8
+[    5549.1 ms] RX [BUFFER] queued id=395 count=95/8
+[    5549.2 ms] RX [BUFFER] queued id=396 count=96/8
+[    5549.2 ms] RX [BUFFER] queued id=397 count=97/8
+[    5549.2 ms] RX [BUFFER] queued id=398 count=98/8
+[    5549.2 ms] RX [BUFFER] queued id=399 count=99/8
+[    5549.2 ms] RX [BUFFER] queued id=400 count=100/8
+[    5549.2 ms] RX [STRESS] end heap=261247
+[~   5549.2 ms] TX STATUS
+[    5795.5 ms] RX {"net":"BACKOFF","broker":false,"buffer":100,"capacity":8,"sent":600,"dropped":0,"duplicates":300,"reconnect_attempts":24,"heap":261247}
+[    5840.7 ms] RX [NET] state=CONNECTING
+[    5841.0 ms] RX [NET] reconnect=FAILED
+[    5841.0 ms] RX [NET] state=BACKOFF
+[    5841.1 ms] RX [NET] retry=25 backoff_ms=50
+[    5893.0 ms] RX [NET] state=CONNECTING
+[    5893.2 ms] RX [NET] reconnect=FAILED
+[    5893.3 ms] RX [NET] state=BACKOFF
+[    5893.3 ms] RX [NET] retry=26 backoff_ms=50
+[    5944.4 ms] RX [NET] state=CONNECTING
+[    5944.7 ms] RX [NET] reconnect=FAILED
+[    5944.7 ms] RX [NET] state=BACKOFF
+[    5944.8 ms] RX [NET] retry=27 backoff_ms=50
+[    5996.9 ms] RX [NET] state=CONNECTING
+[    5997.2 ms] RX [NET] reconnect=FAILED
+[    5997.2 ms] RX [NET] state=BACKOFF
+[    5997.2 ms] RX [NET] retry=28 backoff_ms=50
+[    6048.9 ms] RX [NET] state=CONNECTING
+[    6049.1 ms] RX [NET] reconnect=FAILED
+[    6049.1 ms] RX [NET] state=BACKOFF
+[    6049.1 ms] RX [NET] retry=29 backoff_ms=50
+[    6100.4 ms] RX [NET] state=CONNECTING
+[    6100.6 ms] RX [NET] reconnect=FAILED
+[    6100.6 ms] RX [NET] state=BACKOFF
+[    6100.7 ms] RX [NET] retry=30 backoff_ms=50
+[~   6100.7 ms] TX NET UP
+[    6151.4 ms] RX [NET] state=CONNECTING
+[    6151.7 ms] RX [NET] reconnect=FAILED
+[    6151.7 ms] RX [NET] state=BACKOFF
+[    6151.7 ms] RX [NET] retry=31 backoff_ms=50
+[    6151.8 ms] RX [FAULT] network restored
+[    6151.8 ms] RX [NET] state=CONNECTING
+[    6151.8 ms] HW GPIO2=1
+[    6151.8 ms] RX [NET] state=CONNECTED
+[    6151.8 ms] RX [NET] reconnect=SUCCESS
+[    6151.9 ms] RX [BUFFER] flush_start count=100
+[    6151.9 ms] RX [MQTT] publish id=397 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=397 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=398 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=398 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=399 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=399 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=400 temp=24.5
+[    6151.9 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.0 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.1 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.1 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.1 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.1 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.1 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.2 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.3 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.4 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.5 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.6 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.6 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=394 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=395 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.8 ms] RX [MQTT] publish id=396 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=397 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=398 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=399 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=400 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=393 temp=24.5
+[    6152.9 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.0 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.1 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.2 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.3 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.4 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.5 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.6 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.7 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=397 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=398 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=399 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.8 ms] RX [MQTT] publish id=400 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=393 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=394 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=395 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=396 temp=24.5
+[    6153.9 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.0 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=393 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=393 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=394 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=394 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=395 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=395 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=396 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=396 temp=24.5
+[    6154.1 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.2 ms] RX [MQTT] publish id=393 temp=24.5
+[    6154.3 ms] RX [MQTT] publish id=393 temp=24.5
+[    6154.3 ms] RX [MQTT] publish id=394 temp=24.5
+[    6154.3 ms] RX [MQTT] publish id=394 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=395 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=395 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=396 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=396 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=397 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=398 temp=24.5
+[    6154.4 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.5 ms] RX [MQTT] publish id=399 temp=24.5
+[    6154.5 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.5 ms] RX [MQTT] publish id=400 temp=24.5
+[    6154.5 ms] RX [BUFFER] flush_end count=0
+[~   6154.5 ms] TX STATUS
+[    6559.1 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":800,"dropped":0,"duplicates":400,"reconnect_attempts":31,"heap":261247}
+[~   6559.1 ms] TX NET DOWN
+[    6920.9 ms] HW GPIO2=0
+[    6921.3 ms] RX [NET] state=DISCONNECTED
+[    6921.4 ms] RX [NET] state=BACKOFF
+[    6921.4 ms] RX [NET] retry=32 backoff_ms=500
+[~   6921.4 ms] TX STRESS 100
+[    7119.8 ms] RX [STRESS] start count=100 heap=261247
+[    7120.2 ms] RX [BUFFER] queued id=401 count=1/8
+[    7120.2 ms] RX [BUFFER] queued id=402 count=2/8
+[    7120.2 ms] RX [BUFFER] queued id=403 count=3/8
+[    7120.4 ms] RX [BUFFER] queued id=404 count=4/8
+[    7120.4 ms] RX [BUFFER] queued id=405 count=5/8
+[    7120.4 ms] RX [BUFFER] queued id=406 count=6/8
+[    7120.4 ms] RX [BUFFER] queued id=407 count=7/8
+[    7120.4 ms] RX [BUFFER] queued id=408 count=8/8
+[    7120.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=0
+[    7120.4 ms] RX [BUFFER] queued id=409 count=9/8
+[    7120.5 ms] RX [BUFFER] queued id=410 count=10/8
+[    7120.5 ms] RX [BUFFER] queued id=411 count=11/8
+[    7120.5 ms] RX [BUFFER] queued id=412 count=12/8
+[    7120.5 ms] RX [BUFFER] queued id=413 count=13/8
+[    7120.5 ms] RX [BUFFER] queued id=414 count=14/8
+[    7120.5 ms] RX [BUFFER] queued id=415 count=15/8
+[    7120.5 ms] RX [BUFFER] queued id=416 count=16/8
+[    7120.6 ms] RX [BUFFER] queued id=417 count=17/8
+[    7120.6 ms] RX [BUFFER] queued id=418 count=18/8
+[    7120.6 ms] RX [BUFFER] queued id=419 count=19/8
+[    7120.6 ms] RX [BUFFER] queued id=420 count=20/8
+[    7120.6 ms] RX [BUFFER] queued id=421 count=21/8
+[    7120.6 ms] RX [BUFFER] queued id=422 count=22/8
+[    7120.6 ms] RX [BUFFER] queued id=423 count=23/8
+[    7120.6 ms] RX [BUFFER] queued id=424 count=24/8
+[    7120.6 ms] RX [BUFFER] queued id=425 count=25/8
+[    7120.6 ms] RX [BUFFER] queued id=426 count=26/8
+[    7120.7 ms] RX [BUFFER] queued id=427 count=27/8
+[    7120.7 ms] RX [BUFFER] queued id=428 count=28/8
+[    7120.7 ms] RX [BUFFER] queued id=429 count=29/8
+[    7120.7 ms] RX [BUFFER] queued id=430 count=30/8
+[    7120.7 ms] RX [BUFFER] queued id=431 count=31/8
+[    7120.7 ms] RX [BUFFER] queued id=432 count=32/8
+[    7120.7 ms] RX [BUFFER] queued id=433 count=33/8
+[    7120.7 ms] RX [BUFFER] queued id=434 count=34/8
+[    7120.8 ms] RX [BUFFER] queued id=435 count=35/8
+[    7120.8 ms] RX [BUFFER] queued id=436 count=36/8
+[    7120.8 ms] RX [BUFFER] queued id=437 count=37/8
+[    7120.8 ms] RX [BUFFER] queued id=438 count=38/8
+[    7120.8 ms] RX [BUFFER] queued id=439 count=39/8
+[    7120.8 ms] RX [BUFFER] queued id=440 count=40/8
+[    7120.8 ms] RX [BUFFER] queued id=441 count=41/8
+[    7120.9 ms] RX [BUFFER] queued id=442 count=42/8
+[    7120.9 ms] RX [BUFFER] queued id=443 count=43/8
+[    7120.9 ms] RX [BUFFER] queued id=444 count=44/8
+[    7120.9 ms] RX [BUFFER] queued id=445 count=45/8
+[    7120.9 ms] RX [BUFFER] queued id=446 count=46/8
+[    7120.9 ms] RX [BUFFER] queued id=447 count=47/8
+[    7121.0 ms] RX [BUFFER] queued id=448 count=48/8
+[    7121.0 ms] RX [BUFFER] queued id=449 count=49/8
+[    7121.0 ms] RX [BUFFER] queued id=450 count=50/8
+[    7121.0 ms] RX [BUFFER] queued id=451 count=51/8
+[    7121.0 ms] RX [BUFFER] queued id=452 count=52/8
+[    7121.0 ms] RX [BUFFER] queued id=453 count=53/8
+[    7121.0 ms] RX [BUFFER] queued id=454 count=54/8
+[    7121.0 ms] RX [BUFFER] queued id=455 count=55/8
+[    7121.1 ms] RX [BUFFER] queued id=456 count=56/8
+[    7121.1 ms] RX [BUFFER] queued id=457 count=57/8
+[    7121.1 ms] RX [BUFFER] queued id=458 count=58/8
+[    7121.1 ms] RX [BUFFER] queued id=459 count=59/8
+[    7121.1 ms] RX [BUFFER] queued id=460 count=60/8
+[    7121.1 ms] RX [BUFFER] queued id=461 count=61/8
+[    7121.1 ms] RX [BUFFER] queued id=462 count=62/8
+[    7121.1 ms] RX [BUFFER] queued id=463 count=63/8
+[    7121.1 ms] RX [BUFFER] queued id=464 count=64/8
+[    7121.2 ms] RX [BUFFER] queued id=465 count=65/8
+[    7121.2 ms] RX [BUFFER] queued id=466 count=66/8
+[    7121.2 ms] RX [BUFFER] queued id=467 count=67/8
+[    7121.2 ms] RX [BUFFER] queued id=468 count=68/8
+[    7121.2 ms] RX [BUFFER] queued id=469 count=69/8
+[    7121.2 ms] RX [BUFFER] queued id=470 count=70/8
+[    7121.2 ms] RX [BUFFER] queued id=471 count=71/8
+[    7121.2 ms] RX [BUFFER] queued id=472 count=72/8
+[    7121.2 ms] RX [BUFFER] queued id=473 count=73/8
+[    7121.2 ms] RX [BUFFER] queued id=474 count=74/8
+[    7121.3 ms] RX [BUFFER] queued id=475 count=75/8
+[    7121.3 ms] RX [BUFFER] queued id=476 count=76/8
+[    7121.3 ms] RX [BUFFER] queued id=477 count=77/8
+[    7121.3 ms] RX [BUFFER] queued id=478 count=78/8
+[    7121.3 ms] RX [BUFFER] queued id=479 count=79/8
+[    7121.4 ms] RX [BUFFER] queued id=480 count=80/8
+[    7121.4 ms] RX [BUFFER] queued id=481 count=81/8
+[    7121.4 ms] RX [BUFFER] queued id=482 count=82/8
+[    7121.4 ms] RX [BUFFER] queued id=483 count=83/8
+[    7121.4 ms] RX [BUFFER] queued id=484 count=84/8
+[    7121.5 ms] RX [BUFFER] queued id=485 count=85/8
+[    7121.5 ms] RX [BUFFER] queued id=486 count=86/8
+[    7121.5 ms] RX [BUFFER] queued id=487 count=87/8
+[    7121.5 ms] RX [BUFFER] queued id=488 count=88/8
+[    7121.5 ms] RX [BUFFER] queued id=489 count=89/8
+[    7121.5 ms] RX [BUFFER] queued id=490 count=90/8
+[    7121.6 ms] RX [BUFFER] queued id=491 count=91/8
+[    7121.6 ms] RX [BUFFER] queued id=492 count=92/8
+[    7121.6 ms] RX [BUFFER] queued id=493 count=93/8
+[    7121.6 ms] RX [BUFFER] queued id=494 count=94/8
+[    7121.6 ms] RX [BUFFER] queued id=495 count=95/8
+[    7121.6 ms] RX [BUFFER] queued id=496 count=96/8
+[    7121.6 ms] RX [BUFFER] queued id=497 count=97/8
+[    7121.7 ms] RX [BUFFER] queued id=498 count=98/8
+[    7121.7 ms] RX [BUFFER] queued id=499 count=99/8
+[    7121.7 ms] RX [BUFFER] queued id=500 count=100/8
+[    7121.7 ms] RX [STRESS] end heap=254847
+[~   7121.7 ms] TX STATUS
+[    7379.6 ms] RX {"net":"BACKOFF","broker":false,"buffer":100,"capacity":8,"sent":800,"dropped":0,"duplicates":400,"reconnect_attempts":32,"heap":254847}
+[    7423.2 ms] RX [NET] state=CONNECTING
+[    7423.5 ms] RX [NET] reconnect=FAILED
+[    7423.5 ms] RX [NET] state=BACKOFF
+[    7423.5 ms] RX [NET] retry=33 backoff_ms=50
+[    7475.4 ms] RX [NET] state=CONNECTING
+[    7475.7 ms] RX [NET] reconnect=FAILED
+[    7475.7 ms] RX [NET] state=BACKOFF
+[    7475.7 ms] RX [NET] retry=34 backoff_ms=50
+[    7527.9 ms] RX [NET] state=CONNECTING
+[    7528.2 ms] RX [NET] reconnect=FAILED
+[    7528.2 ms] RX [NET] state=BACKOFF
+[    7528.2 ms] RX [NET] retry=35 backoff_ms=50
+[    7579.9 ms] RX [NET] state=CONNECTING
+[    7580.2 ms] RX [NET] reconnect=FAILED
+[    7580.2 ms] RX [NET] state=BACKOFF
+[    7580.2 ms] RX [NET] retry=36 backoff_ms=50
+[    7631.7 ms] RX [NET] state=CONNECTING
+[    7631.9 ms] RX [NET] reconnect=FAILED
+[    7632.0 ms] RX [NET] state=BACKOFF
+[    7632.0 ms] RX [NET] retry=37 backoff_ms=50
+[    7681.7 ms] RX [NET] state=CONNECTING
+[    7681.8 ms] RX [NET] reconnect=FAILED
+[    7681.9 ms] RX [NET] state=BACKOFF
+[    7681.9 ms] RX [NET] retry=38 backoff_ms=50
+[~   7681.9 ms] TX NET UP
+[    7727.5 ms] RX [FAULT] network restored
+[    7727.7 ms] RX [NET] state=CONNECTING
+[    7727.7 ms] HW GPIO2=1
+[    7727.7 ms] RX [NET] state=CONNECTED
+[    7727.7 ms] RX [NET] reconnect=SUCCESS
+[    7727.7 ms] RX [BUFFER] flush_start count=100
+[    7727.8 ms] RX [MQTT] publish id=497 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=497 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=498 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=498 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=499 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=499 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=500 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=500 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=493 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=493 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=494 temp=24.5
+[    7727.8 ms] RX [MQTT] publish id=494 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=495 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=495 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=496 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=496 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=497 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=497 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=498 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=498 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=499 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=499 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=500 temp=24.5
+[    7727.9 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.0 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.1 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.2 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.3 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.4 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.5 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.6 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.7 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=495 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=496 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=497 temp=24.5
+[    7728.8 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=498 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=499 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=500 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=493 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=494 temp=24.5
+[    7728.9 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.0 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.1 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.2 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.3 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.4 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.5 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=493 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=494 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.6 ms] RX [MQTT] publish id=495 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=496 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=497 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=498 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.7 ms] RX [MQTT] publish id=499 temp=24.5
+[    7729.8 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.8 ms] RX [MQTT] publish id=500 temp=24.5
+[    7729.8 ms] RX [BUFFER] flush_end count=0
+[~   7729.8 ms] TX STATUS
+[    8136.3 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":1000,"dropped":0,"duplicates":500,"reconnect_attempts":38,"heap":254847}
+# MEASURED heap_series = [286847, 280447, 274047, 267647, 261247, 254847]
+# MEASURED buffer_occupancy_offline = [100, 100, 100, 100, 100]

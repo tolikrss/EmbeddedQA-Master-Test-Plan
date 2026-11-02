@@ -1,0 +1,2238 @@
+UART CLI Homework (buggy build) — Serial log
+Дата: 28.10.2026   Тестувальник: Лахно Анатолій
+Прошивка: Wokwi_UART_CLI_Homework_Buggy, src/main.cpp без змін ("UART CLI HOMEWORK DEVICE v2.0")
+Плата: ESP32 DevKit v1 (diagram.json), STATUS LED на GPIO2. UART 115200 8N1, кінець рядка LF.
+Середовище виконання: host-модель ESP32 Arduino API (32-bit int/long як у Xtensa,
+таймінг UART 115200 = 86.8 мкс/байт, RX-буфер драйвера 256 байт як в arduino-esp32 2.x).
+Кожен TC — окремий сеанс з холодного старту; кожен прогнано 5 разів
+(прогони 1–3: рядок відправлено пакетом, як paste; прогони 4–5: посимвольно, 30 мс/символ).
+Нижче — прогін №1 кожного TC; для TC-17 і TC-24 додано також прогін №4 (посимвольний).
+
+Позначення:
+  [  мс від старту ]  віртуальний час
+  TX> "..."          що надіслано у Serial (\n = LF, \r = CR, \xNN = байт)
+  RX< ...            що вивела прошивка
+  {GPIO2 -> ...}     зміна рівня на виводі STATUS LED
+  {UART RX buffer overflow: N bytes dropped}  байти, втрачені через переповнення RX-буфера
+
+
+====================================================================================================
+TC-01 — help
+Техніка: Smoke / Positive
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "help\n"  (5 bytes)
+[  300.469] RX< Commands:
+[  300.469] RX<   help
+[  300.469] RX<   status
+[  300.469] RX<   set speed <0..255>
+[  300.469] RX<   set timeout <1..60>
+[  300.469] RX<   led on
+[  300.469] RX<   led off
+[  300.469] RX<   save
+[  300.469] RX<   reset
+[  300.469] RX< > 
+[ 1450.035] {END OF SESSION}
+
+
+====================================================================================================
+TC-02 — status (після старту)
+Техніка: Smoke / Positive
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "status\n"  (7 bytes)
+[  300.629] RX< SPEED=120
+[  300.629] RX< TIMEOUT=10
+[  300.629] RX< LED=OFF
+[  300.629] RX< CONFIG=SAVED
+[  300.629] RX< > 
+[ 1450.041] {END OF SESSION}
+
+
+====================================================================================================
+TC-03 — set speed -1 → 0 → 1
+Техніка: BVA: MIN-1, MIN, MIN+1
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed -1\n"  (13 bytes)
+[  301.153] RX< ERROR: speed out of range
+[  301.153] RX< > 
+[  450.027] TX> "status\n"  (7 bytes)
+[  450.642] RX< SPEED=120
+[  450.642] RX< TIMEOUT=10
+[  450.642] RX< LED=OFF
+[  450.642] RX< CONFIG=SAVED
+[  450.642] RX< > 
+[  600.044] TX> "set speed 0\n"  (12 bytes)
+[  601.092] RX< OK: speed=0
+[  601.092] RX< > 
+[  750.054] TX> "set speed 1\n"  (12 bytes)
+[  751.102] RX< OK: speed=1
+[  751.102] RX< > 
+[  900.064] TX> "status\n"  (7 bytes)
+[  900.679] RX< SPEED=1
+[  900.679] RX< TIMEOUT=10
+[  900.679] RX< LED=OFF
+[  900.679] RX< CONFIG=DIRTY
+[  900.679] RX< > 
+[ 2050.091] {END OF SESSION}
+
+
+====================================================================================================
+TC-04 — set speed 127 → 254 → 255
+Техніка: BVA: NOMINAL, MAX-1, MAX
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 127\n"  (14 bytes)
+[  301.244] RX< OK: speed=127
+[  301.244] RX< > 
+[  450.030] TX> "set speed 254\n"  (14 bytes)
+[  451.260] RX< OK: speed=254
+[  451.260] RX< > 
+[  600.046] TX> "set speed 255\n"  (14 bytes)
+[  601.276] RX< OK: speed=255
+[  601.276] RX< > 
+[  750.062] TX> "status\n"  (7 bytes)
+[  750.677] RX< SPEED=255
+[  750.677] RX< TIMEOUT=10
+[  750.677] RX< LED=OFF
+[  750.677] RX< CONFIG=DIRTY
+[  750.677] RX< > 
+[ 1900.089] {END OF SESSION}
+
+
+====================================================================================================
+TC-05 — set speed 256
+Техніка: BVA: MAX+1 / Negative
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 256\n"  (14 bytes)
+[  301.244] RX< OK: speed=255
+[  301.244] RX< > 
+[  450.030] TX> "status\n"  (7 bytes)
+[  450.645] RX< SPEED=255
+[  450.645] RX< TIMEOUT=10
+[  450.645] RX< LED=OFF
+[  450.645] RX< CONFIG=DIRTY
+[  450.645] RX< > 
+[ 1600.057] {END OF SESSION}
+
+
+====================================================================================================
+TC-06 — set speed 257 → 999999999999999
+Техніка: BVA: MAX+2 / Overflow / Negative
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 257\n"  (14 bytes)
+[  301.244] RX< ERROR: speed out of range
+[  301.244] RX< > 
+[  450.030] TX> "set speed 999999999999999\n"  (26 bytes)
+[  452.308] RX< ERROR: speed out of range
+[  452.308] RX< > 
+[  600.038] TX> "status\n"  (7 bytes)
+[  600.653] RX< SPEED=120
+[  600.653] RX< TIMEOUT=10
+[  600.653] RX< LED=OFF
+[  600.653] RX< CONFIG=SAVED
+[  600.653] RX< > 
+[ 1750.065] {END OF SESSION}
+
+
+====================================================================================================
+TC-07 — set timeout 0 (+ -0, 00)
+Техніка: BVA: MIN-1 / Negative
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set timeout 0\n"  (14 bytes)
+[  301.244] RX< OK: timeout=0
+[  301.244] RX< > 
+[  450.030] TX> "status\n"  (7 bytes)
+[  450.645] RX< SPEED=120
+[  450.645] RX< TIMEOUT=0
+[  450.645] RX< LED=OFF
+[  450.645] RX< CONFIG=DIRTY
+[  450.645] RX< > 
+[  600.047] TX> "set timeout -0\n"  (15 bytes)
+[  601.368] RX< OK: timeout=0
+[  601.368] RX< > 
+[  750.066] TX> "set timeout 00\n"  (15 bytes)
+[  751.387] RX< OK: timeout=0
+[  751.387] RX< > 
+[  900.085] TX> "status\n"  (7 bytes)
+[  900.700] RX< SPEED=120
+[  900.700] RX< TIMEOUT=0
+[  900.700] RX< LED=OFF
+[  900.700] RX< CONFIG=DIRTY
+[  900.700] RX< > 
+[ 2050.112] {END OF SESSION}
+
+
+====================================================================================================
+TC-08 — set timeout 1 → 2 → 59 → 60 → 61 → 99999999999
+Техніка: BVA: MIN, MIN+1, MAX-1, MAX, MAX+1, overflow
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set timeout 1\n"  (14 bytes)
+[  301.244] RX< OK: timeout=1
+[  301.244] RX< > 
+[  450.030] TX> "set timeout 2\n"  (14 bytes)
+[  451.260] RX< OK: timeout=2
+[  451.260] RX< > 
+[  600.046] TX> "set timeout 59\n"  (15 bytes)
+[  601.367] RX< OK: timeout=59
+[  601.367] RX< > 
+[  750.065] TX> "set timeout 60\n"  (15 bytes)
+[  751.386] RX< OK: timeout=60
+[  751.386] RX< > 
+[  900.084] TX> "set timeout 61\n"  (15 bytes)
+[  901.405] RX< ERROR: timeout out of range
+[  901.405] RX< > 
+[ 1050.103] TX> "set timeout 99999999999\n"  (24 bytes)
+[ 1052.199] RX< ERROR: timeout out of range
+[ 1052.199] RX< > 
+[ 1200.105] TX> "status\n"  (7 bytes)
+[ 1200.720] RX< SPEED=120
+[ 1200.720] RX< TIMEOUT=60
+[ 1200.720] RX< LED=OFF
+[ 1200.720] RX< CONFIG=DIRTY
+[ 1200.720] RX< > 
+[ 2350.132] {END OF SESSION}
+
+
+====================================================================================================
+TC-09 — set speed / set speed abc / set speed 10 20 / set speed 12abc / set speed 1.5 / set timeout
+Техніка: Negative: відсутній, зайвий, нечисловий аргумент
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed\n"  (10 bytes)
+[  300.902] RX< ERROR: invalid speed
+[  300.902] RX< > 
+[  450.018] TX> "set speed abc\n"  (14 bytes)
+[  451.248] RX< ERROR: invalid speed
+[  451.248] RX< > 
+[  600.034] TX> "set speed 10 20\n"  (16 bytes)
+[  601.424] RX< ERROR: invalid speed
+[  601.424] RX< > 
+[  750.034] TX> "set speed 12abc\n"  (16 bytes)
+[  751.424] RX< ERROR: invalid speed
+[  751.424] RX< > 
+[  900.034] TX> "set speed 1.5\n"  (14 bytes)
+[  901.264] RX< ERROR: invalid speed
+[  901.264] RX< > 
+[ 1050.050] TX> "set timeout\n"  (12 bytes)
+[ 1051.098] RX< ERROR: invalid timeout
+[ 1051.098] RX< > 
+[ 1200.060] TX> "status\n"  (7 bytes)
+[ 1200.675] RX< SPEED=120
+[ 1200.675] RX< TIMEOUT=10
+[ 1200.675] RX< LED=OFF
+[ 1200.675] RX< CONFIG=SAVED
+[ 1200.675] RX< > 
+[ 2350.087] {END OF SESSION}
+
+
+====================================================================================================
+TC-10 — foo / led blink / "" / "   "
+Техніка: Negative: unknown / empty command
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "foo\n"  (4 bytes)
+[  300.378] RX< ERROR: unknown command
+[  300.378] RX< > 
+[  450.022] TX> "led blink\n"  (10 bytes)
+[  450.910] RX< ERROR: unknown command
+[  450.910] RX< > 
+[  600.026] TX> "\n"  (1 bytes)
+[  600.117] RX< ERROR: empty command
+[  600.117] RX< > 
+[  750.047] TX> "   \n"  (4 bytes)
+[  750.411] RX< ERROR: empty command
+[  750.411] RX< > 
+[  900.055] TX> "status\n"  (7 bytes)
+[  900.670] RX< SPEED=120
+[  900.670] RX< TIMEOUT=10
+[  900.670] RX< LED=OFF
+[  900.670] RX< CONFIG=SAVED
+[  900.670] RX< > 
+[ 2050.082] {END OF SESSION}
+
+
+====================================================================================================
+TC-11 — HELP / Help / LED ON / STATUS / Status
+Техніка: Negative: case sensitivity (REQ-06)
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "HELP\n"  (5 bytes)
+[  300.469] RX< ERROR: unknown command
+[  300.469] RX< > 
+[  450.025] TX> "Help\n"  (5 bytes)
+[  450.480] RX< ERROR: unknown command
+[  450.480] RX< > 
+[  600.036] TX> "LED ON\n"  (7 bytes)
+[  600.651] RX< ERROR: unknown command
+[  600.651] RX< > 
+[  750.053] TX> "STATUS\n"  (7 bytes)
+[  750.668] RX< SPEED=120
+[  750.668] RX< TIMEOUT=10
+[  750.668] RX< LED=OFF
+[  750.668] RX< CONFIG=SAVED
+[  750.668] RX< > 
+[  900.070] TX> "Status\n"  (7 bytes)
+[  900.685] RX< SPEED=120
+[  900.685] RX< TIMEOUT=10
+[  900.685] RX< LED=OFF
+[  900.685] RX< CONFIG=SAVED
+[  900.685] RX< > 
+[ 1050.087] TX> "status\n"  (7 bytes)
+[ 1050.702] RX< SPEED=120
+[ 1050.702] RX< TIMEOUT=10
+[ 1050.702] RX< LED=OFF
+[ 1050.702] RX< CONFIG=SAVED
+[ 1050.702] RX< > 
+[ 2200.114] {END OF SESSION}
+
+
+====================================================================================================
+TC-12 — %%%\t### / !@#$%^&*() / - / статус
+Техніка: Negative: special chars / Unicode (REQ-08)
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "%%%\t###\n"  (8 bytes)
+[  300.720] RX< OK
+[  300.720] RX< > 
+[  450.034] TX> "!@#$%^&*()\n"  (11 bytes)
+[  450.991] RX< OK
+[  450.991] RX< > 
+[  600.041] TX> "-\n"  (2 bytes)
+[  600.223] RX< OK
+[  600.223] RX< > 
+[  750.043] TX> "\xD1\x81\xD1\x82\xD0\xB0\xD1\x82\xD1\x83\xD1\x81\n"  (13 bytes)
+[  751.182] RX< OK
+[  751.182] RX< > 
+[  900.056] TX> "status\n"  (7 bytes)
+[  900.671] RX< SPEED=120
+[  900.671] RX< TIMEOUT=10
+[  900.671] RX< LED=OFF
+[  900.671] RX< CONFIG=SAVED
+[  900.671] RX< > 
+[ 2050.083] {END OF SESSION}
+
+
+====================================================================================================
+TC-13 — status\r / status\r\n / " status "
+Техніка: Equivalence: line terminators, пробіли
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "status\r"  (7 bytes)
+[  300.629] RX< SPEED=120
+[  300.629] RX< TIMEOUT=10
+[  300.629] RX< LED=OFF
+[  300.629] RX< CONFIG=SAVED
+[  300.629] RX< > 
+[  450.031] TX> "status\r\n"  (8 bytes)
+[  450.646] RX< SPEED=120
+[  450.646] RX< TIMEOUT=10
+[  450.646] RX< LED=OFF
+[  450.646] RX< CONFIG=SAVED
+[  450.646] RX< > 
+[  600.051] TX> " status \n"  (9 bytes)
+[  600.848] RX< SPEED=120
+[  600.848] RX< TIMEOUT=10
+[  600.848] RX< LED=OFF
+[  600.848] RX< CONFIG=SAVED
+[  600.848] RX< > 
+[  750.052] TX> "status\n"  (7 bytes)
+[  750.667] RX< SPEED=120
+[  750.667] RX< TIMEOUT=10
+[  750.667] RX< LED=OFF
+[  750.667] RX< CONFIG=SAVED
+[  750.667] RX< > 
+[ 1900.079] {END OF SESSION}
+
+
+====================================================================================================
+TC-14 — рядок рівно 40 символів: "set speed 000000000000000000000000000007" та "A"×40
+Техніка: Input length: N = 40
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 000000000000000000000000000007\n"  (41 bytes)
+[  303.591] RX< OK: speed=7
+[  303.591] RX< > 
+[  450.023] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (41 bytes)
+[  453.600] RX< ERROR: unknown command
+[  453.600] RX< > 
+[  600.032] TX> "status\n"  (7 bytes)
+[  600.647] RX< SPEED=7
+[  600.647] RX< TIMEOUT=10
+[  600.647] RX< LED=OFF
+[  600.647] RX< CONFIG=DIRTY
+[  600.647] RX< > 
+[ 1750.059] {END OF SESSION}
+
+
+====================================================================================================
+TC-15 — "A"×41
+Техніка: Input length: N+1 = 41
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (42 bytes)
+[  303.591] RX< 
+[  303.591] RX< *** SYSTEM FAULT ***
+[  303.591] RX< Reason: input line boundary failure
+[  303.591] RX< rst:0xc (SW_CPU_RESET)
+[  303.591] RX< Rebooting...
+[  553.591] RX< 
+[  553.591] RX< ======================================
+[  553.591] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  553.591] RX<  READY
+[  553.591] RX< ======================================
+[  553.591] RX< Type 'help'
+[  553.591] RX< > ERROR: empty command
+[  553.614] RX< > 
+[  553.636] TX> "status\n"  (7 bytes)
+[  554.251] RX< SPEED=120
+[  554.251] RX< TIMEOUT=10
+[  554.251] RX< LED=OFF
+[  554.251] RX< CONFIG=SAVED
+[  554.251] RX< > 
+[ 1703.663] {END OF SESSION}
+
+
+====================================================================================================
+TC-16 — валідна команда довжиною 41: "set speed 0000000000000000000000000000007"
+Техніка: Input length: N+1 з валідним змістом
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 0000000000000000000000000000007\n"  (42 bytes)
+[  303.591] RX< 
+[  303.591] RX< *** SYSTEM FAULT ***
+[  303.591] RX< Reason: input line boundary failure
+[  303.591] RX< rst:0xc (SW_CPU_RESET)
+[  303.591] RX< Rebooting...
+[  553.591] RX< 
+[  553.591] RX< ======================================
+[  553.591] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  553.591] RX<  READY
+[  553.591] RX< ======================================
+[  553.591] RX< Type 'help'
+[  553.591] RX< > ERROR: empty command
+[  553.614] RX< > 
+[  553.636] TX> "status\n"  (7 bytes)
+[  554.251] RX< SPEED=120
+[  554.251] RX< TIMEOUT=10
+[  554.251] RX< LED=OFF
+[  554.251] RX< CONFIG=SAVED
+[  554.251] RX< > 
+[ 1703.663] {END OF SESSION}
+
+
+====================================================================================================
+TC-17 — "A"×42, "A"×80 (2N), "A"×400 (10N)
+Техніка: Input length: N+2, 2N, 10N
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (43 bytes)
+[  303.591] RX< 
+[  303.591] RX< *** SYSTEM FAULT ***
+[  303.591] RX< Reason: input line boundary failure
+[  303.591] RX< rst:0xc (SW_CPU_RESET)
+[  303.591] RX< Rebooting...
+[  553.591] RX< 
+[  553.591] RX< ======================================
+[  553.591] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  553.591] RX<  READY
+[  553.591] RX< ======================================
+[  553.591] RX< Type 'help'
+[  553.591] RX< > ERROR: unknown command
+[  553.617] RX< > 
+[ 1153.645] TX> "status\n"  (7 bytes)
+[ 1154.260] RX< SPEED=120
+[ 1154.260] RX< TIMEOUT=10
+[ 1154.260] RX< LED=OFF
+[ 1154.260] RX< CONFIG=SAVED
+[ 1154.260] RX< > 
+[ 1603.676] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (81 bytes)
+[ 1607.253] RX< 
+[ 1607.253] RX< *** SYSTEM FAULT ***
+[ 1607.253] RX< Reason: input line boundary failure
+[ 1607.253] RX< rst:0xc (SW_CPU_RESET)
+[ 1607.253] RX< Rebooting...
+[ 1857.253] RX< 
+[ 1857.253] RX< ======================================
+[ 1857.253] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1857.253] RX<  READY
+[ 1857.253] RX< ======================================
+[ 1857.253] RX< Type 'help'
+[ 1857.253] RX< > ERROR: unknown command
+[ 1857.393] RX< > 
+[ 2657.423] TX> "status\n"  (7 bytes)
+[ 2658.038] RX< SPEED=120
+[ 2658.038] RX< TIMEOUT=10
+[ 2658.038] RX< LED=OFF
+[ 2658.038] RX< CONFIG=SAVED
+[ 2658.038] RX< > 
+[ 3107.454] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (401 bytes)
+[ 3111.031] RX< 
+[ 3111.031] RX< *** SYSTEM FAULT ***
+[ 3111.031] RX< Reason: input line boundary failure
+[ 3111.031] RX< rst:0xc (SW_CPU_RESET)
+[ 3111.031] RX< Rebooting...
+[ 3361.031] RX< 
+[ 3361.031] RX< ======================================
+[ 3361.031] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 3361.031] RX<  READY
+[ 3361.031] RX< ======================================
+[ 3361.031] RX< Type 'help'
+[ 3361.031] RX< > 
+[ 3361.174] RX< *** SYSTEM FAULT ***
+[ 3361.174] RX< Reason: input line boundary failure
+[ 3361.174] RX< rst:0xc (SW_CPU_RESET)
+[ 3361.174] RX< Rebooting...
+[ 3611.174] RX< 
+[ 3611.174] RX< ======================================
+[ 3611.174] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 3611.174] RX<  READY
+[ 3611.174] RX< ======================================
+[ 3611.174] RX< Type 'help'
+[ 3611.174] RX< > 
+[ 3611.317] RX< *** SYSTEM FAULT ***
+[ 3611.317] RX< Reason: input line boundary failure
+[ 3611.317] RX< rst:0xc (SW_CPU_RESET)
+[ 3611.317] RX< Rebooting...
+[ 3861.317] RX< 
+[ 3861.317] RX< ======================================
+[ 3861.317] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 3861.317] RX<  READY
+[ 3861.317] RX< ======================================
+[ 3861.317] RX< Type 'help'
+[ 3861.317] RX< > 
+[ 3861.460] RX< *** SYSTEM FAULT ***
+[ 3861.460] RX< Reason: input line boundary failure
+[ 3861.460] RX< rst:0xc (SW_CPU_RESET)
+[ 3861.460] RX< Rebooting...
+[ 4111.460] RX< 
+[ 4111.460] RX< ======================================
+[ 4111.460] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4111.460] RX<  READY
+[ 4111.460] RX< ======================================
+[ 4111.460] RX< Type 'help'
+[ 4111.460] RX< > 
+[ 4111.603] RX< *** SYSTEM FAULT ***
+[ 4111.603] RX< Reason: input line boundary failure
+[ 4111.603] RX< rst:0xc (SW_CPU_RESET)
+[ 4111.603] RX< Rebooting...
+[ 4361.603] RX< 
+[ 4361.603] RX< ======================================
+[ 4361.603] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4361.603] RX<  READY
+[ 4361.603] RX< ======================================
+[ 4361.603] RX< Type 'help'
+[ 4361.603] RX< > 
+[ 4361.746] RX< *** SYSTEM FAULT ***
+[ 4361.746] RX< Reason: input line boundary failure
+[ 4361.746] RX< rst:0xc (SW_CPU_RESET)
+[ 4361.746] RX< Rebooting...
+[ 4611.746] RX< 
+[ 4611.746] RX< ======================================
+[ 4611.746] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4611.746] RX<  READY
+[ 4611.746] RX< ======================================
+[ 4611.746] RX< Type 'help'
+[ 4611.746] RX< > 
+[ 4611.889] RX< *** SYSTEM FAULT ***
+[ 4611.889] RX< Reason: input line boundary failure
+[ 4611.889] RX< rst:0xc (SW_CPU_RESET)
+[ 4611.889] RX< Rebooting...
+[ 4861.889] RX< 
+[ 4861.889] RX< ======================================
+[ 4861.889] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4861.889] RX<  READY
+[ 4861.889] RX< ======================================
+[ 4861.889] RX< Type 'help'
+[ 4861.889] RX< > 
+[ 8861.979] TX> "status\n"  (7 bytes)
+[ 8862.594] RX< ERROR: unknown command
+[ 8862.594] RX< > 
+{UART RX buffer overflow: 104 bytes dropped by driver}
+[10012.006] {END OF SESSION}
+
+
+====================================================================================================
+TC-17 — "A"×42, "A"×80 (2N), "A"×400 (10N)  [прогін №4: посимвольне введення 30 мс/символ]
+Техніка: Input length: N+2, 2N, 10N
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (43 bytes, typed, 30 ms/char)
+[ 1530.025] RX< 
+[ 1530.025] RX< *** SYSTEM FAULT ***
+[ 1530.025] RX< Reason: input line boundary failure
+[ 1530.025] RX< rst:0xc (SW_CPU_RESET)
+[ 1530.025] RX< Rebooting...
+[ 1780.025] RX< 
+[ 1780.025] RX< ======================================
+[ 1780.025] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1780.025] RX<  READY
+[ 1780.025] RX< ======================================
+[ 1780.025] RX< Type 'help'
+[ 1780.025] RX< > ERROR: unknown command
+[ 1780.051] RX< > 
+[ 2380.079] TX> "status\n"  (7 bytes, typed, 30 ms/char)
+[ 2590.090] RX< SPEED=120
+[ 2590.090] RX< TIMEOUT=10
+[ 2590.090] RX< LED=OFF
+[ 2590.090] RX< CONFIG=SAVED
+[ 2590.090] RX< > 
+[ 2890.126] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (81 bytes, typed, 30 ms/char)
+[ 4120.137] RX< 
+[ 4120.137] RX< *** SYSTEM FAULT ***
+[ 4120.137] RX< Reason: input line boundary failure
+[ 4120.137] RX< rst:0xc (SW_CPU_RESET)
+[ 4120.137] RX< Rebooting...
+[ 4370.137] RX< 
+[ 4370.137] RX< ======================================
+[ 4370.137] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4370.137] RX<  READY
+[ 4370.137] RX< ======================================
+[ 4370.137] RX< Type 'help'
+[ 4370.137] RX< > ERROR: unknown command
+[ 5320.127] RX< > 
+[ 6120.157] TX> "status\n"  (7 bytes, typed, 30 ms/char)
+[ 6330.168] RX< SPEED=120
+[ 6330.168] RX< TIMEOUT=10
+[ 6330.168] RX< LED=OFF
+[ 6330.168] RX< CONFIG=SAVED
+[ 6330.168] RX< > 
+[ 6630.204] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (401 bytes, typed, 30 ms/char)
+[ 7860.215] RX< 
+[ 7860.215] RX< *** SYSTEM FAULT ***
+[ 7860.215] RX< Reason: input line boundary failure
+[ 7860.215] RX< rst:0xc (SW_CPU_RESET)
+[ 7860.215] RX< Rebooting...
+[ 8110.215] RX< 
+[ 8110.215] RX< ======================================
+[ 8110.215] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 8110.215] RX<  READY
+[ 8110.215] RX< ======================================
+[ 8110.215] RX< Type 'help'
+[ 8110.215] RX< > 
+[ 9090.216] RX< *** SYSTEM FAULT ***
+[ 9090.216] RX< Reason: input line boundary failure
+[ 9090.216] RX< rst:0xc (SW_CPU_RESET)
+[ 9090.216] RX< Rebooting...
+[ 9340.216] RX< 
+[ 9340.216] RX< ======================================
+[ 9340.216] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 9340.216] RX<  READY
+[ 9340.216] RX< ======================================
+[ 9340.216] RX< Type 'help'
+[ 9340.216] RX< > 
+[10320.217] RX< *** SYSTEM FAULT ***
+[10320.217] RX< Reason: input line boundary failure
+[10320.217] RX< rst:0xc (SW_CPU_RESET)
+[10320.217] RX< Rebooting...
+[10570.217] RX< 
+[10570.217] RX< ======================================
+[10570.217] RX<  UART CLI HOMEWORK DEVICE v2.0
+[10570.217] RX<  READY
+[10570.217] RX< ======================================
+[10570.217] RX< Type 'help'
+[10570.217] RX< > 
+[11550.218] RX< *** SYSTEM FAULT ***
+[11550.218] RX< Reason: input line boundary failure
+[11550.218] RX< rst:0xc (SW_CPU_RESET)
+[11550.218] RX< Rebooting...
+[11800.218] RX< 
+[11800.218] RX< ======================================
+[11800.218] RX<  UART CLI HOMEWORK DEVICE v2.0
+[11800.218] RX<  READY
+[11800.218] RX< ======================================
+[11800.218] RX< Type 'help'
+[11800.218] RX< > 
+[12780.219] RX< *** SYSTEM FAULT ***
+[12780.219] RX< Reason: input line boundary failure
+[12780.219] RX< rst:0xc (SW_CPU_RESET)
+[12780.219] RX< Rebooting...
+[13030.219] RX< 
+[13030.219] RX< ======================================
+[13030.219] RX<  UART CLI HOMEWORK DEVICE v2.0
+[13030.219] RX<  READY
+[13030.219] RX< ======================================
+[13030.219] RX< Type 'help'
+[13030.219] RX< > 
+[14010.220] RX< *** SYSTEM FAULT ***
+[14010.220] RX< Reason: input line boundary failure
+[14010.220] RX< rst:0xc (SW_CPU_RESET)
+[14010.220] RX< Rebooting...
+[14260.220] RX< 
+[14260.220] RX< ======================================
+[14260.220] RX<  UART CLI HOMEWORK DEVICE v2.0
+[14260.220] RX<  READY
+[14260.220] RX< ======================================
+[14260.220] RX< Type 'help'
+[14260.220] RX< > 
+[15240.221] RX< *** SYSTEM FAULT ***
+[15240.221] RX< Reason: input line boundary failure
+[15240.221] RX< rst:0xc (SW_CPU_RESET)
+[15240.221] RX< Rebooting...
+[15490.221] RX< 
+[15490.221] RX< ======================================
+[15490.221] RX<  UART CLI HOMEWORK DEVICE v2.0
+[15490.221] RX<  READY
+[15490.221] RX< ======================================
+[15490.221] RX< Type 'help'
+[15490.221] RX< > 
+[16470.222] RX< *** SYSTEM FAULT ***
+[16470.222] RX< Reason: input line boundary failure
+[16470.222] RX< rst:0xc (SW_CPU_RESET)
+[16470.222] RX< Rebooting...
+[16720.222] RX< 
+[16720.222] RX< ======================================
+[16720.222] RX<  UART CLI HOMEWORK DEVICE v2.0
+[16720.222] RX<  READY
+[16720.222] RX< ======================================
+[16720.222] RX< Type 'help'
+[16720.222] RX< > 
+[17700.223] RX< *** SYSTEM FAULT ***
+[17700.223] RX< Reason: input line boundary failure
+[17700.223] RX< rst:0xc (SW_CPU_RESET)
+[17700.223] RX< Rebooting...
+[17950.223] RX< 
+[17950.223] RX< ======================================
+[17950.223] RX<  UART CLI HOMEWORK DEVICE v2.0
+[17950.223] RX<  READY
+[17950.223] RX< ======================================
+[17950.223] RX< Type 'help'
+[17950.223] RX< > ERROR: unknown command
+[18660.213] RX< > 
+[22660.253] TX> "status\n"  (7 bytes, typed, 30 ms/char)
+[22870.264] RX< SPEED=120
+[22870.264] RX< TIMEOUT=10
+[22870.264] RX< LED=OFF
+[22870.264] RX< CONFIG=SAVED
+[22870.264] RX< > 
+[23870.296] {END OF SESSION}
+
+
+====================================================================================================
+TC-18 — set speed 50 → save → "A"×41 + "set speed 0"
+Техніка: Input length + Sequence: хвіст довгого рядка
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 50\n"  (13 bytes)
+[  301.153] RX< OK: speed=50
+[  301.153] RX< > 
+[  450.027] TX> "save\n"  (5 bytes)
+[  450.482] RX< OK: configuration saved
+[  450.482] RX< > 
+[  600.038] TX> "status\n"  (7 bytes)
+[  600.653] RX< SPEED=50
+[  600.653] RX< TIMEOUT=10
+[  600.653] RX< LED=OFF
+[  600.653] RX< CONFIG=SAVED
+[  600.653] RX< > 
+[  750.055] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAset speed 0\n"  (53 bytes)
+[  753.632] RX< 
+[  753.632] RX< *** SYSTEM FAULT ***
+[  753.632] RX< Reason: input line boundary failure
+[  753.632] RX< rst:0xc (SW_CPU_RESET)
+[  753.632] RX< Rebooting...
+[ 1003.632] RX< 
+[ 1003.632] RX< ======================================
+[ 1003.632] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1003.632] RX<  READY
+[ 1003.632] RX< ======================================
+[ 1003.632] RX< Type 'help'
+[ 1003.632] RX< > OK: speed=0
+[ 1003.688] RX< > 
+[ 1603.716] TX> "status\n"  (7 bytes)
+[ 1604.331] RX< SPEED=0
+[ 1604.331] RX< TIMEOUT=10
+[ 1604.331] RX< LED=OFF
+[ 1604.331] RX< CONFIG=DIRTY
+[ 1604.331] RX< > 
+[ 2753.743] {END OF SESSION}
+
+
+====================================================================================================
+TC-19 — set speed 100 → led on → "A"×41 → status
+Техніка: State: втрата конфігурації після fault
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 100\n"  (14 bytes)
+[  301.244] RX< OK: speed=100
+[  301.244] RX< > 
+[  450.030] TX> "led on\n"  (7 bytes)
+[  450.645] {GPIO2 -> HIGH (LED ON)}
+[  450.645] RX< OK
+[  450.645] RX< > 
+[  600.047] TX> "status\n"  (7 bytes)
+[  600.662] RX< SPEED=100
+[  600.662] RX< TIMEOUT=10
+[  600.662] RX< LED=ON
+[  600.662] RX< CONFIG=DIRTY
+[  600.662] RX< > 
+[  750.064] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (42 bytes)
+[  753.641] RX< 
+[  753.641] RX< *** SYSTEM FAULT ***
+[  753.641] RX< Reason: input line boundary failure
+[  753.641] RX< rst:0xc (SW_CPU_RESET)
+[  753.641] RX< Rebooting...
+[ 1003.641] {GPIO2 -> LOW (LED OFF)}
+[ 1003.641] RX< 
+[ 1003.641] RX< ======================================
+[ 1003.641] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1003.641] RX<  READY
+[ 1003.641] RX< ======================================
+[ 1003.641] RX< Type 'help'
+[ 1003.641] RX< > ERROR: empty command
+[ 1003.664] RX< > 
+[ 1603.692] TX> "status\n"  (7 bytes)
+[ 1604.307] RX< SPEED=120
+[ 1604.307] RX< TIMEOUT=10
+[ 1604.307] RX< LED=OFF
+[ 1604.307] RX< CONFIG=SAVED
+[ 1604.307] RX< > 
+[ 2753.719] {END OF SESSION}
+
+
+====================================================================================================
+TC-20 — set (у стані SAVED)
+Техніка: State / Sequence: incomplete command, чистий стан
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set\n"  (4 bytes)
+[  300.378] RX< ERROR: unknown command
+[  300.378] RX< > 
+[  450.022] TX> "status\n"  (7 bytes)
+[  450.637] RX< SPEED=120
+[  450.637] RX< TIMEOUT=10
+[  450.637] RX< LED=OFF
+[  450.637] RX< CONFIG=SAVED
+[  450.637] RX< > 
+[ 1600.049] {END OF SESSION}
+
+
+====================================================================================================
+TC-21 — set speed 100 → set
+Техніка: State / Sequence: incomplete command у стані DIRTY (Bonus)
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 100\n"  (14 bytes)
+[  301.244] RX< OK: speed=100
+[  301.244] RX< > 
+[  450.030] TX> "status\n"  (7 bytes)
+[  450.645] RX< SPEED=100
+[  450.645] RX< TIMEOUT=10
+[  450.645] RX< LED=OFF
+[  450.645] RX< CONFIG=DIRTY
+[  450.645] RX< > 
+[  600.047] TX> "set\n"  (4 bytes)
+[  600.411] RX< 
+[  600.411] RX< *** SYSTEM FAULT ***
+[  600.411] RX< Reason: parser state mismatch while configuration is dirty
+[  600.411] RX< rst:0xc (SW_CPU_RESET)
+[  600.411] RX< Rebooting...
+[  850.411] RX< 
+[  850.411] RX< ======================================
+[  850.411] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  850.411] RX<  READY
+[  850.411] RX< ======================================
+[  850.411] RX< Type 'help'
+[  850.411] RX< > 
+[ 1450.439] TX> "status\n"  (7 bytes)
+[ 1451.054] RX< SPEED=120
+[ 1451.054] RX< TIMEOUT=10
+[ 1451.054] RX< LED=OFF
+[ 1451.054] RX< CONFIG=SAVED
+[ 1451.054] RX< > 
+[ 2600.466] {END OF SESSION}
+
+
+====================================================================================================
+TC-22 — set speed 100 → save → set; set speed 100 → reset → set
+Техніка: State / Sequence: DIRTY очищено
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 100\n"  (14 bytes)
+[  301.244] RX< OK: speed=100
+[  301.244] RX< > 
+[  450.030] TX> "save\n"  (5 bytes)
+[  450.485] RX< OK: configuration saved
+[  450.485] RX< > 
+[  600.041] TX> "set\n"  (4 bytes)
+[  600.405] RX< ERROR: unknown command
+[  600.405] RX< > 
+[  750.049] TX> "status\n"  (7 bytes)
+[  750.664] RX< SPEED=100
+[  750.664] RX< TIMEOUT=10
+[  750.664] RX< LED=OFF
+[  750.664] RX< CONFIG=SAVED
+[  750.664] RX< > 
+[  900.066] TX> "set speed 100\n"  (14 bytes)
+[  901.296] RX< OK: speed=100
+[  901.296] RX< > 
+[ 1050.082] TX> "reset\n"  (6 bytes)
+[ 1050.606] RX< OK: reset
+[ 1050.606] RX< > 
+[ 1200.096] TX> "set\n"  (4 bytes)
+[ 1200.460] RX< ERROR: unknown command
+[ 1200.460] RX< > 
+[ 1350.104] TX> "status\n"  (7 bytes)
+[ 1350.719] RX< SPEED=120
+[ 1350.719] RX< TIMEOUT=10
+[ 1350.719] RX< LED=OFF
+[ 1350.719] RX< CONFIG=SAVED
+[ 1350.719] RX< > 
+[ 2500.131] {END OF SESSION}
+
+
+====================================================================================================
+TC-23 — "status\n" × 100 одним пакетом
+Техніка: Stress: burst валідних команд
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "status\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\nstatus\n"  (700 bytes)
+[  300.629] RX< SPEED=120
+[  300.629] RX< TIMEOUT=10
+[  300.629] RX< LED=OFF
+[  300.629] RX< CONFIG=SAVED
+[  300.629] RX< > SPEED=120
+[  301.244] RX< TIMEOUT=10
+[  301.244] RX< LED=OFF
+[  301.244] RX< CONFIG=SAVED
+[  301.244] RX< > SPEED=120
+[  301.837] RX< TIMEOUT=10
+[  301.837] RX< LED=OFF
+[  301.837] RX< CONFIG=SAVED
+[  301.837] RX< > SPEED=120
+[  302.452] RX< TIMEOUT=10
+[  302.452] RX< LED=OFF
+[  302.452] RX< CONFIG=SAVED
+[  302.452] RX< > SPEED=120
+[  303.067] RX< TIMEOUT=10
+[  303.067] RX< LED=OFF
+[  303.067] RX< CONFIG=SAVED
+[  303.067] RX< > SPEED=120
+[  303.660] RX< TIMEOUT=10
+[  303.660] RX< LED=OFF
+[  303.660] RX< CONFIG=SAVED
+[  303.660] RX< > SPEED=120
+[  304.275] RX< TIMEOUT=10
+[  304.275] RX< LED=OFF
+[  304.275] RX< CONFIG=SAVED
+[  304.275] RX< > SPEED=120
+[  304.890] RX< TIMEOUT=10
+[  304.890] RX< LED=OFF
+[  304.890] RX< CONFIG=SAVED
+[  304.890] RX< > SPEED=120
+[  305.483] RX< TIMEOUT=10
+[  305.483] RX< LED=OFF
+[  305.483] RX< CONFIG=SAVED
+[  305.483] RX< > SPEED=120
+[  306.098] RX< TIMEOUT=10
+[  306.098] RX< LED=OFF
+[  306.098] RX< CONFIG=SAVED
+[  306.098] RX< > SPEED=120
+[  306.713] RX< TIMEOUT=10
+[  306.713] RX< LED=OFF
+[  306.713] RX< CONFIG=SAVED
+[  306.713] RX< > SPEED=120
+[  307.306] RX< TIMEOUT=10
+[  307.306] RX< LED=OFF
+[  307.306] RX< CONFIG=SAVED
+[  307.306] RX< > SPEED=120
+[  307.921] RX< TIMEOUT=10
+[  307.921] RX< LED=OFF
+[  307.921] RX< CONFIG=SAVED
+[  307.921] RX< > SPEED=120
+[  308.536] RX< TIMEOUT=10
+[  308.536] RX< LED=OFF
+[  308.536] RX< CONFIG=SAVED
+[  308.536] RX< > SPEED=120
+[  309.129] RX< TIMEOUT=10
+[  309.129] RX< LED=OFF
+[  309.129] RX< CONFIG=SAVED
+[  309.129] RX< > SPEED=120
+[  309.744] RX< TIMEOUT=10
+[  309.744] RX< LED=OFF
+[  309.744] RX< CONFIG=SAVED
+[  309.744] RX< > SPEED=120
+[  310.359] RX< TIMEOUT=10
+[  310.359] RX< LED=OFF
+[  310.359] RX< CONFIG=SAVED
+[  310.359] RX< > SPEED=120
+[  310.952] RX< TIMEOUT=10
+[  310.952] RX< LED=OFF
+[  310.952] RX< CONFIG=SAVED
+[  310.952] RX< > SPEED=120
+[  311.567] RX< TIMEOUT=10
+[  311.567] RX< LED=OFF
+[  311.567] RX< CONFIG=SAVED
+[  311.567] RX< > SPEED=120
+[  312.182] RX< TIMEOUT=10
+[  312.182] RX< LED=OFF
+[  312.182] RX< CONFIG=SAVED
+[  312.182] RX< > SPEED=120
+[  312.775] RX< TIMEOUT=10
+[  312.775] RX< LED=OFF
+[  312.775] RX< CONFIG=SAVED
+[  312.775] RX< > SPEED=120
+[  313.390] RX< TIMEOUT=10
+[  313.390] RX< LED=OFF
+[  313.390] RX< CONFIG=SAVED
+[  313.390] RX< > SPEED=120
+[  314.005] RX< TIMEOUT=10
+[  314.005] RX< LED=OFF
+[  314.005] RX< CONFIG=SAVED
+[  314.005] RX< > SPEED=120
+[  314.598] RX< TIMEOUT=10
+[  314.598] RX< LED=OFF
+[  314.598] RX< CONFIG=SAVED
+[  314.598] RX< > SPEED=120
+[  315.213] RX< TIMEOUT=10
+[  315.213] RX< LED=OFF
+[  315.213] RX< CONFIG=SAVED
+[  315.213] RX< > SPEED=120
+[  315.828] RX< TIMEOUT=10
+[  315.828] RX< LED=OFF
+[  315.828] RX< CONFIG=SAVED
+[  315.828] RX< > SPEED=120
+[  316.421] RX< TIMEOUT=10
+[  316.421] RX< LED=OFF
+[  316.421] RX< CONFIG=SAVED
+[  316.421] RX< > SPEED=120
+[  317.036] RX< TIMEOUT=10
+[  317.036] RX< LED=OFF
+[  317.036] RX< CONFIG=SAVED
+[  317.036] RX< > SPEED=120
+[  317.651] RX< TIMEOUT=10
+[  317.651] RX< LED=OFF
+[  317.651] RX< CONFIG=SAVED
+[  317.651] RX< > SPEED=120
+[  318.244] RX< TIMEOUT=10
+[  318.244] RX< LED=OFF
+[  318.244] RX< CONFIG=SAVED
+[  318.244] RX< > SPEED=120
+[  318.859] RX< TIMEOUT=10
+[  318.859] RX< LED=OFF
+[  318.859] RX< CONFIG=SAVED
+[  318.859] RX< > SPEED=120
+[  319.474] RX< TIMEOUT=10
+[  319.474] RX< LED=OFF
+[  319.474] RX< CONFIG=SAVED
+[  319.474] RX< > SPEED=120
+[  320.067] RX< TIMEOUT=10
+[  320.067] RX< LED=OFF
+[  320.067] RX< CONFIG=SAVED
+[  320.067] RX< > SPEED=120
+[  320.682] RX< TIMEOUT=10
+[  320.682] RX< LED=OFF
+[  320.682] RX< CONFIG=SAVED
+[  320.682] RX< > SPEED=120
+[  321.297] RX< TIMEOUT=10
+[  321.297] RX< LED=OFF
+[  321.297] RX< CONFIG=SAVED
+[  321.297] RX< > SPEED=120
+[  321.890] RX< TIMEOUT=10
+[  321.890] RX< LED=OFF
+[  321.890] RX< CONFIG=SAVED
+[  321.890] RX< > SPEED=120
+[  322.505] RX< TIMEOUT=10
+[  322.505] RX< LED=OFF
+[  322.505] RX< CONFIG=SAVED
+[  322.505] RX< > SPEED=120
+[  323.120] RX< TIMEOUT=10
+[  323.120] RX< LED=OFF
+[  323.120] RX< CONFIG=SAVED
+[  323.120] RX< > SPEED=120
+[  323.713] RX< TIMEOUT=10
+[  323.713] RX< LED=OFF
+[  323.713] RX< CONFIG=SAVED
+[  323.713] RX< > SPEED=120
+[  324.328] RX< TIMEOUT=10
+[  324.328] RX< LED=OFF
+[  324.328] RX< CONFIG=SAVED
+[  324.328] RX< > SPEED=120
+[  324.943] RX< TIMEOUT=10
+[  324.943] RX< LED=OFF
+[  324.943] RX< CONFIG=SAVED
+[  324.943] RX< > SPEED=120
+[  325.536] RX< TIMEOUT=10
+[  325.536] RX< LED=OFF
+[  325.536] RX< CONFIG=SAVED
+[  325.536] RX< > SPEED=120
+[  326.151] RX< TIMEOUT=10
+[  326.151] RX< LED=OFF
+[  326.151] RX< CONFIG=SAVED
+[  326.151] RX< > SPEED=120
+[  326.766] RX< TIMEOUT=10
+[  326.766] RX< LED=OFF
+[  326.766] RX< CONFIG=SAVED
+[  326.766] RX< > SPEED=120
+[  327.359] RX< TIMEOUT=10
+[  327.359] RX< LED=OFF
+[  327.359] RX< CONFIG=SAVED
+[  327.359] RX< > SPEED=120
+[  327.974] RX< TIMEOUT=10
+[  327.974] RX< LED=OFF
+[  327.974] RX< CONFIG=SAVED
+[  327.974] RX< > SPEED=120
+[  328.589] RX< TIMEOUT=10
+[  328.589] RX< LED=OFF
+[  328.589] RX< CONFIG=SAVED
+[  328.589] RX< > SPEED=120
+[  329.182] RX< TIMEOUT=10
+[  329.182] RX< LED=OFF
+[  329.182] RX< CONFIG=SAVED
+[  329.182] RX< > SPEED=120
+[  329.797] RX< TIMEOUT=10
+[  329.797] RX< LED=OFF
+[  329.797] RX< CONFIG=SAVED
+[  329.797] RX< > SPEED=120
+[  330.412] RX< TIMEOUT=10
+[  330.412] RX< LED=OFF
+[  330.412] RX< CONFIG=SAVED
+[  330.412] RX< > SPEED=120
+[  331.005] RX< TIMEOUT=10
+[  331.005] RX< LED=OFF
+[  331.005] RX< CONFIG=SAVED
+[  331.005] RX< > SPEED=120
+[  331.620] RX< TIMEOUT=10
+[  331.620] RX< LED=OFF
+[  331.620] RX< CONFIG=SAVED
+[  331.620] RX< > SPEED=120
+[  332.235] RX< TIMEOUT=10
+[  332.235] RX< LED=OFF
+[  332.235] RX< CONFIG=SAVED
+[  332.235] RX< > SPEED=120
+[  332.828] RX< TIMEOUT=10
+[  332.828] RX< LED=OFF
+[  332.828] RX< CONFIG=SAVED
+[  332.828] RX< > SPEED=120
+[  333.443] RX< TIMEOUT=10
+[  333.443] RX< LED=OFF
+[  333.443] RX< CONFIG=SAVED
+[  333.443] RX< > SPEED=120
+[  334.058] RX< TIMEOUT=10
+[  334.058] RX< LED=OFF
+[  334.058] RX< CONFIG=SAVED
+[  334.058] RX< > SPEED=120
+[  334.651] RX< TIMEOUT=10
+[  334.651] RX< LED=OFF
+[  334.651] RX< CONFIG=SAVED
+[  334.651] RX< > SPEED=120
+[  335.266] RX< TIMEOUT=10
+[  335.266] RX< LED=OFF
+[  335.266] RX< CONFIG=SAVED
+[  335.266] RX< > SPEED=120
+[  335.881] RX< TIMEOUT=10
+[  335.881] RX< LED=OFF
+[  335.881] RX< CONFIG=SAVED
+[  335.881] RX< > SPEED=120
+[  336.474] RX< TIMEOUT=10
+[  336.474] RX< LED=OFF
+[  336.474] RX< CONFIG=SAVED
+[  336.474] RX< > SPEED=120
+[  337.089] RX< TIMEOUT=10
+[  337.089] RX< LED=OFF
+[  337.089] RX< CONFIG=SAVED
+[  337.089] RX< > SPEED=120
+[  337.704] RX< TIMEOUT=10
+[  337.704] RX< LED=OFF
+[  337.704] RX< CONFIG=SAVED
+[  337.704] RX< > SPEED=120
+[  338.297] RX< TIMEOUT=10
+[  338.297] RX< LED=OFF
+[  338.297] RX< CONFIG=SAVED
+[  338.297] RX< > SPEED=120
+[  338.912] RX< TIMEOUT=10
+[  338.912] RX< LED=OFF
+[  338.912] RX< CONFIG=SAVED
+[  338.912] RX< > SPEED=120
+[  339.527] RX< TIMEOUT=10
+[  339.527] RX< LED=OFF
+[  339.527] RX< CONFIG=SAVED
+[  339.527] RX< > SPEED=120
+[  340.120] RX< TIMEOUT=10
+[  340.120] RX< LED=OFF
+[  340.120] RX< CONFIG=SAVED
+[  340.120] RX< > SPEED=120
+[  340.735] RX< TIMEOUT=10
+[  340.735] RX< LED=OFF
+[  340.735] RX< CONFIG=SAVED
+[  340.735] RX< > SPEED=120
+[  341.350] RX< TIMEOUT=10
+[  341.350] RX< LED=OFF
+[  341.350] RX< CONFIG=SAVED
+[  341.350] RX< > SPEED=120
+[  341.943] RX< TIMEOUT=10
+[  341.943] RX< LED=OFF
+[  341.943] RX< CONFIG=SAVED
+[  341.943] RX< > SPEED=120
+[  342.558] RX< TIMEOUT=10
+[  342.558] RX< LED=OFF
+[  342.558] RX< CONFIG=SAVED
+[  342.558] RX< > SPEED=120
+[  343.173] RX< TIMEOUT=10
+[  343.173] RX< LED=OFF
+[  343.173] RX< CONFIG=SAVED
+[  343.173] RX< > SPEED=120
+[  343.766] RX< TIMEOUT=10
+[  343.766] RX< LED=OFF
+[  343.766] RX< CONFIG=SAVED
+[  343.766] RX< > SPEED=120
+[  344.381] RX< TIMEOUT=10
+[  344.381] RX< LED=OFF
+[  344.381] RX< CONFIG=SAVED
+[  344.381] RX< > SPEED=120
+[  344.996] RX< TIMEOUT=10
+[  344.996] RX< LED=OFF
+[  344.996] RX< CONFIG=SAVED
+[  344.996] RX< > SPEED=120
+[  345.589] RX< TIMEOUT=10
+[  345.589] RX< LED=OFF
+[  345.589] RX< CONFIG=SAVED
+[  345.589] RX< > SPEED=120
+[  346.204] RX< TIMEOUT=10
+[  346.204] RX< LED=OFF
+[  346.204] RX< CONFIG=SAVED
+[  346.204] RX< > SPEED=120
+[  346.819] RX< TIMEOUT=10
+[  346.819] RX< LED=OFF
+[  346.819] RX< CONFIG=SAVED
+[  346.819] RX< > SPEED=120
+[  347.412] RX< TIMEOUT=10
+[  347.412] RX< LED=OFF
+[  347.412] RX< CONFIG=SAVED
+[  347.412] RX< > SPEED=120
+[  348.027] RX< TIMEOUT=10
+[  348.027] RX< LED=OFF
+[  348.027] RX< CONFIG=SAVED
+[  348.027] RX< > SPEED=120
+[  348.642] RX< TIMEOUT=10
+[  348.642] RX< LED=OFF
+[  348.642] RX< CONFIG=SAVED
+[  348.642] RX< > SPEED=120
+[  349.235] RX< TIMEOUT=10
+[  349.235] RX< LED=OFF
+[  349.235] RX< CONFIG=SAVED
+[  349.235] RX< > SPEED=120
+[  349.850] RX< TIMEOUT=10
+[  349.850] RX< LED=OFF
+[  349.850] RX< CONFIG=SAVED
+[  349.850] RX< > SPEED=120
+[  350.465] RX< TIMEOUT=10
+[  350.465] RX< LED=OFF
+[  350.465] RX< CONFIG=SAVED
+[  350.465] RX< > SPEED=120
+[  351.058] RX< TIMEOUT=10
+[  351.058] RX< LED=OFF
+[  351.058] RX< CONFIG=SAVED
+[  351.058] RX< > SPEED=120
+[  351.673] RX< TIMEOUT=10
+[  351.673] RX< LED=OFF
+[  351.673] RX< CONFIG=SAVED
+[  351.673] RX< > SPEED=120
+[  352.288] RX< TIMEOUT=10
+[  352.288] RX< LED=OFF
+[  352.288] RX< CONFIG=SAVED
+[  352.288] RX< > SPEED=120
+[  352.881] RX< TIMEOUT=10
+[  352.881] RX< LED=OFF
+[  352.881] RX< CONFIG=SAVED
+[  352.881] RX< > SPEED=120
+[  353.496] RX< TIMEOUT=10
+[  353.496] RX< LED=OFF
+[  353.496] RX< CONFIG=SAVED
+[  353.496] RX< > SPEED=120
+[  354.111] RX< TIMEOUT=10
+[  354.111] RX< LED=OFF
+[  354.111] RX< CONFIG=SAVED
+[  354.111] RX< > SPEED=120
+[  354.704] RX< TIMEOUT=10
+[  354.704] RX< LED=OFF
+[  354.704] RX< CONFIG=SAVED
+[  354.704] RX< > SPEED=120
+[  355.319] RX< TIMEOUT=10
+[  355.319] RX< LED=OFF
+[  355.319] RX< CONFIG=SAVED
+[  355.319] RX< > SPEED=120
+[  355.934] RX< TIMEOUT=10
+[  355.934] RX< LED=OFF
+[  355.934] RX< CONFIG=SAVED
+[  355.934] RX< > SPEED=120
+[  356.527] RX< TIMEOUT=10
+[  356.527] RX< LED=OFF
+[  356.527] RX< CONFIG=SAVED
+[  356.527] RX< > SPEED=120
+[  357.142] RX< TIMEOUT=10
+[  357.142] RX< LED=OFF
+[  357.142] RX< CONFIG=SAVED
+[  357.142] RX< > SPEED=120
+[  357.757] RX< TIMEOUT=10
+[  357.757] RX< LED=OFF
+[  357.757] RX< CONFIG=SAVED
+[  357.757] RX< > SPEED=120
+[  358.350] RX< TIMEOUT=10
+[  358.350] RX< LED=OFF
+[  358.350] RX< CONFIG=SAVED
+[  358.350] RX< > SPEED=120
+[  358.965] RX< TIMEOUT=10
+[  358.965] RX< LED=OFF
+[  358.965] RX< CONFIG=SAVED
+[  358.965] RX< > SPEED=120
+[  359.580] RX< TIMEOUT=10
+[  359.580] RX< LED=OFF
+[  359.580] RX< CONFIG=SAVED
+[  359.580] RX< > SPEED=120
+[  360.173] RX< TIMEOUT=10
+[  360.173] RX< LED=OFF
+[  360.173] RX< CONFIG=SAVED
+[  360.173] RX< > SPEED=120
+[  360.788] RX< TIMEOUT=10
+[  360.788] RX< LED=OFF
+[  360.788] RX< CONFIG=SAVED
+[  360.788] RX< > 
+[  450.020] TX> "status\n"  (7 bytes)
+[  450.635] RX< SPEED=120
+[  450.635] RX< TIMEOUT=10
+[  450.635] RX< LED=OFF
+[  450.635] RX< CONFIG=SAVED
+[  450.635] RX< > 
+[ 1600.047] {END OF SESSION}
+
+
+====================================================================================================
+TC-24 — "A"×1000 одним пакетом → status
+Техніка: Stress: дуже довгий рядок
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (1001 bytes)
+[  303.591] RX< 
+[  303.591] RX< *** SYSTEM FAULT ***
+[  303.591] RX< Reason: input line boundary failure
+[  303.591] RX< rst:0xc (SW_CPU_RESET)
+[  303.591] RX< Rebooting...
+[  553.591] RX< 
+[  553.591] RX< ======================================
+[  553.591] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  553.591] RX<  READY
+[  553.591] RX< ======================================
+[  553.591] RX< Type 'help'
+[  553.591] RX< > 
+[  553.734] RX< *** SYSTEM FAULT ***
+[  553.734] RX< Reason: input line boundary failure
+[  553.734] RX< rst:0xc (SW_CPU_RESET)
+[  553.734] RX< Rebooting...
+[  803.734] RX< 
+[  803.734] RX< ======================================
+[  803.734] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  803.734] RX<  READY
+[  803.734] RX< ======================================
+[  803.734] RX< Type 'help'
+[  803.734] RX< > 
+[  803.877] RX< *** SYSTEM FAULT ***
+[  803.877] RX< Reason: input line boundary failure
+[  803.877] RX< rst:0xc (SW_CPU_RESET)
+[  803.877] RX< Rebooting...
+[ 1053.877] RX< 
+[ 1053.877] RX< ======================================
+[ 1053.877] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1053.877] RX<  READY
+[ 1053.877] RX< ======================================
+[ 1053.877] RX< Type 'help'
+[ 1053.877] RX< > 
+[ 1054.020] RX< *** SYSTEM FAULT ***
+[ 1054.020] RX< Reason: input line boundary failure
+[ 1054.020] RX< rst:0xc (SW_CPU_RESET)
+[ 1054.020] RX< Rebooting...
+[ 1304.020] RX< 
+[ 1304.020] RX< ======================================
+[ 1304.020] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1304.020] RX<  READY
+[ 1304.020] RX< ======================================
+[ 1304.020] RX< Type 'help'
+[ 1304.020] RX< > 
+[ 1304.163] RX< *** SYSTEM FAULT ***
+[ 1304.163] RX< Reason: input line boundary failure
+[ 1304.163] RX< rst:0xc (SW_CPU_RESET)
+[ 1304.163] RX< Rebooting...
+[ 1554.163] RX< 
+[ 1554.163] RX< ======================================
+[ 1554.163] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1554.163] RX<  READY
+[ 1554.163] RX< ======================================
+[ 1554.163] RX< Type 'help'
+[ 1554.163] RX< > 
+[ 1554.306] RX< *** SYSTEM FAULT ***
+[ 1554.306] RX< Reason: input line boundary failure
+[ 1554.306] RX< rst:0xc (SW_CPU_RESET)
+[ 1554.306] RX< Rebooting...
+[ 1804.306] RX< 
+[ 1804.306] RX< ======================================
+[ 1804.306] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1804.306] RX<  READY
+[ 1804.306] RX< ======================================
+[ 1804.306] RX< Type 'help'
+[ 1804.306] RX< > 
+[ 1804.449] RX< *** SYSTEM FAULT ***
+[ 1804.449] RX< Reason: input line boundary failure
+[ 1804.449] RX< rst:0xc (SW_CPU_RESET)
+[ 1804.449] RX< Rebooting...
+[ 2054.449] RX< 
+[ 2054.449] RX< ======================================
+[ 2054.449] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 2054.449] RX<  READY
+[ 2054.449] RX< ======================================
+[ 2054.449] RX< Type 'help'
+[ 2054.449] RX< > 
+[12054.533] TX> "status\n"  (7 bytes)
+[12055.148] RX< ERROR: unknown command
+[12055.148] RX< > 
+{UART RX buffer overflow: 704 bytes dropped by driver}
+[13204.560] {END OF SESSION}
+
+
+====================================================================================================
+TC-24 — "A"×1000 одним пакетом → status  [прогін №4: посимвольне введення 30 мс/символ]
+Техніка: Stress: дуже довгий рядок
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (1001 bytes, typed, 30 ms/char)
+[ 1530.025] RX< 
+[ 1530.025] RX< *** SYSTEM FAULT ***
+[ 1530.025] RX< Reason: input line boundary failure
+[ 1530.025] RX< rst:0xc (SW_CPU_RESET)
+[ 1530.025] RX< Rebooting...
+[ 1780.025] RX< 
+[ 1780.025] RX< ======================================
+[ 1780.025] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1780.025] RX<  READY
+[ 1780.025] RX< ======================================
+[ 1780.025] RX< Type 'help'
+[ 1780.025] RX< > 
+[ 2760.026] RX< *** SYSTEM FAULT ***
+[ 2760.026] RX< Reason: input line boundary failure
+[ 2760.026] RX< rst:0xc (SW_CPU_RESET)
+[ 2760.026] RX< Rebooting...
+[ 3010.026] RX< 
+[ 3010.026] RX< ======================================
+[ 3010.026] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 3010.026] RX<  READY
+[ 3010.026] RX< ======================================
+[ 3010.026] RX< Type 'help'
+[ 3010.026] RX< > 
+[ 3990.027] RX< *** SYSTEM FAULT ***
+[ 3990.027] RX< Reason: input line boundary failure
+[ 3990.027] RX< rst:0xc (SW_CPU_RESET)
+[ 3990.027] RX< Rebooting...
+[ 4240.027] RX< 
+[ 4240.027] RX< ======================================
+[ 4240.027] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 4240.027] RX<  READY
+[ 4240.027] RX< ======================================
+[ 4240.027] RX< Type 'help'
+[ 4240.027] RX< > 
+[ 5220.028] RX< *** SYSTEM FAULT ***
+[ 5220.028] RX< Reason: input line boundary failure
+[ 5220.028] RX< rst:0xc (SW_CPU_RESET)
+[ 5220.028] RX< Rebooting...
+[ 5470.028] RX< 
+[ 5470.028] RX< ======================================
+[ 5470.028] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 5470.028] RX<  READY
+[ 5470.028] RX< ======================================
+[ 5470.028] RX< Type 'help'
+[ 5470.028] RX< > 
+[ 6450.029] RX< *** SYSTEM FAULT ***
+[ 6450.029] RX< Reason: input line boundary failure
+[ 6450.029] RX< rst:0xc (SW_CPU_RESET)
+[ 6450.029] RX< Rebooting...
+[ 6700.029] RX< 
+[ 6700.029] RX< ======================================
+[ 6700.029] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 6700.029] RX<  READY
+[ 6700.029] RX< ======================================
+[ 6700.029] RX< Type 'help'
+[ 6700.029] RX< > 
+[ 7680.030] RX< *** SYSTEM FAULT ***
+[ 7680.030] RX< Reason: input line boundary failure
+[ 7680.030] RX< rst:0xc (SW_CPU_RESET)
+[ 7680.030] RX< Rebooting...
+[ 7930.030] RX< 
+[ 7930.030] RX< ======================================
+[ 7930.030] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 7930.030] RX<  READY
+[ 7930.030] RX< ======================================
+[ 7930.030] RX< Type 'help'
+[ 7930.030] RX< > 
+[ 8910.031] RX< *** SYSTEM FAULT ***
+[ 8910.031] RX< Reason: input line boundary failure
+[ 8910.031] RX< rst:0xc (SW_CPU_RESET)
+[ 8910.031] RX< Rebooting...
+[ 9160.031] RX< 
+[ 9160.031] RX< ======================================
+[ 9160.031] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 9160.031] RX<  READY
+[ 9160.031] RX< ======================================
+[ 9160.031] RX< Type 'help'
+[ 9160.031] RX< > 
+[10140.032] RX< *** SYSTEM FAULT ***
+[10140.032] RX< Reason: input line boundary failure
+[10140.032] RX< rst:0xc (SW_CPU_RESET)
+[10140.032] RX< Rebooting...
+[10390.032] RX< 
+[10390.032] RX< ======================================
+[10390.032] RX<  UART CLI HOMEWORK DEVICE v2.0
+[10390.032] RX<  READY
+[10390.032] RX< ======================================
+[10390.032] RX< Type 'help'
+[10390.032] RX< > 
+[11370.033] RX< *** SYSTEM FAULT ***
+[11370.033] RX< Reason: input line boundary failure
+[11370.033] RX< rst:0xc (SW_CPU_RESET)
+[11370.033] RX< Rebooting...
+[11620.033] RX< 
+[11620.033] RX< ======================================
+[11620.033] RX<  UART CLI HOMEWORK DEVICE v2.0
+[11620.033] RX<  READY
+[11620.033] RX< ======================================
+[11620.033] RX< Type 'help'
+[11620.033] RX< > 
+[12600.034] RX< *** SYSTEM FAULT ***
+[12600.034] RX< Reason: input line boundary failure
+[12600.034] RX< rst:0xc (SW_CPU_RESET)
+[12600.034] RX< Rebooting...
+[12850.034] RX< 
+[12850.034] RX< ======================================
+[12850.034] RX<  UART CLI HOMEWORK DEVICE v2.0
+[12850.034] RX<  READY
+[12850.034] RX< ======================================
+[12850.034] RX< Type 'help'
+[12850.034] RX< > 
+[13830.035] RX< *** SYSTEM FAULT ***
+[13830.035] RX< Reason: input line boundary failure
+[13830.035] RX< rst:0xc (SW_CPU_RESET)
+[13830.035] RX< Rebooting...
+[14080.035] RX< 
+[14080.035] RX< ======================================
+[14080.035] RX<  UART CLI HOMEWORK DEVICE v2.0
+[14080.035] RX<  READY
+[14080.035] RX< ======================================
+[14080.035] RX< Type 'help'
+[14080.035] RX< > 
+[15060.036] RX< *** SYSTEM FAULT ***
+[15060.036] RX< Reason: input line boundary failure
+[15060.036] RX< rst:0xc (SW_CPU_RESET)
+[15060.036] RX< Rebooting...
+[15310.036] RX< 
+[15310.036] RX< ======================================
+[15310.036] RX<  UART CLI HOMEWORK DEVICE v2.0
+[15310.036] RX<  READY
+[15310.036] RX< ======================================
+[15310.036] RX< Type 'help'
+[15310.036] RX< > 
+[16290.015] RX< *** SYSTEM FAULT ***
+[16290.015] RX< Reason: input line boundary failure
+[16290.015] RX< rst:0xc (SW_CPU_RESET)
+[16290.015] RX< Rebooting...
+[16540.015] RX< 
+[16540.015] RX< ======================================
+[16540.015] RX<  UART CLI HOMEWORK DEVICE v2.0
+[16540.015] RX<  READY
+[16540.015] RX< ======================================
+[16540.015] RX< Type 'help'
+[16540.015] RX< > 
+[17520.016] RX< *** SYSTEM FAULT ***
+[17520.016] RX< Reason: input line boundary failure
+[17520.016] RX< rst:0xc (SW_CPU_RESET)
+[17520.016] RX< Rebooting...
+[17770.016] RX< 
+[17770.016] RX< ======================================
+[17770.016] RX<  UART CLI HOMEWORK DEVICE v2.0
+[17770.016] RX<  READY
+[17770.016] RX< ======================================
+[17770.016] RX< Type 'help'
+[17770.016] RX< > 
+[18750.017] RX< *** SYSTEM FAULT ***
+[18750.017] RX< Reason: input line boundary failure
+[18750.017] RX< rst:0xc (SW_CPU_RESET)
+[18750.017] RX< Rebooting...
+[19000.017] RX< 
+[19000.017] RX< ======================================
+[19000.017] RX<  UART CLI HOMEWORK DEVICE v2.0
+[19000.017] RX<  READY
+[19000.017] RX< ======================================
+[19000.017] RX< Type 'help'
+[19000.017] RX< > 
+[19980.018] RX< *** SYSTEM FAULT ***
+[19980.018] RX< Reason: input line boundary failure
+[19980.018] RX< rst:0xc (SW_CPU_RESET)
+[19980.018] RX< Rebooting...
+[20230.018] RX< 
+[20230.018] RX< ======================================
+[20230.018] RX<  UART CLI HOMEWORK DEVICE v2.0
+[20230.018] RX<  READY
+[20230.018] RX< ======================================
+[20230.018] RX< Type 'help'
+[20230.018] RX< > 
+[21210.019] RX< *** SYSTEM FAULT ***
+[21210.019] RX< Reason: input line boundary failure
+[21210.019] RX< rst:0xc (SW_CPU_RESET)
+[21210.019] RX< Rebooting...
+[21460.019] RX< 
+[21460.019] RX< ======================================
+[21460.019] RX<  UART CLI HOMEWORK DEVICE v2.0
+[21460.019] RX<  READY
+[21460.019] RX< ======================================
+[21460.019] RX< Type 'help'
+[21460.019] RX< > 
+[22440.020] RX< *** SYSTEM FAULT ***
+[22440.020] RX< Reason: input line boundary failure
+[22440.020] RX< rst:0xc (SW_CPU_RESET)
+[22440.020] RX< Rebooting...
+[22690.020] RX< 
+[22690.020] RX< ======================================
+[22690.020] RX<  UART CLI HOMEWORK DEVICE v2.0
+[22690.020] RX<  READY
+[22690.020] RX< ======================================
+[22690.020] RX< Type 'help'
+[22690.020] RX< > 
+[23670.021] RX< *** SYSTEM FAULT ***
+[23670.021] RX< Reason: input line boundary failure
+[23670.021] RX< rst:0xc (SW_CPU_RESET)
+[23670.021] RX< Rebooting...
+[23920.021] RX< 
+[23920.021] RX< ======================================
+[23920.021] RX<  UART CLI HOMEWORK DEVICE v2.0
+[23920.021] RX<  READY
+[23920.021] RX< ======================================
+[23920.021] RX< Type 'help'
+[23920.021] RX< > 
+[24900.022] RX< *** SYSTEM FAULT ***
+[24900.022] RX< Reason: input line boundary failure
+[24900.022] RX< rst:0xc (SW_CPU_RESET)
+[24900.022] RX< Rebooting...
+[25150.022] RX< 
+[25150.022] RX< ======================================
+[25150.022] RX<  UART CLI HOMEWORK DEVICE v2.0
+[25150.022] RX<  READY
+[25150.022] RX< ======================================
+[25150.022] RX< Type 'help'
+[25150.022] RX< > 
+[26130.023] RX< *** SYSTEM FAULT ***
+[26130.023] RX< Reason: input line boundary failure
+[26130.023] RX< rst:0xc (SW_CPU_RESET)
+[26130.023] RX< Rebooting...
+[26380.023] RX< 
+[26380.023] RX< ======================================
+[26380.023] RX<  UART CLI HOMEWORK DEVICE v2.0
+[26380.023] RX<  READY
+[26380.023] RX< ======================================
+[26380.023] RX< Type 'help'
+[26380.023] RX< > 
+[27360.024] RX< *** SYSTEM FAULT ***
+[27360.024] RX< Reason: input line boundary failure
+[27360.024] RX< rst:0xc (SW_CPU_RESET)
+[27360.024] RX< Rebooting...
+[27610.024] RX< 
+[27610.024] RX< ======================================
+[27610.024] RX<  UART CLI HOMEWORK DEVICE v2.0
+[27610.024] RX<  READY
+[27610.024] RX< ======================================
+[27610.024] RX< Type 'help'
+[27610.024] RX< > 
+[28590.025] RX< *** SYSTEM FAULT ***
+[28590.025] RX< Reason: input line boundary failure
+[28590.025] RX< rst:0xc (SW_CPU_RESET)
+[28590.025] RX< Rebooting...
+[28840.025] RX< 
+[28840.025] RX< ======================================
+[28840.025] RX<  UART CLI HOMEWORK DEVICE v2.0
+[28840.025] RX<  READY
+[28840.025] RX< ======================================
+[28840.025] RX< Type 'help'
+[28840.025] RX< > 
+[29820.026] RX< *** SYSTEM FAULT ***
+[29820.026] RX< Reason: input line boundary failure
+[29820.026] RX< rst:0xc (SW_CPU_RESET)
+[29820.026] RX< Rebooting...
+[30070.026] RX< 
+[30070.026] RX< ======================================
+[30070.026] RX<  UART CLI HOMEWORK DEVICE v2.0
+[30070.026] RX<  READY
+[30070.026] RX< ======================================
+[30070.026] RX< Type 'help'
+[30070.026] RX< > ERROR: unknown command
+[30330.027] RX< > 
+[40330.061] TX> "status\n"  (7 bytes, typed, 30 ms/char)
+[40540.072] RX< SPEED=120
+[40540.072] RX< TIMEOUT=10
+[40540.072] RX< LED=OFF
+[40540.072] RX< CONFIG=SAVED
+[40540.072] RX< > 
+[41540.104] {END OF SESSION}
+
+
+====================================================================================================
+TC-25 — 500 випадкових байтів 0x01–0xFF + \n → status
+Техніка: Stress: binary garbage
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "\xC2\xA8Hi\xC2\x8E\xC3\xBF\xC3\xAF\xC3\x98\x16\xC2\xB6BQ\xC3\x83;\xC2\x84J\x08\x12\xC2\x91\xC3\x85\x1Cg\x1C\xC3\x99Kc\x12\xC3\xB6\x05\xC3\x99\xC2\xB0\x0176\xC3\xAE\xC3\xAA\x0Eya\xC3\xBB\xC2\xB6fl\x13\xC2\x91\xC2\xA23\xC3\x88\xC2\xADFW\x17PV\x04\xC3\xB7i\xC3\x83\xC3\xAD\x1F#@\xC2\xB5\x1A\x03\x10x\xC3\x8D}.\xC2\xAF\xC2\x901s\xC2\x831\xC3\xBD\xC2\xBC\xC3\x85"l\xC2\xA5c\x1Efl\xC3\xBE7\x01F\xC3\x9E\xC3\xB9\xC3\xBA\xC3\x8E\xC2\x98N\xC3\xA3\x0660e\xC3\xBF\xC3\x9B\xC2\x9B\xC2\xA5\xC2\x94\x1A\x0B\xC3\xBE&7rC\x03\xC3\x86\xC2\x9DU\xC3\x95Lc\x13\x14\x186\xC2\x96\xC2\xA3?\x04\xC2\x9A_`\xC2\xA0u!\xC3\xB6\xC2\x97|\xC3\x96\xC2\x94#\xC3\x9Ec/\xC2\xA1(P\xC3\xA9;\xC3\x92\xC2\x9D@\xC2\xBA1)\xC2\xBE\xC2\xA2\xC3\xB1\xC2\x8E3\xC2\xB0\xC3\xB4d\xC3\xA2|\xC2\x9B\x15l\r\x1B\x1C\n\xC2\x84\xC3\xB7B>\xC2\xBE\xC2\xB5eBl\xC3\x93\xC3\xA8\xC2\x99~L\xC2\x86-\xC3\xAE\xC2\xB9\xC3\xBB\x12!;{\xC2\x90\xC2\xA8\xC3\x9B\xC2\x9E\xC2\x9E\x13H7\xC3\xAB\xC3\xAB5\xC3\x80\x05\x12Ejs@\x10\x0C.I_\xC2\x88\xC2\x93\xC3\xBA"\x18]$\xC3\xA5t\xC3\xBCU\xC2\xA9\xC2\xBC\xC2\xB1\xC2\x86\xC2\x96\xC3\xB3$\xC2\x98\t\xC3\xAD\x05z\xC3\xAA\\xC2\xB4P\xC3\xB7\t\x06\xC2\x9A\xC2\xA3\x14|\x12\xC2\xBCPR#\x13\x14t\xC2\x8C_\xC2\xBD\x0C\xC3\xA7\xC3\xB0\xC2\xBD\xC2\xBD\xC2\xB5"\xC3\x8C\xC3\xB7\xC3\xABX[\x16\xC2\xB0z\xC3\xA7\x14\xC3\xA0\xC3\x9Ck\xC3\xB2\xC3\x8B\x08\xC3\x9E\xC2\x80\xC2\x93\x04\xC2\xA0\xC2\xAAbb\xC2\x96\x04\xC2\x9C\x13\x15\x18\xC2\xA4\x1E\xC3\xBFB\xC3\xA2k\xC2\xBBUd\xC3\xB0\xC2\xBD\xC2\xB2\xC2\x95vqw\xC3\x97\xC2\x8B\x16\xC2\x85\xC3\x81\xC2\x84\x08P\xC2\x9A\x17|\x06;\xC3\xB6\xC2\xB3\x1D\xC2\x80\xC3\x88\xC2\x9E\xC2\xA9\xC3\xAC}B\xC3\xA6\x03_N%\xC2\xAE\xC2\x9D4\xC2\x85,\xC3\x81\xC3\xA8X\xC2\xA9\xC3\xAFr\xC2\x80\xC3\xA5>Th\xC2\xABA3\xC2\xA3o\xC3\x8E\xC3\x8F\xC3\x82\xC3\xAB4\xC3\xA27c9\xC2\x96\xC3\xACR6##\xC2\x80Z\xC3\x97\xC3\xA6\xC3\x9A\x0B\xC2\xB7\x11\xC3\xB4\xC3\xBBG\xC3\x93,\x1DtyG\xC3\xAD7\xC3\x95jb\xC2\xA1\xC2\x86\x7F\xC2\xADQ\xC2\xB8\xC3\x97\xC3\x98\xC3\xBC\xC2\xA0tS\x14\xC3\x95\tH\xC3\xA0\xC2\x9C\x0B\xC2\xAE\xC2\xB6H\xC2\x93[P\xC2\xA7\xC3\x8B\xC2\x91\x05\xC2\xA5#hu1\x07\xC3\x85\xC3\x95E=\xC3\x88%\xC3\x8C\r\xC3\xBC\xC2\xA2\x1Es\x1C\xC2\xA2\xC2\x8A\xC2\xA8\xC2\xA4\xC3\x8F_\xC3\xB6\x14\xC2\xB034\xC3\x93zB.\xC2\xB7\x03\xC3\x82y\xC2\x89\xC2\xB7\n.:F\xC3\x88Y\xC2\x8B\xC2\xB3\xC3\xB3\xC2\x86\xC2\x81\xC2\x9E\xC3\x82)e\xC3\x9A\xC3\x8B\xC2\xB4\xC3\xA8:\x17j\xC3\xAF\xC3\xA5\xC2\xB9d"tu3\xC2\xA1\n"  (736 bytes)
+[  303.591] RX< 
+[  303.591] RX< *** SYSTEM FAULT ***
+[  303.591] RX< Reason: input line boundary failure
+[  303.591] RX< rst:0xc (SW_CPU_RESET)
+[  303.591] RX< Rebooting...
+[  553.591] RX< 
+[  553.591] RX< ======================================
+[  553.591] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  553.591] RX<  READY
+[  553.591] RX< ======================================
+[  553.591] RX< Type 'help'
+[  553.591] RX< > 
+[  553.734] RX< *** SYSTEM FAULT ***
+[  553.734] RX< Reason: input line boundary failure
+[  553.734] RX< rst:0xc (SW_CPU_RESET)
+[  553.734] RX< Rebooting...
+[  803.734] RX< 
+[  803.734] RX< ======================================
+[  803.734] RX<  UART CLI HOMEWORK DEVICE v2.0
+[  803.734] RX<  READY
+[  803.734] RX< ======================================
+[  803.734] RX< Type 'help'
+[  803.734] RX< > 
+[  803.877] RX< *** SYSTEM FAULT ***
+[  803.877] RX< Reason: input line boundary failure
+[  803.877] RX< rst:0xc (SW_CPU_RESET)
+[  803.877] RX< Rebooting...
+[ 1053.877] RX< 
+[ 1053.877] RX< ======================================
+[ 1053.877] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1053.877] RX<  READY
+[ 1053.877] RX< ======================================
+[ 1053.877] RX< Type 'help'
+[ 1053.877] RX< > 
+[ 1054.020] RX< *** SYSTEM FAULT ***
+[ 1054.020] RX< Reason: input line boundary failure
+[ 1054.020] RX< rst:0xc (SW_CPU_RESET)
+[ 1054.020] RX< Rebooting...
+[ 1304.020] RX< 
+[ 1304.020] RX< ======================================
+[ 1304.020] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1304.020] RX<  READY
+[ 1304.020] RX< ======================================
+[ 1304.020] RX< Type 'help'
+[ 1304.020] RX< > 
+[ 1304.163] RX< *** SYSTEM FAULT ***
+[ 1304.163] RX< Reason: input line boundary failure
+[ 1304.163] RX< rst:0xc (SW_CPU_RESET)
+[ 1304.163] RX< Rebooting...
+[ 1554.163] RX< 
+[ 1554.163] RX< ======================================
+[ 1554.163] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1554.163] RX<  READY
+[ 1554.163] RX< ======================================
+[ 1554.163] RX< Type 'help'
+[ 1554.163] RX< > ERROR: unknown command
+[ 1554.285] RX< > OK
+[ 1554.294] RX< > 
+[ 1554.417] RX< *** SYSTEM FAULT ***
+[ 1554.417] RX< Reason: input line boundary failure
+[ 1554.417] RX< rst:0xc (SW_CPU_RESET)
+[ 1554.417] RX< Rebooting...
+[ 1804.417] RX< 
+[ 1804.417] RX< ======================================
+[ 1804.417] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1804.417] RX<  READY
+[ 1804.417] RX< ======================================
+[ 1804.417] RX< Type 'help'
+[ 1804.417] RX< > 
+[ 5804.519] TX> "status\n"  (7 bytes)
+[ 5805.134] RX< ERROR: unknown command
+[ 5805.134] RX< > 
+{UART RX buffer overflow: 439 bytes dropped by driver}
+[ 6954.546] {END OF SESSION}
+
+
+====================================================================================================
+TC-26 — reset reset reset; 50 чергувань valid/invalid → status
+Техніка: Stress: швидка послідовність команд
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "reset reset reset\n"  (18 bytes)
+[  301.586] RX< ERROR: unknown command
+[  301.586] RX< > 
+[  450.020] TX> "save\n"  (5 bytes)
+[  450.475] RX< OK: configuration saved
+[  450.475] RX< > 
+[  600.031] TX> "set speed\n"  (10 bytes)
+[  600.919] RX< ERROR: invalid speed
+[  600.919] RX< > 
+[  750.035] TX> "status\n"  (7 bytes)
+[  750.650] RX< SPEED=120
+[  750.650] RX< TIMEOUT=10
+[  750.650] RX< LED=OFF
+[  750.650] RX< CONFIG=SAVED
+[  750.650] RX< > 
+[  900.052] TX> "set speed\n"  (10 bytes)
+[  900.940] RX< ERROR: invalid speed
+[  900.940] RX< > 
+[ 1050.056] TX> "save\n"  (5 bytes)
+[ 1050.511] RX< OK: configuration saved
+[ 1050.511] RX< > 
+[ 1200.067] TX> "set timeout 61\n"  (15 bytes)
+[ 1201.388] RX< ERROR: timeout out of range
+[ 1201.388] RX< > 
+[ 1350.086] TX> "status\n"  (7 bytes)
+[ 1350.701] RX< SPEED=120
+[ 1350.701] RX< TIMEOUT=10
+[ 1350.701] RX< LED=OFF
+[ 1350.701] RX< CONFIG=SAVED
+[ 1350.701] RX< > 
+[ 1500.103] TX> "set speed\n"  (10 bytes)
+[ 1500.991] RX< ERROR: invalid speed
+[ 1500.991] RX< > 
+[ 1650.107] TX> "set timeout 1\n"  (14 bytes)
+[ 1651.337] RX< OK: timeout=1
+[ 1651.337] RX< > 
+[ 1800.123] TX> "set speed -1\n"  (13 bytes)
+[ 1801.262] RX< ERROR: speed out of range
+[ 1801.262] RX< > 
+[ 1950.136] TX> "status\n"  (7 bytes)
+[ 1950.751] RX< SPEED=120
+[ 1950.751] RX< TIMEOUT=1
+[ 1950.751] RX< LED=OFF
+[ 1950.751] RX< CONFIG=DIRTY
+[ 1950.751] RX< > 
+[ 2100.153] TX> "set timeout 61\n"  (15 bytes)
+[ 2101.474] RX< ERROR: timeout out of range
+[ 2101.474] RX< > 
+[ 2250.172] TX> "set speed 17\n"  (13 bytes)
+[ 2251.311] RX< OK: speed=17
+[ 2251.311] RX< > 
+[ 2400.185] TX> "foo\n"  (4 bytes)
+[ 2400.549] RX< ERROR: unknown command
+[ 2400.549] RX< > 
+[ 2550.193] TX> "save\n"  (5 bytes)
+[ 2550.648] RX< OK: configuration saved
+[ 2550.648] RX< > 
+[ 2700.204] TX> "set speed 999\n"  (14 bytes)
+[ 2701.434] RX< ERROR: speed out of range
+[ 2701.434] RX< > 
+[ 2850.220] TX> "set speed 17\n"  (13 bytes)
+[ 2851.359] RX< OK: speed=17
+[ 2851.359] RX< > 
+[ 3000.233] TX> "foo\n"  (4 bytes)
+[ 3000.597] RX< ERROR: unknown command
+[ 3000.597] RX< > 
+[ 3150.241] TX> "status\n"  (7 bytes)
+[ 3150.856] RX< SPEED=17
+[ 3150.856] RX< TIMEOUT=1
+[ 3150.856] RX< LED=OFF
+[ 3150.856] RX< CONFIG=DIRTY
+[ 3150.856] RX< > 
+[ 3300.258] TX> "set speed\n"  (10 bytes)
+[ 3301.146] RX< ERROR: invalid speed
+[ 3301.146] RX< > 
+[ 3450.262] TX> "set speed 0\n"  (12 bytes)
+[ 3451.310] RX< OK: speed=0
+[ 3451.310] RX< > 
+[ 3600.272] TX> "set timeout x\n"  (14 bytes)
+[ 3601.502] RX< ERROR: invalid timeout
+[ 3601.502] RX< > 
+[ 3750.288] TX> "led off\n"  (8 bytes)
+[ 3750.994] RX< OK
+[ 3750.994] RX< > 
+[ 3900.308] TX> "set timeout 61\n"  (15 bytes)
+[ 3901.629] RX< ERROR: timeout out of range
+[ 3901.629] RX< > 
+[ 4050.327] TX> "set speed 17\n"  (13 bytes)
+[ 4051.466] RX< OK: speed=17
+[ 4051.466] RX< > 
+[ 4200.340] TX> "set timeout x\n"  (14 bytes)
+[ 4201.570] RX< ERROR: invalid timeout
+[ 4201.570] RX< > 
+[ 4350.356] TX> "set speed 0\n"  (12 bytes)
+[ 4351.404] RX< OK: speed=0
+[ 4351.404] RX< > 
+[ 4500.366] TX> "set speed\n"  (10 bytes)
+[ 4501.254] RX< ERROR: invalid speed
+[ 4501.254] RX< > 
+[ 4650.370] TX> "status\n"  (7 bytes)
+[ 4650.985] RX< SPEED=0
+[ 4650.985] RX< TIMEOUT=1
+[ 4650.985] RX< LED=OFF
+[ 4650.985] RX< CONFIG=DIRTY
+[ 4650.985] RX< > 
+[ 4800.387] TX> "foo\n"  (4 bytes)
+[ 4800.751] RX< ERROR: unknown command
+[ 4800.751] RX< > 
+[ 4950.395] TX> "set speed 0\n"  (12 bytes)
+[ 4951.443] RX< OK: speed=0
+[ 4951.443] RX< > 
+[ 5100.405] TX> "foo\n"  (4 bytes)
+[ 5100.769] RX< ERROR: unknown command
+[ 5100.769] RX< > 
+[ 5250.413] TX> "set timeout 1\n"  (14 bytes)
+[ 5251.643] RX< OK: timeout=1
+[ 5251.643] RX< > 
+[ 5400.429] TX> "set speed -1\n"  (13 bytes)
+[ 5401.568] RX< ERROR: speed out of range
+[ 5401.568] RX< > 
+[ 5550.442] TX> "set speed 0\n"  (12 bytes)
+[ 5551.490] RX< OK: speed=0
+[ 5551.490] RX< > 
+[ 5700.452] TX> "set speed\n"  (10 bytes)
+[ 5701.340] RX< ERROR: invalid speed
+[ 5701.340] RX< > 
+[ 5850.456] TX> "save\n"  (5 bytes)
+[ 5850.911] RX< OK: configuration saved
+[ 5850.911] RX< > 
+[ 6000.467] TX> "set speed 999\n"  (14 bytes)
+[ 6001.697] RX< ERROR: speed out of range
+[ 6001.697] RX< > 
+[ 6150.483] TX> "save\n"  (5 bytes)
+[ 6150.938] RX< OK: configuration saved
+[ 6150.938] RX< > 
+[ 6300.494] TX> "set timeout x\n"  (14 bytes)
+[ 6301.724] RX< ERROR: invalid timeout
+[ 6301.724] RX< > 
+[ 6450.510] TX> "set timeout 1\n"  (14 bytes)
+[ 6451.740] RX< OK: timeout=1
+[ 6451.740] RX< > 
+[ 6600.526] TX> "set timeout x\n"  (14 bytes)
+[ 6601.756] RX< ERROR: invalid timeout
+[ 6601.756] RX< > 
+[ 6750.542] TX> "set timeout 1\n"  (14 bytes)
+[ 6751.772] RX< OK: timeout=1
+[ 6751.772] RX< > 
+[ 6900.558] TX> "led blink\n"  (10 bytes)
+[ 6901.446] RX< ERROR: unknown command
+[ 6901.446] RX< > 
+[ 7050.562] TX> "set timeout 60\n"  (15 bytes)
+[ 7051.883] RX< OK: timeout=60
+[ 7051.883] RX< > 
+[ 7200.581] TX> "set timeout 61\n"  (15 bytes)
+[ 7201.902] RX< ERROR: timeout out of range
+[ 7201.902] RX< > 
+[ 7350.600] TX> "set speed 0\n"  (12 bytes)
+[ 7351.648] RX< OK: speed=0
+[ 7351.648] RX< > 
+[ 7500.610] TX> "led blink\n"  (10 bytes)
+[ 7501.498] RX< ERROR: unknown command
+[ 7501.498] RX< > 
+[ 7650.614] TX> "set speed 255\n"  (14 bytes)
+[ 7651.844] RX< OK: speed=255
+[ 7651.844] RX< > 
+[ 7800.630] TX> "set timeout 61\n"  (15 bytes)
+[ 7801.951] RX< ERROR: timeout out of range
+[ 7801.951] RX< > 
+[ 7950.649] TX> "status\n"  (7 bytes)
+[ 7951.264] RX< SPEED=255
+[ 7951.264] RX< TIMEOUT=60
+[ 7951.264] RX< LED=OFF
+[ 7951.264] RX< CONFIG=DIRTY
+[ 7951.264] RX< > 
+[ 9100.676] {END OF SESSION}
+
+
+====================================================================================================
+ДОДАТОК A — збережена конфігурація після fault (до BUG-01)
+set speed 100 → save → "A"×41 → status
+====================================================================================================
+[    0.000] {POWER ON / boot}
+[    0.000] {Serial.begin 115200}
+[    0.000] {GPIO2 -> LOW (LED OFF)}
+[    0.000] RX< 
+[    0.000] RX< ======================================
+[    0.000] RX<  UART CLI HOMEWORK DEVICE v2.0
+[    0.000] RX<  READY
+[    0.000] RX< ======================================
+[    0.000] RX< Type 'help'
+[  300.014] TX> "set speed 100\n"  (14 bytes)
+[  301.244] RX< OK: speed=100
+[  301.244] RX< > 
+[  450.030] TX> "save\n"  (5 bytes)
+[  450.485] RX< OK: configuration saved
+[  450.485] RX< > 
+[  600.041] TX> "status\n"  (7 bytes)
+[  600.656] RX< SPEED=100
+[  600.656] RX< TIMEOUT=10
+[  600.656] RX< LED=OFF
+[  600.656] RX< CONFIG=SAVED
+[  600.656] RX< > 
+[  750.058] TX> "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"  (42 bytes)
+[  753.635] RX< 
+[  753.635] RX< *** SYSTEM FAULT ***
+[  753.635] RX< Reason: input line boundary failure
+[  753.635] RX< rst:0xc (SW_CPU_RESET)
+[  753.635] RX< Rebooting...
+[ 1003.635] RX< 
+[ 1003.635] RX< ======================================
+[ 1003.635] RX<  UART CLI HOMEWORK DEVICE v2.0
+[ 1003.635] RX<  READY
+[ 1003.635] RX< ======================================
+[ 1003.635] RX< Type 'help'
+[ 1003.635] RX< > ERROR: empty command
+[ 1003.658] RX< > 
+[ 1603.686] TX> "status\n"  (7 bytes)
+[ 1604.301] RX< SPEED=120
+[ 1604.301] RX< TIMEOUT=10
+[ 1604.301] RX< LED=OFF
+[ 1604.301] RX< CONFIG=SAVED
+[ 1604.301] RX< > 
+[ 2753.713] {END OF SESSION}
+
+====================================================================================================
+ДОДАТОК B — sweep довжини рядка "A"×N, N = 1…300 (окремий сеанс на кожне N, після рядка — status)
+Рядок без термінатора; термінатор LF. Посимвольне введення, щоб виключити втрату байтів.
+====================================================================================================
+  N =   1… 40: ERROR: unknown command ; наступний status OK
+  N =  41… 81: SYSTEM FAULT ×1 + reboot ; наступний status OK
+  N =  82…122: SYSTEM FAULT ×2 + reboot ; наступний status OK
+  N = 123…163: SYSTEM FAULT ×3 + reboot ; наступний status OK
+  N = 164…204: SYSTEM FAULT ×4 + reboot ; наступний status OK
+  N = 205…245: SYSTEM FAULT ×5 + reboot ; наступний status OK
+  N = 246…286: SYSTEM FAULT ×6 + reboot ; наступний status OK
+  N = 287…300: SYSTEM FAULT ×7 + reboot ; наступний status OK
+Висновок: межа 40/41; кількість reboot = floor(N/41).
+Додатково: 40 символів + CRLF і 40 символів + CR → OK (термінатор не рахується);
+41 пробіл та "status"+35 пробілів → SYSTEM FAULT (вміст ролі не відіграє).
+
+====================================================================================================
+ДОДАТОК C — чи залежить реакція на невалідний ввід від попередньої валідної команди (до BUG-04)
+Кожну невалідну команду надіслано в 8 різних попередніх станах (свіжий старт, після set speed 100,
+set timeout 20, led on, set speed 100+save, set speed 100+reset, status, help).
+====================================================================================================
+  foo, set speed 256, set speed -1, set speed, set speed abc, set timeout 0, set timeout 61,
+  set timeout, %%%, HELP, led blink, "set  speed 10"     → однакова відповідь в усіх 8 станах
+  "A"×41                                                 → SYSTEM FAULT в усіх 8 станах
+  set                                                    → ERROR: unknown command у 6 станах;
+                                                           SYSTEM FAULT "parser state mismatch while configuration
+                                                           is dirty" після set speed 100 і після set timeout 20

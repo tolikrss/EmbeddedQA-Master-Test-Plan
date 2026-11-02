@@ -1,0 +1,141 @@
+[       1.0 ms] HW GPIO2=1
+[     204.0 ms] RX [BOOT] IoT node ready
+[     204.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_DUP01_no_duplicate_ids_over_5_flaps fw=demo
+[~    204.4 ms] TX RESET STATS
+[     254.0 ms] RX [STATS] reset
+[~    254.0 ms] TX NET DOWN
+[     855.1 ms] HW GPIO2=0
+[     855.4 ms] RX [NET] state=DISCONNECTED
+[     855.4 ms] RX [NET] state=BACKOFF
+[     855.4 ms] RX [NET] retry=1 backoff_ms=500
+[~    855.4 ms] TX SEND
+[    1056.2 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1056.2 ms] TX SEND
+[    1181.2 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1181.2 ms] TX SEND
+[    1301.9 ms] RX [BUFFER] queued id=3 count=3/8
+[    1356.7 ms] RX [NET] state=CONNECTING
+[    1357.0 ms] RX [NET] reconnect=FAILED
+[    1357.0 ms] RX [NET] state=BACKOFF
+[    1357.0 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1357.0 ms] TX NET UP
+[    1424.2 ms] RX [FAULT] network restored
+[    1424.4 ms] RX [NET] state=CONNECTING
+[    1424.4 ms] HW GPIO2=1
+[    1424.5 ms] RX [NET] state=CONNECTED
+[    1424.5 ms] RX [NET] reconnect=SUCCESS
+[    1424.5 ms] RX [BUFFER] flush_start count=3
+[    1424.5 ms] RX [MQTT] publish id=1 temp=24.5
+[    1424.5 ms] RX [MQTT] publish id=2 temp=24.5
+[    1424.5 ms] RX [MQTT] publish id=3 temp=24.5
+[    1424.5 ms] RX [BUFFER] flush_end count=0
+[~   1424.5 ms] TX NET DOWN
+[    1782.2 ms] HW GPIO2=0
+[    1782.6 ms] RX [NET] state=DISCONNECTED
+[    1782.6 ms] RX [NET] state=BACKOFF
+[    1782.7 ms] RX [NET] retry=3 backoff_ms=500
+[~   1782.7 ms] TX SEND
+[    2283.1 ms] RX [NET] state=CONNECTING
+[    2283.4 ms] RX [NET] reconnect=FAILED
+[    2283.4 ms] RX [NET] state=BACKOFF
+[    2283.4 ms] RX [NET] retry=4 backoff_ms=1000
+[    2290.6 ms] RX [BUFFER] queued id=4 count=1/8
+[~   2290.6 ms] TX SEND
+[    2412.2 ms] RX [BUFFER] queued id=5 count=2/8
+[~   2412.2 ms] TX SEND
+[    2538.6 ms] RX [BUFFER] queued id=6 count=3/8
+[~   2538.6 ms] TX NET UP
+[    2663.2 ms] RX [FAULT] network restored
+[    2663.5 ms] RX [NET] state=CONNECTING
+[    2663.5 ms] HW GPIO2=1
+[    2663.5 ms] RX [NET] state=CONNECTED
+[    2663.6 ms] RX [NET] reconnect=SUCCESS
+[    2663.6 ms] RX [BUFFER] flush_start count=3
+[    2663.6 ms] RX [MQTT] publish id=4 temp=24.5
+[    2663.6 ms] RX [MQTT] publish id=5 temp=24.5
+[    2663.6 ms] RX [MQTT] publish id=6 temp=24.5
+[    2663.6 ms] RX [BUFFER] flush_end count=0
+[~   2663.6 ms] TX NET DOWN
+[    3018.2 ms] HW GPIO2=0
+[    3018.5 ms] RX [NET] state=DISCONNECTED
+[    3018.5 ms] RX [NET] state=BACKOFF
+[    3018.5 ms] RX [NET] retry=5 backoff_ms=500
+[~   3018.5 ms] TX SEND
+[    3218.0 ms] RX [BUFFER] queued id=7 count=1/8
+[~   3218.0 ms] TX SEND
+[    3344.3 ms] RX [BUFFER] queued id=8 count=2/8
+[~   3344.3 ms] TX SEND
+[    3465.2 ms] RX [BUFFER] queued id=9 count=3/8
+[    3523.5 ms] RX [NET] state=CONNECTING
+[    3523.7 ms] RX [NET] reconnect=FAILED
+[    3523.8 ms] RX [NET] state=BACKOFF
+[    3523.8 ms] RX [NET] retry=6 backoff_ms=1000
+[~   3523.8 ms] TX NET UP
+[    3591.5 ms] RX [FAULT] network restored
+[    3591.8 ms] RX [NET] state=CONNECTING
+[    3591.8 ms] HW GPIO2=1
+[    3591.8 ms] RX [NET] state=CONNECTED
+[    3591.8 ms] RX [NET] reconnect=SUCCESS
+[    3591.8 ms] RX [BUFFER] flush_start count=3
+[    3591.9 ms] RX [MQTT] publish id=7 temp=24.5
+[    3591.9 ms] RX [MQTT] publish id=8 temp=24.5
+[    3591.9 ms] RX [MQTT] publish id=9 temp=24.5
+[    3591.9 ms] RX [BUFFER] flush_end count=0
+[~   3591.9 ms] TX NET DOWN
+[    3945.5 ms] HW GPIO2=0
+[    3945.8 ms] RX [NET] state=DISCONNECTED
+[    3945.8 ms] RX [NET] state=BACKOFF
+[    3945.9 ms] RX [NET] retry=7 backoff_ms=500
+[~   3945.9 ms] TX SEND
+[    4144.3 ms] RX [BUFFER] queued id=10 count=1/8
+[~   4144.3 ms] TX SEND
+[    4268.8 ms] RX [BUFFER] queued id=11 count=2/8
+[~   4268.8 ms] TX SEND
+[    4392.8 ms] RX [BUFFER] queued id=12 count=3/8
+[    4446.8 ms] RX [NET] state=CONNECTING
+[    4447.0 ms] RX [NET] reconnect=FAILED
+[    4447.0 ms] RX [NET] state=BACKOFF
+[    4447.0 ms] RX [NET] retry=8 backoff_ms=1000
+[~   4447.0 ms] TX NET UP
+[    4516.0 ms] RX [FAULT] network restored
+[    4516.3 ms] RX [NET] state=CONNECTING
+[    4516.3 ms] HW GPIO2=1
+[    4516.3 ms] RX [NET] state=CONNECTED
+[    4516.3 ms] RX [NET] reconnect=SUCCESS
+[    4516.3 ms] RX [BUFFER] flush_start count=3
+[    4516.4 ms] RX [MQTT] publish id=10 temp=24.5
+[    4516.4 ms] RX [MQTT] publish id=11 temp=24.5
+[    4516.4 ms] RX [MQTT] publish id=12 temp=24.5
+[    4516.4 ms] RX [BUFFER] flush_end count=0
+[~   4516.4 ms] TX NET DOWN
+[    4872.5 ms] HW GPIO2=0
+[    4872.9 ms] RX [NET] state=DISCONNECTED
+[    4872.9 ms] RX [NET] state=BACKOFF
+[    4872.9 ms] RX [NET] retry=9 backoff_ms=500
+[~   4872.9 ms] TX SEND
+[    5075.1 ms] RX [BUFFER] queued id=13 count=1/8
+[~   5075.1 ms] TX SEND
+[    5199.0 ms] RX [BUFFER] queued id=14 count=2/8
+[~   5199.0 ms] TX SEND
+[    5321.4 ms] RX [BUFFER] queued id=15 count=3/8
+[    5372.3 ms] RX [NET] state=CONNECTING
+[    5372.6 ms] RX [NET] reconnect=FAILED
+[    5372.6 ms] RX [NET] state=BACKOFF
+[    5372.6 ms] RX [NET] retry=10 backoff_ms=1000
+[~   5372.6 ms] TX NET UP
+[    5447.5 ms] RX [FAULT] network restored
+[    5447.7 ms] RX [NET] state=CONNECTING
+[    5447.7 ms] HW GPIO2=1
+[    5447.8 ms] RX [NET] state=CONNECTED
+[    5447.8 ms] RX [NET] reconnect=SUCCESS
+[    5447.8 ms] RX [BUFFER] flush_start count=3
+[    5447.8 ms] RX [MQTT] publish id=13 temp=24.5
+[    5447.8 ms] RX [MQTT] publish id=14 temp=24.5
+[    5447.8 ms] RX [MQTT] publish id=15 temp=24.5
+[    5447.8 ms] RX [BUFFER] flush_end count=0
+[~   5447.8 ms] TX STATUS
+[    5800.2 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":15,"dropped":0,"duplicates":0,"reconnect_attempts":10,"heap":286847}
+# MEASURED published_total = 15
+# MEASURED unique_ids = 15
+# MEASURED status_duplicates = 0

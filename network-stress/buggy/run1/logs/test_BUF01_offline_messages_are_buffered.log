@@ -1,0 +1,97 @@
+[       0.7 ms] HW GPIO2=1
+[     204.4 ms] RX [BOOT] IoT node ready
+[     204.8 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF01_offline_messages_are_buffered fw=buggy
+[~    204.8 ms] TX RESET STATS
+[     259.2 ms] RX [STATS] reset
+[~    259.2 ms] TX NET DOWN
+[     858.1 ms] HW GPIO2=0
+[     858.4 ms] RX [NET] state=DISCONNECTED
+[     858.4 ms] RX [NET] state=BACKOFF
+[     858.4 ms] RX [NET] retry=1 backoff_ms=500
+[~    858.4 ms] TX SEND
+[    1060.0 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1060.0 ms] TX SEND
+[    1186.2 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1186.2 ms] TX SEND
+[    1311.6 ms] RX [BUFFER] queued id=3 count=3/8
+[    1364.2 ms] RX [NET] state=CONNECTING
+[    1364.5 ms] RX [NET] reconnect=FAILED
+[    1364.5 ms] RX [NET] state=BACKOFF
+[    1364.5 ms] RX [NET] retry=2 backoff_ms=50
+[    1415.8 ms] RX [NET] state=CONNECTING
+[    1416.1 ms] RX [NET] reconnect=FAILED
+[    1416.1 ms] RX [NET] state=BACKOFF
+[    1416.1 ms] RX [NET] retry=3 backoff_ms=50
+[~   1416.1 ms] TX SEND
+[    1430.4 ms] RX [BUFFER] queued id=4 count=4/8
+[    1467.3 ms] RX [NET] state=CONNECTING
+[    1467.5 ms] RX [NET] reconnect=FAILED
+[    1467.5 ms] RX [NET] state=BACKOFF
+[    1467.5 ms] RX [NET] retry=4 backoff_ms=50
+[    1518.2 ms] RX [NET] state=CONNECTING
+[    1518.4 ms] RX [NET] reconnect=FAILED
+[    1518.4 ms] RX [NET] state=BACKOFF
+[    1518.5 ms] RX [NET] retry=5 backoff_ms=50
+[~   1518.5 ms] TX SEND
+[    1554.7 ms] RX [BUFFER] queued id=5 count=5/8
+[    1571.2 ms] RX [NET] state=CONNECTING
+[    1571.4 ms] RX [NET] reconnect=FAILED
+[    1571.4 ms] RX [NET] state=BACKOFF
+[    1571.5 ms] RX [NET] retry=6 backoff_ms=50
+[    1626.2 ms] RX [NET] state=CONNECTING
+[    1626.4 ms] RX [NET] reconnect=FAILED
+[    1626.5 ms] RX [NET] state=BACKOFF
+[    1626.5 ms] RX [NET] retry=7 backoff_ms=50
+[~   1626.5 ms] TX BUFFER
+[    1679.4 ms] RX [NET] state=CONNECTING
+[    1679.7 ms] RX [NET] reconnect=FAILED
+[    1679.7 ms] RX [NET] state=BACKOFF
+[    1679.7 ms] RX [NET] retry=8 backoff_ms=50
+[    1679.8 ms] RX [BUFFER] count=5 capacity=8 dropped=0
+[    1731.9 ms] RX [NET] state=CONNECTING
+[    1732.1 ms] RX [NET] reconnect=FAILED
+[    1732.1 ms] RX [NET] state=BACKOFF
+[    1732.1 ms] RX [NET] retry=9 backoff_ms=50
+[    1782.8 ms] RX [NET] state=CONNECTING
+[    1783.0 ms] RX [NET] reconnect=FAILED
+[    1783.0 ms] RX [NET] state=BACKOFF
+[    1783.0 ms] RX [NET] retry=10 backoff_ms=50
+[    1836.2 ms] RX [NET] state=CONNECTING
+[    1836.4 ms] RX [NET] reconnect=FAILED
+[    1836.4 ms] RX [NET] state=BACKOFF
+[    1836.5 ms] RX [NET] retry=11 backoff_ms=50
+[    1889.2 ms] RX [NET] state=CONNECTING
+[    1889.4 ms] RX [NET] reconnect=FAILED
+[    1889.4 ms] RX [NET] state=BACKOFF
+[    1889.5 ms] RX [NET] retry=12 backoff_ms=50
+[    1943.1 ms] RX [NET] state=CONNECTING
+[    1943.3 ms] RX [NET] reconnect=FAILED
+[    1943.3 ms] RX [NET] state=BACKOFF
+[    1943.4 ms] RX [NET] retry=13 backoff_ms=50
+[    1995.1 ms] RX [NET] state=CONNECTING
+[    1995.4 ms] RX [NET] reconnect=FAILED
+[    1995.4 ms] RX [NET] state=BACKOFF
+[    1995.4 ms] RX [NET] retry=14 backoff_ms=50
+[    2049.2 ms] RX [NET] state=CONNECTING
+[    2049.4 ms] RX [NET] reconnect=FAILED
+[    2049.4 ms] RX [NET] state=BACKOFF
+[    2049.5 ms] RX [NET] retry=15 backoff_ms=50
+[    2102.5 ms] RX [NET] state=CONNECTING
+[    2102.8 ms] RX [NET] reconnect=FAILED
+[    2102.8 ms] RX [NET] state=BACKOFF
+[    2102.8 ms] RX [NET] retry=16 backoff_ms=50
+[    2153.4 ms] RX [NET] state=CONNECTING
+[    2153.6 ms] RX [NET] reconnect=FAILED
+[    2153.7 ms] RX [NET] state=BACKOFF
+[    2153.7 ms] RX [NET] retry=17 backoff_ms=50
+[    2204.2 ms] RX [NET] state=CONNECTING
+[    2204.5 ms] RX [NET] reconnect=FAILED
+[    2204.5 ms] RX [NET] state=BACKOFF
+[    2204.5 ms] RX [NET] retry=18 backoff_ms=50
+[    2256.1 ms] RX [NET] state=CONNECTING
+[    2256.3 ms] RX [NET] reconnect=FAILED
+[    2256.3 ms] RX [NET] state=BACKOFF
+[    2256.4 ms] RX [NET] retry=19 backoff_ms=50
+# MEASURED queued_ids = [1, 2, 3, 4, 5]
+# MEASURED buffer_line = ['[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=8 backoff_ms=50', '[BUFFER] count=5 capacity=8 dropped=0', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=9 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=10 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=11 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=12 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=13 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=14 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=15 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=16 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=17 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=18 backoff_ms=50', '[NET] state=CONNECTING', '[NET] reconnect=FAILED', '[NET] state=BACKOFF', '[NET] retry=19 backoff_ms=50']

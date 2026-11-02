@@ -1,0 +1,29 @@
+[       2.8 ms] HW GPIO2=1
+[     206.1 ms] RX [BOOT] IoT node ready
+[     206.5 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF01_offline_messages_are_buffered fw=demo
+[~    206.5 ms] TX RESET STATS
+[     261.1 ms] RX [STATS] reset
+[~    261.1 ms] TX NET DOWN
+[     860.7 ms] HW GPIO2=0
+[     861.0 ms] RX [NET] state=DISCONNECTED
+[     861.1 ms] RX [NET] state=BACKOFF
+[     861.1 ms] RX [NET] retry=1 backoff_ms=500
+[~    861.1 ms] TX SEND
+[    1064.6 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1064.6 ms] TX SEND
+[    1190.3 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1190.3 ms] TX SEND
+[    1311.6 ms] RX [BUFFER] queued id=3 count=3/8
+[    1363.5 ms] RX [NET] state=CONNECTING
+[    1363.7 ms] RX [NET] reconnect=FAILED
+[    1363.8 ms] RX [NET] state=BACKOFF
+[    1363.9 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1363.9 ms] TX SEND
+[    1437.1 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1437.1 ms] TX SEND
+[    1560.5 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1560.5 ms] TX BUFFER
+[    1678.9 ms] RX [BUFFER] count=5 capacity=8 dropped=0
+# MEASURED queued_ids = [1, 2, 3, 4, 5]
+# MEASURED buffer_line = ['[BUFFER] count=5 capacity=8 dropped=0']

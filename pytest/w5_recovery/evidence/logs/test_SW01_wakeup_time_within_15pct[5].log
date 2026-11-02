@@ -1,0 +1,36 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.7] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       41.2] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       43.7] b0  RX  ets Jul 29 2019 12:21:46
+[       43.8] b0  RX  
+[       44.5] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      346.0] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      346.2] b0  RX  [BOOT] reset_reason=POWER_ON
+[      346.9] b0  HW  WDT_ADD loopTask
+[      348.2] b0  RX  [WDT] enabled timeout=4000 ms
+[      348.2] b0  RX  Commands:
+[      348.3] b0  RX    help
+[      348.4] b0  RX    status
+[      348.4] b0  RX    sensor
+[      348.6] b0  RX    relay on
+[      348.7] b0  RX    relay off
+[      349.4] b0  TX  status
+[      349.9] b0  RX    save
+[      350.1] b0  RX    sleep <seconds>
+[      350.2] b0  RX    hang
+[      350.3] b0  RX    powerloss
+[      350.4] b0  RX    reboot
+[      353.2] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      371.9] b0  TX  sleep 5
+[      375.6] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      403.9] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      404.9] b0  RX  [STORE] saved
+[      405.1] b0  RX  [STATE] SLEEP timer=5 s
+[      424.6] b0  HW  SLEEP_CFG timer_us=500000
+[      424.6] b0  HW  SLEEP_CFG ext0 pin=4 level=0
+[      424.6] b0  HW  DEEP_SLEEP timer_us=500000 ext0_pin=4 ext0_level=0 btn_level_now=1
+[      924.8] b1  SYS CHIP RESET RELEASED reason=DEEPSLEEP wake_cause=4
+[      961.1] b1  HW  BOOT reset_reason=DEEPSLEEP wake_cause=4
+[      963.2] b1  RX  ets Jul 29 2019 12:21:46
+[      963.3] b1  RX  
+[      963.6] b1  RX  rst:0x5 (DEEPSLEEP_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)

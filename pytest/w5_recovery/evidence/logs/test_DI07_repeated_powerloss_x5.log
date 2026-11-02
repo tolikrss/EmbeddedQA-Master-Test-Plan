@@ -1,0 +1,236 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.3] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       31.1] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       32.7] b0  RX  ets Jul 29 2019 12:21:46
+[       32.9] b0  RX  
+[       33.1] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      334.7] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      334.8] b0  RX  [BOOT] reset_reason=POWER_ON
+[      336.0] b0  HW  WDT_ADD loopTask
+[      337.6] b0  RX  [WDT] enabled timeout=4000 ms
+[      337.6] b0  RX  Commands:
+[      337.9] b0  RX    help
+[      337.9] b0  RX    status
+[      338.0] b0  RX    sensor
+[      338.2] b0  RX    relay on
+[      338.8] b0  RX    relay off
+[      339.2] b0  TX  status
+[      339.8] b0  RX    save
+[      339.9] b0  RX    sleep <seconds>
+[      339.9] b0  RX    hang
+[      340.0] b0  RX    powerloss
+[      340.1] b0  RX    reboot
+[      341.8] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      358.9] b0  TX  status
+[      361.1] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      370.0] b0  SYS INJECT BTNSEQ 0:200,1:60
+[      370.7] b0  HW  BTN level=0
+[      372.3] b0  HW  GPIO pin=5 level=1
+[      372.3] b0  HW  GPIO pin=2 level=1
+[      378.4] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      409.8] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      411.5] b0  RX  [STORE] saved
+[      411.6] b0  RX  [BUTTON] relay=ON
+[      571.7] b0  HW  BTN level=1
+[      632.7] b0  HW  BTNSEQ_DONE
+[      636.9] b0  TX  save
+[      646.1] b0  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[      672.1] b0  RX  [STORE] saved
+[      839.1] b0  TX  status
+[      843.0] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":true,"counter":2,"heap":298412,"sensor_ok":true}
+[      850.9] b0  TX  powerloss
+[      863.0] b0  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[      864.4] b0  RX  [FAULT] power loss DURING save
+[      884.2] b0  HW  RESET reason=SW detail=esp_restart
+[      896.0] b1  SYS CHIP RESET RELEASED reason=SW wake_cause=0
+[      936.0] b1  HW  BOOT reset_reason=SW wake_cause=0
+[      939.9] b1  RX  ets Jul 29 2019 12:21:46
+[      940.0] b1  RX  
+[      940.2] b1  RX  rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     1242.9] b1  HW  GPIO pin=5 level=1
+[     1243.0] b1  HW  GPIO pin=2 level=1
+[     1243.1] b1  HW  WDT_INIT timeout_ms=4000 panic=1
+[     1243.9] b1  HW  WDT_ADD loopTask
+[     1244.7] b1  RX  [BOOT] reset_reason=SOFTWARE_RESET
+[     1245.1] b1  RX  [WDT] enabled timeout=4000 ms
+[     1245.2] b1  RX  Commands:
+[     1245.3] b1  RX    help
+[     1245.4] b1  RX    status
+[     1245.4] b1  RX    sensor
+[     1245.5] b1  RX    relay on
+[     1245.9] b1  RX    relay off
+[     1246.0] b1  RX    save
+[     1246.1] b1  RX    sleep <seconds>
+[     1246.2] b1  RX    hang
+[     1246.3] b1  RX    powerloss
+[     1246.3] b1  RX    reboot
+[     1246.9] b1  TX  status
+[     1251.2] b1  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":true,"counter":102,"heap":298412,"sensor_ok":true}
+[     1259.1] b1  SYS INJECT BTNSEQ 0:200,1:60
+[     1262.2] b1  HW  BTN level=0
+[     1263.9] b1  HW  GPIO pin=5 level=0
+[     1264.0] b1  HW  GPIO pin=2 level=0
+[     1271.6] b1  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     1306.2] b1  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[     1308.2] b1  RX  [STORE] saved
+[     1308.5] b1  RX  [BUTTON] relay=OFF
+[     1463.3] b1  HW  BTN level=1
+[     1524.8] b1  HW  BTNSEQ_DONE
+[     1532.2] b1  TX  save
+[     1543.2] b1  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[     1569.7] b1  RX  [STORE] saved
+[     1733.7] b1  TX  status
+[     1738.9] b1  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":false,"counter":104,"heap":298412,"sensor_ok":true}
+[     1746.3] b1  TX  powerloss
+[     1757.5] b1  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[     1759.4] b1  RX  [FAULT] power loss DURING save
+[     1778.6] b1  HW  RESET reason=SW detail=esp_restart
+[     1791.8] b2  SYS CHIP RESET RELEASED reason=SW wake_cause=0
+[     1840.0] b2  HW  BOOT reset_reason=SW wake_cause=0
+[     1846.4] b2  RX  ets Jul 29 2019 12:21:46
+[     1846.5] b2  RX  
+[     1846.8] b2  RX  rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     2147.2] b2  HW  WDT_INIT timeout_ms=4000 panic=1
+[     2149.4] b2  HW  WDT_ADD loopTask
+[     2150.5] b2  RX  [BOOT] reset_reason=SOFTWARE_RESET
+[     2150.9] b2  RX  [WDT] enabled timeout=4000 ms
+[     2151.0] b2  RX  Commands:
+[     2151.1] b2  RX    help
+[     2151.2] b2  RX    status
+[     2151.7] b2  RX    sensor
+[     2151.9] b2  RX    relay on
+[     2152.0] b2  RX    relay off
+[     2152.1] b2  RX    save
+[     2152.3] b2  RX    sleep <seconds>
+[     2152.3] b2  RX    hang
+[     2152.5] b2  RX    powerloss
+[     2152.6] b2  RX    reboot
+[     2157.1] b2  TX  status
+[     2162.4] b2  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":false,"counter":204,"heap":298412,"sensor_ok":true}
+[     2169.0] b2  SYS INJECT BTNSEQ 0:200,1:60
+[     2170.8] b2  HW  BTN level=0
+[     2172.7] b2  HW  GPIO pin=5 level=1
+[     2172.8] b2  HW  GPIO pin=2 level=1
+[     2184.4] b2  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     2215.8] b2  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[     2217.8] b2  RX  [STORE] saved
+[     2217.9] b2  RX  [BUTTON] relay=ON
+[     2372.2] b2  HW  BTN level=1
+[     2433.0] b2  HW  BTNSEQ_DONE
+[     2437.5] b2  TX  save
+[     2445.9] b2  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[     2472.0] b2  RX  [STORE] saved
+[     2638.9] b2  TX  status
+[     2642.5] b2  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":true,"counter":206,"heap":298412,"sensor_ok":true}
+[     2651.5] b2  TX  powerloss
+[     2661.1] b2  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[     2662.8] b2  RX  [FAULT] power loss DURING save
+[     2682.0] b2  HW  RESET reason=SW detail=esp_restart
+[     2692.9] b3  SYS CHIP RESET RELEASED reason=SW wake_cause=0
+[     2735.9] b3  HW  BOOT reset_reason=SW wake_cause=0
+[     2737.6] b3  RX  ets Jul 29 2019 12:21:46
+[     2738.0] b3  RX  
+[     2738.2] b3  RX  rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     3040.2] b3  RX  [BOOT] reset_reason=SOFTWARE_RESET
+[     3040.4] b3  HW  GPIO pin=5 level=1
+[     3040.4] b3  HW  GPIO pin=2 level=1
+[     3040.4] b3  HW  WDT_INIT timeout_ms=4000 panic=1
+[     3041.0] b3  HW  WDT_ADD loopTask
+[     3043.3] b3  RX  [WDT] enabled timeout=4000 ms
+[     3043.5] b3  RX  Commands:
+[     3043.7] b3  RX    help
+[     3043.9] b3  RX    status
+[     3044.0] b3  RX    sensor
+[     3044.2] b3  RX    relay on
+[     3044.3] b3  RX    relay off
+[     3044.4] b3  RX    save
+[     3045.3] b3  RX    sleep <seconds>
+[     3045.5] b3  RX    hang
+[     3045.7] b3  RX    powerloss
+[     3045.8] b3  RX    reboot
+[     3050.2] b3  TX  status
+[     3052.7] b3  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":true,"counter":306,"heap":298412,"sensor_ok":true}
+[     3062.4] b3  SYS INJECT BTNSEQ 0:200,1:60
+[     3063.2] b3  HW  BTN level=0
+[     3064.0] b3  HW  GPIO pin=5 level=0
+[     3064.1] b3  HW  GPIO pin=2 level=0
+[     3070.7] b3  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     3102.7] b3  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[     3103.6] b3  RX  [STORE] saved
+[     3103.9] b3  RX  [BUTTON] relay=OFF
+[     3264.1] b3  HW  BTN level=1
+[     3325.2] b3  HW  BTNSEQ_DONE
+[     3330.6] b3  TX  save
+[     3341.5] b3  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[     3368.1] b3  RX  [STORE] saved
+[     3532.6] b3  TX  status
+[     3535.2] b3  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":false,"counter":308,"heap":298412,"sensor_ok":true}
+[     3544.8] b3  TX  powerloss
+[     3555.4] b3  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[     3558.3] b3  RX  [FAULT] power loss DURING save
+[     3576.7] b3  HW  RESET reason=SW detail=esp_restart
+[     3591.5] b4  SYS CHIP RESET RELEASED reason=SW wake_cause=0
+[     3628.8] b4  HW  BOOT reset_reason=SW wake_cause=0
+[     3631.2] b4  RX  ets Jul 29 2019 12:21:46
+[     3631.3] b4  RX  
+[     3631.6] b4  RX  rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     3934.6] b4  HW  WDT_INIT timeout_ms=4000 panic=1
+[     3935.1] b4  RX  [BOOT] reset_reason=SOFTWARE_RESET
+[     3936.4] b4  HW  WDT_ADD loopTask
+[     3937.3] b4  RX  [WDT] enabled timeout=4000 ms
+[     3938.0] b4  RX  Commands:
+[     3938.5] b4  RX    help
+[     3938.6] b4  RX    status
+[     3938.6] b4  RX    sensor
+[     3938.7] b4  RX    relay on
+[     3938.8] b4  RX    relay off
+[     3939.2] b4  RX    save
+[     3939.4] b4  RX    sleep <seconds>
+[     3939.4] b4  RX    hang
+[     3939.5] b4  RX    powerloss
+[     3939.6] b4  RX    reboot
+[     3944.0] b4  TX  status
+[     3946.4] b4  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":false,"counter":408,"heap":298412,"sensor_ok":true}
+[     3955.9] b4  SYS INJECT BTNSEQ 0:200,1:60
+[     3956.7] b4  HW  BTN level=0
+[     3957.4] b4  HW  GPIO pin=5 level=1
+[     3957.4] b4  HW  GPIO pin=2 level=1
+[     3964.5] b4  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[     3997.5] b4  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[     3999.3] b4  RX  [STORE] saved
+[     4000.0] b4  RX  [BUTTON] relay=ON
+[     4157.6] b4  HW  BTN level=1
+[     4219.1] b4  HW  BTNSEQ_DONE
+[     4227.6] b4  TX  save
+[     4243.5] b4  HW  NVS_COMMIT #3 write key=qa-lab/counter
+[     4270.1] b4  RX  [STORE] saved
+[     4429.3] b4  TX  status
+[     4432.8] b4  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":true,"counter":410,"heap":298412,"sensor_ok":true}
+[     4441.1] b4  TX  powerloss
+[     4450.9] b4  HW  NVS_COMMIT #4 write key=qa-lab/counter
+[     4453.9] b4  RX  [FAULT] power loss DURING save
+[     4472.1] b4  HW  RESET reason=SW detail=esp_restart
+[     4480.6] b5  SYS CHIP RESET RELEASED reason=SW wake_cause=0
+[     4510.4] b5  HW  BOOT reset_reason=SW wake_cause=0
+[     4514.4] b5  RX  ets Jul 29 2019 12:21:46
+[     4514.7] b5  RX  
+[     4515.5] b5  RX  rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[     4816.2] b5  HW  GPIO pin=5 level=1
+[     4816.2] b5  HW  GPIO pin=2 level=1
+[     4816.2] b5  HW  WDT_INIT timeout_ms=4000 panic=1
+[     4817.8] b5  HW  WDT_ADD loopTask
+[     4818.1] b5  RX  [BOOT] reset_reason=SOFTWARE_RESET
+[     4819.6] b5  RX  [WDT] enabled timeout=4000 ms
+[     4819.7] b5  RX  Commands:
+[     4819.8] b5  RX    help
+[     4819.8] b5  RX    status
+[     4820.6] b5  RX    sensor
+[     4821.0] b5  RX    relay on
+[     4821.5] b5  RX    relay off
+[     4821.6] b5  RX    save
+[     4821.7] b5  RX    sleep <seconds>
+[     4822.6] b5  TX  status
+[     4823.4] b5  RX    hang
+[     4824.0] b5  RX    powerloss
+[     4824.1] b5  RX    reboot
+[     4825.3] b5  RX  {"state":"ACTIVE","reset_reason":"SOFTWARE_RESET","relay":true,"counter":510,"heap":298412,"sensor_ok":true}

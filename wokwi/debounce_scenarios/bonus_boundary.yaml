@@ -1,0 +1,96 @@
+name: 'Bonus: boundary pulses 1/5/10/20/29/30/31/50 ms'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  # pulse 1 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 1ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 5 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 5ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 10 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 10ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 20 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 20ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 29 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 29ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 30 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 30ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 31 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 31ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # pulse 50 ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 50ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2500ms
+  # Compare LOGICAL EVENT count/timestamps with pulse list (expected: only 30/31/50 ms accepted)

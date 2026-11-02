@@ -1,0 +1,59 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.2] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       31.0] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       33.3] b0  RX  ets Jul 29 2019 12:21:46
+[       33.5] b0  RX  
+[       33.8] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      335.2] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      336.3] b0  RX  [BOOT] reset_reason=POWER_ON
+[      337.3] b0  HW  WDT_ADD loopTask
+[      337.8] b0  RX  [WDT] enabled timeout=4000 ms
+[      338.3] b0  RX  Commands:
+[      338.3] b0  RX    help
+[      338.4] b0  RX    status
+[      339.9] b0  RX    sensor
+[      340.0] b0  RX    relay on
+[      340.1] b0  RX    relay off
+[      340.1] b0  RX    save
+[      340.2] b0  RX    sleep <seconds>
+[      340.6] b0  RX    hang
+[      340.7] b0  RX    powerloss
+[      340.7] b0  RX    reboot
+[      343.4] b0  TX  status
+[      345.5] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      365.5] b0  TX  relay on
+[      368.5] b0  HW  GPIO pin=5 level=1
+[      368.7] b0  HW  GPIO pin=2 level=1
+[      370.8] b0  HW  NVS_COMMIT #1 write key=qa-lab/counter
+[      398.6] b0  HW  NVS_COMMIT #2 write key=qa-lab/relay
+[      399.5] b0  RX  [STORE] saved
+[      399.8] b0  RX  [RELAY] ON
+[      608.1] b0  SYS INJECT BROWNOUT
+[      609.1] b0  HW  RESET reason=BROWNOUT detail=injected_brownout
+[      609.8] b0  RX  
+[      613.6] b0  RX  Brownout detector was triggered
+[      613.6] b0  RX  
+[      616.2] b1  SYS CHIP RESET RELEASED reason=BROWNOUT wake_cause=0
+[      645.6] b1  HW  BOOT reset_reason=BROWNOUT wake_cause=0
+[      651.1] b1  RX  ets Jul 29 2019 12:21:46
+[      651.2] b1  RX  
+[      651.5] b1  RX  rst:0xf (RTCWDT_BROWN_OUT_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      954.5] b1  HW  GPIO pin=5 level=1
+[      954.5] b1  HW  GPIO pin=2 level=1
+[      954.5] b1  HW  WDT_INIT timeout_ms=4000 panic=1
+[      955.4] b1  HW  WDT_ADD loopTask
+[      957.1] b1  RX  [BOOT] reset_reason=BROWNOUT
+[      957.3] b1  RX  [WDT] enabled timeout=4000 ms
+[      957.4] b1  RX  Commands:
+[      957.5] b1  RX    help
+[      957.5] b1  RX    status
+[      957.6] b1  RX    sensor
+[      957.7] b1  RX    relay on
+[      957.7] b1  RX    relay off
+[      958.1] b1  RX    save
+[      958.3] b1  RX    sleep <seconds>
+[      958.3] b1  RX    hang
+[      958.4] b1  RX    powerloss
+[      958.5] b1  RX    reboot
+[      963.5] b1  TX  status
+[      966.5] b1  RX  {"state":"ACTIVE","reset_reason":"BROWNOUT","relay":true,"counter":1,"heap":298412,"sensor_ok":true}

@@ -1,0 +1,66 @@
+[       2.7 ms] HW GPIO2=1
+[     205.7 ms] RX [BOOT] IoT node ready
+[     206.2 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF04_drop_oldest_keeps_newest_in_order[12] fw=demo
+[~    206.2 ms] TX RESET STATS
+[     271.1 ms] RX [STATS] reset
+[~    271.1 ms] TX NET DOWN
+[     873.0 ms] HW GPIO2=0
+[     873.4 ms] RX [NET] state=DISCONNECTED
+[     873.4 ms] RX [NET] state=BACKOFF
+[     873.4 ms] RX [NET] retry=1 backoff_ms=500
+[~    873.4 ms] TX SEND
+[    1077.8 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1077.8 ms] TX SEND
+[    1201.3 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1201.3 ms] TX SEND
+[    1325.2 ms] RX [BUFFER] queued id=3 count=3/8
+[    1376.3 ms] RX [NET] state=CONNECTING
+[    1376.5 ms] RX [NET] reconnect=FAILED
+[    1376.5 ms] RX [NET] state=BACKOFF
+[    1376.6 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1376.6 ms] TX SEND
+[    1448.0 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1448.0 ms] TX SEND
+[    1566.3 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1566.3 ms] TX SEND
+[    1690.6 ms] RX [BUFFER] queued id=6 count=6/8
+[~   1690.6 ms] TX SEND
+[    1814.2 ms] RX [BUFFER] queued id=7 count=7/8
+[~   1814.2 ms] TX SEND
+[    1937.2 ms] RX [BUFFER] queued id=8 count=8/8
+[~   1937.2 ms] TX SEND
+[    2063.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=1
+[    2063.3 ms] RX [BUFFER] queued id=9 count=8/8
+[~   2063.3 ms] TX SEND
+[    2186.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=2
+[    2186.9 ms] RX [BUFFER] queued id=10 count=8/8
+[~   2186.9 ms] TX SEND
+[    2310.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=3
+[    2311.1 ms] RX [BUFFER] queued id=11 count=8/8
+[    2379.1 ms] RX [NET] state=CONNECTING
+[    2379.4 ms] RX [NET] reconnect=FAILED
+[    2379.4 ms] RX [NET] state=BACKOFF
+[    2379.4 ms] RX [NET] retry=3 backoff_ms=2000
+[~   2379.4 ms] TX SEND
+[    2430.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=4
+[    2430.7 ms] RX [BUFFER] queued id=12 count=8/8
+[~   2430.7 ms] TX NET UP
+[    2554.5 ms] RX [FAULT] network restored
+[    2554.8 ms] RX [NET] state=CONNECTING
+[    2554.9 ms] HW GPIO2=1
+[    2554.9 ms] RX [NET] state=CONNECTED
+[    2554.9 ms] RX [NET] reconnect=SUCCESS
+[    2554.9 ms] RX [BUFFER] flush_start count=8
+[    2554.9 ms] RX [MQTT] publish id=5 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=6 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=7 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=8 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=9 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=10 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=11 temp=24.5
+[    2555.0 ms] RX [MQTT] publish id=12 temp=24.5
+[    2555.0 ms] RX [BUFFER] flush_end count=0
+# MEASURED queued = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# MEASURED published = [5, 6, 7, 8, 9, 10, 11, 12]
+# MEASURED lost_ids = [1, 2, 3, 4]

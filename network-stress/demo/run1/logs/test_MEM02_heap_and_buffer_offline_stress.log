@@ -1,0 +1,1128 @@
+[       0.7 ms] HW GPIO2=1
+[     202.7 ms] RX [BOOT] IoT node ready
+[     203.1 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_MEM02_heap_and_buffer_offline_stress fw=demo
+[~    203.1 ms] TX STATUS
+[     259.3 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":286847}
+[~    259.3 ms] TX NET DOWN
+[     613.2 ms] HW GPIO2=0
+[     613.6 ms] RX [NET] state=DISCONNECTED
+[     613.7 ms] RX [NET] state=BACKOFF
+[     613.7 ms] RX [NET] retry=1 backoff_ms=500
+[~    613.7 ms] TX STRESS 100
+[     817.2 ms] RX [STRESS] start count=100 heap=286847
+[     817.5 ms] RX [BUFFER] queued id=1 count=1/8
+[     817.5 ms] RX [BUFFER] queued id=2 count=2/8
+[     817.5 ms] RX [BUFFER] queued id=3 count=3/8
+[     817.5 ms] RX [BUFFER] queued id=4 count=4/8
+[     817.5 ms] RX [BUFFER] queued id=5 count=5/8
+[     817.5 ms] RX [BUFFER] queued id=6 count=6/8
+[     817.5 ms] RX [BUFFER] queued id=7 count=7/8
+[     817.5 ms] RX [BUFFER] queued id=8 count=8/8
+[     817.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=1
+[     817.6 ms] RX [BUFFER] queued id=9 count=8/8
+[     817.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=2
+[     817.6 ms] RX [BUFFER] queued id=10 count=8/8
+[     817.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=3
+[     817.6 ms] RX [BUFFER] queued id=11 count=8/8
+[     817.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=4
+[     817.6 ms] RX [BUFFER] queued id=12 count=8/8
+[     817.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=5
+[     817.7 ms] RX [BUFFER] queued id=13 count=8/8
+[     817.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=6
+[     817.7 ms] RX [BUFFER] queued id=14 count=8/8
+[     817.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=7
+[     817.7 ms] RX [BUFFER] queued id=15 count=8/8
+[     817.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=8
+[     817.7 ms] RX [BUFFER] queued id=16 count=8/8
+[     817.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=9
+[     817.8 ms] RX [BUFFER] queued id=17 count=8/8
+[     817.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=10
+[     817.8 ms] RX [BUFFER] queued id=18 count=8/8
+[     817.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=11
+[     817.8 ms] RX [BUFFER] queued id=19 count=8/8
+[     817.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=12
+[     817.8 ms] RX [BUFFER] queued id=20 count=8/8
+[     817.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=13
+[     817.9 ms] RX [BUFFER] queued id=21 count=8/8
+[     817.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=14
+[     817.9 ms] RX [BUFFER] queued id=22 count=8/8
+[     817.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=15
+[     817.9 ms] RX [BUFFER] queued id=23 count=8/8
+[     817.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=16
+[     817.9 ms] RX [BUFFER] queued id=24 count=8/8
+[     817.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=17
+[     818.0 ms] RX [BUFFER] queued id=25 count=8/8
+[     818.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=18
+[     818.0 ms] RX [BUFFER] queued id=26 count=8/8
+[     818.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=19
+[     818.0 ms] RX [BUFFER] queued id=27 count=8/8
+[     818.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=20
+[     818.0 ms] RX [BUFFER] queued id=28 count=8/8
+[     818.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=21
+[     818.1 ms] RX [BUFFER] queued id=29 count=8/8
+[     818.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=22
+[     818.1 ms] RX [BUFFER] queued id=30 count=8/8
+[     818.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=23
+[     818.1 ms] RX [BUFFER] queued id=31 count=8/8
+[     818.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=24
+[     818.1 ms] RX [BUFFER] queued id=32 count=8/8
+[     818.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=25
+[     818.2 ms] RX [BUFFER] queued id=33 count=8/8
+[     818.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=26
+[     818.2 ms] RX [BUFFER] queued id=34 count=8/8
+[     818.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=27
+[     818.2 ms] RX [BUFFER] queued id=35 count=8/8
+[     818.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=28
+[     818.2 ms] RX [BUFFER] queued id=36 count=8/8
+[     818.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=29
+[     818.3 ms] RX [BUFFER] queued id=37 count=8/8
+[     818.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=30
+[     818.3 ms] RX [BUFFER] queued id=38 count=8/8
+[     818.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=31
+[     818.3 ms] RX [BUFFER] queued id=39 count=8/8
+[     818.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=32
+[     818.3 ms] RX [BUFFER] queued id=40 count=8/8
+[     818.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=33
+[     818.4 ms] RX [BUFFER] queued id=41 count=8/8
+[     818.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=34
+[     818.4 ms] RX [BUFFER] queued id=42 count=8/8
+[     818.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=35
+[     818.4 ms] RX [BUFFER] queued id=43 count=8/8
+[     818.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=36
+[     818.4 ms] RX [BUFFER] queued id=44 count=8/8
+[     818.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=37
+[     818.5 ms] RX [BUFFER] queued id=45 count=8/8
+[     818.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=38
+[     818.6 ms] RX [BUFFER] queued id=46 count=8/8
+[     818.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=39
+[     818.6 ms] RX [BUFFER] queued id=47 count=8/8
+[     818.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=40
+[     818.6 ms] RX [BUFFER] queued id=48 count=8/8
+[     818.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=41
+[     818.6 ms] RX [BUFFER] queued id=49 count=8/8
+[     818.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=42
+[     818.7 ms] RX [BUFFER] queued id=50 count=8/8
+[     818.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=43
+[     818.7 ms] RX [BUFFER] queued id=51 count=8/8
+[     818.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=44
+[     818.7 ms] RX [BUFFER] queued id=52 count=8/8
+[     818.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=45
+[     818.7 ms] RX [BUFFER] queued id=53 count=8/8
+[     818.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=46
+[     818.8 ms] RX [BUFFER] queued id=54 count=8/8
+[     818.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=47
+[     818.8 ms] RX [BUFFER] queued id=55 count=8/8
+[     818.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=48
+[     818.8 ms] RX [BUFFER] queued id=56 count=8/8
+[     818.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=49
+[     818.8 ms] RX [BUFFER] queued id=57 count=8/8
+[     818.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=50
+[     818.9 ms] RX [BUFFER] queued id=58 count=8/8
+[     818.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=51
+[     818.9 ms] RX [BUFFER] queued id=59 count=8/8
+[     818.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=52
+[     818.9 ms] RX [BUFFER] queued id=60 count=8/8
+[     818.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=53
+[     818.9 ms] RX [BUFFER] queued id=61 count=8/8
+[     819.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=54
+[     819.0 ms] RX [BUFFER] queued id=62 count=8/8
+[     819.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=55
+[     819.0 ms] RX [BUFFER] queued id=63 count=8/8
+[     819.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=56
+[     819.0 ms] RX [BUFFER] queued id=64 count=8/8
+[     819.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=57
+[     819.1 ms] RX [BUFFER] queued id=65 count=8/8
+[     819.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=58
+[     819.1 ms] RX [BUFFER] queued id=66 count=8/8
+[     819.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=59
+[     819.1 ms] RX [BUFFER] queued id=67 count=8/8
+[     819.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=60
+[     819.1 ms] RX [BUFFER] queued id=68 count=8/8
+[     819.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=61
+[     819.2 ms] RX [BUFFER] queued id=69 count=8/8
+[     819.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=62
+[     819.2 ms] RX [BUFFER] queued id=70 count=8/8
+[     819.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=63
+[     819.2 ms] RX [BUFFER] queued id=71 count=8/8
+[     819.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=64
+[     819.2 ms] RX [BUFFER] queued id=72 count=8/8
+[     819.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=65
+[     819.2 ms] RX [BUFFER] queued id=73 count=8/8
+[     819.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=66
+[     819.3 ms] RX [BUFFER] queued id=74 count=8/8
+[     819.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=67
+[     819.3 ms] RX [BUFFER] queued id=75 count=8/8
+[     819.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=68
+[     819.3 ms] RX [BUFFER] queued id=76 count=8/8
+[     819.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=69
+[     819.3 ms] RX [BUFFER] queued id=77 count=8/8
+[     819.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=70
+[     819.4 ms] RX [BUFFER] queued id=78 count=8/8
+[     819.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=71
+[     819.4 ms] RX [BUFFER] queued id=79 count=8/8
+[     819.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=72
+[     819.4 ms] RX [BUFFER] queued id=80 count=8/8
+[     819.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=73
+[     819.4 ms] RX [BUFFER] queued id=81 count=8/8
+[     819.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=74
+[     819.5 ms] RX [BUFFER] queued id=82 count=8/8
+[     819.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=75
+[     819.5 ms] RX [BUFFER] queued id=83 count=8/8
+[     819.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=76
+[     819.5 ms] RX [BUFFER] queued id=84 count=8/8
+[     819.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=77
+[     819.5 ms] RX [BUFFER] queued id=85 count=8/8
+[     819.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=78
+[     819.6 ms] RX [BUFFER] queued id=86 count=8/8
+[     819.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=79
+[     819.6 ms] RX [BUFFER] queued id=87 count=8/8
+[     819.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=80
+[     819.6 ms] RX [BUFFER] queued id=88 count=8/8
+[     819.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=81
+[     819.6 ms] RX [BUFFER] queued id=89 count=8/8
+[     819.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=82
+[     819.7 ms] RX [BUFFER] queued id=90 count=8/8
+[     819.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=83
+[     819.7 ms] RX [BUFFER] queued id=91 count=8/8
+[     819.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=84
+[     819.7 ms] RX [BUFFER] queued id=92 count=8/8
+[     819.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=85
+[     819.7 ms] RX [BUFFER] queued id=93 count=8/8
+[     819.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=86
+[     819.8 ms] RX [BUFFER] queued id=94 count=8/8
+[     819.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=87
+[     819.8 ms] RX [BUFFER] queued id=95 count=8/8
+[     819.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=88
+[     819.8 ms] RX [BUFFER] queued id=96 count=8/8
+[     819.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=89
+[     819.8 ms] RX [BUFFER] queued id=97 count=8/8
+[     819.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=90
+[     819.9 ms] RX [BUFFER] queued id=98 count=8/8
+[     819.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=91
+[     819.9 ms] RX [BUFFER] queued id=99 count=8/8
+[     819.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=92
+[     819.9 ms] RX [BUFFER] queued id=100 count=8/8
+[     819.9 ms] RX [STRESS] end heap=286847
+[~    819.9 ms] TX STATUS
+[    1070.0 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":0,"dropped":92,"duplicates":0,"reconnect_attempts":1,"heap":286847}
+[    1113.8 ms] RX [NET] state=CONNECTING
+[    1114.0 ms] RX [NET] reconnect=FAILED
+[    1114.0 ms] RX [NET] state=BACKOFF
+[    1114.1 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1114.1 ms] TX NET UP
+[    1425.7 ms] RX [FAULT] network restored
+[    1426.2 ms] RX [NET] state=CONNECTING
+[    1426.3 ms] HW GPIO2=1
+[    1426.3 ms] RX [NET] state=CONNECTED
+[    1426.3 ms] RX [NET] reconnect=SUCCESS
+[    1426.3 ms] RX [BUFFER] flush_start count=8
+[    1426.3 ms] RX [MQTT] publish id=93 temp=24.5
+[    1426.3 ms] RX [MQTT] publish id=94 temp=24.5
+[    1426.3 ms] RX [MQTT] publish id=95 temp=24.5
+[    1426.4 ms] RX [MQTT] publish id=96 temp=24.5
+[    1426.4 ms] RX [MQTT] publish id=97 temp=24.5
+[    1426.4 ms] RX [MQTT] publish id=98 temp=24.5
+[    1426.4 ms] RX [MQTT] publish id=99 temp=24.5
+[    1426.4 ms] RX [MQTT] publish id=100 temp=24.5
+[    1426.4 ms] RX [BUFFER] flush_end count=0
+[~   1426.4 ms] TX STATUS
+[    1781.7 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":8,"dropped":92,"duplicates":0,"reconnect_attempts":2,"heap":286847}
+[~   1781.7 ms] TX NET DOWN
+[    2137.0 ms] HW GPIO2=0
+[    2137.3 ms] RX [NET] state=DISCONNECTED
+[    2137.3 ms] RX [NET] state=BACKOFF
+[    2137.3 ms] RX [NET] retry=3 backoff_ms=500
+[~   2137.3 ms] TX STRESS 100
+[    2342.9 ms] RX [STRESS] start count=100 heap=286847
+[    2343.1 ms] RX [BUFFER] queued id=101 count=1/8
+[    2343.1 ms] RX [BUFFER] queued id=102 count=2/8
+[    2343.1 ms] RX [BUFFER] queued id=103 count=3/8
+[    2343.1 ms] RX [BUFFER] queued id=104 count=4/8
+[    2343.1 ms] RX [BUFFER] queued id=105 count=5/8
+[    2343.2 ms] RX [BUFFER] queued id=106 count=6/8
+[    2343.2 ms] RX [BUFFER] queued id=107 count=7/8
+[    2343.2 ms] RX [BUFFER] queued id=108 count=8/8
+[    2343.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=93
+[    2343.2 ms] RX [BUFFER] queued id=109 count=8/8
+[    2343.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=94
+[    2343.3 ms] RX [BUFFER] queued id=110 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=95
+[    2343.3 ms] RX [BUFFER] queued id=111 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=96
+[    2343.3 ms] RX [BUFFER] queued id=112 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=97
+[    2343.3 ms] RX [BUFFER] queued id=113 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=98
+[    2343.3 ms] RX [BUFFER] queued id=114 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=99
+[    2343.3 ms] RX [BUFFER] queued id=115 count=8/8
+[    2343.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=100
+[    2343.4 ms] RX [BUFFER] queued id=116 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=101
+[    2343.4 ms] RX [BUFFER] queued id=117 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=102
+[    2343.4 ms] RX [BUFFER] queued id=118 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=103
+[    2343.4 ms] RX [BUFFER] queued id=119 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=104
+[    2343.4 ms] RX [BUFFER] queued id=120 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=105
+[    2343.4 ms] RX [BUFFER] queued id=121 count=8/8
+[    2343.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=106
+[    2343.4 ms] RX [BUFFER] queued id=122 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=107
+[    2343.5 ms] RX [BUFFER] queued id=123 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=108
+[    2343.5 ms] RX [BUFFER] queued id=124 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=109
+[    2343.5 ms] RX [BUFFER] queued id=125 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=110
+[    2343.5 ms] RX [BUFFER] queued id=126 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=111
+[    2343.5 ms] RX [BUFFER] queued id=127 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=112
+[    2343.5 ms] RX [BUFFER] queued id=128 count=8/8
+[    2343.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=113
+[    2343.6 ms] RX [BUFFER] queued id=129 count=8/8
+[    2343.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=114
+[    2343.6 ms] RX [BUFFER] queued id=130 count=8/8
+[    2343.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=115
+[    2343.6 ms] RX [BUFFER] queued id=131 count=8/8
+[    2343.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=116
+[    2343.6 ms] RX [BUFFER] queued id=132 count=8/8
+[    2343.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=117
+[    2343.6 ms] RX [BUFFER] queued id=133 count=8/8
+[    2343.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=118
+[    2343.6 ms] RX [BUFFER] queued id=134 count=8/8
+[    2343.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=119
+[    2343.7 ms] RX [BUFFER] queued id=135 count=8/8
+[    2343.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=120
+[    2343.7 ms] RX [BUFFER] queued id=136 count=8/8
+[    2343.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=121
+[    2343.7 ms] RX [BUFFER] queued id=137 count=8/8
+[    2343.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=122
+[    2343.7 ms] RX [BUFFER] queued id=138 count=8/8
+[    2343.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=123
+[    2343.7 ms] RX [BUFFER] queued id=139 count=8/8
+[    2343.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=124
+[    2343.8 ms] RX [BUFFER] queued id=140 count=8/8
+[    2343.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=125
+[    2343.8 ms] RX [BUFFER] queued id=141 count=8/8
+[    2343.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=126
+[    2343.8 ms] RX [BUFFER] queued id=142 count=8/8
+[    2343.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=127
+[    2343.8 ms] RX [BUFFER] queued id=143 count=8/8
+[    2343.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=128
+[    2343.9 ms] RX [BUFFER] queued id=144 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=129
+[    2343.9 ms] RX [BUFFER] queued id=145 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=130
+[    2343.9 ms] RX [BUFFER] queued id=146 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=131
+[    2343.9 ms] RX [BUFFER] queued id=147 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=132
+[    2343.9 ms] RX [BUFFER] queued id=148 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=133
+[    2343.9 ms] RX [BUFFER] queued id=149 count=8/8
+[    2343.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=134
+[    2343.9 ms] RX [BUFFER] queued id=150 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=135
+[    2344.0 ms] RX [BUFFER] queued id=151 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=136
+[    2344.0 ms] RX [BUFFER] queued id=152 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=137
+[    2344.0 ms] RX [BUFFER] queued id=153 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=138
+[    2344.0 ms] RX [BUFFER] queued id=154 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=139
+[    2344.0 ms] RX [BUFFER] queued id=155 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=140
+[    2344.0 ms] RX [BUFFER] queued id=156 count=8/8
+[    2344.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=141
+[    2344.1 ms] RX [BUFFER] queued id=157 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=142
+[    2344.1 ms] RX [BUFFER] queued id=158 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=143
+[    2344.1 ms] RX [BUFFER] queued id=159 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=144
+[    2344.1 ms] RX [BUFFER] queued id=160 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=145
+[    2344.1 ms] RX [BUFFER] queued id=161 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=146
+[    2344.1 ms] RX [BUFFER] queued id=162 count=8/8
+[    2344.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=147
+[    2344.1 ms] RX [BUFFER] queued id=163 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=148
+[    2344.2 ms] RX [BUFFER] queued id=164 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=149
+[    2344.2 ms] RX [BUFFER] queued id=165 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=150
+[    2344.2 ms] RX [BUFFER] queued id=166 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=151
+[    2344.2 ms] RX [BUFFER] queued id=167 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=152
+[    2344.2 ms] RX [BUFFER] queued id=168 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=153
+[    2344.2 ms] RX [BUFFER] queued id=169 count=8/8
+[    2344.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=154
+[    2344.3 ms] RX [BUFFER] queued id=170 count=8/8
+[    2344.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=155
+[    2344.3 ms] RX [BUFFER] queued id=171 count=8/8
+[    2344.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=156
+[    2344.3 ms] RX [BUFFER] queued id=172 count=8/8
+[    2344.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=157
+[    2344.3 ms] RX [BUFFER] queued id=173 count=8/8
+[    2344.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=158
+[    2344.3 ms] RX [BUFFER] queued id=174 count=8/8
+[    2344.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=159
+[    2344.4 ms] RX [BUFFER] queued id=175 count=8/8
+[    2344.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=160
+[    2344.4 ms] RX [BUFFER] queued id=176 count=8/8
+[    2344.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=161
+[    2344.4 ms] RX [BUFFER] queued id=177 count=8/8
+[    2344.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=162
+[    2344.4 ms] RX [BUFFER] queued id=178 count=8/8
+[    2344.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=163
+[    2344.4 ms] RX [BUFFER] queued id=179 count=8/8
+[    2344.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=164
+[    2344.4 ms] RX [BUFFER] queued id=180 count=8/8
+[    2344.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=165
+[    2344.5 ms] RX [BUFFER] queued id=181 count=8/8
+[    2344.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=166
+[    2344.6 ms] RX [BUFFER] queued id=182 count=8/8
+[    2344.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=167
+[    2344.6 ms] RX [BUFFER] queued id=183 count=8/8
+[    2344.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=168
+[    2344.6 ms] RX [BUFFER] queued id=184 count=8/8
+[    2344.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=169
+[    2344.6 ms] RX [BUFFER] queued id=185 count=8/8
+[    2344.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=170
+[    2344.6 ms] RX [BUFFER] queued id=186 count=8/8
+[    2344.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=171
+[    2344.7 ms] RX [BUFFER] queued id=187 count=8/8
+[    2344.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=172
+[    2344.7 ms] RX [BUFFER] queued id=188 count=8/8
+[    2344.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=173
+[    2344.7 ms] RX [BUFFER] queued id=189 count=8/8
+[    2344.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=174
+[    2344.7 ms] RX [BUFFER] queued id=190 count=8/8
+[    2344.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=175
+[    2344.7 ms] RX [BUFFER] queued id=191 count=8/8
+[    2344.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=176
+[    2344.7 ms] RX [BUFFER] queued id=192 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=177
+[    2344.8 ms] RX [BUFFER] queued id=193 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=178
+[    2344.8 ms] RX [BUFFER] queued id=194 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=179
+[    2344.8 ms] RX [BUFFER] queued id=195 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=180
+[    2344.8 ms] RX [BUFFER] queued id=196 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=181
+[    2344.8 ms] RX [BUFFER] queued id=197 count=8/8
+[    2344.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=182
+[    2344.9 ms] RX [BUFFER] queued id=198 count=8/8
+[    2344.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=183
+[    2344.9 ms] RX [BUFFER] queued id=199 count=8/8
+[    2344.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=184
+[    2344.9 ms] RX [BUFFER] queued id=200 count=8/8
+[    2344.9 ms] RX [STRESS] end heap=286847
+[~   2344.9 ms] TX STATUS
+[    2644.0 ms] RX [NET] state=CONNECTING
+[    2644.3 ms] RX [NET] reconnect=FAILED
+[    2644.3 ms] RX [NET] state=BACKOFF
+[    2644.3 ms] RX [NET] retry=4 backoff_ms=1000
+[    2651.9 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":8,"dropped":184,"duplicates":0,"reconnect_attempts":4,"heap":286847}
+[~   2651.9 ms] TX NET UP
+[    3004.4 ms] RX [FAULT] network restored
+[    3004.8 ms] RX [NET] state=CONNECTING
+[    3004.8 ms] HW GPIO2=1
+[    3004.8 ms] RX [NET] state=CONNECTED
+[    3004.8 ms] RX [NET] reconnect=SUCCESS
+[    3004.8 ms] RX [BUFFER] flush_start count=8
+[    3004.9 ms] RX [MQTT] publish id=193 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=194 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=195 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=196 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=197 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=198 temp=24.5
+[    3004.9 ms] RX [MQTT] publish id=199 temp=24.5
+[    3005.0 ms] RX [MQTT] publish id=200 temp=24.5
+[    3005.0 ms] RX [BUFFER] flush_end count=0
+[~   3005.0 ms] TX STATUS
+[    3357.3 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":16,"dropped":184,"duplicates":0,"reconnect_attempts":4,"heap":286847}
+[~   3357.3 ms] TX NET DOWN
+[    3710.9 ms] HW GPIO2=0
+[    3711.1 ms] RX [NET] state=DISCONNECTED
+[    3711.2 ms] RX [NET] state=BACKOFF
+[    3711.2 ms] RX [NET] retry=5 backoff_ms=500
+[~   3711.2 ms] TX STRESS 100
+[    3911.6 ms] RX [STRESS] start count=100 heap=286847
+[    3911.9 ms] RX [BUFFER] queued id=201 count=1/8
+[    3912.0 ms] RX [BUFFER] queued id=202 count=2/8
+[    3912.0 ms] RX [BUFFER] queued id=203 count=3/8
+[    3912.0 ms] RX [BUFFER] queued id=204 count=4/8
+[    3912.0 ms] RX [BUFFER] queued id=205 count=5/8
+[    3912.0 ms] RX [BUFFER] queued id=206 count=6/8
+[    3912.0 ms] RX [BUFFER] queued id=207 count=7/8
+[    3912.0 ms] RX [BUFFER] queued id=208 count=8/8
+[    3912.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=185
+[    3912.0 ms] RX [BUFFER] queued id=209 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=186
+[    3912.1 ms] RX [BUFFER] queued id=210 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=187
+[    3912.1 ms] RX [BUFFER] queued id=211 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=188
+[    3912.1 ms] RX [BUFFER] queued id=212 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=189
+[    3912.1 ms] RX [BUFFER] queued id=213 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=190
+[    3912.1 ms] RX [BUFFER] queued id=214 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=191
+[    3912.1 ms] RX [BUFFER] queued id=215 count=8/8
+[    3912.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=192
+[    3912.2 ms] RX [BUFFER] queued id=216 count=8/8
+[    3912.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=193
+[    3912.2 ms] RX [BUFFER] queued id=217 count=8/8
+[    3912.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=194
+[    3912.2 ms] RX [BUFFER] queued id=218 count=8/8
+[    3912.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=195
+[    3912.2 ms] RX [BUFFER] queued id=219 count=8/8
+[    3912.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=196
+[    3912.2 ms] RX [BUFFER] queued id=220 count=8/8
+[    3912.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=197
+[    3912.3 ms] RX [BUFFER] queued id=221 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=198
+[    3912.3 ms] RX [BUFFER] queued id=222 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=199
+[    3912.3 ms] RX [BUFFER] queued id=223 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=200
+[    3912.3 ms] RX [BUFFER] queued id=224 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=201
+[    3912.3 ms] RX [BUFFER] queued id=225 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=202
+[    3912.3 ms] RX [BUFFER] queued id=226 count=8/8
+[    3912.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=203
+[    3912.4 ms] RX [BUFFER] queued id=227 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=204
+[    3912.4 ms] RX [BUFFER] queued id=228 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=205
+[    3912.4 ms] RX [BUFFER] queued id=229 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=206
+[    3912.4 ms] RX [BUFFER] queued id=230 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=207
+[    3912.4 ms] RX [BUFFER] queued id=231 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=208
+[    3912.4 ms] RX [BUFFER] queued id=232 count=8/8
+[    3912.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=209
+[    3912.4 ms] RX [BUFFER] queued id=233 count=8/8
+[    3912.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=210
+[    3912.5 ms] RX [BUFFER] queued id=234 count=8/8
+[    3912.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=211
+[    3912.5 ms] RX [BUFFER] queued id=235 count=8/8
+[    3912.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=212
+[    3912.5 ms] RX [BUFFER] queued id=236 count=8/8
+[    3912.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=213
+[    3912.5 ms] RX [BUFFER] queued id=237 count=8/8
+[    3912.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=214
+[    3912.5 ms] RX [BUFFER] queued id=238 count=8/8
+[    3912.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=215
+[    3912.6 ms] RX [BUFFER] queued id=239 count=8/8
+[    3912.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=216
+[    3912.6 ms] RX [BUFFER] queued id=240 count=8/8
+[    3912.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=217
+[    3912.6 ms] RX [BUFFER] queued id=241 count=8/8
+[    3912.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=218
+[    3912.6 ms] RX [BUFFER] queued id=242 count=8/8
+[    3912.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=219
+[    3912.7 ms] RX [BUFFER] queued id=243 count=8/8
+[    3912.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=220
+[    3912.7 ms] RX [BUFFER] queued id=244 count=8/8
+[    3912.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=221
+[    3912.7 ms] RX [BUFFER] queued id=245 count=8/8
+[    3912.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=222
+[    3912.7 ms] RX [BUFFER] queued id=246 count=8/8
+[    3912.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=223
+[    3912.7 ms] RX [BUFFER] queued id=247 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=224
+[    3912.8 ms] RX [BUFFER] queued id=248 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=225
+[    3912.8 ms] RX [BUFFER] queued id=249 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=226
+[    3912.8 ms] RX [BUFFER] queued id=250 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=227
+[    3912.8 ms] RX [BUFFER] queued id=251 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=228
+[    3912.8 ms] RX [BUFFER] queued id=252 count=8/8
+[    3912.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=229
+[    3912.8 ms] RX [BUFFER] queued id=253 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=230
+[    3912.9 ms] RX [BUFFER] queued id=254 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=231
+[    3912.9 ms] RX [BUFFER] queued id=255 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=232
+[    3912.9 ms] RX [BUFFER] queued id=256 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=233
+[    3912.9 ms] RX [BUFFER] queued id=257 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=234
+[    3912.9 ms] RX [BUFFER] queued id=258 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=235
+[    3912.9 ms] RX [BUFFER] queued id=259 count=8/8
+[    3912.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=236
+[    3913.0 ms] RX [BUFFER] queued id=260 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=237
+[    3913.0 ms] RX [BUFFER] queued id=261 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=238
+[    3913.0 ms] RX [BUFFER] queued id=262 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=239
+[    3913.0 ms] RX [BUFFER] queued id=263 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=240
+[    3913.0 ms] RX [BUFFER] queued id=264 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=241
+[    3913.0 ms] RX [BUFFER] queued id=265 count=8/8
+[    3913.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=242
+[    3913.1 ms] RX [BUFFER] queued id=266 count=8/8
+[    3913.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=243
+[    3913.1 ms] RX [BUFFER] queued id=267 count=8/8
+[    3913.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=244
+[    3913.1 ms] RX [BUFFER] queued id=268 count=8/8
+[    3913.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=245
+[    3913.1 ms] RX [BUFFER] queued id=269 count=8/8
+[    3913.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=246
+[    3913.2 ms] RX [BUFFER] queued id=270 count=8/8
+[    3913.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=247
+[    3913.2 ms] RX [BUFFER] queued id=271 count=8/8
+[    3913.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=248
+[    3913.2 ms] RX [BUFFER] queued id=272 count=8/8
+[    3913.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=249
+[    3913.2 ms] RX [BUFFER] queued id=273 count=8/8
+[    3913.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=250
+[    3913.3 ms] RX [BUFFER] queued id=274 count=8/8
+[    3913.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=251
+[    3913.3 ms] RX [BUFFER] queued id=275 count=8/8
+[    3913.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=252
+[    3913.3 ms] RX [BUFFER] queued id=276 count=8/8
+[    3913.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=253
+[    3913.3 ms] RX [BUFFER] queued id=277 count=8/8
+[    3913.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=254
+[    3913.3 ms] RX [BUFFER] queued id=278 count=8/8
+[    3913.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=255
+[    3913.4 ms] RX [BUFFER] queued id=279 count=8/8
+[    3913.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=256
+[    3913.4 ms] RX [BUFFER] queued id=280 count=8/8
+[    3913.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=257
+[    3913.6 ms] RX [BUFFER] queued id=281 count=8/8
+[    3913.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=258
+[    3913.6 ms] RX [BUFFER] queued id=282 count=8/8
+[    3913.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=259
+[    3913.6 ms] RX [BUFFER] queued id=283 count=8/8
+[    3913.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=260
+[    3913.6 ms] RX [BUFFER] queued id=284 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=261
+[    3913.7 ms] RX [BUFFER] queued id=285 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=262
+[    3913.7 ms] RX [BUFFER] queued id=286 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=263
+[    3913.7 ms] RX [BUFFER] queued id=287 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=264
+[    3913.7 ms] RX [BUFFER] queued id=288 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=265
+[    3913.7 ms] RX [BUFFER] queued id=289 count=8/8
+[    3913.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=266
+[    3913.8 ms] RX [BUFFER] queued id=290 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=267
+[    3913.8 ms] RX [BUFFER] queued id=291 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=268
+[    3913.8 ms] RX [BUFFER] queued id=292 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=269
+[    3913.8 ms] RX [BUFFER] queued id=293 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=270
+[    3913.8 ms] RX [BUFFER] queued id=294 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=271
+[    3913.8 ms] RX [BUFFER] queued id=295 count=8/8
+[    3913.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=272
+[    3913.9 ms] RX [BUFFER] queued id=296 count=8/8
+[    3913.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=273
+[    3913.9 ms] RX [BUFFER] queued id=297 count=8/8
+[    3913.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=274
+[    3913.9 ms] RX [BUFFER] queued id=298 count=8/8
+[    3913.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=275
+[    3913.9 ms] RX [BUFFER] queued id=299 count=8/8
+[    3913.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=276
+[    3913.9 ms] RX [BUFFER] queued id=300 count=8/8
+[    3913.9 ms] RX [STRESS] end heap=286847
+[~   3913.9 ms] TX STATUS
+[    4164.7 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":16,"dropped":276,"duplicates":0,"reconnect_attempts":5,"heap":286847}
+[    4212.8 ms] RX [NET] state=CONNECTING
+[    4213.1 ms] RX [NET] reconnect=FAILED
+[    4213.2 ms] RX [NET] state=BACKOFF
+[    4213.2 ms] RX [NET] retry=6 backoff_ms=1000
+[~   4213.2 ms] TX NET UP
+[    4523.8 ms] RX [FAULT] network restored
+[    4524.1 ms] RX [NET] state=CONNECTING
+[    4524.2 ms] HW GPIO2=1
+[    4524.2 ms] RX [NET] state=CONNECTED
+[    4524.2 ms] RX [NET] reconnect=SUCCESS
+[    4524.2 ms] RX [BUFFER] flush_start count=8
+[    4524.2 ms] RX [MQTT] publish id=293 temp=24.5
+[    4524.2 ms] RX [MQTT] publish id=294 temp=24.5
+[    4524.2 ms] RX [MQTT] publish id=295 temp=24.5
+[    4524.3 ms] RX [MQTT] publish id=296 temp=24.5
+[    4524.3 ms] RX [MQTT] publish id=297 temp=24.5
+[    4524.3 ms] RX [MQTT] publish id=298 temp=24.5
+[    4524.3 ms] RX [MQTT] publish id=299 temp=24.5
+[    4524.3 ms] RX [MQTT] publish id=300 temp=24.5
+[    4524.3 ms] RX [BUFFER] flush_end count=0
+[~   4524.3 ms] TX STATUS
+[    4882.1 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":24,"dropped":276,"duplicates":0,"reconnect_attempts":6,"heap":286847}
+[~   4882.1 ms] TX NET DOWN
+[    5233.7 ms] HW GPIO2=0
+[    5234.0 ms] RX [NET] state=DISCONNECTED
+[    5234.0 ms] RX [NET] state=BACKOFF
+[    5234.1 ms] RX [NET] retry=7 backoff_ms=500
+[~   5234.1 ms] TX STRESS 100
+[    5435.7 ms] RX [STRESS] start count=100 heap=286847
+[    5436.1 ms] RX [BUFFER] queued id=301 count=1/8
+[    5436.1 ms] RX [BUFFER] queued id=302 count=2/8
+[    5436.1 ms] RX [BUFFER] queued id=303 count=3/8
+[    5436.1 ms] RX [BUFFER] queued id=304 count=4/8
+[    5436.1 ms] RX [BUFFER] queued id=305 count=5/8
+[    5436.1 ms] RX [BUFFER] queued id=306 count=6/8
+[    5436.1 ms] RX [BUFFER] queued id=307 count=7/8
+[    5436.2 ms] RX [BUFFER] queued id=308 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=277
+[    5436.2 ms] RX [BUFFER] queued id=309 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=278
+[    5436.2 ms] RX [BUFFER] queued id=310 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=279
+[    5436.2 ms] RX [BUFFER] queued id=311 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=280
+[    5436.2 ms] RX [BUFFER] queued id=312 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=281
+[    5436.2 ms] RX [BUFFER] queued id=313 count=8/8
+[    5436.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=282
+[    5436.3 ms] RX [BUFFER] queued id=314 count=8/8
+[    5436.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=283
+[    5436.3 ms] RX [BUFFER] queued id=315 count=8/8
+[    5436.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=284
+[    5436.3 ms] RX [BUFFER] queued id=316 count=8/8
+[    5436.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=285
+[    5436.3 ms] RX [BUFFER] queued id=317 count=8/8
+[    5436.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=286
+[    5436.3 ms] RX [BUFFER] queued id=318 count=8/8
+[    5436.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=287
+[    5436.3 ms] RX [BUFFER] queued id=319 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=288
+[    5436.4 ms] RX [BUFFER] queued id=320 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=289
+[    5436.4 ms] RX [BUFFER] queued id=321 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=290
+[    5436.4 ms] RX [BUFFER] queued id=322 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=291
+[    5436.4 ms] RX [BUFFER] queued id=323 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=292
+[    5436.4 ms] RX [BUFFER] queued id=324 count=8/8
+[    5436.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=293
+[    5436.4 ms] RX [BUFFER] queued id=325 count=8/8
+[    5436.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=294
+[    5436.5 ms] RX [BUFFER] queued id=326 count=8/8
+[    5436.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=295
+[    5436.5 ms] RX [BUFFER] queued id=327 count=8/8
+[    5436.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=296
+[    5436.5 ms] RX [BUFFER] queued id=328 count=8/8
+[    5436.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=297
+[    5436.5 ms] RX [BUFFER] queued id=329 count=8/8
+[    5436.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=298
+[    5436.5 ms] RX [BUFFER] queued id=330 count=8/8
+[    5436.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=299
+[    5436.6 ms] RX [BUFFER] queued id=331 count=8/8
+[    5436.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=300
+[    5436.6 ms] RX [BUFFER] queued id=332 count=8/8
+[    5436.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=301
+[    5436.6 ms] RX [BUFFER] queued id=333 count=8/8
+[    5436.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=302
+[    5436.6 ms] RX [BUFFER] queued id=334 count=8/8
+[    5436.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=303
+[    5436.6 ms] RX [BUFFER] queued id=335 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=304
+[    5436.7 ms] RX [BUFFER] queued id=336 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=305
+[    5436.7 ms] RX [BUFFER] queued id=337 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=306
+[    5436.7 ms] RX [BUFFER] queued id=338 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=307
+[    5436.7 ms] RX [BUFFER] queued id=339 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=308
+[    5436.7 ms] RX [BUFFER] queued id=340 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=309
+[    5436.7 ms] RX [BUFFER] queued id=341 count=8/8
+[    5436.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=310
+[    5436.8 ms] RX [BUFFER] queued id=342 count=8/8
+[    5436.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=311
+[    5436.8 ms] RX [BUFFER] queued id=343 count=8/8
+[    5436.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=312
+[    5436.8 ms] RX [BUFFER] queued id=344 count=8/8
+[    5436.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=313
+[    5436.8 ms] RX [BUFFER] queued id=345 count=8/8
+[    5436.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=314
+[    5436.8 ms] RX [BUFFER] queued id=346 count=8/8
+[    5436.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=315
+[    5436.8 ms] RX [BUFFER] queued id=347 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=316
+[    5436.9 ms] RX [BUFFER] queued id=348 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=317
+[    5436.9 ms] RX [BUFFER] queued id=349 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=318
+[    5436.9 ms] RX [BUFFER] queued id=350 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=319
+[    5436.9 ms] RX [BUFFER] queued id=351 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=320
+[    5436.9 ms] RX [BUFFER] queued id=352 count=8/8
+[    5436.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=321
+[    5436.9 ms] RX [BUFFER] queued id=353 count=8/8
+[    5437.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=322
+[    5437.0 ms] RX [BUFFER] queued id=354 count=8/8
+[    5437.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=323
+[    5437.0 ms] RX [BUFFER] queued id=355 count=8/8
+[    5437.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=324
+[    5437.0 ms] RX [BUFFER] queued id=356 count=8/8
+[    5437.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=325
+[    5437.0 ms] RX [BUFFER] queued id=357 count=8/8
+[    5437.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=326
+[    5437.0 ms] RX [BUFFER] queued id=358 count=8/8
+[    5437.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=327
+[    5437.1 ms] RX [BUFFER] queued id=359 count=8/8
+[    5437.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=328
+[    5437.1 ms] RX [BUFFER] queued id=360 count=8/8
+[    5437.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=329
+[    5437.1 ms] RX [BUFFER] queued id=361 count=8/8
+[    5437.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=330
+[    5437.1 ms] RX [BUFFER] queued id=362 count=8/8
+[    5437.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=331
+[    5437.1 ms] RX [BUFFER] queued id=363 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=332
+[    5437.2 ms] RX [BUFFER] queued id=364 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=333
+[    5437.2 ms] RX [BUFFER] queued id=365 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=334
+[    5437.2 ms] RX [BUFFER] queued id=366 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=335
+[    5437.2 ms] RX [BUFFER] queued id=367 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=336
+[    5437.2 ms] RX [BUFFER] queued id=368 count=8/8
+[    5437.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=337
+[    5437.3 ms] RX [BUFFER] queued id=369 count=8/8
+[    5437.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=338
+[    5437.3 ms] RX [BUFFER] queued id=370 count=8/8
+[    5437.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=339
+[    5437.3 ms] RX [BUFFER] queued id=371 count=8/8
+[    5437.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=340
+[    5437.3 ms] RX [BUFFER] queued id=372 count=8/8
+[    5437.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=341
+[    5437.3 ms] RX [BUFFER] queued id=373 count=8/8
+[    5437.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=342
+[    5437.4 ms] RX [BUFFER] queued id=374 count=8/8
+[    5437.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=343
+[    5437.4 ms] RX [BUFFER] queued id=375 count=8/8
+[    5437.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=344
+[    5437.4 ms] RX [BUFFER] queued id=376 count=8/8
+[    5437.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=345
+[    5437.4 ms] RX [BUFFER] queued id=377 count=8/8
+[    5437.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=346
+[    5437.4 ms] RX [BUFFER] queued id=378 count=8/8
+[    5437.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=347
+[    5437.4 ms] RX [BUFFER] queued id=379 count=8/8
+[    5437.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=348
+[    5437.5 ms] RX [BUFFER] queued id=380 count=8/8
+[    5437.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=349
+[    5437.5 ms] RX [BUFFER] queued id=381 count=8/8
+[    5437.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=350
+[    5437.6 ms] RX [BUFFER] queued id=382 count=8/8
+[    5437.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=351
+[    5437.6 ms] RX [BUFFER] queued id=383 count=8/8
+[    5437.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=352
+[    5437.6 ms] RX [BUFFER] queued id=384 count=8/8
+[    5437.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=353
+[    5437.6 ms] RX [BUFFER] queued id=385 count=8/8
+[    5437.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=354
+[    5437.6 ms] RX [BUFFER] queued id=386 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=355
+[    5437.7 ms] RX [BUFFER] queued id=387 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=356
+[    5437.7 ms] RX [BUFFER] queued id=388 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=357
+[    5437.7 ms] RX [BUFFER] queued id=389 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=358
+[    5437.7 ms] RX [BUFFER] queued id=390 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=359
+[    5437.7 ms] RX [BUFFER] queued id=391 count=8/8
+[    5437.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=360
+[    5437.8 ms] RX [BUFFER] queued id=392 count=8/8
+[    5437.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=361
+[    5437.8 ms] RX [BUFFER] queued id=393 count=8/8
+[    5437.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=362
+[    5437.8 ms] RX [BUFFER] queued id=394 count=8/8
+[    5437.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=363
+[    5437.8 ms] RX [BUFFER] queued id=395 count=8/8
+[    5437.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=364
+[    5437.8 ms] RX [BUFFER] queued id=396 count=8/8
+[    5437.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=365
+[    5437.9 ms] RX [BUFFER] queued id=397 count=8/8
+[    5437.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=366
+[    5437.9 ms] RX [BUFFER] queued id=398 count=8/8
+[    5437.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=367
+[    5437.9 ms] RX [BUFFER] queued id=399 count=8/8
+[    5437.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=368
+[    5437.9 ms] RX [BUFFER] queued id=400 count=8/8
+[    5437.9 ms] RX [STRESS] end heap=286847
+[    5735.2 ms] RX [NET] state=CONNECTING
+[    5735.6 ms] RX [NET] reconnect=FAILED
+[    5735.6 ms] RX [NET] state=BACKOFF
+[    5735.6 ms] RX [NET] retry=8 backoff_ms=1000
+[~   5735.6 ms] TX STATUS
+[    5743.5 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":24,"dropped":368,"duplicates":0,"reconnect_attempts":8,"heap":286847}
+[~   5743.5 ms] TX NET UP
+[    6103.1 ms] RX [FAULT] network restored
+[    6103.5 ms] RX [NET] state=CONNECTING
+[    6103.5 ms] HW GPIO2=1
+[    6103.5 ms] RX [NET] state=CONNECTED
+[    6103.6 ms] RX [NET] reconnect=SUCCESS
+[    6103.6 ms] RX [BUFFER] flush_start count=8
+[    6103.6 ms] RX [MQTT] publish id=393 temp=24.5
+[    6103.6 ms] RX [MQTT] publish id=394 temp=24.5
+[    6103.6 ms] RX [MQTT] publish id=395 temp=24.5
+[    6103.6 ms] RX [MQTT] publish id=396 temp=24.5
+[    6103.6 ms] RX [MQTT] publish id=397 temp=24.5
+[    6103.7 ms] RX [MQTT] publish id=398 temp=24.5
+[    6103.7 ms] RX [MQTT] publish id=399 temp=24.5
+[    6103.7 ms] RX [MQTT] publish id=400 temp=24.5
+[    6103.7 ms] RX [BUFFER] flush_end count=0
+[~   6103.7 ms] TX STATUS
+[    6457.9 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":32,"dropped":368,"duplicates":0,"reconnect_attempts":8,"heap":286847}
+[~   6457.9 ms] TX NET DOWN
+[    6812.5 ms] HW GPIO2=0
+[    6812.9 ms] RX [NET] state=DISCONNECTED
+[    6812.9 ms] RX [NET] state=BACKOFF
+[    6812.9 ms] RX [NET] retry=9 backoff_ms=500
+[~   6812.9 ms] TX STRESS 100
+[    7016.5 ms] RX [STRESS] start count=100 heap=286847
+[    7016.8 ms] RX [BUFFER] queued id=401 count=1/8
+[    7016.8 ms] RX [BUFFER] queued id=402 count=2/8
+[    7016.9 ms] RX [BUFFER] queued id=403 count=3/8
+[    7016.9 ms] RX [BUFFER] queued id=404 count=4/8
+[    7016.9 ms] RX [BUFFER] queued id=405 count=5/8
+[    7016.9 ms] RX [BUFFER] queued id=406 count=6/8
+[    7016.9 ms] RX [BUFFER] queued id=407 count=7/8
+[    7016.9 ms] RX [BUFFER] queued id=408 count=8/8
+[    7016.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=369
+[    7016.9 ms] RX [BUFFER] queued id=409 count=8/8
+[    7017.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=370
+[    7017.0 ms] RX [BUFFER] queued id=410 count=8/8
+[    7017.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=371
+[    7017.0 ms] RX [BUFFER] queued id=411 count=8/8
+[    7017.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=372
+[    7017.0 ms] RX [BUFFER] queued id=412 count=8/8
+[    7017.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=373
+[    7017.0 ms] RX [BUFFER] queued id=413 count=8/8
+[    7017.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=374
+[    7017.1 ms] RX [BUFFER] queued id=414 count=8/8
+[    7017.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=375
+[    7017.1 ms] RX [BUFFER] queued id=415 count=8/8
+[    7017.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=376
+[    7017.1 ms] RX [BUFFER] queued id=416 count=8/8
+[    7017.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=377
+[    7017.1 ms] RX [BUFFER] queued id=417 count=8/8
+[    7017.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=378
+[    7017.1 ms] RX [BUFFER] queued id=418 count=8/8
+[    7017.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=379
+[    7017.2 ms] RX [BUFFER] queued id=419 count=8/8
+[    7017.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=380
+[    7017.2 ms] RX [BUFFER] queued id=420 count=8/8
+[    7017.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=381
+[    7017.2 ms] RX [BUFFER] queued id=421 count=8/8
+[    7017.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=382
+[    7017.3 ms] RX [BUFFER] queued id=422 count=8/8
+[    7017.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=383
+[    7017.3 ms] RX [BUFFER] queued id=423 count=8/8
+[    7017.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=384
+[    7017.4 ms] RX [BUFFER] queued id=424 count=8/8
+[    7017.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=385
+[    7017.4 ms] RX [BUFFER] queued id=425 count=8/8
+[    7017.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=386
+[    7017.4 ms] RX [BUFFER] queued id=426 count=8/8
+[    7017.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=387
+[    7017.4 ms] RX [BUFFER] queued id=427 count=8/8
+[    7017.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=388
+[    7017.5 ms] RX [BUFFER] queued id=428 count=8/8
+[    7017.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=389
+[    7017.5 ms] RX [BUFFER] queued id=429 count=8/8
+[    7017.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=390
+[    7017.5 ms] RX [BUFFER] queued id=430 count=8/8
+[    7017.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=391
+[    7017.5 ms] RX [BUFFER] queued id=431 count=8/8
+[    7017.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=392
+[    7017.6 ms] RX [BUFFER] queued id=432 count=8/8
+[    7017.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=393
+[    7017.6 ms] RX [BUFFER] queued id=433 count=8/8
+[    7017.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=394
+[    7017.6 ms] RX [BUFFER] queued id=434 count=8/8
+[    7017.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=395
+[    7017.6 ms] RX [BUFFER] queued id=435 count=8/8
+[    7017.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=396
+[    7017.6 ms] RX [BUFFER] queued id=436 count=8/8
+[    7017.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=397
+[    7017.7 ms] RX [BUFFER] queued id=437 count=8/8
+[    7017.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=398
+[    7017.7 ms] RX [BUFFER] queued id=438 count=8/8
+[    7017.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=399
+[    7017.7 ms] RX [BUFFER] queued id=439 count=8/8
+[    7017.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=400
+[    7017.7 ms] RX [BUFFER] queued id=440 count=8/8
+[    7017.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=401
+[    7017.8 ms] RX [BUFFER] queued id=441 count=8/8
+[    7017.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=402
+[    7017.8 ms] RX [BUFFER] queued id=442 count=8/8
+[    7017.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=403
+[    7017.8 ms] RX [BUFFER] queued id=443 count=8/8
+[    7017.8 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=404
+[    7017.8 ms] RX [BUFFER] queued id=444 count=8/8
+[    7017.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=405
+[    7017.9 ms] RX [BUFFER] queued id=445 count=8/8
+[    7017.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=406
+[    7017.9 ms] RX [BUFFER] queued id=446 count=8/8
+[    7017.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=407
+[    7017.9 ms] RX [BUFFER] queued id=447 count=8/8
+[    7017.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=408
+[    7017.9 ms] RX [BUFFER] queued id=448 count=8/8
+[    7018.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=409
+[    7018.0 ms] RX [BUFFER] queued id=449 count=8/8
+[    7018.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=410
+[    7018.0 ms] RX [BUFFER] queued id=450 count=8/8
+[    7018.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=411
+[    7018.0 ms] RX [BUFFER] queued id=451 count=8/8
+[    7018.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=412
+[    7018.1 ms] RX [BUFFER] queued id=452 count=8/8
+[    7018.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=413
+[    7018.1 ms] RX [BUFFER] queued id=453 count=8/8
+[    7018.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=414
+[    7018.1 ms] RX [BUFFER] queued id=454 count=8/8
+[    7018.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=415
+[    7018.1 ms] RX [BUFFER] queued id=455 count=8/8
+[    7018.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=416
+[    7018.2 ms] RX [BUFFER] queued id=456 count=8/8
+[    7018.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=417
+[    7018.2 ms] RX [BUFFER] queued id=457 count=8/8
+[    7018.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=418
+[    7018.2 ms] RX [BUFFER] queued id=458 count=8/8
+[    7018.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=419
+[    7018.2 ms] RX [BUFFER] queued id=459 count=8/8
+[    7018.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=420
+[    7018.3 ms] RX [BUFFER] queued id=460 count=8/8
+[    7018.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=421
+[    7018.3 ms] RX [BUFFER] queued id=461 count=8/8
+[    7018.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=422
+[    7018.3 ms] RX [BUFFER] queued id=462 count=8/8
+[    7018.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=423
+[    7018.3 ms] RX [BUFFER] queued id=463 count=8/8
+[    7018.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=424
+[    7018.4 ms] RX [BUFFER] queued id=464 count=8/8
+[    7018.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=425
+[    7018.4 ms] RX [BUFFER] queued id=465 count=8/8
+[    7018.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=426
+[    7018.4 ms] RX [BUFFER] queued id=466 count=8/8
+[    7018.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=427
+[    7018.4 ms] RX [BUFFER] queued id=467 count=8/8
+[    7018.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=428
+[    7018.5 ms] RX [BUFFER] queued id=468 count=8/8
+[    7018.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=429
+[    7018.5 ms] RX [BUFFER] queued id=469 count=8/8
+[    7018.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=430
+[    7018.5 ms] RX [BUFFER] queued id=470 count=8/8
+[    7018.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=431
+[    7018.5 ms] RX [BUFFER] queued id=471 count=8/8
+[    7018.5 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=432
+[    7018.6 ms] RX [BUFFER] queued id=472 count=8/8
+[    7018.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=433
+[    7018.6 ms] RX [BUFFER] queued id=473 count=8/8
+[    7018.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=434
+[    7018.6 ms] RX [BUFFER] queued id=474 count=8/8
+[    7018.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=435
+[    7018.6 ms] RX [BUFFER] queued id=475 count=8/8
+[    7018.6 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=436
+[    7018.7 ms] RX [BUFFER] queued id=476 count=8/8
+[    7018.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=437
+[    7018.7 ms] RX [BUFFER] queued id=477 count=8/8
+[    7018.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=438
+[    7018.7 ms] RX [BUFFER] queued id=478 count=8/8
+[    7018.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=439
+[    7018.7 ms] RX [BUFFER] queued id=479 count=8/8
+[    7018.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=440
+[    7018.8 ms] RX [BUFFER] queued id=480 count=8/8
+[    7018.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=441
+[    7018.9 ms] RX [BUFFER] queued id=481 count=8/8
+[    7018.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=442
+[    7019.0 ms] RX [BUFFER] queued id=482 count=8/8
+[    7019.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=443
+[    7019.0 ms] RX [BUFFER] queued id=483 count=8/8
+[    7019.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=444
+[    7019.0 ms] RX [BUFFER] queued id=484 count=8/8
+[    7019.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=445
+[    7019.0 ms] RX [BUFFER] queued id=485 count=8/8
+[    7019.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=446
+[    7019.1 ms] RX [BUFFER] queued id=486 count=8/8
+[    7019.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=447
+[    7019.1 ms] RX [BUFFER] queued id=487 count=8/8
+[    7019.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=448
+[    7019.1 ms] RX [BUFFER] queued id=488 count=8/8
+[    7019.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=449
+[    7019.1 ms] RX [BUFFER] queued id=489 count=8/8
+[    7019.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=450
+[    7019.2 ms] RX [BUFFER] queued id=490 count=8/8
+[    7019.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=451
+[    7019.2 ms] RX [BUFFER] queued id=491 count=8/8
+[    7019.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=452
+[    7019.2 ms] RX [BUFFER] queued id=492 count=8/8
+[    7019.2 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=453
+[    7019.3 ms] RX [BUFFER] queued id=493 count=8/8
+[    7019.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=454
+[    7019.3 ms] RX [BUFFER] queued id=494 count=8/8
+[    7019.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=455
+[    7019.3 ms] RX [BUFFER] queued id=495 count=8/8
+[    7019.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=456
+[    7019.3 ms] RX [BUFFER] queued id=496 count=8/8
+[    7019.3 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=457
+[    7019.3 ms] RX [BUFFER] queued id=497 count=8/8
+[    7019.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=458
+[    7019.4 ms] RX [BUFFER] queued id=498 count=8/8
+[    7019.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=459
+[    7019.4 ms] RX [BUFFER] queued id=499 count=8/8
+[    7019.4 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=460
+[    7019.4 ms] RX [BUFFER] queued id=500 count=8/8
+[    7019.4 ms] RX [STRESS] end heap=286847
+[~   7019.4 ms] TX STATUS
+[    7318.5 ms] RX [NET] state=CONNECTING
+[    7318.7 ms] RX [NET] reconnect=FAILED
+[    7318.7 ms] RX [NET] state=BACKOFF
+[    7318.7 ms] RX [NET] retry=10 backoff_ms=1000
+[    7326.1 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":32,"dropped":460,"duplicates":0,"reconnect_attempts":10,"heap":286847}
+[~   7326.1 ms] TX NET UP
+[    7678.5 ms] RX [FAULT] network restored
+[    7678.8 ms] RX [NET] state=CONNECTING
+[    7678.8 ms] HW GPIO2=1
+[    7678.8 ms] RX [NET] state=CONNECTED
+[    7678.9 ms] RX [NET] reconnect=SUCCESS
+[    7678.9 ms] RX [BUFFER] flush_start count=8
+[    7678.9 ms] RX [MQTT] publish id=493 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=494 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=495 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=496 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=497 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=498 temp=24.5
+[    7678.9 ms] RX [MQTT] publish id=499 temp=24.5
+[    7679.0 ms] RX [MQTT] publish id=500 temp=24.5
+[    7679.0 ms] RX [BUFFER] flush_end count=0
+[~   7679.0 ms] TX STATUS
+[    8033.2 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":40,"dropped":460,"duplicates":0,"reconnect_attempts":10,"heap":286847}
+# MEASURED heap_series = [286847, 286847, 286847, 286847, 286847, 286847]
+# MEASURED buffer_occupancy_offline = [8, 8, 8, 8, 8]

@@ -1,0 +1,29 @@
+# firmware=fw_buggy scale=10.0 (times = device world ms)
+[        0.2] b0  SYS CHIP RESET RELEASED reason=POWERON wake_cause=0
+[       32.5] b0  HW  BOOT reset_reason=POWERON wake_cause=0
+[       35.0] b0  RX  ets Jul 29 2019 12:21:46
+[       35.1] b0  RX  
+[       35.3] b0  RX  rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+[      336.1] b0  HW  WDT_INIT timeout_ms=4000 panic=1
+[      337.9] b0  RX  [BOOT] reset_reason=POWER_ON
+[      338.1] b0  HW  WDT_ADD loopTask
+[      338.4] b0  RX  [WDT] enabled timeout=4000 ms
+[      338.6] b0  RX  Commands:
+[      338.6] b0  RX    help
+[      338.7] b0  RX    status
+[      338.7] b0  RX    sensor
+[      338.8] b0  RX    relay on
+[      339.4] b0  RX    relay off
+[      339.5] b0  RX    save
+[      341.3] b0  RX    sleep <seconds>
+[      341.3] b0  RX    hang
+[      341.4] b0  RX    powerloss
+[      341.5] b0  RX    reboot
+[      342.7] b0  TX  status
+[      344.9] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":true}
+[      363.7] b0  SYS INJECT DHT nan
+[      364.4] b0  HW  DHT mode=nan t=24.5 h=45.0
+[      374.8] b0  TX  sensor
+[      376.8] b0  RX  [SENSOR] temp=0.0C humidity=0.0%
+[      875.8] b0  TX  status
+[      878.9] b0  RX  {"state":"ACTIVE","reset_reason":"POWER_ON","relay":false,"counter":0,"heap":298412,"sensor_ok":false}

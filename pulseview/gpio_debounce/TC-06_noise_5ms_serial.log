@@ -1,0 +1,24 @@
+[   500.002 ms] 
+[   500.002 ms] ESP32 BUTTON / INTERRUPT / DEBOUNCE DEMO
+[   500.002 ms] ----------------------------------------
+[   500.002 ms] GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT
+[   500.002 ms] 
+[   500.002 ms] Green BUTTON = physical button with bouncing
+[   500.002 ms] Red NOISE    = artificial noise input
+[   500.002 ms] 
+[  1008.014 ms] 
+[  1008.014 ms] ================================
+[  1008.014 ms] LOGICAL EVENT #1
+[  1008.014 ms] Button press ACCEPTED
+[  1008.014 ms] RAW interrupts total: 1
+[  1008.014 ms] RAW interrupts since previous logical event: 1
+[  1008.014 ms] LOGICAL events total: 1
+[  1008.014 ms] ACTIONS total: 1
+[  1008.014 ms] ACTION executed ONCE
+[  1008.014 ms] LOGGER: physical press -> RAW -> LOGICAL -> ACTION
+[  1008.014 ms] ================================
+[  1008.016 ms] [SYSTEM] Critical operation is running...
+[  1013.002 ms] Button RELEASE accepted
+[  3000.005 ms] 
+[  3000.005 ms] [LOGGER] RAW interrupts: 2 | Logical events: 1 | Actions: 1
+[  3008.011 ms] [SYSTEM] Critical operation finished.

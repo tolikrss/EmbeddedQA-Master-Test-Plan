@@ -1,0 +1,48 @@
+name: 'TC-03 Heavy bounce (NOISE, 2 ms segments)'
+version: 1
+author: 'QA'
+
+steps:
+  - wait-serial: 'GPIO18 -> INTERRUPT -> ISR -> DEBOUNCE -> EVENT'
+  - delay: 500ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 2ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 1
+  - delay: 300ms
+  - set-control:
+      part-id: noise
+      control: pressed
+      value: 0
+  - delay: 3000ms
+  # Expected: exactly 1 LOGICAL EVENT. Bug reproduced if 'LOGICAL EVENT #2' appears.

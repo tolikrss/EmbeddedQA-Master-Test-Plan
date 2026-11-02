@@ -1,0 +1,52 @@
+[       0.7 ms] HW GPIO2=1
+[     204.0 ms] RX [BOOT] IoT node ready
+[     204.3 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF03_capacity_boundary_counters[12] fw=demo
+[~    204.3 ms] TX RESET STATS
+[     258.5 ms] RX [STATS] reset
+[~    258.5 ms] TX NET DOWN
+[     857.5 ms] HW GPIO2=0
+[     857.8 ms] RX [NET] state=DISCONNECTED
+[     857.9 ms] RX [NET] state=BACKOFF
+[     857.9 ms] RX [NET] retry=1 backoff_ms=500
+[~    857.9 ms] TX SEND
+[    1063.5 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1063.5 ms] TX SEND
+[    1186.6 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1186.6 ms] TX SEND
+[    1307.6 ms] RX [BUFFER] queued id=3 count=3/8
+[    1359.7 ms] RX [NET] state=CONNECTING
+[    1360.0 ms] RX [NET] reconnect=FAILED
+[    1360.0 ms] RX [NET] state=BACKOFF
+[    1360.1 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1360.1 ms] TX SEND
+[    1434.3 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1434.3 ms] TX SEND
+[    1554.9 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1554.9 ms] TX SEND
+[    1676.2 ms] RX [BUFFER] queued id=6 count=6/8
+[~   1676.2 ms] TX SEND
+[    1801.2 ms] RX [BUFFER] queued id=7 count=7/8
+[~   1801.2 ms] TX SEND
+[    1925.0 ms] RX [BUFFER] queued id=8 count=8/8
+[~   1925.0 ms] TX SEND
+[    2043.9 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=1
+[    2044.1 ms] RX [BUFFER] queued id=9 count=8/8
+[~   2044.1 ms] TX SEND
+[    2169.1 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=2
+[    2169.3 ms] RX [BUFFER] queued id=10 count=8/8
+[~   2169.3 ms] TX SEND
+[    2293.0 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=3
+[    2293.2 ms] RX [BUFFER] queued id=11 count=8/8
+[    2365.1 ms] RX [NET] state=CONNECTING
+[    2365.3 ms] RX [NET] reconnect=FAILED
+[    2365.3 ms] RX [NET] state=BACKOFF
+[    2365.4 ms] RX [NET] retry=3 backoff_ms=2000
+[~   2365.4 ms] TX SEND
+[    2416.7 ms] RX [BUFFER] overflow policy=DROP_OLDEST dropped_total=4
+[    2416.9 ms] RX [BUFFER] queued id=12 count=8/8
+[~   2416.9 ms] TX STATUS
+[    2537.6 ms] RX {"net":"BACKOFF","broker":false,"buffer":8,"capacity":8,"sent":0,"dropped":4,"duplicates":0,"reconnect_attempts":3,"heap":286847}
+# MEASURED sent_offline = 12
+# MEASURED buffer = 8
+# MEASURED dropped = 4

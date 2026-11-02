@@ -1,0 +1,43 @@
+[       0.8 ms] HW GPIO2=1
+[     203.7 ms] RX [BOOT] IoT node ready
+[     204.1 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":0,"dropped":0,"duplicates":0,"reconnect_attempts":0,"heap":287057}
+# test tests/test_network.py::test_BUF02_buffer_flushed_exactly_once fw=demo
+[~    204.1 ms] TX RESET STATS
+[     249.1 ms] RX [STATS] reset
+[~    249.1 ms] TX NET DOWN
+[     852.5 ms] HW GPIO2=0
+[     852.8 ms] RX [NET] state=DISCONNECTED
+[     852.9 ms] RX [NET] state=BACKOFF
+[     852.9 ms] RX [NET] retry=1 backoff_ms=500
+[~    852.9 ms] TX SEND
+[    1059.3 ms] RX [BUFFER] queued id=1 count=1/8
+[~   1059.3 ms] TX SEND
+[    1176.2 ms] RX [BUFFER] queued id=2 count=2/8
+[~   1176.2 ms] TX SEND
+[    1301.1 ms] RX [BUFFER] queued id=3 count=3/8
+[    1353.8 ms] RX [NET] state=CONNECTING
+[    1354.1 ms] RX [NET] reconnect=FAILED
+[    1354.1 ms] RX [NET] state=BACKOFF
+[    1354.1 ms] RX [NET] retry=2 backoff_ms=1000
+[~   1354.1 ms] TX SEND
+[    1421.0 ms] RX [BUFFER] queued id=4 count=4/8
+[~   1421.0 ms] TX SEND
+[    1546.7 ms] RX [BUFFER] queued id=5 count=5/8
+[~   1546.7 ms] TX NET UP
+[    1666.4 ms] RX [FAULT] network restored
+[    1666.7 ms] RX [NET] state=CONNECTING
+[    1666.8 ms] HW GPIO2=1
+[    1666.8 ms] RX [NET] state=CONNECTED
+[    1666.8 ms] RX [NET] reconnect=SUCCESS
+[    1666.9 ms] RX [BUFFER] flush_start count=5
+[    1666.9 ms] RX [MQTT] publish id=1 temp=24.5
+[    1666.9 ms] RX [MQTT] publish id=2 temp=24.5
+[    1666.9 ms] RX [MQTT] publish id=3 temp=24.5
+[    1666.9 ms] RX [MQTT] publish id=4 temp=24.5
+[    1666.9 ms] RX [MQTT] publish id=5 temp=24.5
+[    1666.9 ms] RX [BUFFER] flush_end count=0
+[~   1666.9 ms] TX STATUS
+[    2022.4 ms] RX {"net":"CONNECTED","broker":true,"buffer":0,"capacity":8,"sent":5,"dropped":0,"duplicates":0,"reconnect_attempts":2,"heap":286847}
+# MEASURED queued = [1, 2, 3, 4, 5]
+# MEASURED published = [1, 2, 3, 4, 5]
+# MEASURED status = {'net': 'CONNECTED', 'broker': True, 'buffer': 0, 'capacity': 8, 'sent': 5, 'dropped': 0, 'duplicates': 0, 'reconnect_attempts': 2, 'heap': 286847}
